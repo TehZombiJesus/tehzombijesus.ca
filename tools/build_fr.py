@@ -12,7 +12,7 @@ from fr_dict import FR
 from i18n import chunks, SITE, SKIP_TEXT
 
 DOMAIN = 'https://tehzombijesus.ca/'
-CORE = ['index.html', 'homelab.html', 'setup.html', 'ruenix.html', 'builds.html', 'now.html', 'guestbook.html', '404.html']
+CORE = ['index.html', 'homelab.html', 'setup.html', 'ruenix.html', 'now.html', 'guestbook.html', '404.html']
 missing = set()
 # names that stay the same in French; not reported as missing
 KEEP = {'TehZombiJesus', 'Homelab', 'Ruenix', 'GitHub', '@TehZombiJesus', 'X / Twitter', 'Ruenix MC', 'Canada', 'Nox Interactive', 'Proxmox', 'TrueNAS', 'ZFS',
@@ -22,7 +22,7 @@ KEEP = {'TehZombiJesus', 'Homelab', 'Ruenix', 'GitHub', '@TehZombiJesus', 'X / T
         'Cloud Gateway Fiber', '7680 × 2160, 240 Hz', 'PC', 'MAGNUS Pro XL', 'Gigabyte X870E AORUS Master', 'Windows', 'Arctic Liquid Freezer III Pro',
         'Fractal North XL Mesh', 'Premium PC Mount', 'Logitech G502 X Lightspeed', 'Logitech G Pro X 2 Lightspeed', 'Logitech Brio 4K', 'RTX 3070 Ti',
         'Gigabyte Z790 AORUS Elite AX', 'Windows 11 Pro', 'SMP', 'SkyPvP', 'Ruenix crest', 'Fibre', 'DNS · protection', 'Forums', 'Webcam', 'Photos',
-        'Immich · photos', 'FR', 'Français', 'RSS', '.litematic', '.nbt', '@@FRMAIN@@'}
+        'Immich · photos', 'FR', 'Français', 'RSS', '@@FRMAIN@@'}
 
 def tr_text(t):
     core = ' '.join(t.split())
@@ -102,7 +102,7 @@ def build_pair(rel, fr_main=None):
     s = s.replace('<dt>Poste de jeu</dt>', '<dt>Configuration</dt>')  # the "Setup" row in the storage panel
     s = s.replace('href="feed.xml"', 'href="feed.xml"')  # French pages use fr/feed.xml (same relative name)
     if rel == '404.html':
-        s = re.sub(r'href="/(index|homelab|setup|ruenix|builds|devlog|now|guestbook|changelog)\.html"', r'href="/fr/\1.html"', s)
+        s = re.sub(r'href="/(index|homelab|setup|ruenix|devlog|now|guestbook|changelog)\.html"', r'href="/fr/\1.html"', s)
     else:
         s = re.sub(r'(["\'])((?:\.\./)*)' + SHARED, r'\1../\2\3', s)
     s = add_alternates(add_switch(s, rel, True), rel)

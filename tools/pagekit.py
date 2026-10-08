@@ -1,7 +1,7 @@
 """Make a new page that shares the head, menu and footer of the existing English pages.
 
     from pagekit import make_page
-    html = make_page('builds.html', title='Builds | TehZombiJesus', description='...', main='<main>...</main>')
+    html = make_page('now.html', title='Now | TehZombiJesus', description='...', main='<main>...</main>')
 
 The template is site/now.html: everything outside <main> is copied, then the title,
 descriptions, current menu item and scripts are swapped.

@@ -1,6 +1,6 @@
 # tehzombijesus.ca
 
-The personal site of **TehZombiJesus**: link hub, portfolio, homelab, setup, Minecraft builds, devlog and the Ruenix network.
+The personal site of **TehZombiJesus**: link hub, portfolio, homelab, setup, devlog and the Ruenix network.
 Plain HTML, CSS and JavaScript, plus a few small Cloudflare functions for the live parts. Hosted on Cloudflare Pages, in English and French.
 
 ## How it deploys
@@ -23,7 +23,6 @@ site/                    everything that gets published
   homelab.html           homelab, the network map and the next server
   setup.html             the battlestation and the next build
   ruenix.html            the Minecraft network, with the opening-day countdown
-  builds.html            Minecraft builds with the 3D viewer
   now.html               what I'm up to right now
   guestbook.html         the guestbook (guestbook-admin.html is the private moderation page)
   devlog.html, devlog/   GENERATED from tools/devlog_posts.py
@@ -35,7 +34,7 @@ site/                    everything that gets published
   site.js                age, motion, scroll reveals, living background
   extras.js              terminal, achievements, seasons, clock, pet zombie, map, trackers, live features
   sw.js, manifest.webmanifest   installable app + offline support
-  assets/                images, fonts (self-hosted), 3D viewer, game, preview images
+  assets/                images, fonts (self-hosted), game, preview images
   _headers               security headers (A+ on securityheaders.com)
   feed.xml, fr/feed.xml  GENERATED RSS feeds for the devlog
   sitemap.xml            GENERATED
@@ -57,7 +56,6 @@ and lists any sentence that is still missing a French translation.
 - **Text on a page:** edit the English page in `site/`, add the sentence and its French version to `tools/fr_dict.py`, then build.
 - **New devlog post:** add it to `tools/devlog_posts.py` (both languages), then build. For its link preview, add nothing: run `node tools/og.js`.
 - **Build trackers:** on `setup.html` and `homelab.html`, change `data-got="no"` to `data-got="yes"` when a part is bought.
-- **Minecraft plan:** on `builds.html`, change a stage's badge from `Coming` to `In 3D` when it gets built.
 - **Ruenix opening day:** on `ruenix.html`, put the date in `data-opening`, for example `2026-12-01T19:00:00-05:00`. A live countdown appears.
 - **Now page:** edit `site/now.html` and the "Updated" month.
 - **Seasons, clock hours, terminal commands:** marked `EDIT` in `extras.js`. Preview a season with `?season=christmas`.

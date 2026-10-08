@@ -22,7 +22,6 @@ const PAGES = [
   { name: 'homelab', tag: ['Homelab', 'Homelab'], title: ['The rack that keeps growing', 'La baie qui ne cesse de grandir'] },
   { name: 'setup', tag: ['Setup', 'Poste de jeu'], title: ['The battlestation', 'La station de combat'] },
   { name: 'ruenix', tag: ['Ruenix MC', 'Ruenix MC'], title: ['The network I run', 'Le réseau que je gère'], ruenix: true },
-  { name: 'builds', tag: ['Builds', 'Constructions'], title: ['From cabin to citadel', 'Du chalet à la citadelle'] },
   { name: 'devlog', tag: ['Devlog', 'Journal'], title: ['Built in public', 'Construit en public'] },
   { name: 'now', tag: ['Now', 'En ce moment'], title: ["What I'm up to", 'Ce que je fais'] },
   { name: 'guestbook', tag: ['Guestbook', "Livre d'or"], title: ['Sign the Crypt', 'Signe la Crypte'] },

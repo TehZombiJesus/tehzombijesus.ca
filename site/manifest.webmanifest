@@ -14,7 +14,6 @@
   ],
   "shortcuts": [
     { "name": "Homelab", "url": "/homelab" },
-    { "name": "Builds", "url": "/builds" },
     { "name": "Devlog", "url": "/devlog" },
     { "name": "Français", "url": "/fr/" }
   ]

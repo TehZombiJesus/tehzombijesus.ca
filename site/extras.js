@@ -277,11 +277,13 @@
 
   // ---------- Copy email ----------
   document.querySelectorAll('.copy-email').forEach(function (b) {
-    b.addEventListener('click', function () {
+    b.addEventListener('click', function (e) {
+      e.preventDefault();   // copy instead of opening the mail app
       copy(b.getAttribute('data-email') || EMAIL, function () {
         toast('📋 ' + t('Email copied', 'Courriel copié'));
-        var old = b.textContent; b.textContent = t('Copied!', 'Copié!');
-        setTimeout(function () { b.textContent = old; }, 1800);
+        if (!b.dataset.label) b.dataset.label = b.textContent;
+        b.textContent = t('Copied!', 'Copié!'); b.classList.add('copied');
+        clearTimeout(b._t); b._t = setTimeout(function () { b.textContent = b.dataset.label; b.classList.remove('copied'); }, 1800);
         unlock('email');
       });
     });
