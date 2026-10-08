@@ -60,6 +60,16 @@
     <p>What I self-host at home, the hardware it runs on, and where it's headed. It's never finished, and that's the fun part.</p>
   </header>
 
+  <!-- LAB CONSOLE: typed by extras.js from what's on this page (services, build tracker, live status) -->
+  <div class="lab-console" hidden></div>
+
+  <!-- LIVE STATUS: filled from /api/status (Uptime Kuma). Stays hidden until KUMA_URL and KUMA_SLUG are set. -->
+  <section class="lab-live" hidden>
+    <h2>Live status</h2>
+    <p class="lede">Straight from Uptime Kuma, which checks every service around the clock. Updates every minute.</p>
+    <div class="live-board" aria-live="polite"></div>
+  </section>
+
   <!-- ===================== EDIT SERVICES HERE: one <div class="svc"> each ===================== -->
   <section>
     <h2>What's running</h2>
@@ -163,6 +173,72 @@
   <section>
     <h2>The next server</h2>
     <p class="lede">A rebuild that's being planned in stages, so storage can grow without starting over.</p>
+
+    <!-- SERVER X-RAY: each part lights up when its line in the build plan below says data-got="yes" (matched by data-key) -->
+    <figure class="xray">
+      <svg viewBox="0 0 640 520" role="img" aria-label="Drawing of the next server, part by part. Parts already bought are solid and lit; planned parts are drawn as a blueprint.">
+        <defs>
+          <linearGradient id="xr-scan" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fb54f7" stop-opacity="0"/><stop offset=".5" stop-color="#fb54f7" stop-opacity=".22"/><stop offset="1" stop-color="#fb54f7" stop-opacity="0"/></linearGradient>
+          <clipPath id="xr-clip"><rect x="20" y="20" width="430" height="480" rx="16"/></clipPath>
+        </defs>
+        <g class="xr-part" data-key="case" tabindex="0">
+          <rect class="body" x="20" y="20" width="430" height="480" rx="16"/>
+          <circle class="led power" cx="420" cy="40" r="5"/>
+          <text class="lbl" x="36" y="488">Fractal Define 7</text>
+        </g>
+        <g class="xr-part" data-key="board" tabindex="0">
+          <rect class="body" x="160" y="50" width="260" height="300" rx="8"/>
+          <text class="lbl" x="172" y="70">W880 board</text>
+        </g>
+        <g class="xr-part" data-key="cooler" tabindex="0">
+          <rect class="body" x="205" y="95" width="100" height="100" rx="10"/>
+          <g class="fan" style="transform-origin:255px 145px"><circle class="ring" cx="255" cy="145" r="40"/><path class="blades" d="M255 145 L255 109 A36 36 0 0 1 286 127 Z M255 145 L286 163 A36 36 0 0 1 255 181 Z M255 145 L224 163 A36 36 0 0 1 224 127 Z"/></g>
+        </g>
+        <g class="xr-part" data-key="cpu" tabindex="0">
+          <rect class="body chip" x="238" y="205" width="34" height="34" rx="4"/>
+          <text class="lbl" x="278" y="227">Core Ultra 7</text>
+        </g>
+        <g class="xr-part" data-key="ram" tabindex="0">
+          <rect class="body" x="330" y="90" width="12" height="110" rx="3"/><rect class="body" x="348" y="90" width="12" height="110" rx="3"/>
+          <rect class="spare" x="366" y="90" width="12" height="110" rx="3"/><rect class="spare" x="384" y="90" width="12" height="110" rx="3"/>
+          <text class="lbl" x="330" y="216">64 GB ECC</text>
+        </g>
+        <g class="xr-part" data-key="fast" tabindex="0">
+          <rect class="body" x="180" y="252" width="64" height="12" rx="3"/><rect class="body" x="180" y="270" width="64" height="12" rx="3"/>
+          <circle class="led act" cx="250" cy="258" r="3"/><circle class="led act d2" cx="250" cy="276" r="3"/>
+          <text class="lbl" x="258" y="280">NVMe ×2</text>
+        </g>
+        <g class="xr-part" data-key="hba" tabindex="0">
+          <rect class="body" x="175" y="300" width="230" height="22" rx="4"/>
+          <circle class="led act d3" cx="395" cy="311" r="3.5"/>
+          <text class="lbl" x="185" y="316">16-port HBA</text>
+        </g>
+        <g class="xr-part" data-key="boot" tabindex="0">
+          <rect class="body" x="175" y="372" width="90" height="16" rx="3"/><rect class="body" x="175" y="394" width="90" height="16" rx="3"/>
+          <text class="lbl" x="272" y="396">Boot ×2</text>
+        </g>
+        <g class="xr-part" data-key="psu" tabindex="0">
+          <rect class="body" x="250" y="420" width="190" height="66" rx="8"/>
+          <g class="fan slow" style="transform-origin:300px 453px"><circle class="ring" cx="300" cy="453" r="24"/><path class="blades" d="M300 453 L300 432 A21 21 0 0 1 318 443 Z M300 453 L318 463 A21 21 0 0 1 300 474 Z M300 453 L282 463 A21 21 0 0 1 282 443 Z"/></g>
+          <text class="lbl" x="334" y="458">1000 W</text>
+        </g>
+        <g class="xr-part" data-key="media" tabindex="0">
+          <g class="bays"></g>
+          <text class="lbl" x="36" y="372">Drive cage</text>
+        </g>
+        <g class="xr-part" data-key="ups" tabindex="0">
+          <rect class="body" x="480" y="340" width="130" height="160" rx="10"/>
+          <circle class="led power" cx="545" cy="372" r="6"/>
+          <rect class="body bar" x="500" y="400" width="90" height="10" rx="5"/>
+          <text class="lbl" x="545" y="440" text-anchor="middle">UPS</text><text class="lbl" x="545" y="460" text-anchor="middle">1500 VA</text>
+        </g>
+        <g class="scan" clip-path="url(#xr-clip)"><rect x="20" y="-90" width="430" height="90" fill="url(#xr-scan)"/></g>
+      </svg>
+      <figcaption>
+        <p class="xr-count"></p>
+        <p class="xr-info" aria-live="polite"><strong>Hover or tap a part</strong> to see what it is. Parts light up as they're bought.</p>
+      </figcaption>
+    </figure>
     <div class="split">
       <div class="panel">
         <h3>Build plan</h3>
@@ -170,17 +246,17 @@
         <!-- The grey line under each part is the "why". Edit the text inside <span class="why">...</span> -->
         <!-- BUILD TRACKER: change data-got="no" to data-got="yes" when a part is bought -->
         <dl class="specs" data-track="parts">
-          <dt>CPU</dt><dd data-got="no">Intel Core Ultra 7 265K<span class="why">Built-in Quick Sync handles video transcoding for Jellyfin without a separate graphics card. Plenty of cores for the VMs, and low power at idle.</span></dd>
-          <dt>Board</dt><dd data-got="no">ASUS Pro WS W880-ACE SE<span class="why">A workstation board, because it supports ECC memory, which regular desktop boards don't. Room for the HBA and the NVMe drives too.</span></dd>
-          <dt>Memory</dt><dd data-got="no">64 GB ECC<span class="why">ECC catches memory errors before they reach the data. 64 GB covers every VM plus ZFS caching, with slots free to add more.</span></dd>
-          <dt>Cooler</dt><dd data-got="no">Noctua NH-U12A<span class="why">Quiet and dependable. An air cooler has no pump to fail on a machine that runs 24/7.</span></dd>
-          <dt>PSU</dt><dd data-got="no">Corsair RM1000x<span class="why">Enough power for a case full of hard drives spinning up at the same time, and silent at low load.</span></dd>
-          <dt>Case</dt><dd data-got="no">Fractal Design Define 7<span class="why">Room for lots of drives, and sound-dampened panels so a box full of disks stays quiet.</span></dd>
-          <dt>Controller</dt><dd data-got="no">16-port HBA<span class="why">Connects far more drives than the motherboard can, and hands them straight to TrueNAS, which ZFS needs to work properly.</span></dd>
-          <dt>Boot</dt><dd data-got="no">2× 480 GB SSD, mirrored<span class="why">If one boot drive dies, the server keeps running on the other.</span></dd>
-          <dt>Fast pool</dt><dd data-got="no">2× 4 TB NVMe, mirrored<span class="why">VMs, containers and apps run from fast flash. Mirrored, so one drive can fail without losing anything.</span></dd>
-          <dt>Media pool</dt><dd data-got="no">7× WD Red Pro 20 TB, RAIDZ2 to start<span class="why">Where the movies and TV live. NAS-grade drives made to run all day, added in batches as the library grows.</span></dd>
-          <dt>UPS</dt><dd data-got="no">CyberPower 1500 VA<span class="why">Rides through short outages and gives time to shut down cleanly in a long one, so no write is ever lost halfway.</span></dd>
+          <dt>CPU</dt><dd data-key="cpu" data-got="no">Intel Core Ultra 7 265K<span class="why">Built-in Quick Sync handles video transcoding for Jellyfin without a separate graphics card. Plenty of cores for the VMs, and low power at idle.</span></dd>
+          <dt>Board</dt><dd data-key="board" data-got="no">ASUS Pro WS W880-ACE SE<span class="why">A workstation board, because it supports ECC memory, which regular desktop boards don't. Room for the HBA and the NVMe drives too.</span></dd>
+          <dt>Memory</dt><dd data-key="ram" data-got="no">64 GB ECC<span class="why">ECC catches memory errors before they reach the data. 64 GB covers every VM plus ZFS caching, with slots free to add more.</span></dd>
+          <dt>Cooler</dt><dd data-key="cooler" data-got="no">Noctua NH-U12A<span class="why">Quiet and dependable. An air cooler has no pump to fail on a machine that runs 24/7.</span></dd>
+          <dt>PSU</dt><dd data-key="psu" data-got="no">Corsair RM1000x<span class="why">Enough power for a case full of hard drives spinning up at the same time, and silent at low load.</span></dd>
+          <dt>Case</dt><dd data-key="case" data-got="no">Fractal Design Define 7<span class="why">Room for lots of drives, and sound-dampened panels so a box full of disks stays quiet.</span></dd>
+          <dt>Controller</dt><dd data-key="hba" data-got="no">16-port HBA<span class="why">Connects far more drives than the motherboard can, and hands them straight to TrueNAS, which ZFS needs to work properly.</span></dd>
+          <dt>Boot</dt><dd data-key="boot" data-got="no">2× 480 GB SSD, mirrored<span class="why">If one boot drive dies, the server keeps running on the other.</span></dd>
+          <dt>Fast pool</dt><dd data-key="fast" data-got="no">2× 4 TB NVMe, mirrored<span class="why">VMs, containers and apps run from fast flash. Mirrored, so one drive can fail without losing anything.</span></dd>
+          <dt>Media pool</dt><dd data-key="media" data-got="no">7× WD Red Pro 20 TB, RAIDZ2 to start<span class="why">Where the movies and TV live. NAS-grade drives made to run all day, added in batches as the library grows.</span></dd>
+          <dt>UPS</dt><dd data-key="ups" data-got="no">CyberPower 1500 VA<span class="why">Rides through short outages and gives time to shut down cleanly in a long one, so no write is ever lost halfway.</span></dd>
         </dl>
       </div>
       <div class="stick">

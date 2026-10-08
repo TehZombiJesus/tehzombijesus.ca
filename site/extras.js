@@ -673,6 +673,115 @@
   });
 
   // =====================================================================
+  // SERVER X-RAY (homelab): parts light up when their build-plan line says data-got="yes"
+  // =====================================================================
+  var xray = document.querySelector('.xray svg');
+  if (xray) {
+    var NS = 'http://www.w3.org/2000/svg';
+    var bays = xray.querySelector('.bays'), BAYS = 14, MEDIA = 7;   // EDIT: drive slots in the case, and drives planned
+    for (var bi = 0; bi < BAYS; bi++) {
+      var r = document.createElementNS(NS, 'rect');
+      r.setAttribute('x', 36); r.setAttribute('y', 50 + bi * 21); r.setAttribute('width', 108); r.setAttribute('height', 17); r.setAttribute('rx', 3);
+      r.setAttribute('class', bi < MEDIA ? 'body drive' : 'spare');
+      bays.appendChild(r);
+      if (bi < MEDIA) {
+        var led = document.createElementNS(NS, 'circle');
+        led.setAttribute('cx', 134); led.setAttribute('cy', 58.5 + bi * 21); led.setAttribute('r', 2.6);
+        led.setAttribute('class', 'led act d' + (bi % 4)); bays.appendChild(led);
+      }
+    }
+    var xrGot = 0, xrTotal = 0;
+    document.querySelectorAll('.specs [data-key]').forEach(function (dd) {
+      var part = xray.querySelector('.xr-part[data-key="' + dd.getAttribute('data-key') + '"]');
+      if (!part) return;
+      xrTotal++;
+      var yes = dd.getAttribute('data-got') === 'yes'; if (yes) xrGot++;
+      part.classList.add(yes ? 'got' : 'planned');
+      var dt = dd.previousElementSibling, why = dd.querySelector('.why');
+      var name = (dd.firstChild && dd.firstChild.nodeValue || '').trim();
+      part.setAttribute('data-name', (dt ? dt.textContent + ': ' : '') + name);
+      part.setAttribute('data-info', (yes ? t('Bought. ', 'Acheté. ') : t('Planned. ', 'Prévu. ')) + (why ? why.textContent : ''));
+    });
+    var cnt = document.querySelector('.xray .xr-count');
+    if (cnt) cnt.innerHTML = xrGot === xrTotal ? '✅ ' + t('Every part is in the box', 'Toutes les pièces sont dans le boîtier')
+      : '<b>' + xrGot + '</b> / ' + xrTotal + ' ' + t('parts in the box so far', 'pièces dans le boîtier pour l\'instant');
+    if (xrGot === xrTotal) xray.classList.add('complete');
+    wireInfo(xray, '.xr-part', document.querySelector('.xray .xr-info'));
+    if (calm) xray.classList.add('calm');
+  }
+
+  // =====================================================================
+  // LAB CONSOLE (homelab): types out what's on this page, plus live status when it's set up
+  // =====================================================================
+  var lc = document.querySelector('.lab-console');
+  var labLive = null;   // filled by the live status below
+  if (lc) {
+    lc.hidden = false;
+    lc.setAttribute('aria-hidden', 'true');   // decoration: the same facts are on the page in plain text
+    lc.innerHTML = '<div class="lc-top"><i></i><i></i><i></i><span>kevin@lab: ~</span></div><pre class="lc-out"></pre>';
+    var out = lc.querySelector('.lc-out');
+    var svcs = [].map.call(document.querySelectorAll('.services .svc'), function (c) {
+      return { name: c.querySelector('h3').textContent, trial: c.classList.contains('trial') };
+    });
+    var pad = function (x, n) { x = String(x); return x + new Array(Math.max(1, n - x.length)).join(' '); };
+    var scripts = function () {
+      var list = [];
+      list.push(['lab status', svcs.map(function (v) {
+        var l = labLive && labLive.byName(v.name);
+        var state = l ? (l.status === 'up' ? t('up', 'en marche') : l.status === 'down' ? t('DOWN', 'EN PANNE') : t(l.status, l.status)) + (l.uptime30 != null || l.uptime24 != null ? '  ' + pct(l.uptime30 != null ? l.uptime30 : l.uptime24) : '')
+          : v.trial ? t('trying out', 'à l\'essai') : t('in use', 'en service');
+        var cls = l ? (l.status === 'up' ? 'ok' : l.status === 'down' ? 'bad' : 'warn') : v.trial ? 'warn' : 'ok';
+        return '<span class="' + cls + '">●</span> ' + esc(pad(v.name.toLowerCase().replace(/\s+/g, '-'), 14)) + esc(state);
+      })]);
+      var specs = document.querySelector('.specs[data-track]');
+      if (specs) {
+        var all = specs.querySelectorAll('[data-got]').length, have = specs.querySelectorAll('[data-got="yes"]').length;
+        list.push(['lab next-server', [
+          t('parts planned', 'pièces prévues') + '   ' + all,
+          t('parts bought', 'pièces achetées') + '    ' + have + '  (' + Math.round(have / all * 100) + '%)',
+          '<span class="dim">' + t('# it fills in as the parts arrive', '# ça se remplit à mesure que les pièces arrivent') + '</span>']]);
+      }
+      list.push(['zpool plan', [
+        'fast    ' + t('2× 4 TB NVMe, mirrored', '2× 4 To NVMe, en miroir'),
+        'media   ' + t('7× 20 TB, RAIDZ2', '7× 20 To, RAIDZ2'),
+        '<span class="dim">' + t('# any two media drives can fail, nothing is lost', '# deux disques peuvent lâcher sans rien perdre') + '</span>']]);
+      if (labLive) list.push(['lab uptime', [labLive.summary]]);
+      return list;
+    };
+    var running = false, visible = false, step = 0;
+    var typeLine = function (text, done) {
+      var line = el('div', 'lc-line', '<span class="ps">$</span> <span class="cmd"></span>'); out.appendChild(line);
+      var cmd = line.querySelector('.cmd'), i = 0;
+      (function next() {
+        if (i <= text.length) { cmd.textContent = text.slice(0, i++); setTimeout(next, 45 + Math.random() * 50); }
+        else setTimeout(done, 350);
+      })();
+    };
+    var showLines = function (lines, done) {
+      var i = 0;
+      (function next() {
+        if (i < lines.length) { out.appendChild(el('div', 'lc-line', lines[i++])); setTimeout(next, 90); }
+        else done();
+      })();
+    };
+    var cycle = function () {
+      if (!visible || document.hidden) { running = false; return; }
+      running = true;
+      var list = scripts(), sc = list[step++ % list.length];
+      out.innerHTML = '';
+      typeLine(sc[0], function () { showLines(sc[1], function () { setTimeout(cycle, 4200); }); });
+    };
+    if (calm) {
+      var once = function () { out.innerHTML = ''; scripts().forEach(function (sc) { out.appendChild(el('div', 'lc-line', '<span class="ps">$</span> ' + esc(sc[0]))); sc[1].forEach(function (x) { out.appendChild(el('div', 'lc-line', x)); }); }); };
+      once(); lc._refresh = once;
+    } else if ('IntersectionObserver' in window) {
+      new IntersectionObserver(function (en) { visible = en[0].isIntersecting; if (visible && !running) cycle(); }).observe(lc);
+      document.addEventListener('visibilitychange', function () { if (!document.hidden && visible && !running) cycle(); });
+    } else { visible = true; cycle(); }
+  }
+  function pct(x) { return (Math.floor(x * 10000) / 100).toFixed(2).replace(/\.?0+$/, '') + '%'; }
+
+  // =====================================================================
   // LIVE FEATURES — run by Cloudflare functions in /functions. Each one hides itself until it's set up.
   // =====================================================================
   var API = BASE + 'api/';
@@ -693,6 +802,78 @@
 
   var config = getJSON('config').catch(function () { return {}; });
   window.TZJ.config = config;
+
+  // ---------- Homelab live status (Uptime Kuma, via /api/status) ----------
+  var board = document.querySelector('.lab-live');
+  if (board) config.then(function (c) {
+    if (!c.status) return;
+    var rtf = window.Intl && Intl.RelativeTimeFormat ? new Intl.RelativeTimeFormat(FR ? 'fr-CA' : 'en-CA', { numeric: 'auto' }) : null;
+    var ago = function (iso) {
+      if (!iso || !rtf) return '';
+      var s = (new Date(iso) - new Date()) / 1000, a = Math.abs(s);
+      return a < 60 ? rtf.format(Math.round(s), 'second') : a < 3600 ? rtf.format(Math.round(s / 60), 'minute') : a < 86400 ? rtf.format(Math.round(s / 3600), 'hour') : rtf.format(Math.round(s / 86400), 'day');
+    };
+    var dur = function (iso) {   // "3 days" / "3 jours"
+      var s = Math.max(0, (new Date() - new Date(iso)) / 1000), n, u;
+      if (s < 3600) { n = Math.max(1, Math.round(s / 60)); u = ['minute', 'minutes', 'minute', 'minutes']; }
+      else if (s < 86400) { n = Math.round(s / 3600); u = ['hour', 'hours', 'heure', 'heures']; }
+      else { n = Math.round(s / 86400); u = ['day', 'days', 'jour', 'jours']; }
+      return n + ' ' + (FR ? (n > 1 ? u[3] : u[2]) : (n > 1 ? u[1] : u[0]));
+    };
+    var WORD = { up: t('Up', 'En marche'), down: t('Down', 'En panne'), pending: t('Checking', 'Vérification'), maintenance: t('Maintenance', 'Entretien') };
+    var match = function (a, b) { a = a.toLowerCase(); b = b.toLowerCase(); return a === b || a.indexOf(b) === 0 || b.indexOf(a) === 0; };
+    var render = function (j) {
+      var ups = j.services.filter(function (x) { return x.status === 'up'; }).length;
+      var u = j.services.map(function (x) { return x.uptime30 != null ? x.uptime30 : x.uptime24; }).filter(function (x) { return x != null; });
+      var avg = u.length ? u.reduce(function (a, b) { return a + b; }, 0) / u.length : null;
+      var head = { up: t('All systems normal', 'Tout fonctionne normalement'), degraded: t('Some services need attention', 'Certains services ont un pépin'),
+        down: t('The lab is down', 'Le labo est en panne'), unknown: t('Waiting for the first check', 'En attente de la première vérification') }[j.overall];
+      var html = '<div class="lb-sum ' + j.overall + '"><span class="dot"></span><div><strong>' + head + '</strong><span>' +
+        t(ups + ' of ' + j.services.length + ' services up', ups + ' sur ' + j.services.length + ' services en marche') +
+        (avg != null ? ' · ' + t('uptime ', 'disponibilité ') + pct(avg) : '') + ' · ' +
+        (j.lastOutage ? t('last blip ', 'dernier pépin ') + ago(j.lastOutage) : t('no outage in recent checks', 'aucune panne aux dernières vérifications')) +
+        '</span></div><span class="lb-when">' + t('checked ', 'vérifié ') + '<time data-at="' + j.updated + '">' + ago(j.updated) + '</time></span></div>';
+      if (j.incident) html += '<p class="lb-incident">📣 ' + esc(j.incident.title) + (j.incident.at ? ' <span>' + ago(j.incident.at) + '</span>' : '') + '</p>';
+      if (j.maintenance) html += '<p class="lb-incident">🛠️ ' + t('Planned maintenance in progress', 'Entretien prévu en cours') + '</p>';
+      html += '<div class="lb-grid">' + j.services.map(function (x) {
+        var up = x.uptime30 != null ? x.uptime30 : x.uptime24;
+        return '<div class="lb-svc ' + x.status + '"><div class="lb-name"><span class="dot"></span>' + esc(x.name) + '</div>' +
+          '<div class="lb-meta">' + WORD[x.status] + (x.since ? ' ' + t('for', 'depuis') + ' ' + dur(x.since) : '') + '</div>' +
+          '<div class="lb-spark" aria-hidden="true">' + x.recent.map(function (b) { return '<i class="b' + b + '"></i>'; }).join('') + '</div>' +
+          '<div class="lb-nums"><span>' + (up != null ? pct(up) : '–') + '<small>' + (x.uptime30 != null ? t(' 30 days', ' 30 jours') : t(' 24 h', ' 24 h')) + '</small></span>' +
+          (x.ping != null ? '<span>' + x.ping + '<small> ms</small></span>' : '') + '</div></div>';
+      }).join('') + '</div>';
+      board.querySelector('.live-board').innerHTML = html;
+      board.hidden = false;
+      // light up the matching service cards and map boxes
+      document.querySelectorAll('.services .svc').forEach(function (card) {
+        var name = card.querySelector('h3').textContent, l = j.services.filter(function (x) { return match(x.name, name); })[0];
+        var b = card.querySelector('.live-dot');
+        if (!l) { if (b) b.remove(); return; }
+        if (!b) { b = el('span', 'live-dot'); card.querySelector('h3').appendChild(b); }
+        b.className = 'live-dot ' + l.status; b.title = WORD[l.status];
+      });
+      document.querySelectorAll('.netmap .node').forEach(function (n) {
+        var name = n.getAttribute('data-name') || '', l = j.services.filter(function (x) { return match(x.name, name.split(' ')[0]) || match(x.name, name); })[0];
+        var dot = n.querySelector('.ndot'), rect = n.querySelector('rect');
+        if (!l || !rect) { if (dot) dot.remove(); return; }
+        if (!dot) {
+          dot = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+          dot.setAttribute('r', 6); dot.setAttribute('cx', +rect.getAttribute('x') + +rect.getAttribute('width') - 12); dot.setAttribute('cy', +rect.getAttribute('y') + 12);
+          n.appendChild(dot);
+        }
+        dot.setAttribute('class', 'ndot ' + l.status);
+      });
+      labLive = {
+        byName: function (name) { return j.services.filter(function (x) { return match(x.name, name); })[0]; },
+        summary: '<span class="' + (j.overall === 'up' ? 'ok' : j.overall === 'down' ? 'bad' : 'warn') + '">●</span> ' + esc(head) + (avg != null ? '  ·  ' + pct(avg) : ''),
+      };
+      if (lc && lc._refresh) lc._refresh();
+    };
+    var load = function () { if (!document.hidden) getJSON('status').then(render).catch(function () {}); };
+    load(); setInterval(load, 60000);
+    setInterval(function () { board.querySelectorAll('time[data-at]').forEach(function (x) { x.textContent = ago(x.getAttribute('data-at')); }); }, 15000);
+  });
 
   // ---------- Installable app + offline page (service worker lives at /sw.js) ----------
   if ('serviceWorker' in navigator && location.protocol === 'https:' && /(^|\.)tehzombijesus\.ca$|pages\.dev$/.test(location.hostname)) {

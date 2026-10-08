@@ -7,5 +7,6 @@ export async function onRequestGet({ env }) {
     guestbook: !!(env.DB && env.TURNSTILE_SECRET && env.TURNSTILE_SITE_KEY && env.HASH_SALT),
     turnstileSiteKey: env.TURNSTILE_SITE_KEY || null,
     spotify: !!(env.DB && env.SPOTIFY_CLIENT_ID && env.SPOTIFY_CLIENT_SECRET),
+    status: !!(env.KUMA_URL && env.KUMA_SLUG),
   });
 }

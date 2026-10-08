@@ -55,7 +55,7 @@ and lists any sentence that is still missing a French translation.
 
 - **Text on a page:** edit the English page in `site/`, add the sentence and its French version to `tools/fr_dict.py`, then build.
 - **New devlog post:** add it to `tools/devlog_posts.py` (both languages), then build. For its link preview, add nothing: run `node tools/og.js`.
-- **Build trackers:** on `setup.html` and `homelab.html`, change `data-got="no"` to `data-got="yes"` when a part is bought.
+- **Build trackers:** on `setup.html` and `homelab.html`, change `data-got="no"` to `data-got="yes"` when a part is bought. On the homelab page, that part also lights up in the server drawing (matched by `data-key`).
 - **Ruenix opening day:** on `ruenix.html`, put the date in `data-opening`, for example `2026-12-01T19:00:00-05:00`. A live countdown appears.
 - **Now page:** edit `site/now.html` and the "Updated" month.
 - **Seasons, clock hours, terminal commands:** marked `EDIT` in `extras.js`. Preview a season with `?season=christmas`.
@@ -72,6 +72,7 @@ Each one stays hidden on the site until it's set up, so nothing ever looks broke
 | Guestbook | `/api/guestbook` | `DB`, `TURNSTILE_SITE_KEY`, `TURNSTILE_SECRET`, `HASH_SALT` |
 | Guestbook moderation | `/guestbook-admin.html` | `ADMIN_TOKEN` |
 | Spotify "now playing" | `/api/spotify` | `DB`, `SPOTIFY_CLIENT_ID`, `SPOTIFY_CLIENT_SECRET`, `ADMIN_TOKEN` |
+| Homelab live status (board, dots on the map and service cards, lab console) | `/api/status` | `KUMA_URL`, `KUMA_SLUG` |
 
 ### One-time setup
 
@@ -87,8 +88,11 @@ Each one stays hidden on the site until it's set up, so nothing ever looks broke
    - `ADMIN_TOKEN` (secret): a long random password, at least 24 characters. Keep it in 1Password.
 4. **Spotify.** At developer.spotify.com → Dashboard → Create app. Redirect URI: `https://tehzombijesus.ca/api/spotify/callback`, API: Web API.
    Add `SPOTIFY_CLIENT_ID` (text) and `SPOTIFY_CLIENT_SECRET` (secret) to the variables above.
-5. **Redeploy** so the new settings load: Deployments → latest → Retry deployment (or push any change).
-6. **Connect Spotify once:** open `https://tehzombijesus.ca/api/spotify/login?key=YOUR_ADMIN_TOKEN` and allow access.
+5. **Homelab live status (Uptime Kuma).** In Uptime Kuma, make a public **Status page** (for example slug `homelab`) and add the monitors you want shown.
+   Name each monitor the way it should appear on the site, like `Immich`, never after a hostname or address. Names that match a service card or a map box get a live dot there too.
+   Then add `KUMA_URL` (secret, e.g. `https://status.example.com`) and `KUMA_SLUG` (text, e.g. `homelab`). Visitors only ever see names, up/down, uptime and response time: the address stays hidden.
+6. **Redeploy** so the new settings load: Deployments → latest → Retry deployment (or push any change).
+7. **Connect Spotify once:** open `https://tehzombijesus.ca/api/spotify/login?key=YOUR_ADMIN_TOKEN` and allow access.
 
 ## Privacy
 

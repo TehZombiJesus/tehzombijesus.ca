@@ -419,3 +419,18 @@ FR.update({
 
 
 FR.update({ 'Click to copy': 'Clique pour copier' })
+
+# Homelab: live status, server x-ray
+FR.update({
+    'Live status': 'État en direct',
+    'Straight from Uptime Kuma, which checks every service around the clock. Updates every minute.':
+        "Tout droit d'Uptime Kuma, qui vérifie chaque service jour et nuit. Mis à jour chaque minute.",
+    'Drawing of the next server, part by part. Parts already bought are solid and lit; planned parts are drawn as a blueprint.':
+        'Dessin du prochain serveur, pièce par pièce. Les pièces déjà achetées sont pleines et allumées; les pièces prévues sont dessinées comme un plan.',
+    'Hover or tap a part': 'Survole ou touche une pièce',
+    "to see what it is. Parts light up as they're bought.": "pour voir ce que c'est. Les pièces s'allument à mesure qu'elles sont achetées.",
+    'Drive cage': 'Baie de disques',
+    'W880 board': 'Carte W880',
+    'Boot ×2': 'Démarrage ×2',
+    'NVMe ×2': 'NVMe ×2', '1000 W': '1000 W', '1500 VA': '1500 VA', 'Core Ultra 7': 'Core Ultra 7', 'Fractal Define 7': 'Fractal Define 7',
+})
