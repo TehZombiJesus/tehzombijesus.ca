@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>TehZombiJesus</title>
+<meta name="description" content="Homelabber, CTO et administrateur système, gestionnaire de réseau Minecraft et joueur PC occasionnel.">
+<meta name="theme-color" content="#8300fb">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+<meta property="og:title" content="TehZombiJesus">
+<meta property="og:description" content="Homelabber, CTO et administrateur système, gestionnaire de réseau Minecraft et joueur PC occasionnel.">
+<meta property="og:locale" content="fr_CA">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="TehZombiJesus">
+<meta property="og:image" content="https://tehzombijesus.ca/assets/social-preview.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://tehzombijesus.ca/assets/social-preview.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="alternate" hreflang="en" href="https://tehzombijesus.ca/">
+<link rel="alternate" hreflang="fr" href="https://tehzombijesus.ca/fr/">
+<link rel="alternate" hreflang="x-default" href="https://tehzombijesus.ca/">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@600;700&family=Inter:wght@400;600&family=JetBrains+Mono:wght@400&family=Lilita+One&family=Nunito:wght@400;800&display=swap">
+<link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+
+<!-- Top menu: to add a page, copy one <li> line and point it at the new file -->
+<nav class="nav" aria-label="Principal">
+  <div class="wrap">
+    <a class="home" href="index.html"><img src="../assets/favicon.svg" alt="" width="38" height="38"><span>TehZombiJesus</span></a>
+    <ul>
+      <li><a href="index.html" aria-current="page">Accueil</a></li>
+      <li><a href="homelab.html">Homelab</a></li>
+      <li><a href="setup.html">Poste de jeu</a></li>
+      <li><a href="ruenix.html">Ruenix</a></li>
+      <li><a href="now.html">En ce moment</a></li>
+      <li><a class="lang" href="../index.html" hreflang="en" lang="en" title="English">EN</a></li>
+    </ul>
+  </div>
+</nav>
+<div class="band animate" aria-hidden="true">
+  <svg viewBox="0 0 1440 300" preserveAspectRatio="xMidYMid slice">
+    <polygon class="s" fill="#472f4a" points="0,0 560,0 450,300 -110,300 -200,300 -200,0"/>
+    <polygon class="s" fill="#8300fb" points="560,0 1120,0 1010,300 450,300"/>
+    <polygon class="s" fill="#74263e" points="1120,0 1280,0 1170,300 1010,300"/>
+    <polygon class="s" fill="#fb54f7" points="1280,0 1640,0 1530,300 1170,300"/>
+    <g class="shards" fill="#472f4a"><polygon points="880,54 892,54 802,300 790,300"/><polygon points="916,108 928,108 858,300 846,300"/><polygon points="952,162 964,162 913,300 901,300"/><polygon points="1000,54 1012,54 922,300 910,300"/><polygon points="1036,108 1048,108 978,300 966,300"/></g>
+  </svg>
+</div>
+
+<main class="wrap">
+
+  <header class="hero animate">
+    <img class="avatar" src="../assets/avatar.webp" alt="Avatar de TehZombiJesus" width="320" height="320" data-flip="../assets/avatar-toon.webp" title="Clique-moi">
+    <div class="hero-text">
+      <h1 style="margin:0"><img class="wordmark" src="../assets/wordmark.svg" alt="TehZombiJesus" width="700" height="79"></h1>
+      <div class="bar"></div>
+      <!-- EDIT: your intro -->
+      <p class="intro">Je fais rouler des serveurs, je gère un réseau Minecraft et j'entretiens un homelab qui est toujours à une mise à niveau d'être terminé. <span class="soft">CTO et administrateur système de métier, bricoleur par habitude, joueur occasionnel après les heures.</span></p>
+      <!-- EDIT: the rotating "Right now" line. Separate each phrase with | -->
+      <p class="typed"><span class="typed-label">En ce moment :</span> <span class="typed-text" data-words="je garde les serveurs en vie|je bâtis la Crypte|je planifie un poste de 57 pouces|je mets à niveau le homelab, encore|je joue en ARAM, juste pour le plaisir">je garde les serveurs en vie</span><span class="caret" aria-hidden="true"></span></p>
+      <div class="cta-row">
+        <a class="btn" href="https://discord.gg/DRSZb9qqqh">Rejoindre la Crypte</a>
+        <a class="btn ghost" href="homelab.html">Voir le homelab</a>
+      </div>
+      <!-- Live member count from Discord. Hides itself if Discord doesn't answer. -->
+      <p class="discord-live" hidden><span class="dot" aria-hidden="true"></span><span class="dl-text"></span></p>
+    </div>
+  </header>
+
+  <!-- ========================= EDIT YOUR LINKS HERE =========================
+       One <li> per link. Change href="..." and the name/handle text.
+       Keep an even number so the two columns line up. -->
+  <section>
+    <h2>Me trouver</h2>
+    <p class="lede">Le même nom partout : TehZombiJesus.</p>
+    <ul class="links">
+      <li><a href="https://discord.gg/DRSZb9qqqh"><span class="name">La Crypte</span><span class="handle">Mon serveur Discord</span></a></li>
+      <li><a href="https://github.com/TehZombiJesus"><span class="name">GitHub</span><span class="handle">@TehZombiJesus</span></a></li>
+      <li><a href="https://x.com/TehZombiJesus"><span class="name">X / Twitter</span><span class="handle">@TehZombiJesus</span></a></li>
+      <li><a href="ruenix.html"><span class="name">Ruenix MC</span><span class="handle">Réseau Minecraft, SMP et SkyPvP</span></a></li>
+    </ul>
+  </section>
+
+  <!-- ========================= EDIT ABOUT ME HERE ========================= -->
+  <section>
+    <h2>À propos de moi</h2>
+    <p class="lede">La version courte.</p>
+    <div class="about">
+      <img src="../assets/avatar-toon.webp" alt="Version dessin animé de TehZombiJesus" width="260" height="260">
+      <div>
+        <!-- Age updates itself every birthday. The birthday is set in site.js. -->
+        <ul class="me">
+          <li><span id="age">28</span> ans</li>
+          <li><img src="../assets/flag-ca.svg" alt="" width="28" height="21">Canada</li>
+          <!-- My local time and what I'm probably doing. The hours are set in extras.js. -->
+          <li class="clock"><span class="dot" aria-hidden="true"></span><span class="clock-text">Heure de l'Est</span></li>
+        </ul>
+        <p>Je m'appelle Kevin, mieux connu en ligne sous le nom de TehZombiJesus. Je suis celui qui finit toujours par s'occuper des serveurs : les installer, les garder en ligne et comprendre pourquoi ils ont arrêté.</p>
+        <p class="muted">Ces temps-ci, ça veut dire être CTO et administrateur système chez Nox Interactive, gérer le réseau Minecraft Ruenix, et entretenir à la maison un homelab qui devient tranquillement un petit centre de données. Je ne suis pas développeur. Mon rôle, c'est l'infrastructure, la coordination et l'organisation des communautés.</p>
+        <p class="muted">Quand tout roule, je suis habituellement dans un jeu, juste pour le plaisir.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================= EDIT YOUR WORK HERE ========================= -->
+  <section>
+    <h2>Ce sur quoi je travaille</h2>
+    <p class="lede">De l'infrastructure, des communautés et une baie de serveurs qui ne cesse de grandir.</p>
+    <div class="cols">
+      <div class="col">
+        <h3>Nox Interactive</h3>
+        <p class="role">CTO et administrateur système</p>
+        <p>Je dirige le côté technique d'une petite entreprise de logiciels : l'infrastructure, la coordination des projets et le bon fonctionnement de nos systèmes et services.</p>
+      </div>
+      <div class="col plum">
+        <h3>Ruenix MC</h3>
+        <p class="role">Gestionnaire</p>
+        <p>Un réseau Minecraft avec des serveurs SMP et SkyPvP. Je dirige l'équipe de modération et j'anime la communauté Discord.</p>
+        <a class="more" href="ruenix.html">À propos de Ruenix</a>
+      </div>
+      <div class="col wine">
+        <h3>Homelab</h3>
+        <p class="role">En cours, pour toujours</p>
+        <p>Proxmox et TrueNAS à la maison, j'héberge moi-même mes photos et mes fichiers, le tout derrière Cloudflare.</p>
+        <a class="more" href="homelab.html">Visiter le homelab</a>
+      </div>
+    </div>
+    <ul class="chips">
+      <li>Proxmox</li><li>TrueNAS</li><li>ZFS</li><li>Docker</li><li>Coolify</li>
+      <li>Cloudflare</li><li>UniFi</li><li>Linux</li><li>Admin Discord</li>
+    </ul>
+  </section>
+
+  <!-- ========================= EDIT YOUR GAMING HERE ========================= -->
+  <section>
+    <h2>Après le travail</h2>
+    <p class="lede">Joueur PC, manette en main, juste pour le plaisir. Pas de classé, pas de stress.</p>
+    <div class="split">
+      <ul class="rows">
+        <li><span class="title">Minecraft</span><span class="note">Mieux entre amis</span></li>
+        <li><span class="title">GTA V</span><span class="note">Quand ça prend du chaos</span></li>
+        <li><span class="title">Ghost Recon Wildlands</span><span class="note">Infiltration en monde ouvert</span></li>
+        <li><span class="title">League of Legends</span><span class="note">ARAM seulement</span></li>
+      </ul>
+      <div class="panel">
+        <h3>Le prochain poste de jeu</h3>
+        <p class="status">En planification, morceau par morceau.</p>
+        <dl class="specs">
+          <dt>Bureau</dt><dd>Secretlab MAGNUS Pro XL</dd>
+          <dt>Écran principal</dt><dd>Samsung Odyssey Neo G9, 57 po</dd>
+          <dt>Rangée du haut</dt><dd>Trois écrans de 22 po</dd>
+          <dt>Carte graphique</dt><dd>RTX 5090 Founders Edition</dd>
+          <dt>Processeur</dt><dd>Ryzen 7 9850X3D</dd>
+        </dl>
+        <p style="margin:24px 0 0"><a class="btn ghost" href="setup.html">Le poste au complet</a></p>
+      </div>
+    </div>
+
+    <div style="margin-top:40px;max-width:680px">
+      <h3>Comment je joue</h3>
+      <ul class="rows playstyle">
+        <li><span class="title">Manette, toujours</span><span class="note">Manette Xbox, même sur PC</span></li>
+        <li><span class="title">Jamais en classé</span><span class="note">Les jeux, c'est pour s'amuser</span></li>
+        <li><span class="title">120 IPS, c'est assez</span><span class="note">Pas de course aux chiffres</span></li>
+        <li><span class="title">Basses à fond</span><span class="note">L'égaliseur du casque réglé pour faire vibrer</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>Joue avec moi</h2>
+    <p class="lede">Le réseau Minecraft que je gère.</p>
+
+    <div class="rx">
+      <img class="crest" src="../assets/ruenix-crest.webp" alt="Blason de Ruenix" width="200" height="200">
+      <div>
+        <img class="rx-word" src="../assets/ruenix-wordmark.svg" alt="Ruenix" width="240" height="65">
+        <div class="gem"></div>
+        <p>Un réseau Minecraft avec des serveurs Survie (SMP) et SkyPvP. Communauté anglophone, équipe sympathique et d'autres modes de jeu à venir.</p>
+        <!-- The server isn't public yet. When it opens, replace the line below with:
+             <div class="ip"><code>mc.ruenix.net</code><button type="button" data-copy="mc.ruenix.net">Copy</button></div> -->
+        <div class="ip soon"><code>Ouverture bientôt</code><span>Rejoins le Discord pour être le premier informé</span></div>
+        <div class="rx-links">
+          <a class="rx-btn" href="https://discord.gg/9WJPvJemwU">Rejoindre le Discord</a>
+          <a class="rx-btn" href="ruenix.html">En savoir plus sur Ruenix</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="contact">
+      <svg class="deco" viewBox="0 0 360 300" preserveAspectRatio="none" aria-hidden="true">
+        <polygon fill="#472f4a" points="160,0 240,0 140,300 60,300"/>
+        <polygon fill="#fb54f7" points="270,0 300,0 200,300 170,300"/>
+        <polygon fill="#0e080d" points="320,0 400,0 300,300 220,300"/>
+      </svg>
+      <div style="position:relative">
+        <h2>Me contacter</h2>
+        <!-- EDIT: change the email below, or delete that button -->
+        <p>La Crypte, mon serveur Discord, est le moyen le plus rapide de me joindre. Pour quelque chose de plus officiel, le courriel fonctionne aussi.</p>
+      </div>
+      <div class="actions">
+        <a class="btn" href="https://discord.gg/DRSZb9qqqh">Rejoindre la Crypte</a>
+        <a class="btn ghost" href="mailto:hello@tehzombijesus.ca">hello@tehzombijesus.ca</a>
+        <button class="btn ghost copy-email" type="button" data-email="hello@tehzombijesus.ca">Copier le courriel</button>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>TehZombiJesus · tehzombijesus.ca</span>
+    <a href="index.html">Accueil</a><a href="homelab.html">Homelab</a><a href="setup.html">Poste de jeu</a><a href="ruenix.html">Ruenix</a><a href="now.html">En ce moment</a>
+    <!-- When your Uptime Kuma status page is public, uncomment this line and put in its address:
+    <a href="https://status.tehzombijesus.ca">Status</a> -->
+  </div>
+</footer>
+
+<script src="../site.js"></script>
+<script src="../extras.js"></script>
+</body>
+</html>
