@@ -7,22 +7,22 @@
 <meta name="description" content="Ruenix MC — a Minecraft network with SMP and SkyPvP servers. How to join, the community, and the staff team.">
 <meta name="theme-color" content="#8300fb">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="manifest" href="manifest.webmanifest">
 <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
 <meta property="og:title" content="Ruenix MC | TehZombiJesus">
 <meta property="og:description" content="Ruenix MC — a Minecraft network with SMP and SkyPvP servers. How to join, the community, and the staff team.">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="TehZombiJesus">
-<meta property="og:image" content="https://tehzombijesus.ca/assets/social-preview.png">
+<meta property="og:image" content="https://tehzombijesus.ca/assets/og/ruenix-en.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://tehzombijesus.ca/assets/social-preview.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<meta name="twitter:image" content="https://tehzombijesus.ca/assets/og/ruenix-en.jpg">
+<link rel="preload" href="assets/fonts/chakra-petch-latin-700-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="alternate" hreflang="en" href="https://tehzombijesus.ca/ruenix">
 <link rel="alternate" hreflang="fr" href="https://tehzombijesus.ca/fr/ruenix">
 <link rel="alternate" hreflang="x-default" href="https://tehzombijesus.ca/ruenix">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@600;700&family=Inter:wght@400;600&family=JetBrains+Mono:wght@400&family=Lilita+One&family=Nunito:wght@400;800&display=swap">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -36,6 +36,8 @@
       <li><a href="homelab.html">Homelab</a></li>
       <li><a href="setup.html">Setup</a></li>
       <li><a href="ruenix.html" aria-current="page">Ruenix</a></li>
+      <li><a href="builds.html">Builds</a></li>
+      <li><a href="devlog.html">Devlog</a></li>
       <li><a href="now.html">Now</a></li>
       <li><a class="lang" href="fr/ruenix.html" hreflang="fr" lang="fr" title="Français">FR</a></li>
     </ul>
@@ -99,6 +101,9 @@
   <section>
     <h2>Opening soon</h2>
     <p class="lede">Ruenix isn't open to the public yet. The Discord is the place to be when the doors open.</p>
+    <!-- OPENING DAY: put the date and time in data-opening and a live countdown appears, for example:
+         data-opening="2026-12-01T19:00:00-05:00"   (the -05:00 is Eastern time in winter, -04:00 in summer) -->
+    <div class="countdown" data-opening=""><p class="cd-tba">Date to be announced.</p></div>
     <ol class="rows" style="list-style:none">
       <li><span class="title">1. Join the Ruenix Discord</span></li>
       <li><span class="title">2. Watch the announcements for opening day</span></li>
@@ -120,7 +125,7 @@
 <footer>
   <div class="wrap">
     <span>TehZombiJesus · tehzombijesus.ca</span>
-    <a href="index.html">Home</a><a href="homelab.html">Homelab</a><a href="setup.html">Setup</a><a href="ruenix.html">Ruenix</a><a href="now.html">Now</a>
+    <a href="index.html">Home</a><a href="homelab.html">Homelab</a><a href="setup.html">Setup</a><a href="ruenix.html">Ruenix</a><a href="builds.html">Builds</a><a href="devlog.html">Devlog</a><a href="now.html">Now</a><a href="guestbook.html">Guestbook</a><a href="changelog.html">Changelog</a>
     <!-- When your Uptime Kuma status page is public, uncomment this line and put in its address:
     <a href="https://status.tehzombijesus.ca">Status</a> -->
   </div>

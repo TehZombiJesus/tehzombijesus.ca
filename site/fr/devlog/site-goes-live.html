@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Le site est en ligne | TehZombiJesus</title>
+<meta name="description" content="tehzombijesus.ca est en ligne : une page de liens et un portfolio, hébergés sur Cloudflare Pages.">
+<meta name="theme-color" content="#8300fb">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="manifest" href="../../manifest.webmanifest">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<meta property="og:title" content="Le site est en ligne | TehZombiJesus">
+<meta property="og:description" content="tehzombijesus.ca est en ligne : une page de liens et un portfolio, hébergés sur Cloudflare Pages.">
+<meta property="og:locale" content="fr_CA">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="TehZombiJesus">
+<meta property="og:image" content="https://tehzombijesus.ca/assets/og/devlog-site-goes-live-fr.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://tehzombijesus.ca/assets/og/devlog-site-goes-live-fr.jpg">
+<link rel="preload" href="../../assets/fonts/chakra-petch-latin-700-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../../assets/fonts/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="alternate" type="application/rss+xml" title="Journal de TehZombiJesus" href="../feed.xml">
+<link rel="alternate" hreflang="en" href="https://tehzombijesus.ca/devlog/site-goes-live">
+<link rel="alternate" hreflang="fr" href="https://tehzombijesus.ca/fr/devlog/site-goes-live">
+<link rel="alternate" hreflang="x-default" href="https://tehzombijesus.ca/devlog/site-goes-live">
+<link rel="stylesheet" href="../../styles.css">
+</head>
+<body>
+
+<!-- Top menu: to add a page, copy one <li> line and point it at the new file -->
+<nav class="nav" aria-label="Principal">
+  <div class="wrap">
+    <a class="home" href="../index.html"><img src="../../assets/favicon.svg" alt="" width="38" height="38"><span>TehZombiJesus</span></a>
+    <ul>
+      <li><a href="../index.html">Accueil</a></li>
+      <li><a href="../homelab.html">Homelab</a></li>
+      <li><a href="../setup.html">Poste de jeu</a></li>
+      <li><a href="../ruenix.html">Ruenix</a></li>
+      <li><a href="../builds.html">Constructions</a></li>
+      <li><a href="../devlog.html" aria-current="page">Journal</a></li>
+      <li><a href="../now.html">En ce moment</a></li>
+      <li><a class="lang" href="../../devlog/site-goes-live.html" hreflang="en" lang="en" title="English">EN</a></li>
+    </ul>
+  </div>
+</nav>
+<div class="band small" aria-hidden="true">
+  <svg viewBox="0 0 1440 150" preserveAspectRatio="xMidYMid slice">
+    <polygon class="s" fill="#472f4a" points="0,0 560,0 505,150 -55,150 -200,150 -200,0"/>
+    <polygon class="s" fill="#8300fb" points="560,0 1120,0 1065,150 505,150"/>
+    <polygon class="s" fill="#74263e" points="1120,0 1280,0 1225,150 1065,150"/>
+    <polygon class="s" fill="#fb54f7" points="1280,0 1640,0 1585,150 1225,150"/>
+    <g class="shards" fill="#472f4a"><polygon points="880,27 892,27 847,150 835,150"/><polygon points="916,54 928,54 893,150 881,150"/><polygon points="952,81 964,81 939,150 927,150"/><polygon points="1000,27 1012,27 967,150 955,150"/><polygon points="1036,54 1048,54 1013,150 1001,150"/></g>
+  </svg>
+</div>
+
+<main class="wrap">
+  <header class="page-head">
+    <span class="tag">Journal · <time datetime="2026-10-05">5 octobre 2026</time></span>
+    <h1>Le site est en ligne</h1>
+    <div class="bar"></div>
+    <p>tehzombijesus.ca est en ligne : une page de liens et un portfolio, hébergés sur Cloudflare Pages.</p>
+  </header>
+  <article class="prose">
+<p>Pendant des années, «&nbsp;TehZombiJesus&nbsp;» était un nom d'utilisateur sur une douzaine de plateformes, sans rien pour les relier. Maintenant, il y a un camp de base&nbsp;: <strong>tehzombijesus.ca</strong>.</p>
+<p>Ça a commencé comme une simple page de liens, puis c'est devenu quatre pages&nbsp;: le homelab, le poste de jeu que je planifie, le réseau Minecraft Ruenix et l'habituel à propos. C'est du HTML et du CSS tout simples sur Cloudflare Pages. Pas de framework, pas d'étape de compilation, rien à mettre à jour chaque semaine.</p>
+<h2>Verrouillé dès le premier jour</h2>
+<p>Les en-têtes de sécurité sont passés avant tout le reste. Le site obtient <strong>A+</strong> sur securityheaders.com&nbsp;: une politique de sécurité du contenu stricte, HSTS, aucun encadrement et seulement les fonctions du navigateur dont le site a vraiment besoin. Chaque script roule à partir de ce domaine, alors rien ne se charge d'un endroit que je ne contrôle pas.</p>
+<p>Le reste de ce journal, c'est là où le site, le serveur et le poste de jeu se construisent en public.</p>
+  </article>
+  <nav class="post-nav" aria-label="Autres billets"><a class="all" href="../devlog.html">Tous les billets</a><a class="newer" href="../devlog/welcome-to-the-crypt.html">Bienvenue dans la Crypte →</a></nav>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>TehZombiJesus · tehzombijesus.ca</span>
+    <a href="../index.html">Accueil</a><a href="../homelab.html">Homelab</a><a href="../setup.html">Poste de jeu</a><a href="../ruenix.html">Ruenix</a><a href="../builds.html">Constructions</a><a href="../devlog.html">Journal</a><a href="../now.html">En ce moment</a><a href="../guestbook.html">Livre d'or</a><a href="../changelog.html">Journal des changements</a>
+    <!-- When your Uptime Kuma status page is public, uncomment this line and put in its address:
+    <a href="https://status.tehzombijesus.ca">Status</a> -->
+  </div>
+</footer>
+
+<script src="../../site.js"></script>
+<script src="../../extras.js"></script>
+</body>
+</html>

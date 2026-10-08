@@ -7,6 +7,7 @@
 <meta name="description" content="Homelabber, CTO et administrateur système, gestionnaire de réseau Minecraft et joueur PC occasionnel.">
 <meta name="theme-color" content="#8300fb">
 <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="manifest" href="../manifest.webmanifest">
 <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
 <meta property="og:title" content="TehZombiJesus">
 <meta property="og:description" content="Homelabber, CTO et administrateur système, gestionnaire de réseau Minecraft et joueur PC occasionnel.">
@@ -18,12 +19,11 @@
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://tehzombijesus.ca/assets/social-preview.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" href="../assets/fonts/chakra-petch-latin-700-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../assets/fonts/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="alternate" hreflang="en" href="https://tehzombijesus.ca/">
 <link rel="alternate" hreflang="fr" href="https://tehzombijesus.ca/fr/">
 <link rel="alternate" hreflang="x-default" href="https://tehzombijesus.ca/">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@600;700&family=Inter:wght@400;600&family=JetBrains+Mono:wght@400&family=Lilita+One&family=Nunito:wght@400;800&display=swap">
 <link rel="stylesheet" href="../styles.css">
 </head>
 <body>
@@ -37,6 +37,8 @@
       <li><a href="homelab.html">Homelab</a></li>
       <li><a href="setup.html">Poste de jeu</a></li>
       <li><a href="ruenix.html">Ruenix</a></li>
+      <li><a href="builds.html">Constructions</a></li>
+      <li><a href="devlog.html">Journal</a></li>
       <li><a href="now.html">En ce moment</a></li>
       <li><a class="lang" href="../index.html" hreflang="en" lang="en" title="English">EN</a></li>
     </ul>
@@ -55,7 +57,7 @@
 <main class="wrap">
 
   <header class="hero animate">
-    <img class="avatar" src="../assets/avatar.webp" alt="Avatar de TehZombiJesus" width="320" height="320" data-flip="../assets/avatar-toon.webp" title="Clique-moi">
+    <img class="avatar" fetchpriority="high" src="../assets/avatar.webp" alt="Avatar de TehZombiJesus" width="320" height="320" data-flip="../assets/avatar-toon.webp" title="Clique-moi">
     <div class="hero-text">
       <h1 style="margin:0"><img class="wordmark" src="../assets/wordmark.svg" alt="TehZombiJesus" width="700" height="79"></h1>
       <div class="bar"></div>
@@ -91,7 +93,7 @@
     <h2>À propos de moi</h2>
     <p class="lede">La version courte.</p>
     <div class="about">
-      <img src="../assets/avatar-toon.webp" alt="Version dessin animé de TehZombiJesus" width="260" height="260">
+      <img loading="lazy" decoding="async" src="../assets/avatar-toon.webp" alt="Version dessin animé de TehZombiJesus" width="260" height="260">
       <div>
         <!-- Age updates itself every birthday. The birthday is set in site.js. -->
         <ul class="me">
@@ -140,6 +142,8 @@
   <section>
     <h2>Après le travail</h2>
     <p class="lede">Joueur PC, manette en main, juste pour le plaisir. Pas de classé, pas de stress.</p>
+    <!-- Spotify: fills itself in once Spotify is connected (see README) -->
+    <div class="now-playing" hidden aria-live="polite"></div>
     <div class="split">
       <ul class="rows">
         <li><span class="title">Minecraft</span><span class="note">Mieux entre amis</span></li>
@@ -177,9 +181,9 @@
     <p class="lede">Le réseau Minecraft que je gère.</p>
 
     <div class="rx">
-      <img class="crest" src="../assets/ruenix-crest.webp" alt="Blason de Ruenix" width="200" height="200">
+      <img loading="lazy" decoding="async" class="crest" src="../assets/ruenix-crest.webp" alt="Blason de Ruenix" width="200" height="200">
       <div>
-        <img class="rx-word" src="../assets/ruenix-wordmark.svg" alt="Ruenix" width="240" height="65">
+        <img loading="lazy" decoding="async" class="rx-word" src="../assets/ruenix-wordmark.svg" alt="Ruenix" width="240" height="65">
         <div class="gem"></div>
         <p>Un réseau Minecraft avec des serveurs Survie (SMP) et SkyPvP. Communauté anglophone, équipe sympathique et d'autres modes de jeu à venir.</p>
         <!-- The server isn't public yet. When it opens, replace the line below with:
@@ -218,7 +222,7 @@
 <footer>
   <div class="wrap">
     <span>TehZombiJesus · tehzombijesus.ca</span>
-    <a href="index.html">Accueil</a><a href="homelab.html">Homelab</a><a href="setup.html">Poste de jeu</a><a href="ruenix.html">Ruenix</a><a href="now.html">En ce moment</a>
+    <a href="index.html">Accueil</a><a href="homelab.html">Homelab</a><a href="setup.html">Poste de jeu</a><a href="ruenix.html">Ruenix</a><a href="builds.html">Constructions</a><a href="devlog.html">Journal</a><a href="now.html">En ce moment</a><a href="guestbook.html">Livre d'or</a><a href="changelog.html">Journal des changements</a>
     <!-- When your Uptime Kuma status page is public, uncomment this line and put in its address:
     <a href="https://status.tehzombijesus.ca">Status</a> -->
   </div>

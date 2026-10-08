@@ -7,6 +7,7 @@
 <meta name="description" content="Cette page n'existe pas.">
 <meta name="theme-color" content="#8300fb">
 <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="manifest" href="/manifest.webmanifest">
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
 <meta property="og:title" content="Page introuvable | TehZombiJesus">
 <meta property="og:description" content="Cette page n'existe pas.">
@@ -18,9 +19,8 @@
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://tehzombijesus.ca/assets/social-preview.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@600;700&family=Inter:wght@400;600&family=JetBrains+Mono:wght@400&family=Lilita+One&family=Nunito:wght@400;800&display=swap">
+<link rel="preload" href="/assets/fonts/chakra-petch-latin-700-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
@@ -34,6 +34,8 @@
       <li><a href="/fr/homelab.html">Homelab</a></li>
       <li><a href="/fr/setup.html">Poste de jeu</a></li>
       <li><a href="/fr/ruenix.html">Ruenix</a></li>
+      <li><a href="/fr/builds.html">Constructions</a></li>
+      <li><a href="/fr/devlog.html">Journal</a></li>
       <li><a href="/fr/now.html">En ce moment</a></li>
       <li><a class="lang" href="/index.html" hreflang="en" lang="en" title="English">EN</a></li>
     </ul>
@@ -62,12 +64,18 @@
       <a class="btn ghost" href="/fr/ruenix.html">Ruenix</a>
     </div>
   </header>
+  <!-- Crypt Run: the little game lives in assets/game.js -->
+  <section class="run-wrap">
+    <h2>Tant qu'à être ici</h2>
+    <p class="lede">Échappe au cimetière. Espace, la flèche du haut ou une touche à l'écran pour sauter.</p>
+    <canvas id="crypt-run" width="800" height="240" aria-label="Course de la Crypte, un petit jeu de saut"></canvas>
+  </section>
 </main>
 
 <footer>
   <div class="wrap">
     <span>TehZombiJesus · tehzombijesus.ca</span>
-    <a href="/fr/index.html">Accueil</a><a href="/fr/homelab.html">Homelab</a><a href="/fr/setup.html">Poste de jeu</a><a href="/fr/ruenix.html">Ruenix</a><a href="/fr/now.html">En ce moment</a>
+    <a href="/fr/index.html">Accueil</a><a href="/fr/homelab.html">Homelab</a><a href="/fr/setup.html">Poste de jeu</a><a href="/fr/ruenix.html">Ruenix</a><a href="/fr/builds.html">Constructions</a><a href="/fr/devlog.html">Journal</a><a href="/fr/now.html">En ce moment</a><a href="/fr/guestbook.html">Livre d'or</a><a href="/fr/changelog.html">Journal des changements</a>
     <!-- When your Uptime Kuma status page is public, uncomment this line and put in its address:
     <a href="https://status.tehzombijesus.ca">Status</a> -->
   </div>
@@ -75,5 +83,6 @@
 
 <script src="/site.js"></script>
 <script src="/extras.js"></script>
+<script src="/assets/game.js"></script>
 </body>
 </html>

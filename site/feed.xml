@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+<channel>
+  <title>TehZombiJesus · Devlog</title>
+  <link>https://tehzombijesus.ca/devlog</link>
+  <description>Built in public: the site, the homelab and the battlestation.</description>
+  <language>en-CA</language>
+  <item>
+    <title>The site moved to GitHub, and learned French</title>
+    <link>https://tehzombijesus.ca/devlog/moved-to-github</link>
+    <guid>https://tehzombijesus.ca/devlog/moved-to-github</guid>
+    <pubDate>Wed, 07 Oct 2026 12:00:00 +0000</pubDate>
+    <description>Every change now goes live on its own, the whole site is bilingual, and there are a few secrets to find.
+&lt;p&gt;Until now, updating this site meant zipping a folder and dragging it into Cloudflare. Not anymore. The site lives on &lt;a href=&quot;https://github.com/TehZombiJesus/tehzombijesus.ca&quot;&gt;GitHub&lt;/a&gt;, and every change pushed there is live about a minute later. Every version is kept, so any mistake is one click from undone.&lt;/p&gt;
+&lt;h2&gt;En français aussi&lt;/h2&gt;
+&lt;p&gt;A good part of my friends are French Canadian, so the whole site now exists in standard French. The FR button in the menu switches to the same page in the other language.&lt;/p&gt;
+&lt;h2&gt;Things to find&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;Press the &lt;kbd&gt;`&lt;/kbd&gt; key for a terminal. Try &lt;code&gt;neofetch&lt;/code&gt;.&lt;/li&gt;
+  &lt;li&gt;Type the word &lt;em&gt;crypt&lt;/em&gt; anywhere on the site.&lt;/li&gt;
+  &lt;li&gt;There are achievements, tracked by the trophy in the footer.&lt;/li&gt;
+  &lt;li&gt;The homelab page has a live map of how everything connects.&lt;/li&gt;
+&lt;/ul&gt;</description>
+  </item>
+  <item>
+    <title>Welcome to The Crypt</title>
+    <link>https://tehzombijesus.ca/devlog/welcome-to-the-crypt</link>
+    <guid>https://tehzombijesus.ca/devlog/welcome-to-the-crypt</guid>
+    <pubDate>Tue, 06 Oct 2026 12:00:00 +0000</pubDate>
+    <description>My Discord server is open, and it has its own custom bot: Crypt Keeper.
+&lt;p&gt;&lt;strong&gt;The Crypt&lt;/strong&gt; is my Discord server: a hangout for friends, a place to find people to play with, and a corner for homelab and tech help. It has a full French section too.&lt;/p&gt;
+&lt;h2&gt;Crypt Keeper&lt;/h2&gt;
+&lt;p&gt;Instead of stacking five public bots, the server runs one custom bot written for it. Crypt Keeper builds the whole server layout in one command, welcomes new members with a banner, and keeps a message log for the staff.&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Levels with six crypt-themed ranks, from Lost Soul to Crypt Legend.&lt;/li&gt;
+  &lt;li&gt;Temporary voice rooms, game nights and a looking-for-group board.&lt;/li&gt;
+  &lt;li&gt;Birthdays with their own cards, a question of the day and a weekly recap.&lt;/li&gt;
+  &lt;li&gt;Free game alerts, trivia and a starboard for the best messages.&lt;/li&gt;
+  &lt;li&gt;A first answer from AI on tech-help posts, with a daily limit to keep costs sane.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The server icon even follows the calendar: Halloween in October, Christmas in December, and a few special days in between. This website now does the same.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://discord.gg/DRSZb9qqqh&quot;&gt;Join the Crypt&lt;/a&gt; if any of that sounds like your kind of place.&lt;/p&gt;</description>
+  </item>
+  <item>
+    <title>The site goes live</title>
+    <link>https://tehzombijesus.ca/devlog/site-goes-live</link>
+    <guid>https://tehzombijesus.ca/devlog/site-goes-live</guid>
+    <pubDate>Mon, 05 Oct 2026 12:00:00 +0000</pubDate>
+    <description>tehzombijesus.ca is up: a link hub and portfolio, hosted on Cloudflare Pages.
+&lt;p&gt;For years &quot;TehZombiJesus&quot; has been a username on a dozen platforms and nothing that tied them together. Now there&#x27;s a home base: &lt;strong&gt;tehzombijesus.ca&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;It started as a simple link hub and grew into four pages: the homelab, the gaming setup I&#x27;m planning, the Ruenix Minecraft network, and the usual about me. It&#x27;s plain HTML and CSS on Cloudflare Pages. No framework, no build step, nothing to update every week.&lt;/p&gt;
+&lt;h2&gt;Locked down from day one&lt;/h2&gt;
+&lt;p&gt;Security headers came before anything fancy. The site scores &lt;strong&gt;A+&lt;/strong&gt; on securityheaders.com: a strict content security policy, HSTS, no framing, and only the browser features the site actually needs. Every script runs from this domain, so nothing loads from somewhere I don&#x27;t control.&lt;/p&gt;
+&lt;p&gt;The rest of this devlog is where the site, the server and the setup get built in public.&lt;/p&gt;</description>
+  </item>
+</channel>
+</rss>

@@ -382,3 +382,99 @@ FR = {
  'Lost somewhere in the Crypt. The address might be mistyped, or the page has moved.': "Perdue quelque part dans la Crypte. L'adresse est peut-être mal écrite, ou la page a déménagé.",
  'Back to home': "Retour à l'accueil",
 }
+
+# ---------- menu additions ----------
+FR.update({
+ 'Builds': 'Constructions',
+ 'Devlog': 'Journal',
+ 'Guestbook': "Livre d'or",
+ 'Changelog': 'Journal des changements',
+ 'TehZombiJesus devlog': 'Journal de TehZombiJesus',
+ 'Devlog | TehZombiJesus': 'Journal | TehZombiJesus',
+ 'Notes as the TehZombiJesus site, homelab and battlestation come together.': 'Des notes à mesure que le site, le homelab et le poste de jeu de TehZombiJesus prennent forme.',
+ 'Changelog | TehZombiJesus': 'Journal des changements | TehZombiJesus',
+ 'Every change to tehzombijesus.ca, from its GitHub history.': "Chaque changement apporté à tehzombijesus.ca, tiré de son historique GitHub.",
+})
+
+# ---------- builds ----------
+FR.update({
+ 'Builds | TehZombiJesus': 'Constructions | TehZombiJesus',
+ 'A Minecraft base that grows from a first-night cottage to a medieval citadel, with a 3D layer-by-layer viewer and downloadable build files.':
+   "Une base Minecraft qui grandit d'un chalet de première nuit jusqu'à une citadelle médiévale, avec une visionneuse 3D couche par couche et des fichiers de construction à télécharger.",
+ 'From cabin to citadel': 'Du chalet à la citadelle',
+ 'A Minecraft survival base that grows in stages, from a first-night cottage to a walled medieval city. Nothing gets torn down: every stage builds on the last one. Rotate each build, step through it layer by layer, and grab the files to build it yourself.':
+   "Une base de survie Minecraft qui grandit par étapes, d'un chalet de première nuit jusqu'à une ville médiévale fortifiée. Rien n'est démoli" + N + ": chaque étape s'appuie sur la précédente. Fais tourner chaque construction, parcours-la couche par couche et prends les fichiers pour la bâtir toi-même.",
+ 'Block by block': 'Bloc par bloc',
+ 'The same building in three states. Pick a stage, then use the slider to build it one layer at a time.': "Le même bâtiment dans trois états. Choisis une étape, puis utilise le curseur pour le bâtir une couche à la fois.",
+ 'Build stage': 'Étape de construction',
+ '3D view of the build': 'Vue 3D de la construction',
+ 'Drag to rotate · scroll or pinch to zoom · right-drag to pan': 'Glisse pour tourner · molette ou pincement pour zoomer · clic droit pour déplacer',
+ 'Previous layer': 'Couche précédente',
+ 'Next layer': 'Couche suivante',
+ 'Layer': 'Couche',
+ 'Show only this layer': 'Afficher seulement cette couche',
+ "Highlight what's new in this upgrade": 'Faire ressortir ce qui est nouveau dans cette amélioration',
+ 'Materials': 'Matériaux',
+ 'The plan': 'Le plan',
+ 'Eight stages, each one a reason to keep playing. Three are already designed block by block.': "Huit étapes, chacune une raison de continuer à jouer. Trois sont déjà conçues bloc par bloc.",
+ 'Cottage': 'Chalet',
+ 'Night one to day three. Wood and cobblestone.': 'De la première nuit au troisième jour. Bois et pierre.',
+ 'In 3D': 'En 3D',
+ 'Homestead': 'Ferme',
+ 'Week one. A workshop, storage and steady food.': "Première semaine. Un atelier, du rangement et de la nourriture assurée.",
+ 'Palisade': 'Palissade',
+ 'A log wall and a watchtower that hides the iron farm.': 'Un mur de bûches et une tour de guet qui cache la ferme à fer.',
+ 'Coming': 'À venir',
+ 'Village quarter': 'Quartier du village',
+ 'The cottage becomes an inn. Villagers, trading, real farms.': "Le chalet devient une auberge. Villageois, échanges et vraies fermes.",
+ 'Stone walls': 'Murs de pierre',
+ 'An inner bailey with four towers on the high ground.': 'Une basse-cour intérieure avec quatre tours sur les hauteurs.',
+ 'The keep': 'Le donjon',
+ 'Enchanting, brewing, the Nether portal and a map room.': "Enchantement, alchimie, le portail du Nether et une salle des cartes.",
+ 'Town': 'La ville',
+ 'A market square with a well, houses and a windmill.': 'Une place du marché avec un puits, des maisons et un moulin à vent.',
+ 'Citadel': 'Citadelle',
+ 'The finished walled city.': 'La ville fortifiée, terminée.',
+ 'Build it yourself': 'Bâtis-la toi-même',
+ 'Every stage comes as a Litematica file and a vanilla structure file.': "Chaque étape est offerte en fichier Litematica et en fichier de structure du jeu de base.",
+ 'Stage 1 · Cottage': 'Étape 1 · Chalet',
+ 'Stage 2 · Homestead': 'Étape 2 · Ferme',
+ 'Stage 4 · The inn': "Étape 4 · L'auberge",
+ 'With Litematica': 'Avec Litematica',
+ 'Recommended.': 'Recommandé.',
+ 'Install Fabric, plus the Litematica and MaLiLib mods for your Minecraft version.': 'Installe Fabric, ainsi que les mods Litematica et MaLiLib pour ta version de Minecraft.',
+ 'Put the .litematic files in your .minecraft/schematics folder.': 'Mets les fichiers .litematic dans ton dossier .minecraft/schematics.',
+ 'In game, press M, choose Load Schematics, pick one and load it. A see-through ghost appears.': 'En jeu, appuie sur M, choisis Load Schematics, sélectionnes-en un et charge-le. Un fantôme transparent apparaît.',
+ 'Move it onto your spot and build over the ghost. Wrong blocks show red, missing ones blue.': 'Déplace-le à ton emplacement et construis par-dessus le fantôme. Les mauvais blocs apparaissent en rouge, les manquants en bleu.',
+ 'For an upgrade, load the next file in the same place. Everything you already built matches, so only the new parts show.': "Pour une amélioration, charge le fichier suivant au même endroit. Tout ce que tu as déjà bâti correspond, alors seules les nouvelles parties apparaissent.",
+ 'No mods': 'Sans mods',
+ 'With a structure block.': 'Avec un bloc de structure.',
+ 'Make a creative copy of your world, since structure blocks need cheats.': 'Fais une copie créative de ton monde, puisque les blocs de structure demandent les commandes.',
+ "Put the .nbt files in your world's generated/minecraft/structures folder.": 'Mets les fichiers .nbt dans le dossier generated/minecraft/structures de ton monde.',
+ 'Give yourself a structure block, place it, set it to Load, and type the name, like cottage.': 'Donne-toi un bloc de structure, place-le, mets-le en mode Load et tape le nom, par exemple cottage.',
+ 'Click Load and the full build appears, ready to walk around and copy into survival.': "Clique sur Load et la construction complète apparaît, prête à être visitée et recopiée en survie.",
+})
+
+# ---------- 404 game, Ruenix countdown ----------
+FR.update({
+ "While you're here": 'Tant qu\'à être ici',
+ 'Outrun the graveyard. Space, the up arrow or a tap to jump.': 'Échappe au cimetière. Espace, la flèche du haut ou une touche à l\'écran pour sauter.',
+ 'Crypt Run, a small jumping game': 'Course de la Crypte, un petit jeu de saut',
+ 'Date to be announced.': 'Date à annoncer.',
+})
+
+# ---------- guestbook ----------
+FR.update({
+ 'Guestbook | TehZombiJesus': "Livre d'or | TehZombiJesus",
+ 'Leave a message in the TehZombiJesus guestbook.': "Laisse un message dans le livre d'or de TehZombiJesus.",
+ 'Sign the Crypt': 'Signe la Crypte',
+ 'Old-school web tradition: leave a name and a few words before you go. Messages show up right away, so keep it friendly.':
+   "Une tradition du Web d'antan" + N + ": laisse ton nom et quelques mots avant de partir. Les messages apparaissent tout de suite, alors garde ça sympathique.",
+ 'The guestbook opens soon. The ink is still drying.': "Le livre d'or ouvre bientôt. L'encre sèche encore.",
+ 'Your name': 'Ton nom',
+ 'Your message': 'Ton message',
+ 'No links. Be nice.': 'Pas de liens. Sois gentil.',
+ 'Sign the guestbook': "Signer le livre d'or",
+})
+
+FR.update({ 'Loading the 3D view…': 'Chargement de la vue 3D…' })

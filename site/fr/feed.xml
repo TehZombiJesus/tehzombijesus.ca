@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+<channel>
+  <title>TehZombiJesus · Devlog</title>
+  <link>https://tehzombijesus.ca/fr/devlog</link>
+  <description>Construit en public : le site, le homelab et le poste de jeu.</description>
+  <language>fr-CA</language>
+  <item>
+    <title>Le site a déménagé sur GitHub, et il parle français</title>
+    <link>https://tehzombijesus.ca/fr/devlog/moved-to-github</link>
+    <guid>https://tehzombijesus.ca/fr/devlog/moved-to-github</guid>
+    <pubDate>Wed, 07 Oct 2026 12:00:00 +0000</pubDate>
+    <description>Chaque changement est maintenant mis en ligne tout seul, le site entier est bilingue, et il y a quelques secrets à trouver.
+&lt;p&gt;Jusqu&#x27;à maintenant, mettre ce site à jour voulait dire compresser un dossier et le glisser dans Cloudflare. C&#x27;est fini. Le site vit sur &lt;a href=&quot;https://github.com/TehZombiJesus/tehzombijesus.ca&quot;&gt;GitHub&lt;/a&gt;, et chaque changement envoyé là-bas est en ligne environ une minute plus tard. Chaque version est gardée, alors n&#x27;importe quelle erreur s&#x27;annule en un clic.&lt;/p&gt;
+&lt;h2&gt;In English too&lt;/h2&gt;
+&lt;p&gt;Une bonne partie de mes amis sont Canadiens français, alors le site au complet existe maintenant en français standard. Le bouton EN du menu passe à la même page dans l&#x27;autre langue.&lt;/p&gt;
+&lt;h2&gt;Des choses à trouver&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;Appuie sur la touche &lt;kbd&gt;`&lt;/kbd&gt; pour ouvrir un terminal. Essaie &lt;code&gt;neofetch&lt;/code&gt;.&lt;/li&gt;
+  &lt;li&gt;Tape le mot &lt;em&gt;crypt&lt;/em&gt; n&#x27;importe où sur le site.&lt;/li&gt;
+  &lt;li&gt;Il y a des succès, suivis par le trophée en bas de page.&lt;/li&gt;
+  &lt;li&gt;La page Homelab a une carte animée de comment tout se connecte.&lt;/li&gt;
+&lt;/ul&gt;</description>
+  </item>
+  <item>
+    <title>Bienvenue dans la Crypte</title>
+    <link>https://tehzombijesus.ca/fr/devlog/welcome-to-the-crypt</link>
+    <guid>https://tehzombijesus.ca/fr/devlog/welcome-to-the-crypt</guid>
+    <pubDate>Tue, 06 Oct 2026 12:00:00 +0000</pubDate>
+    <description>Mon serveur Discord est ouvert, et il a son propre robot sur mesure : Crypt Keeper.
+&lt;p&gt;&lt;strong&gt;La Crypte&lt;/strong&gt;, c&#x27;est mon serveur Discord&amp;nbsp;: un lieu de rencontre entre amis, un endroit pour trouver des gens avec qui jouer, et un coin d&#x27;entraide sur le homelab et l&#x27;informatique. Il a aussi une section complète en français.&lt;/p&gt;
+&lt;h2&gt;Crypt Keeper&lt;/h2&gt;
+&lt;p&gt;Au lieu d&#x27;empiler cinq robots publics, le serveur utilise un seul robot écrit sur mesure. Crypt Keeper monte toute la structure du serveur en une commande, accueille les nouveaux membres avec une bannière et garde un journal des messages pour l&#x27;équipe.&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Des niveaux avec six rangs sur le thème de la crypte, d&#x27;Âme perdue à Légende de la Crypte.&lt;/li&gt;
+  &lt;li&gt;Des salons vocaux temporaires, des soirées de jeu et un tableau pour trouver des coéquipiers.&lt;/li&gt;
+  &lt;li&gt;Les anniversaires avec leurs propres cartes, une question du jour et un résumé de la semaine.&lt;/li&gt;
+  &lt;li&gt;Des alertes de jeux gratuits, des quiz et un tableau des meilleurs messages.&lt;/li&gt;
+  &lt;li&gt;Une première réponse de l&#x27;IA dans l&#x27;entraide informatique, avec une limite quotidienne pour garder les coûts raisonnables.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;L&#x27;icône du serveur suit même le calendrier&amp;nbsp;: Halloween en octobre, Noël en décembre, et quelques jours spéciaux entre les deux. Ce site fait maintenant la même chose.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://discord.gg/DRSZb9qqqh&quot;&gt;Rejoins la Crypte&lt;/a&gt; si ça ressemble à ton genre d&#x27;endroit.&lt;/p&gt;</description>
+  </item>
+  <item>
+    <title>Le site est en ligne</title>
+    <link>https://tehzombijesus.ca/fr/devlog/site-goes-live</link>
+    <guid>https://tehzombijesus.ca/fr/devlog/site-goes-live</guid>
+    <pubDate>Mon, 05 Oct 2026 12:00:00 +0000</pubDate>
+    <description>tehzombijesus.ca est en ligne : une page de liens et un portfolio, hébergés sur Cloudflare Pages.
+&lt;p&gt;Pendant des années, «&amp;nbsp;TehZombiJesus&amp;nbsp;» était un nom d&#x27;utilisateur sur une douzaine de plateformes, sans rien pour les relier. Maintenant, il y a un camp de base&amp;nbsp;: &lt;strong&gt;tehzombijesus.ca&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;Ça a commencé comme une simple page de liens, puis c&#x27;est devenu quatre pages&amp;nbsp;: le homelab, le poste de jeu que je planifie, le réseau Minecraft Ruenix et l&#x27;habituel à propos. C&#x27;est du HTML et du CSS tout simples sur Cloudflare Pages. Pas de framework, pas d&#x27;étape de compilation, rien à mettre à jour chaque semaine.&lt;/p&gt;
+&lt;h2&gt;Verrouillé dès le premier jour&lt;/h2&gt;
+&lt;p&gt;Les en-têtes de sécurité sont passés avant tout le reste. Le site obtient &lt;strong&gt;A+&lt;/strong&gt; sur securityheaders.com&amp;nbsp;: une politique de sécurité du contenu stricte, HSTS, aucun encadrement et seulement les fonctions du navigateur dont le site a vraiment besoin. Chaque script roule à partir de ce domaine, alors rien ne se charge d&#x27;un endroit que je ne contrôle pas.&lt;/p&gt;
+&lt;p&gt;Le reste de ce journal, c&#x27;est là où le site, le serveur et le poste de jeu se construisent en public.&lt;/p&gt;</description>
+  </item>
+</channel>
+</rss>

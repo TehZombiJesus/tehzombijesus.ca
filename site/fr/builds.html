@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Constructions | TehZombiJesus</title>
+<meta name="description" content="Une base Minecraft qui grandit d'un chalet de première nuit jusqu'à une citadelle médiévale, avec une visionneuse 3D couche par couche et des fichiers de construction à télécharger.">
+<meta name="theme-color" content="#8300fb">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="manifest" href="../manifest.webmanifest">
+<link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+<meta property="og:title" content="Constructions | TehZombiJesus">
+<meta property="og:description" content="Une base Minecraft qui grandit d'un chalet de première nuit jusqu'à une citadelle médiévale, avec une visionneuse 3D couche par couche et des fichiers de construction à télécharger.">
+<meta property="og:locale" content="fr_CA">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="TehZombiJesus">
+<meta property="og:image" content="https://tehzombijesus.ca/assets/og/builds-fr.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://tehzombijesus.ca/assets/og/builds-fr.jpg">
+<link rel="preload" href="../assets/fonts/chakra-petch-latin-700-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../assets/fonts/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="alternate" hreflang="en" href="https://tehzombijesus.ca/builds">
+<link rel="alternate" hreflang="fr" href="https://tehzombijesus.ca/fr/builds">
+<link rel="alternate" hreflang="x-default" href="https://tehzombijesus.ca/builds">
+<link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+
+<!-- Top menu: to add a page, copy one <li> line and point it at the new file -->
+<nav class="nav" aria-label="Principal">
+  <div class="wrap">
+    <a class="home" href="index.html"><img src="../assets/favicon.svg" alt="" width="38" height="38"><span>TehZombiJesus</span></a>
+    <ul>
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="homelab.html">Homelab</a></li>
+      <li><a href="setup.html">Poste de jeu</a></li>
+      <li><a href="ruenix.html">Ruenix</a></li>
+      <li><a href="builds.html" aria-current="page">Constructions</a></li>
+      <li><a href="devlog.html">Journal</a></li>
+      <li><a href="now.html">En ce moment</a></li>
+      <li><a class="lang" href="../builds.html" hreflang="en" lang="en" title="English">EN</a></li>
+    </ul>
+  </div>
+</nav>
+<div class="band small" aria-hidden="true">
+  <svg viewBox="0 0 1440 150" preserveAspectRatio="xMidYMid slice">
+    <polygon class="s" fill="#472f4a" points="0,0 560,0 505,150 -55,150 -200,150 -200,0"/>
+    <polygon class="s" fill="#8300fb" points="560,0 1120,0 1065,150 505,150"/>
+    <polygon class="s" fill="#74263e" points="1120,0 1280,0 1225,150 1065,150"/>
+    <polygon class="s" fill="#fb54f7" points="1280,0 1640,0 1585,150 1225,150"/>
+    <g class="shards" fill="#472f4a"><polygon points="880,27 892,27 847,150 835,150"/><polygon points="916,54 928,54 893,150 881,150"/><polygon points="952,81 964,81 939,150 927,150"/><polygon points="1000,27 1012,27 967,150 955,150"/><polygon points="1036,54 1048,54 1013,150 1001,150"/></g>
+  </svg>
+</div>
+
+<main class="wrap">
+  <header class="page-head">
+    <span class="tag">Constructions</span>
+    <h1>Du chalet à la citadelle</h1>
+    <div class="bar"></div>
+    <p>Une base de survie Minecraft qui grandit par étapes, d'un chalet de première nuit jusqu'à une ville médiévale fortifiée. Rien n'est démoli : chaque étape s'appuie sur la précédente. Fais tourner chaque construction, parcours-la couche par couche et prends les fichiers pour la bâtir toi-même.</p>
+  </header>
+
+  <!-- ===================== 3D VIEWER: the block data lives in assets/builds/viewer.js ===================== -->
+  <section class="viewer">
+    <h2>Bloc par bloc</h2>
+    <p class="lede">Le même bâtiment dans trois états. Choisis une étape, puis utilise le curseur pour le bâtir une couche à la fois.</p>
+    <div class="tabs" role="group" aria-label="Étape de construction" id="tabs"></div>
+    <div class="vlayout">
+      <div>
+        <div class="stagebox"><span class="vloading">Chargement de la vue 3D…</span><canvas id="view" aria-label="Vue 3D de la construction"></canvas><div class="hint">Glisse pour tourner · molette ou pincement pour zoomer · clic droit pour déplacer</div></div>
+        <div class="vcontrols">
+          <button type="button" id="down" aria-label="Couche précédente">◀</button>
+          <input type="range" id="slider" min="1" value="1" aria-label="Couche">
+          <button type="button" id="up" aria-label="Couche suivante">▶</button>
+          <span class="layer" id="layerLabel"></span>
+        </div>
+        <div class="vcontrols">
+          <label class="toggle"><input type="checkbox" id="onlyLayer"> Afficher seulement cette couche</label>
+          <label class="toggle"><input type="checkbox" id="newOnly"> Faire ressortir ce qui est nouveau dans cette amélioration</label>
+        </div>
+      </div>
+      <aside class="panel dark mats-panel">
+        <h3 id="matTitle">Matériaux</h3>
+        <p class="status" id="matSub"></p>
+        <ul class="mats" id="mats"></ul>
+        <div class="notes" id="notes"></div>
+      </aside>
+    </div>
+  </section>
+
+  <!-- ===================== THE PLAN: change "Coming" to "In 3D" when a stage gets built ===================== -->
+  <section>
+    <h2>Le plan</h2>
+    <p class="lede">Huit étapes, chacune une raison de continuer à jouer. Trois sont déjà conçues bloc par bloc.</p>
+    <ol class="stages">
+      <li class="done"><b>1</b><span><strong>Chalet</strong><em>De la première nuit au troisième jour. Bois et pierre.</em></span><span class="badge new">En 3D</span></li>
+      <li class="done"><b>2</b><span><strong>Ferme</strong><em>Première semaine. Un atelier, du rangement et de la nourriture assurée.</em></span><span class="badge new">En 3D</span></li>
+      <li><b>3</b><span><strong>Palissade</strong><em>Un mur de bûches et une tour de guet qui cache la ferme à fer.</em></span><span class="badge">À venir</span></li>
+      <li class="done"><b>4</b><span><strong>Quartier du village</strong><em>Le chalet devient une auberge. Villageois, échanges et vraies fermes.</em></span><span class="badge new">En 3D</span></li>
+      <li><b>5</b><span><strong>Murs de pierre</strong><em>Une basse-cour intérieure avec quatre tours sur les hauteurs.</em></span><span class="badge">À venir</span></li>
+      <li><b>6</b><span><strong>Le donjon</strong><em>Enchantement, alchimie, le portail du Nether et une salle des cartes.</em></span><span class="badge">À venir</span></li>
+      <li><b>7</b><span><strong>La ville</strong><em>Une place du marché avec un puits, des maisons et un moulin à vent.</em></span><span class="badge">À venir</span></li>
+      <li><b>8</b><span><strong>Citadelle</strong><em>La ville fortifiée, terminée.</em></span><span class="badge">À venir</span></li>
+    </ol>
+  </section>
+
+  <section>
+    <h2>Bâtis-la toi-même</h2>
+    <p class="lede">Chaque étape est offerte en fichier Litematica et en fichier de structure du jeu de base.</p>
+    <ul class="dl-list">
+      <li><span class="title">Étape 1 · Chalet</span><span class="dl"><a href="../assets/builds/cottage.litematic" download>.litematic</a><a href="../assets/builds/cottage.nbt" download>.nbt</a></span></li>
+      <li><span class="title">Étape 2 · Ferme</span><span class="dl"><a href="../assets/builds/homestead.litematic" download>.litematic</a><a href="../assets/builds/homestead.nbt" download>.nbt</a></span></li>
+      <li><span class="title">Étape 4 · L'auberge</span><span class="dl"><a href="../assets/builds/inn.litematic" download>.litematic</a><a href="../assets/builds/inn.nbt" download>.nbt</a></span></li>
+    </ul>
+    <div class="split how-to">
+      <div class="panel dark"><h3>Avec Litematica</h3><p class="status">Recommandé.</p><ol>
+        <li>Installe Fabric, ainsi que les mods Litematica et MaLiLib pour ta version de Minecraft.</li>
+        <li>Mets les fichiers .litematic dans ton dossier .minecraft/schematics.</li>
+        <li>En jeu, appuie sur M, choisis Load Schematics, sélectionnes-en un et charge-le. Un fantôme transparent apparaît.</li>
+        <li>Déplace-le à ton emplacement et construis par-dessus le fantôme. Les mauvais blocs apparaissent en rouge, les manquants en bleu.</li>
+        <li>Pour une amélioration, charge le fichier suivant au même endroit. Tout ce que tu as déjà bâti correspond, alors seules les nouvelles parties apparaissent.</li>
+      </ol></div>
+      <div class="panel dark"><h3>Sans mods</h3><p class="status">Avec un bloc de structure.</p><ol>
+        <li>Fais une copie créative de ton monde, puisque les blocs de structure demandent les commandes.</li>
+        <li>Mets les fichiers .nbt dans le dossier generated/minecraft/structures de ton monde.</li>
+        <li>Donne-toi un bloc de structure, place-le, mets-le en mode Load et tape le nom, par exemple cottage.</li>
+        <li>Clique sur Load et la construction complète apparaît, prête à être visitée et recopiée en survie.</li>
+      </ol></div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>TehZombiJesus · tehzombijesus.ca</span>
+    <a href="index.html">Accueil</a><a href="homelab.html">Homelab</a><a href="setup.html">Poste de jeu</a><a href="ruenix.html">Ruenix</a><a href="builds.html">Constructions</a><a href="devlog.html">Journal</a><a href="now.html">En ce moment</a><a href="guestbook.html">Livre d'or</a><a href="changelog.html">Journal des changements</a>
+    <!-- When your Uptime Kuma status page is public, uncomment this line and put in its address:
+    <a href="https://status.tehzombijesus.ca">Status</a> -->
+  </div>
+</footer>
+
+<script src="../site.js"></script>
+<script src="../extras.js"></script>
+<script src="../assets/builds/loader.js"></script>
+</body>
+</html>

@@ -75,6 +75,8 @@
     ['lost', '👻', 'Lost soul', 'Âme perdue', 'Find the 404 page.', 'Trouver la page 404.'],
     ['bilingual', '⚜️', 'Bilingual', 'Bilingue', 'Read the site in both languages.', 'Lire le site dans les deux langues.'],
     ['cake', '🎂', 'Party guest', 'Invité de la fête', 'Visit on my birthday.', 'Visiter le jour de ma fête.'],
+    ['survivor', '🏃', 'Survivor', 'Survivant', 'Score 25 in the 404 game.', 'Faire 25 points au jeu de la page 404.'],
+    ['guest', '✍️', 'Signed in blood', 'Signé avec du sang', 'Sign the guestbook.', 'Signer le livre d\'or.'],
     ['completionist', '🏆', 'Completionist', 'Complétionniste', 'Unlock every other achievement.', 'Débloquer tous les autres succès.']
   ];
   var got = store.get('ach', {});
@@ -368,7 +370,10 @@
        ['setup', t('the next battlestation', 'la prochaine station de jeu')], ['homelab', t('what\'s running', 'ce qui roule')], ['uptime', t('how long I\'ve been online', 'depuis combien de temps je suis en ligne')],
        ['time', t('my local time', 'mon heure locale')], ['discord', t('join the Crypt', 'rejoindre la Crypte')], ['socials', t('where to find me', 'où me trouver')],
        ['email', t('copy my email', 'copier mon courriel')], ['achievements', t('your trophies', 'tes trophées')], ['lang', t('switch to French', 'passer à l\'anglais')],
-       ['crypt', t('you\'ll see', 'tu verras')], ['clear', t('clean the screen', 'effacer l\'écran')], ['exit', t('close the terminal', 'fermer le terminal')]
+       ['crypt', t('you\'ll see', 'tu verras')], ['snake', t('the classic', 'le classique')], ['hack', t('totally real hacking', 'du piratage très réel')],
+       ['matrix', t('follow the white rabbit', 'suis le lapin blanc')], ['fortune', t('sysadmin wisdom', 'la sagesse d\'un admin système')],
+       ['game', t('play Crypt Run', 'jouer à la Course de la Crypte')], ['pet', t('show or hide the pet zombie', 'afficher ou cacher le zombie de compagnie')],
+       ['clear', t('clean the screen', 'effacer l\'écran')], ['exit', t('close the terminal', 'fermer le terminal')]
       ].forEach(function (r) { print('  ' + (r[0] + '              ').slice(0, 14) + r[1]); });
     },
     whoami: function () { print(t('Kevin, a.k.a. TehZombiJesus. CTO and sysadmin at Nox Interactive, manager of the Ruenix Minecraft network, homelabber, casual gamer. French Canadian.', 'Kevin, alias TehZombiJesus. CTO et administrateur système chez Nox Interactive, gestionnaire du réseau Minecraft Ruenix, homelabber, joueur occasionnel. Canadien français.')); },
@@ -424,6 +429,31 @@
     coffee: function () { print('☕ ' + t('Brewing… done. Productivity +10.', 'Infusion… terminée. Productivité +10.'), 'ok'); },
     history: function () { hist.forEach(function (h, i) { print('  ' + (i + 1) + '  ' + h, 'dim'); }); }
   };
+  CMDS.snake = function () { closeTerm(); snakeGame(); };
+  CMDS.matrix = function () { closeTerm(); matrixRain(); };
+  CMDS.game = function () { print(t('Loading Crypt Run…', 'Chargement de la Course de la Crypte…'), 'dim'); setTimeout(function () { location.href = BASE + (FR ? 'fr/' : '') + 'this-page-is-lost'; }, 450); };
+  CMDS.pet = function () { var off = !store.get('petOff', false); store.set('petOff', off); if (off) { removePet(); print(t('The zombie went back to its grave.', 'Le zombie est retourné dans sa tombe.'), 'dim'); } else { makePet(true); print(t('The zombie is back. Braaains.', 'Le zombie est de retour. Cerveaux…'), 'ok'); } };
+  CMDS.fortune = function () {
+    var F = FR ? [
+      'As-tu essayé de l\'éteindre et de le rallumer?', 'Ce n\'est jamais le DNS. Sauf quand c\'est le DNS. C\'est toujours le DNS.',
+      'Une sauvegarde qui n\'a jamais été restaurée n\'est qu\'un espoir.', 'Il n\'y a pas de nuage, seulement l\'ordinateur de quelqu\'un d\'autre.',
+      'Ne déploie jamais un vendredi.', 'Le RAID n\'est pas une sauvegarde.', 'La mise en production temporaire la plus permanente est celle de vendredi soir.',
+      'Si ça marche, n\'y touche pas. Si tu y touches, documente-le.'
+    ] : [
+      'Have you tried turning it off and on again?', 'It\'s never DNS. Unless it\'s DNS. It\'s always DNS.',
+      'A backup that was never restored is just a hope.', 'There is no cloud, only someone else\'s computer.',
+      'Never deploy on a Friday.', 'RAID is not a backup.', 'Nothing is more permanent than a temporary fix.',
+      'If it works, don\'t touch it. If you touch it, write it down.'
+    ];
+    print('🥠 ' + F[Math.floor(Math.random() * F.length)], 'hl');
+  };
+  CMDS.hack = function () {
+    var L = FR ? ['Connexion au mainframe…', 'Contournement du pare-feu… (il était déjà ouvert)', 'Téléchargement de plus de RAM… 64 Go', 'Décryptage du mot de passe : ********',
+      'Accès au mot de passe Wi-Fi des voisins…', 'Compilation du noyau en 4K…'] : ['Connecting to the mainframe…', 'Bypassing the firewall… (it was already open)', 'Downloading more RAM… 64 GB',
+      'Decrypting password: ********', 'Accessing the neighbours\' Wi-Fi…', 'Compiling the kernel in 4K…'];
+    L.forEach(function (l, i) { setTimeout(function () { print('[' + ('█'.repeat(i + 1) + '░'.repeat(L.length - i - 1)) + '] ' + l, 'ok'); }, 380 * (i + 1)); });
+    setTimeout(function () { print(t('ACCESS GRANTED. Just kidding. Nice try, hacker. 😎', 'ACCÈS ACCORDÉ. Je blague. Bien essayé, pirate. 😎'), 'warn'); unlock('sudo'); }, 380 * (L.length + 1));
+  };
   CMDS.cafe = CMDS.coffee; CMDS['café'] = CMDS.coffee; CMDS.aide = CMDS.help; CMDS.quit = CMDS.exit;
   function run(raw) {
     var v = raw.trim();
@@ -434,6 +464,142 @@
     if (cmd === 'sudo' || (cmd === 'rm' && /-rf/.test(arg))) return CMDS[cmd]();
     if (CMDS[cmd]) CMDS[cmd](arg);
     else print(cmd + t(': command not found. Type "help".', ' : commande introuvable. Tape « help ».'), 'err');
+  }
+
+  // =====================================================================
+  // SNAKE, MATRIX RAIN (from the terminal)
+  // =====================================================================
+  function overlay(cls) {
+    var o = el('div', 'fx-overlay ' + cls); document.body.appendChild(o);
+    function close() { o.remove(); removeEventListener('keydown', key, true); if (o._stop) o._stop(); }
+    function key(e) { if (e.key === 'Escape') { e.preventDefault(); close(); } }
+    addEventListener('keydown', key, true);
+    o._close = close; return o;
+  }
+  function snakeGame() {
+    var o = overlay('snake');
+    var best = store.get('snakeBest', 0);
+    o.innerHTML = '<div class="snake-box"><div class="snake-top"><b>Snake</b><span class="snake-score">0</span><span class="muted">' + t('Best ', 'Record ') + '<span class="snake-best">' + best + '</span></span>' +
+      '<button type="button" class="fx-close" aria-label="' + t('Close', 'Fermer') + '">×</button></div><canvas width="400" height="400"></canvas>' +
+      '<p class="muted">' + t('Arrows or WASD. Swipe on phones. Esc to quit.', 'Flèches ou WASD. Glisse sur téléphone. Échap pour quitter.') + '</p></div>';
+    o.querySelector('.fx-close').addEventListener('click', function () { o._close(); });
+    var c = o.querySelector('canvas'), x = c.getContext('2d'), N = 20, S = 20;
+    var snake, dir, nd, food, score, timer, dead;
+    function place() { do { food = [Math.floor(Math.random() * N), Math.floor(Math.random() * N)]; } while (snake.some(function (p) { return p[0] === food[0] && p[1] === food[1]; })); }
+    function start() { snake = [[10, 10], [9, 10], [8, 10]]; dir = nd = [1, 0]; score = 0; dead = false; place(); clearInterval(timer); timer = setInterval(tick, 110); }
+    function tick() {
+      dir = nd; var h = [snake[0][0] + dir[0], snake[0][1] + dir[1]];
+      if (h[0] < 0 || h[1] < 0 || h[0] >= N || h[1] >= N || snake.some(function (p) { return p[0] === h[0] && p[1] === h[1]; })) {
+        dead = true; clearInterval(timer);
+        if (score > best) { best = score; store.set('snakeBest', best); o.querySelector('.snake-best').textContent = best; }
+        draw(); return;
+      }
+      snake.unshift(h);
+      if (h[0] === food[0] && h[1] === food[1]) { score++; o.querySelector('.snake-score').textContent = score; place(); } else snake.pop();
+      draw();
+    }
+    function draw() {
+      x.fillStyle = '#140c16'; x.fillRect(0, 0, 400, 400);
+      x.fillStyle = '#e8a850'; x.beginPath(); x.arc(food[0] * S + 10, food[1] * S + 10, 7, 0, 7); x.fill();
+      snake.forEach(function (p, i) { x.fillStyle = i ? '#8300fb' : '#fb54f7'; x.fillRect(p[0] * S + 1, p[1] * S + 1, S - 2, S - 2); });
+      if (dead) {
+        x.fillStyle = 'rgba(14,8,13,.7)'; x.fillRect(0, 0, 400, 400); x.fillStyle = '#f4ecf3'; x.textAlign = 'center';
+        x.font = '700 28px "Chakra Petch", sans-serif'; x.fillText(t('Game over', 'Partie terminée'), 200, 190);
+        x.font = '400 15px Inter, sans-serif'; x.fillText(t('Space or tap to play again', 'Espace ou touche pour rejouer'), 200, 220);
+      }
+    }
+    var M = { ArrowUp: [0, -1], ArrowDown: [0, 1], ArrowLeft: [-1, 0], ArrowRight: [1, 0], w: [0, -1], s: [0, 1], a: [-1, 0], d: [1, 0] };
+    function turn(v) { if (v && !(v[0] === -dir[0] && v[1] === -dir[1])) nd = v; }
+    function key(e) {
+      if (dead && (e.code === 'Space' || e.key === 'Enter')) { e.preventDefault(); start(); return; }
+      var v = M[e.key] || M[(e.key || '').toLowerCase()]; if (v) { e.preventDefault(); e.stopPropagation(); turn(v); }
+    }
+    addEventListener('keydown', key, true);
+    var sx, sy;
+    c.addEventListener('touchstart', function (e) { sx = e.touches[0].clientX; sy = e.touches[0].clientY; if (dead) start(); }, { passive: true });
+    c.addEventListener('touchend', function (e) { var dx = e.changedTouches[0].clientX - sx, dy = e.changedTouches[0].clientY - sy; if (Math.max(Math.abs(dx), Math.abs(dy)) > 24) turn(Math.abs(dx) > Math.abs(dy) ? [dx > 0 ? 1 : -1, 0] : [0, dy > 0 ? 1 : -1]); });
+    c.addEventListener('click', function () { if (dead) start(); });
+    o._stop = function () { clearInterval(timer); removeEventListener('keydown', key, true); };
+    start(); draw();
+  }
+  function matrixRain() {
+    var o = overlay('matrix'), c = el('canvas'); o.appendChild(c);
+    var x = c.getContext('2d'), W = c.width = innerWidth, H = c.height = innerHeight, size = 18, cols = Math.ceil(W / size), drops = [];
+    for (var i = 0; i < cols; i++) drops.push(Math.random() * -40);
+    var chars = 'TZJCRYPT01アカサタナハマヤラワ#$%&<>/'.split(''), run = true;
+    (function frame() {
+      if (!run) return;
+      x.fillStyle = 'rgba(8,4,10,.14)'; x.fillRect(0, 0, W, H);
+      x.font = '600 ' + size + 'px "JetBrains Mono", monospace';
+      for (var i = 0; i < cols; i++) {
+        x.fillStyle = Math.random() < 0.08 ? '#ffffff' : (i % 3 ? '#a855ff' : '#fb54f7');
+        x.fillText(chars[(Math.random() * chars.length) | 0], i * size, drops[i] * size);
+        if (drops[i] * size > H && Math.random() > 0.975) drops[i] = 0; drops[i] += 1;
+      }
+      requestAnimationFrame(frame);
+    })();
+    var msg = el('div', 'matrix-msg', t('Wake up, Neo… the Crypt has you. (Esc or click)', 'Réveille-toi, Neo… la Crypte te tient. (Échap ou clic)'));
+    o.appendChild(msg);
+    o.addEventListener('click', function () { o._close(); });
+    o._stop = function () { run = false; };
+    setTimeout(function () { if (document.body.contains(o)) o._close(); }, 9000);
+  }
+
+  // =====================================================================
+  // PET ZOMBIE — wanders along the bottom of the screen (big screens only)
+  // =====================================================================
+  var pet = null, petTimer;
+  var PET_LINES = FR ? ['Cerveaux… je veux dire, salut!', 'As-tu essayé de le redémarrer?', 'Rejoins la Crypte!', 'Je suis seulement mort à l\'intérieur.', 'Tape « crypt » pour voir…', 'Psst. Essaie la touche `', 'Aucun RGB ici. Juste du vert zombie.'] :
+    ['Braaains… I mean, hi!', 'Have you tried restarting it?', 'Join the Crypt!', 'I\'m only dead on the inside.', 'Type "crypt" and see…', 'Psst. Try the ` key.', 'No RGB here. Just zombie green.'];
+  function makePet(force) {
+    if (pet || calm) return;
+    if (!force && (store.get('petOff', false) || innerWidth < 900 || !(window.matchMedia && matchMedia('(pointer: fine)').matches))) return;
+    pet = el('button', 'pet', '<svg viewBox="0 0 16 20" aria-hidden="true" shape-rendering="crispEdges"><rect x="4" y="0" width="8" height="2" fill="#3a2a3a"/><rect x="4" y="2" width="8" height="6" fill="#7fb069"/>' +
+      '<rect x="6" y="4" width="1" height="1" fill="#0e080d"/><rect x="9" y="4" width="1" height="1" fill="#0e080d"/><rect x="6" y="6" width="4" height="1" fill="#fb54f7"/>' +
+      '<rect x="3" y="8" width="10" height="6" fill="#8300fb"/><rect x="11" y="9" width="5" height="2" fill="#7fb069"/><rect x="4" y="14" width="3" height="6" class="leg1" fill="#2f4a22"/><rect x="9" y="14" width="3" height="6" class="leg2" fill="#2f4a22"/></svg><span class="pet-say" hidden></span>');
+    pet.type = 'button'; pet.setAttribute('aria-label', t('Pet zombie', 'Zombie de compagnie'));
+    document.body.appendChild(pet);
+    var x = 120, dir = 1, say = pet.querySelector('.pet-say');
+    function walk() {
+      var max = innerWidth - 160;
+      var target = 80 + Math.random() * (max - 80);
+      dir = target > x ? 1 : -1; pet.classList.toggle('left', dir < 0); pet.classList.add('walking');
+      var dist = Math.abs(target - x); x = target;
+      pet.style.transitionDuration = (dist / 40).toFixed(1) + 's';
+      pet.style.transform = 'translateX(' + x.toFixed(0) + 'px)';
+      clearTimeout(petTimer);
+      petTimer = setTimeout(function () { pet && pet.classList.remove('walking'); petTimer = setTimeout(walk, 3000 + Math.random() * 6000); }, dist / 40 * 1000);
+    }
+    pet.style.transform = 'translateX(' + x + 'px)';
+    petTimer = setTimeout(walk, 2500);
+    pet.addEventListener('click', function () {
+      pet.classList.remove('hop'); void pet.offsetWidth; pet.classList.add('hop');
+      say.textContent = PET_LINES[Math.floor(Math.random() * PET_LINES.length)]; say.hidden = false;
+      clearTimeout(say._t); say._t = setTimeout(function () { say.hidden = true; }, 3200);
+      var n = store.get('petClicks', 0) + 1; store.set('petClicks', n);
+    });
+  }
+  function removePet() { if (pet) { clearTimeout(petTimer); pet.remove(); pet = null; } }
+  setTimeout(function () { makePet(false); }, 4000);
+
+  // =====================================================================
+  // RUENIX COUNTDOWN — set data-opening="2026-12-01T19:00:00-05:00" on the element
+  // =====================================================================
+  var cd = document.querySelector('.countdown[data-opening]');
+  if (cd && cd.getAttribute('data-opening')) {
+    var when = new Date(cd.getAttribute('data-opening'));
+    if (!isNaN(when)) {
+      var lbl = FR ? ['jours', 'heures', 'min', 's'] : ['days', 'hours', 'min', 'sec'];
+      cd.innerHTML = '<div class="cd-grid">' + lbl.map(function (l) { return '<div><b>00</b><span>' + l + '</span></div>'; }).join('') + '</div>' +
+        '<p class="cd-when">' + new Intl.DateTimeFormat(FR ? 'fr-CA' : 'en-CA', { dateStyle: 'full', timeStyle: 'short', timeZone: TZ }).format(when) + '</p>';
+      var bs = cd.querySelectorAll('b');
+      var tickCd = function () {
+        var d = Math.max(0, when - new Date()), v = [Math.floor(d / 864e5), Math.floor(d / 36e5) % 24, Math.floor(d / 6e4) % 60, Math.floor(d / 1e3) % 60];
+        bs.forEach(function (b, i) { b.textContent = String(v[i]).padStart(2, '0'); });
+        if (d === 0) { cd.classList.add('open'); cd.querySelector('.cd-when').textContent = t('Ruenix is open!', 'Ruenix est ouvert!'); clearInterval(cdTimer); }
+      };
+      var cdTimer = setInterval(tickCd, 1000); tickCd();
+    }
   }
 
   // =====================================================================
@@ -486,26 +652,70 @@
   });
 
   // =====================================================================
-  // LIVE DISCORD COUNT — hides itself if Discord doesn't answer
+  // LIVE FEATURES — run by Cloudflare functions in /functions. Each one hides itself until it's set up.
   // =====================================================================
-  var live = document.querySelector('.discord-live');
-  if (live && window.fetch) {
-    var fmt = function (x) { return new Intl.NumberFormat(FR ? 'fr-CA' : 'en-CA').format(x); };
-    var showCount = function (online, total) {
-      var txt = online != null ? t(fmt(online) + ' online', fmt(online) + ' en ligne') : '';
-      if (total) txt += (txt ? ' · ' : '') + t(fmt(total) + ' members in the Crypt', fmt(total) + ' membres dans la Crypte');
-      if (!txt) return;
-      live.querySelector('.dl-text').textContent = txt; live.hidden = false;
-    };
-    fetch('https://discord.com/api/v10/invites/' + DISCORD_INVITE + '?with_counts=true')
-      .then(function (r) { if (!r.ok) throw 0; return r.json(); })
-      .then(function (j) { showCount(j.approximate_presence_count, j.approximate_member_count); })
-      .catch(function () {
-        // backup: the server widget (turn on in Server Settings → Widget)
-        fetch('https://discord.com/api/guilds/' + DISCORD_GUILD + '/widget.json')
-          .then(function (r) { if (!r.ok) throw 0; return r.json(); })
-          .then(function (j) { showCount(j.presence_count, null); })
-          .catch(function () {});
-      });
+  var API = BASE + 'api/';
+  function getJSON(path, opts) {
+    if (!window.fetch) return Promise.reject();
+    return fetch(API + path, opts).then(function (r) { if (!r.ok) throw r.status; return r.json(); });
   }
+  var fmt = function (x) { return new Intl.NumberFormat(FR ? 'fr-CA' : 'en-CA').format(x); };
+
+  // ---------- Discord count under "Join the Crypt" ----------
+  var live = document.querySelector('.discord-live');
+  if (live) getJSON('discord').then(function (j) {
+    var txt = j.online != null ? t(fmt(j.online) + ' online', fmt(j.online) + ' en ligne') : '';
+    if (j.members) txt += (txt ? ' · ' : '') + t(fmt(j.members) + ' members in the Crypt', fmt(j.members) + ' membres dans la Crypte');
+    if (!txt) return;
+    live.querySelector('.dl-text').textContent = txt; live.hidden = false;
+  }).catch(function () {});
+
+  var config = getJSON('config').catch(function () { return {}; });
+  window.TZJ.config = config;
+
+  // ---------- Installable app + offline page (service worker lives at /sw.js) ----------
+  if ('serviceWorker' in navigator && location.protocol === 'https:' && /(^|\.)tehzombijesus\.ca$|pages\.dev$/.test(location.hostname)) {
+    addEventListener('load', function () { navigator.serviceWorker.register('/sw.js').catch(function () {}); });
+  }
+
+  // ---------- Live "here right now" counter in the footer ----------
+  config.then(function (c) {
+    if (!c.presence || !foot) return;
+    var me = (function () { try { var v = sessionStorage.getItem('tzj.pid'); if (v) return v; } catch (e) {}
+      var id = Array.from(crypto.getRandomValues(new Uint8Array(12))).map(function (b) { return (b % 36).toString(36); }).join('') + Date.now().toString(36);
+      try { sessionStorage.setItem('tzj.pid', id); } catch (e) {} return id; })();
+    var chip = el('span', 'here-chip'); chip.hidden = true; foot.insertBefore(chip, foot.querySelector('.season-tag') || termBtn);
+    var beat = function () {
+      if (document.hidden) return;
+      getJSON('presence', { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify({ id: me }) }).then(function (j) {
+        chip.innerHTML = '<span class="dot" aria-hidden="true"></span>' + (j.here <= 1 ? t('Just you in the Crypt', 'Seul dans la Crypte')
+          : t(fmt(j.here) + ' in the Crypt right now', fmt(j.here) + ' dans la Crypte en ce moment'));
+        chip.hidden = false;
+      }).catch(function () {});
+    };
+    beat(); setInterval(beat, 30000);
+    document.addEventListener('visibilitychange', function () { if (!document.hidden) beat(); });
+  });
+
+  // ---------- Spotify: what I'm listening to ----------
+  var np = document.querySelector('.now-playing');
+  if (np) config.then(function (c) {
+    if (!c.spotify) return;
+    var load = function () {
+      getJSON('spotify').then(function (j) {
+        if (!j.title) return;
+        var ago = '';
+        if (!j.playing && j.at) {
+          var m = Math.round((Date.now() - new Date(j.at)) / 60000);
+          ago = m < 60 ? t(m + ' min ago', 'il y a ' + m + ' min') : m < 1440 ? t(Math.round(m / 60) + ' h ago', 'il y a ' + Math.round(m / 60) + ' h') : t('a while ago', 'il y a un moment');
+        }
+        np.innerHTML = (j.art ? '<img src="' + esc(j.art) + '" alt="" width="64" height="64">' : '') +
+          '<div><span class="np-label">' + (j.playing ? '<span class="eq" aria-hidden="true"><i></i><i></i><i></i></span>' + t('Listening now', 'J\'écoute en ce moment') : t('Last played', 'Dernière écoute') + ' · ' + ago) + '</span>' +
+          '<a class="np-title" href="' + esc(j.url || '#') + '" rel="noopener" target="_blank">' + esc(j.title) + '</a>' +
+          '<span class="np-artist">' + esc(j.artist) + '</span></div>';
+        np.classList.toggle('playing', !!j.playing); np.hidden = false;
+      }).catch(function () {});
+    };
+    load(); setInterval(function () { if (!document.hidden) load(); }, 30000);
+  });
 })();
