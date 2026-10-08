@@ -279,7 +279,10 @@
   document.querySelectorAll('.copy-email').forEach(function (b) {
     b.addEventListener('click', function (e) {
       e.preventDefault();   // copy instead of opening the mail app
-      copy(b.getAttribute('data-email') || EMAIL, function () {
+      // Cloudflare's email obfuscation may scramble the address in the page, so only trust a real-looking one
+      var addr = b.getAttribute('data-email') || '';
+      if (!/^[^@\s]+@[^@\s]+\.[a-z]{2,}$/i.test(addr)) addr = EMAIL;
+      copy(addr, function () {
         toast('📋 ' + t('Email copied', 'Courriel copié'));
         if (!b.dataset.label) b.dataset.label = b.textContent;
         b.textContent = t('Copied!', 'Copié!'); b.classList.add('copied');
