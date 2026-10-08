@@ -557,35 +557,51 @@
   var PET_LINES = FR ? ['Cerveaux… je veux dire, salut!', 'As-tu essayé de le redémarrer?', 'Rejoins la Crypte!', 'Je suis seulement mort à l\'intérieur.', 'Tape « crypt » pour voir…', 'Psst. Essaie la touche `', 'Aucun RGB ici. Juste du vert zombie.'] :
     ['Braaains… I mean, hi!', 'Have you tried restarting it?', 'Join the Crypt!', 'I\'m only dead on the inside.', 'Type "crypt" and see…', 'Psst. Try the ` key.', 'No RGB here. Just zombie green.'];
   function makePet(force) {
-    if (pet || calm) return;
-    if (!force && (store.get('petOff', false) || innerWidth < 900 || !(window.matchMedia && matchMedia('(pointer: fine)').matches))) return;
-    pet = el('button', 'pet', '<svg viewBox="0 0 16 20" aria-hidden="true" shape-rendering="crispEdges"><rect x="4" y="0" width="8" height="2" fill="#3a2a3a"/><rect x="4" y="2" width="8" height="6" fill="#7fb069"/>' +
+    if (pet) return;
+    if (!force && store.get('petOff', false)) return;      // the "pet" terminal command turns it off and on
+    var small = innerWidth < 700, touch = window.matchMedia && matchMedia('(pointer: coarse)').matches;
+    pet = el('button', 'pet' + (small ? ' small' : ''), '<svg viewBox="0 0 16 20" aria-hidden="true" shape-rendering="crispEdges"><rect x="4" y="0" width="8" height="2" fill="#3a2a3a"/><rect x="4" y="2" width="8" height="6" fill="#7fb069"/>' +
       '<rect x="6" y="4" width="1" height="1" fill="#0e080d"/><rect x="9" y="4" width="1" height="1" fill="#0e080d"/><rect x="6" y="6" width="4" height="1" fill="#fb54f7"/>' +
       '<rect x="3" y="8" width="10" height="6" fill="#8300fb"/><rect x="11" y="9" width="5" height="2" fill="#7fb069"/><rect x="4" y="14" width="3" height="6" class="leg1" fill="#2f4a22"/><rect x="9" y="14" width="3" height="6" class="leg2" fill="#2f4a22"/></svg><span class="pet-say" hidden></span>');
     pet.type = 'button'; pet.setAttribute('aria-label', t('Pet zombie', 'Zombie de compagnie'));
     document.body.appendChild(pet);
-    var x = 120, dir = 1, say = pet.querySelector('.pet-say');
-    function walk() {
-      var max = innerWidth - 160;
-      var target = 80 + Math.random() * (max - 80);
-      dir = target > x ? 1 : -1; pet.classList.toggle('left', dir < 0); pet.classList.add('walking');
-      var dist = Math.abs(target - x); x = target;
-      pet.style.transitionDuration = (dist / 40).toFixed(1) + 's';
+    var w = small ? 36 : 52, x = small ? 12 : 120, say = pet.querySelector('.pet-say');
+    function place() {
+      x = Math.max(8, Math.min(x, innerWidth - w - 8));
       pet.style.transform = 'translateX(' + x.toFixed(0) + 'px)';
-      clearTimeout(petTimer);
-      petTimer = setTimeout(function () { pet && pet.classList.remove('walking'); petTimer = setTimeout(walk, 3000 + Math.random() * 6000); }, dist / 40 * 1000);
+      pet.classList.toggle('say-left', x > innerWidth / 2);   // keep the speech bubble on screen
     }
-    pet.style.transform = 'translateX(' + x + 'px)';
-    petTimer = setTimeout(walk, 2500);
+    function talk(text, ms) {
+      say.textContent = text; say.hidden = false;
+      clearTimeout(say._t); say._t = setTimeout(function () { say.hidden = true; }, ms || 3200);
+    }
+    function walk() {
+      if (!pet) return;
+      var min = small ? 8 : 60, max = innerWidth - w - (small ? 8 : 90);
+      var target = min + Math.random() * Math.max(0, max - min);
+      pet.classList.toggle('left', target < x); pet.classList.add('walking');
+      var dist = Math.abs(target - x), secs = dist / (small ? 30 : 40);
+      pet.style.transitionDuration = secs.toFixed(1) + 's';
+      x = target; place();
+      clearTimeout(petTimer);
+      petTimer = setTimeout(function () { pet && pet.classList.remove('walking'); petTimer = setTimeout(walk, 3000 + Math.random() * 6000); }, secs * 1000);
+    }
+    place();
+    if (!calm) petTimer = setTimeout(walk, 2500);   // with "reduce motion" on, the pet stays put
+    addEventListener('resize', place);
     pet.addEventListener('click', function () {
-      pet.classList.remove('hop'); void pet.offsetWidth; pet.classList.add('hop');
-      say.textContent = PET_LINES[Math.floor(Math.random() * PET_LINES.length)]; say.hidden = false;
-      clearTimeout(say._t); say._t = setTimeout(function () { say.hidden = true; }, 3200);
-      var n = store.get('petClicks', 0) + 1; store.set('petClicks', n);
+      if (!calm) { pet.classList.remove('hop'); void pet.offsetWidth; pet.classList.add('hop'); }
+      talk(PET_LINES[Math.floor(Math.random() * PET_LINES.length)]);
+      store.set('petClicks', store.get('petClicks', 0) + 1);
     });
+    if (!store.get('petHello', false)) {
+      store.set('petHello', true);
+      setTimeout(function () { if (pet) talk(touch ? t('Hi! I\'m the Crypt\'s pet zombie. Tap me!', 'Salut! Je suis le zombie de la Crypte. Touche-moi!')
+        : t('Hi! I\'m the Crypt\'s pet zombie. Click me!', 'Salut! Je suis le zombie de la Crypte. Clique-moi!'), 5000); }, 1200);
+    }
   }
   function removePet() { if (pet) { clearTimeout(petTimer); pet.remove(); pet = null; } }
-  setTimeout(function () { makePet(false); }, 4000);
+  setTimeout(function () { makePet(false); }, 1500);
 
   // =====================================================================
   // RUENIX COUNTDOWN — set data-opening="2026-12-01T19:00:00-05:00" on the element
