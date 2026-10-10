@@ -121,9 +121,9 @@ POSTS = [
   'tags': ['discord', 'bot', 'crypt keeper'],
   'en': {
     'title': 'Crypt Keeper posts the devlog, and gets /update-server',
-    'summary': 'Every new devlog post now shows up in the Crypt by itself, in English and French, in a new 📰┃devlog channel.',
+    'summary': 'Every new devlog post now shows up in the Crypt by itself, in English and French, in a new #devlog channel.',
     'body': """
-<p>Crypt Keeper, the Crypt's own bot, learned a new trick. It checks this site's devlog every 30 minutes, and each new post lands in <strong>📰┃devlog</strong> on the Discord server, with its title, a one-line summary in English and French, and links to both versions.</p>
+<p>Crypt Keeper, the Crypt's own bot, learned a new trick. It checks this site's devlog every 30 minutes, and each new post lands in <strong>#devlog</strong> on the Discord server, with its title, a one-line summary in English and French, and links to both versions.</p>
 <p>The channel is read-only, so the updates stay easy to follow. Talk about them in the usual channels.</p>
 <h2>/update-server</h2>
 <p>New features that need something on the server now arrive as small updates. <code>/update-server</code> lists only what's new, explains each change and waits for an Apply click. Each update runs once and touches only its own new thing, so anything changed by hand in Discord stays exactly as it is. No more running the full <code>/build-server</code> again.</p>
@@ -131,9 +131,9 @@ POSTS = [
 """},
   'fr': {
     'title': 'Crypt Keeper publie le journal et reçoit /update-server',
-    'summary': 'Chaque nouvel article du journal arrive maintenant tout seul dans la Crypte, en anglais et en français, dans un nouveau salon 📰┃devlog.',
+    'summary': 'Chaque nouvel article du journal arrive maintenant tout seul dans la Crypte, en anglais et en français, dans un nouveau salon #devlog.',
     'body': """
-<p>Crypt Keeper, le bot de la Crypte, a appris un nouveau tour. Il vérifie le journal de ce site toutes les 30&nbsp;minutes, et chaque nouvel article arrive dans <strong>📰┃devlog</strong> sur le serveur Discord, avec son titre, un résumé d'une ligne en anglais et en français, et des liens vers les deux versions.</p>
+<p>Crypt Keeper, le bot de la Crypte, a appris un nouveau tour. Il vérifie le journal de ce site toutes les 30&nbsp;minutes, et chaque nouvel article arrive dans <strong>#devlog</strong> sur le serveur Discord, avec son titre, un résumé d'une ligne en anglais et en français, et des liens vers les deux versions.</p>
 <p>Le salon est en lecture seule, pour que les mises à jour restent faciles à suivre. On en jase dans les salons habituels.</p>
 <h2>/update-server</h2>
 <p>Les nouvelles fonctions qui ont besoin de quelque chose sur le serveur arrivent maintenant sous forme de petites mises à jour. <code>/update-server</code> affiche seulement ce qui est nouveau, explique chaque changement et attend un clic sur Appliquer. Chaque mise à jour ne s'applique qu'une fois et ne touche qu'à sa propre nouveauté, alors tout ce qui a été modifié à la main dans Discord reste exactement pareil. Fini de relancer tout le <code>/build-server</code>.</p>

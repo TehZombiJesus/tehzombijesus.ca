@@ -11,8 +11,8 @@
     <guid>https://tehzombijesus.ca/devlog/crypt-keeper-devlog</guid>
     <pubDate>Fri, 09 Oct 2026 12:00:00 +0000</pubDate>
     <category>discord</category>
-    <description>Every new devlog post now shows up in the Crypt by itself, in English and French, in a new 📰┃devlog channel.
-&lt;p&gt;Crypt Keeper, the Crypt&#x27;s own bot, learned a new trick. It checks this site&#x27;s devlog every 30 minutes, and each new post lands in &lt;strong&gt;📰┃devlog&lt;/strong&gt; on the Discord server, with its title, a one-line summary in English and French, and links to both versions.&lt;/p&gt;
+    <description>Every new devlog post now shows up in the Crypt by itself, in English and French, in a new #devlog channel.
+&lt;p&gt;Crypt Keeper, the Crypt&#x27;s own bot, learned a new trick. It checks this site&#x27;s devlog every 30 minutes, and each new post lands in &lt;strong&gt;#devlog&lt;/strong&gt; on the Discord server, with its title, a one-line summary in English and French, and links to both versions.&lt;/p&gt;
 &lt;p&gt;The channel is read-only, so the updates stay easy to follow. Talk about them in the usual channels.&lt;/p&gt;
 &lt;h2&gt;/update-server&lt;/h2&gt;
 &lt;p&gt;New features that need something on the server now arrive as small updates. &lt;code&gt;/update-server&lt;/code&gt; lists only what&#x27;s new, explains each change and waits for an Apply click. Each update runs once and touches only its own new thing, so anything changed by hand in Discord stays exactly as it is. No more running the full &lt;code&gt;/build-server&lt;/code&gt; again.&lt;/p&gt;
