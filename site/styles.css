@@ -986,7 +986,3 @@ kbd { font: 600 .85em var(--mono); background: var(--raised); border: 1px solid 
 .proj-filter button:hover { color: var(--ink); border-color: var(--violet-text); }
 .proj-filter button[aria-pressed="true"] { color: #fff; background: var(--violet); border-color: var(--violet); }
 .post-list .proj { margin-right: 12px; font: 600 13px/1 var(--display); color: var(--magenta); text-transform: uppercase; letter-spacing: .06em; }
-.stavo-quote { margin: 32px 0 0; padding: 4px 0 4px 24px; border-left: 4px solid var(--magenta); max-width: 40em; }
-.stavo-quote p { margin: 0; font: 600 22px/1.4 var(--display); }
-.stavo-quote cite { display: block; margin-top: 8px; color: var(--muted); font-style: normal; font-size: 16px; }
-.stavo-quote cite::before { content: "— "; }

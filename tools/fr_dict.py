@@ -466,8 +466,6 @@ FR.update({
  'Sell ranks, kits and crate keys, delivered in game within seconds': 'Vends des grades, des kits et des clés de coffre, livrés en jeu en quelques secondes',
  'Forums': 'Forums',
  'Community forums on your own domain': 'Des forums communautaires sur ton propre domaine',
- '“I’m going crazy, I’m even building my own Tebex/Buycraft and XenForo.”': '«&nbsp;Je deviens fou, je bâtis même mon propre Tebex/Buycraft et XenForo.&nbsp;»',
- 'Ronniie, building Stavo': 'Ronniie, qui bâtit Stavo',
  'Alternative to Google Drive': 'Alternative à Google Drive',
  'Alternative to Google Photos': 'Alternative à Google Photos',
  'Alternative to Notion': 'Alternative à Notion',
