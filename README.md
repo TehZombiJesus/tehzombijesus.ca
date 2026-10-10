@@ -61,7 +61,7 @@ After any change, run `python3 tools/build.py`. It rebuilds the devlog, feeds, c
 and lists any sentence that is still missing a French translation.
 
 - **Text on a page:** edit the English page in `site/`, add the sentence and its French version to `tools/fr_dict.py`, then build.
-- **New devlog post:** every update to anything (this site, the Discord server and bot, the Minecraft server, the homelab, the setup) gets one. Add it to `tools/devlog_posts.py` in both languages with its `project`, then build. For its link preview, run `node tools/og.js`. When it reaches `main`, it's announced on Discord by itself (see below).
+- **New devlog post:** every update to anything (this site, the Discord server and bot, the Minecraft server, the homelab, the setup) gets one. Add it to `tools/devlog_posts.py` in both languages with its `project`, then build. For its link preview, run `node tools/og.js`. Once it's live, Crypt Keeper posts it in Discord by itself (see below).
 - **Build trackers:** on `setup.html` and `homelab.html`, change `data-got="no"` to `data-got="yes"` when a part is bought. On the homelab page, that part also lights up in the server drawing (matched by `data-key`).
 - **Ruenix opening day:** on `ruenix.html`, put the date in `data-opening`, for example `2026-12-01T19:00:00-05:00`. A live countdown appears.
 - **Now page:** edit `site/now.html` and the "Updated" month.
@@ -104,19 +104,10 @@ Each one stays hidden on the site until it's set up, so nothing ever looks broke
 
 ## Discord announcements
 
-`.github/workflows/discord.yml` runs on GitHub after every push to `main` (never for `dev`). It waits for the site to publish, then:
-
-- posts each **new devlog post** to Discord, in English and French, with a link (`DISCORD_DEVLOG_WEBHOOK`)
-- optionally posts the **list of changes** in that push (`DISCORD_CHANGELOG_WEBHOOK`)
-
-One-time setup:
-
-1. In Discord, open the channel's settings → Integrations → Webhooks → New Webhook. Name it, pick the channel, and Copy Webhook URL.
-2. On GitHub: this repository → Settings → Secrets and variables → Actions → New repository secret.
-   Name `DISCORD_DEVLOG_WEBHOOK`, paste the URL. (Optional: a second webhook for a changelog channel as `DISCORD_CHANGELOG_WEBHOOK`.)
-3. That's it. To post an entry again: Actions → Announce on Discord → Run workflow → type the post's slug.
-
-Treat a webhook URL like a password: anyone who has it can post in that channel. If it leaks, delete the webhook in Discord and make a new one.
+Crypt Keeper (the Discord bot, repo `TehZombiJesus/crypt-keeper`) reads this site's RSS feeds every 30 minutes and posts each
+new devlog entry in **📰┃devlog** in The Crypt, in English and French, with its project and preview image.
+Nothing to set up here: the feeds carry each post's `project` as an RSS `<category>`. In Discord, `/devlog check` posts
+anything new right away and `/devlog repost` posts one entry again.
 
 ## Privacy
 

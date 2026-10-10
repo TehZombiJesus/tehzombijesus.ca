@@ -7,8 +7,7 @@
 #   tags   a few words
 #   en/fr  title, summary (one sentence for the list, the RSS feed and Discord) and body (HTML)
 # Then run:  python3 tools/build.py
-# When a new post reaches the live site (main branch), GitHub posts it to Discord on its own
-# (.github/workflows/discord.yml, see the README).
+# Once a new post is live, Crypt Keeper posts it in #devlog on Discord by itself (it reads the RSS feeds).
 # =========================================================================
 
 POSTS = [
@@ -153,6 +152,29 @@ POSTS = [
 </ul>
 <h2>Un seul journal pour tout</h2>
 <p>À partir de maintenant, chaque mise à jour a son billet ici&nbsp;: le site web, le serveur Discord et son bot, le serveur Minecraft, le homelab et le poste de jeu. La liste du journal se filtre par projet, et chaque nouveau billet est aussi annoncé sur le serveur Discord.</p>
+"""},
+ },
+
+ {
+  'slug': 'crypt-keeper-devlog',
+  'date': '2026-10-09',
+  'project': 'discord',
+  'tags': ['discord', 'bot', 'crypt keeper'],
+  'en': {
+    'title': 'Crypt Keeper now posts the devlog',
+    'summary': 'Every new devlog post now shows up in the Crypt by itself, in English and French, in a new 📰┃devlog channel.',
+    'body': """
+<p>Crypt Keeper, the Crypt's own bot, learned a new trick. It checks this site's devlog every 30 minutes, and each new post lands in <strong>📰┃devlog</strong> on the Discord server, with its title, a one-line summary in English and French, and links to both versions.</p>
+<p>The channel is read-only, so the updates stay easy to follow. Talk about them in the usual channels.</p>
+<p>The devlog now covers everything: this website, the Discord server and Crypt Keeper, the Minecraft server, the homelab and the setup. So #devlog is the one place to see what changed.</p>
+"""},
+  'fr': {
+    'title': 'Crypt Keeper publie maintenant le journal',
+    'summary': 'Chaque nouveau billet du journal arrive maintenant tout seul dans la Crypte, en anglais et en français, dans un nouveau salon 📰┃devlog.',
+    'body': """
+<p>Crypt Keeper, le bot de la Crypte, a appris un nouveau tour. Il vérifie le journal de ce site toutes les 30&nbsp;minutes, et chaque nouveau billet arrive dans <strong>📰┃devlog</strong> sur le serveur Discord, avec son titre, un résumé d'une ligne en anglais et en français, et des liens vers les deux versions.</p>
+<p>Le salon est en lecture seule, pour que les mises à jour restent faciles à suivre. On en jase dans les salons habituels.</p>
+<p>Le journal couvre maintenant tout&nbsp;: ce site web, le serveur Discord et Crypt Keeper, le serveur Minecraft, le homelab et le poste de jeu. Le salon #devlog est donc l'endroit unique pour voir ce qui a changé.</p>
 """},
  },
 ]

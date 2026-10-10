@@ -10,6 +10,7 @@
     <link>https://tehzombijesus.ca/devlog/a-new-look</link>
     <guid>https://tehzombijesus.ca/devlog/a-new-look</guid>
     <pubDate>Fri, 09 Oct 2026 12:00:00 +0000</pubDate>
+    <category>website</category>
     <description>The whole site goes dark and neon, with art made for it, a reworked portrait, Stavo on the homelab page, and a devlog that now covers everything.
 &lt;p&gt;The site has a new look. It started with a few mockups I asked another AI to imagine, and ended up as something built and drawn properly for this site.&lt;/p&gt;
 &lt;h2&gt;What changed&lt;/h2&gt;
@@ -25,10 +26,22 @@
 &lt;p&gt;From now on, every update gets a post here: the website, the Discord server and its bot, the Minecraft server, the homelab and the setup. The devlog list can be filtered by project, and each new post is also announced in the Discord server.&lt;/p&gt;</description>
   </item>
   <item>
+    <title>Crypt Keeper now posts the devlog</title>
+    <link>https://tehzombijesus.ca/devlog/crypt-keeper-devlog</link>
+    <guid>https://tehzombijesus.ca/devlog/crypt-keeper-devlog</guid>
+    <pubDate>Fri, 09 Oct 2026 12:00:00 +0000</pubDate>
+    <category>discord</category>
+    <description>Every new devlog post now shows up in the Crypt by itself, in English and French, in a new 📰┃devlog channel.
+&lt;p&gt;Crypt Keeper, the Crypt&#x27;s own bot, learned a new trick. It checks this site&#x27;s devlog every 30 minutes, and each new post lands in &lt;strong&gt;📰┃devlog&lt;/strong&gt; on the Discord server, with its title, a one-line summary in English and French, and links to both versions.&lt;/p&gt;
+&lt;p&gt;The channel is read-only, so the updates stay easy to follow. Talk about them in the usual channels.&lt;/p&gt;
+&lt;p&gt;The devlog now covers everything: this website, the Discord server and Crypt Keeper, the Minecraft server, the homelab and the setup. So #devlog is the one place to see what changed.&lt;/p&gt;</description>
+  </item>
+  <item>
     <title>The site moved to GitHub, and learned French</title>
     <link>https://tehzombijesus.ca/devlog/moved-to-github</link>
     <guid>https://tehzombijesus.ca/devlog/moved-to-github</guid>
     <pubDate>Wed, 07 Oct 2026 12:00:00 +0000</pubDate>
+    <category>website</category>
     <description>Every change now goes live on its own, the whole site is bilingual, and there are a few secrets to find.
 &lt;p&gt;Until now, updating this site meant zipping a folder and dragging it into Cloudflare. Not anymore. The site lives on &lt;a href=&quot;https://github.com/TehZombiJesus/tehzombijesus.ca&quot;&gt;GitHub&lt;/a&gt;, and every change pushed there is live about a minute later. Every version is kept, so any mistake is one click from undone.&lt;/p&gt;
 &lt;h2&gt;En français aussi&lt;/h2&gt;
@@ -46,6 +59,7 @@
     <link>https://tehzombijesus.ca/devlog/welcome-to-the-crypt</link>
     <guid>https://tehzombijesus.ca/devlog/welcome-to-the-crypt</guid>
     <pubDate>Tue, 06 Oct 2026 12:00:00 +0000</pubDate>
+    <category>discord</category>
     <description>My Discord server is open, and it has its own custom bot: Crypt Keeper.
 &lt;p&gt;&lt;strong&gt;The Crypt&lt;/strong&gt; is my Discord server: a hangout for friends, a place to find people to play with, and a corner for homelab and tech help. It has a full French section too.&lt;/p&gt;
 &lt;h2&gt;Crypt Keeper&lt;/h2&gt;
@@ -65,6 +79,7 @@
     <link>https://tehzombijesus.ca/devlog/site-goes-live</link>
     <guid>https://tehzombijesus.ca/devlog/site-goes-live</guid>
     <pubDate>Mon, 05 Oct 2026 12:00:00 +0000</pubDate>
+    <category>website</category>
     <description>tehzombijesus.ca is up: a link hub and portfolio, hosted on Cloudflare Pages.
 &lt;p&gt;For years &quot;TehZombiJesus&quot; has been a username on a dozen platforms and nothing that tied them together. Now there&#x27;s a home base: &lt;strong&gt;tehzombijesus.ca&lt;/strong&gt;.&lt;/p&gt;
 &lt;p&gt;It started as a simple link hub and grew into four pages: the homelab, the gaming setup I&#x27;m planning, the Ruenix Minecraft network, and the usual about me. It&#x27;s plain HTML and CSS on Cloudflare Pages. No framework, no build step, nothing to update every week.&lt;/p&gt;

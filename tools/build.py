@@ -143,8 +143,9 @@ def build_feed(fr):
     <link>%s</link>
     <guid>%s</guid>
     <pubDate>%s</pubDate>
+    <category>%s</category>
     <description>%s</description>
-  </item>''' % (html.escape(c['title']), url, url, date, html.escape(c['summary'] + '\n' + c['body'].strip())))
+  </item>''' % (html.escape(c['title']), url, url, date, p.get('project', 'website'), html.escape(c['summary'] + '\n' + c['body'].strip())))
     return '''<?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0">
 <channel>
