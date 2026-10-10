@@ -6,6 +6,25 @@
   <description>Construit en public : le site, le homelab et le poste de jeu.</description>
   <language>fr-CA</language>
   <item>
+    <title>Un nouveau look, dessiné de A à Z</title>
+    <link>https://tehzombijesus.ca/fr/devlog/a-new-look</link>
+    <guid>https://tehzombijesus.ca/fr/devlog/a-new-look</guid>
+    <pubDate>Fri, 09 Oct 2026 12:00:00 +0000</pubDate>
+    <description>Tout le site passe au sombre et au néon, avec des illustrations faites pour lui, un portrait retravaillé, Stavo sur la page du homelab et un journal qui couvre maintenant tout.
+&lt;p&gt;Le site a un nouveau look. Tout est parti de quelques maquettes que j&#x27;ai demandé à une autre IA d&#x27;imaginer, et c&#x27;est devenu quelque chose de bâti et dessiné comme il faut pour ce site.&lt;/p&gt;
+&lt;h2&gt;Ce qui a changé&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Plus sombre, plus lumineux, mais calme.&lt;/strong&gt; Des cartes vitrées aux bordures violettes, une fine grille derrière tout et des effets lumineux gardés pour les grands moments. Les bandes obliques de la trousse de marque sont de retour sous chaque titre.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Un portrait retravaillé.&lt;/strong&gt; La page d&#x27;accueil s&#x27;ouvre sur mon portrait, détouré et rééclairé en violet et magenta, qui flotte devant un anneau néon.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Des illustrations faites pour le site.&lt;/strong&gt; La salle des serveurs, le poste de jeu (la vraie disposition&amp;nbsp;: un 57&amp;nbsp;po avec trois écrans de 22&amp;nbsp;po au-dessus), la fenêtre de la Crypte et la bannière du terminal sont toutes dessinées en code, aux couleurs de la marque. Aucune image de banque, rien d&#x27;emprunté.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Une page d&#x27;accueil plus serrée.&lt;/strong&gt; Trois cartes illustrées pour le homelab, le poste de jeu et Ruenix, des statistiques en bref et une liste «&amp;nbsp;activité récente&amp;nbsp;» qui se remplit toute seule à partir de ce journal.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Le prochain serveur, redessiné.&lt;/strong&gt; Des formes pleines au lieu de lignes de plan. Les pièces prévues restent sombres et s&#x27;allument à mesure qu&#x27;elles sont achetées.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Stavo, par un ami.&lt;/strong&gt; La page du homelab présente maintenant les applications de Stavo, la plateforme auto-hébergée que mon bon ami Ronniie bâtit chez NullDaily. Une bonne partie de mon lab pourrait finir par rouler dessus.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Un seul journal pour tout&lt;/h2&gt;
+&lt;p&gt;À partir de maintenant, chaque mise à jour a son billet ici&amp;nbsp;: le site web, le serveur Discord et son bot, le serveur Minecraft, le homelab et le poste de jeu. La liste du journal se filtre par projet, et chaque nouveau billet est aussi annoncé sur le serveur Discord.&lt;/p&gt;</description>
+  </item>
+  <item>
     <title>Le site a déménagé sur GitHub, et il parle français</title>
     <link>https://tehzombijesus.ca/fr/devlog/moved-to-github</link>
     <guid>https://tehzombijesus.ca/fr/devlog/moved-to-github</guid>

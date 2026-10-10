@@ -485,4 +485,10 @@ FR.update({
  'Mail': 'Courriel',
  'My own email, with private aliases': 'Mon propre courriel, avec des alias privés',
  'Visit Stavo': 'Visiter Stavo',
+ # ---------- devlog for every project ----------
+ 'Every update to the TehZombiJesus site, Discord, Minecraft server, homelab and setup.': 'Chaque mise à jour du site de TehZombiJesus, de Discord, du serveur Minecraft, du homelab et du poste de jeu.',
+ 'Drawing of the next server, part by part. Parts already bought are lit; planned parts are dim.': "Dessin du prochain serveur, pièce par pièce. Les pièces déjà achetées sont allumées; les pièces prévues sont sombres.",
+ 'What I play': 'À quoi je joue',
+ 'Drive bays in the next server': 'Baies de disques dans le prochain serveur',
+ 'Would replace Seafile': 'Remplacerait Seafile',
 })

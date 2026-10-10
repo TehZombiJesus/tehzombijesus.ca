@@ -1224,3 +1224,90 @@ footer { border-top-color: var(--glass-line); background: rgba(10, 6, 16, .6); }
 @media (max-width: 520px) { .stavo { grid-template-columns: 1fr; } }
 /* the float/tilt above was meant for the portrait only; keep the flag still inside its chip */
 .about .me img, .about .me img:hover { animation: none; transform: none; }
+
+/* =====================================================================
+   REFINEMENTS: brand stripes back, calmer glow, tighter home page
+   ===================================================================== */
+/* Glow is saved for the big moments (hero, picture cards, buttons). Everything else gets a quiet edge. */
+:root { --glow: 0 0 0 1px rgba(168, 85, 255, .1), 0 14px 34px -24px rgba(131, 0, 251, .5); }
+.panel:hover, .rx:hover, .col:hover { box-shadow: var(--glow); border-color: var(--glass-line-hot); }
+.stats b { text-shadow: none; }
+.tagline, .quote blockquote { text-shadow: none; }
+.nav ul a[aria-current="page"] { text-shadow: none; }
+.page-head h1 { text-shadow: none; }
+.svc.st:hover { box-shadow: var(--glow); }
+section > h2::after, .page-head .bar { box-shadow: none; }
+
+/* The slanted brand stripes, as a small signature: under every section title and page title… */
+section > h2::after, .page-head .bar {
+  width: 92px; height: 8px; border-radius: 0;
+  background: linear-gradient(90deg, var(--plum) 0 32%, transparent 32% 36%, var(--violet) 36% 66%, transparent 66% 70%, var(--wine) 70% 82%, transparent 82% 86%, var(--magenta) 86% 100%);
+  transform: skewX(-24deg); transform-origin: left;
+}
+/* …and as a full-width band under the home hero, like the original site's header. */
+.xhero::after {
+  height: 10px; box-shadow: none;
+  background: linear-gradient(90deg, var(--plum) 0 38%, var(--violet) 38% 77%, var(--wine) 77% 88%, var(--magenta) 88% 100%);
+}
+.xhero::before {
+  content: ""; position: absolute; right: 0; bottom: 10px; width: 260px; height: 26px; z-index: 0;
+  background: repeating-linear-gradient(115deg, transparent 0 22px, var(--plum) 22px 30px);
+  opacity: .8;
+}
+
+/* Home: one Nox panel next to the toolbox */
+.work { display: grid; grid-template-columns: 1.2fr 1fr; gap: 32px; align-items: center; }
+.work .chips { margin: 0; }
+/* Off the clock: two equal lists */
+.split.even { grid-template-columns: 1fr 1fr; }
+.split.even h3 { margin-bottom: 16px; font-size: 22px; }
+/* "Opening soon" on the Ruenix card */
+.world .badge {
+  align-self: flex-start; margin: 6px 0 2px; padding: 4px 10px; border-radius: 999px;
+  font: 600 11px/1.2 var(--mono); letter-spacing: .1em; text-transform: uppercase;
+  color: #e8a850; border: 1px dashed rgba(232, 168, 80, .6);
+}
+@media (max-width: 960px) {
+  .work, .split.even { grid-template-columns: 1fr; }
+}
+
+/* ---------- Server drawing, redrawn: solid shapes, dim when planned, lit when bought ---------- */
+.xray { background: var(--glass); border-color: var(--glass-line); }
+.xr-part.planned .body, .xr-part.planned .ring, .xr-part .spare {
+  fill: #150c1f; stroke: rgba(168, 85, 255, .32); stroke-width: 1.5; stroke-dasharray: none; animation: none;
+}
+.xr-part .spare { fill: #0f0817; stroke: rgba(168, 85, 255, .14); }
+.xr-part.planned .blades { fill: rgba(168, 85, 255, .2); }
+.xr-part.planned .led { fill: #2a1d36; filter: none; }
+.xr-part.planned .lbl { fill: #8d7a9a; }
+.xr-part .hub { fill: #0e0818; }
+.xr-part .die { fill: #241433; }
+.xr-part .cage { fill: #110a1a; stroke: rgba(168, 85, 255, .18); }
+.xr-part .trim { fill: url(#xr-lit); }
+.xr-part .deco { fill: rgba(168, 85, 255, .16); pointer-events: none; }
+.xr-part[data-key="case"].planned .body { fill: #0d0714; stroke: rgba(168, 85, 255, .4); stroke-width: 2; }
+.xr-part[data-key="board"].planned .body { fill: #120a1b; }
+.xr-part .lbl.big { font-size: 15px; font-weight: 700; }
+/* bought: filled with the brand violet and edged in magenta */
+.xr-part.got .body, .xr-part.got .ring { fill: url(#xr-lit); stroke: var(--magenta); stroke-width: 1.5; }
+.xr-part[data-key="case"].got .body { fill: #120a1c; stroke: var(--violet-text); stroke-width: 2.5; }
+.xr-part[data-key="board"].got .body { fill: #1b0f29; stroke: var(--violet-text); }
+.xr-part.got .blades { fill: #c58bff; }
+.xr-part.got .lbl { fill: var(--ink); }
+.xr-part:hover .body, .xr-part:focus .body, .xr-part.active .body { stroke: var(--magenta); stroke-width: 2; filter: drop-shadow(0 0 6px rgba(251, 84, 247, .45)); }
+.xr-part:hover .lbl, .xr-part.active .lbl { fill: var(--ink); }
+.xray .scan rect { animation-duration: 7s; }
+
+/* ---------- Devlog: project badges and filter ---------- */
+.proj-filter { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 24px; }
+.proj-filter button {
+  font: 600 14px/1 var(--display); color: var(--muted); background: rgba(10, 6, 16, .5);
+  border: 1px solid var(--glass-line); border-radius: 999px; padding: 10px 16px; cursor: pointer;
+}
+.proj-filter button:hover { color: var(--ink); border-color: var(--glass-line-hot); }
+.proj-filter button[aria-pressed="true"] { color: #fff; background: var(--violet); border-color: var(--violet); }
+.post-list > li { background: var(--glass); border-color: var(--glass-line); }
+.post-list .proj {
+  display: inline-block; margin-right: 12px; padding: 3px 9px; border-radius: 999px; vertical-align: 1px;
+  font: 600 11px/1.3 var(--mono); letter-spacing: .08em; text-transform: uppercase; color: var(--magenta); border: 1px solid var(--glass-line-hot);
+}

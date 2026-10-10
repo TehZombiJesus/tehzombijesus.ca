@@ -61,7 +61,7 @@ After any change, run `python3 tools/build.py`. It rebuilds the devlog, feeds, c
 and lists any sentence that is still missing a French translation.
 
 - **Text on a page:** edit the English page in `site/`, add the sentence and its French version to `tools/fr_dict.py`, then build.
-- **New devlog post:** add it to `tools/devlog_posts.py` (both languages), then build. For its link preview, add nothing: run `node tools/og.js`.
+- **New devlog post:** every update to anything (this site, the Discord server and bot, the Minecraft server, the homelab, the setup) gets one. Add it to `tools/devlog_posts.py` in both languages with its `project`, then build. For its link preview, run `node tools/og.js`. When it reaches `main`, it's announced on Discord by itself (see below).
 - **Build trackers:** on `setup.html` and `homelab.html`, change `data-got="no"` to `data-got="yes"` when a part is bought. On the homelab page, that part also lights up in the server drawing (matched by `data-key`).
 - **Ruenix opening day:** on `ruenix.html`, put the date in `data-opening`, for example `2026-12-01T19:00:00-05:00`. A live countdown appears.
 - **Now page:** edit `site/now.html` and the "Updated" month.
@@ -101,6 +101,22 @@ Each one stays hidden on the site until it's set up, so nothing ever looks broke
    Then add `KUMA_URL` (secret, e.g. `https://status.example.com`) and `KUMA_SLUG` (text, e.g. `homelab`). Visitors only ever see names, up/down, uptime and response time: the address stays hidden.
 6. **Redeploy** so the new settings load: Deployments → latest → Retry deployment (or push any change).
 7. **Connect Spotify once:** open `https://tehzombijesus.ca/api/spotify/login?key=YOUR_ADMIN_TOKEN` and allow access.
+
+## Discord announcements
+
+`.github/workflows/discord.yml` runs on GitHub after every push to `main` (never for `dev`). It waits for the site to publish, then:
+
+- posts each **new devlog post** to Discord, in English and French, with a link (`DISCORD_DEVLOG_WEBHOOK`)
+- optionally posts the **list of changes** in that push (`DISCORD_CHANGELOG_WEBHOOK`)
+
+One-time setup:
+
+1. In Discord, open the channel's settings → Integrations → Webhooks → New Webhook. Name it, pick the channel, and Copy Webhook URL.
+2. On GitHub: this repository → Settings → Secrets and variables → Actions → New repository secret.
+   Name `DISCORD_DEVLOG_WEBHOOK`, paste the URL. (Optional: a second webhook for a changelog channel as `DISCORD_CHANGELOG_WEBHOOK`.)
+3. That's it. To post an entry again: Actions → Announce on Discord → Run workflow → type the post's slug.
+
+Treat a webhook URL like a password: anyone who has it can post in that channel. If it leaks, delete the webhook in Discord and make a new one.
 
 ## Privacy
 

@@ -679,14 +679,17 @@
   if (xray) {
     var NS = 'http://www.w3.org/2000/svg';
     var bays = xray.querySelector('.bays'), BAYS = 14, MEDIA = 7;   // EDIT: drive slots in the case, and drives planned
+    // where the bays are drawn comes from the drawing itself (data-x, data-y, data-w, data-h, data-gap, data-led)
+    var bd = function (k, d) { var v = parseFloat(bays.getAttribute('data-' + k)); return isNaN(v) ? d : v; };
+    var BX = bd('x', 36), BY = bd('y', 50), BW = bd('w', 108), BH = bd('h', 17), BG = bd('gap', 21), BL = bd('led', 134);
     for (var bi = 0; bi < BAYS; bi++) {
       var r = document.createElementNS(NS, 'rect');
-      r.setAttribute('x', 36); r.setAttribute('y', 50 + bi * 21); r.setAttribute('width', 108); r.setAttribute('height', 17); r.setAttribute('rx', 3);
+      r.setAttribute('x', BX); r.setAttribute('y', BY + bi * BG); r.setAttribute('width', BW); r.setAttribute('height', BH); r.setAttribute('rx', 3);
       r.setAttribute('class', bi < MEDIA ? 'body drive' : 'spare');
       bays.appendChild(r);
       if (bi < MEDIA) {
         var led = document.createElementNS(NS, 'circle');
-        led.setAttribute('cx', 134); led.setAttribute('cy', 58.5 + bi * 21); led.setAttribute('r', 2.6);
+        led.setAttribute('cx', BL); led.setAttribute('cy', BY + BH / 2 + bi * BG); led.setAttribute('r', 2.6);
         led.setAttribute('class', 'led act d' + (bi % 4)); bays.appendChild(led);
       }
     }

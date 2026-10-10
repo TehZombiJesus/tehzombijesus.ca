@@ -6,6 +6,25 @@
   <description>Built in public: the site, the homelab and the battlestation.</description>
   <language>en-CA</language>
   <item>
+    <title>A new look, drawn from scratch</title>
+    <link>https://tehzombijesus.ca/devlog/a-new-look</link>
+    <guid>https://tehzombijesus.ca/devlog/a-new-look</guid>
+    <pubDate>Fri, 09 Oct 2026 12:00:00 +0000</pubDate>
+    <description>The whole site goes dark and neon, with art made for it, a reworked portrait, Stavo on the homelab page, and a devlog that now covers everything.
+&lt;p&gt;The site has a new look. It started with a few mockups I asked another AI to imagine, and ended up as something built and drawn properly for this site.&lt;/p&gt;
+&lt;h2&gt;What changed&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Darker and glowier, but calm.&lt;/strong&gt; Glass cards with violet edges, a faint grid behind everything, and glow saved for the big moments. The slanted stripes from the brand kit are back as a signature under every title.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;A reworked portrait.&lt;/strong&gt; The home page opens with my portrait, cut out and relit in violet and magenta, floating in front of a neon ring.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Art made for the site.&lt;/strong&gt; The rack room, the battlestation (the real layout: a 57&quot; with three 22&quot; screens above it), the Crypt window and the terminal banner are all drawn in code, in the brand colours. No stock images, nothing borrowed.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;A tighter home page.&lt;/strong&gt; Three picture cards for the homelab, the setup and Ruenix, quick stats, and a &quot;latest activity&quot; list that fills itself from this devlog.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;The next server, redrawn.&lt;/strong&gt; Solid shapes instead of blueprint lines. Planned parts stay dim and light up as they&#x27;re bought.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Stavo, by a friend.&lt;/strong&gt; The homelab page now has the apps from Stavo, the self-hosted platform my good friend Ronniie builds at NullDaily. A lot of my lab might end up running on it.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;One devlog for everything&lt;/h2&gt;
+&lt;p&gt;From now on, every update gets a post here: the website, the Discord server and its bot, the Minecraft server, the homelab and the setup. The devlog list can be filtered by project, and each new post is also announced in the Discord server.&lt;/p&gt;</description>
+  </item>
+  <item>
     <title>The site moved to GitHub, and learned French</title>
     <link>https://tehzombijesus.ca/devlog/moved-to-github</link>
     <guid>https://tehzombijesus.ca/devlog/moved-to-github</guid>

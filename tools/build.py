@@ -36,18 +36,29 @@ def with_rss(page):
 # ------------------------------------------------------------------ devlog
 posts = sorted(POSTS, key=lambda p: p['date'], reverse=True)
 
+# What each post can be about. The devlog covers every project, and the list can be filtered by these.
+# EDIT: add a project here (key: (English, French)) and use its key in a post's 'project'.
+PROJECTS = {
+    'website':   ('Website', 'Site web'),
+    'discord':   ('Discord and bot', 'Discord et bot'),
+    'minecraft': ('Minecraft', 'Minecraft'),
+    'homelab':   ('Homelab', 'Homelab'),
+    'setup':     ('Setup', 'Poste de jeu'),
+}
+
 def index_main(fr):
     L = (lambda en, f: f if fr else en)
     items = []
     for p in posts:
         c = p['fr' if fr else 'en']
         tags = ''.join('<li>%s</li>' % html.escape(t) for t in p['tags'])
-        items.append('''      <li>
-        <time datetime="%s">%s</time>
+        proj = p.get('project', 'website')
+        items.append('''      <li data-project="%s">
+        <span class="proj">%s</span><time datetime="%s">%s</time>
         <h3><a href="devlog/%s.html">%s</a></h3>
         <p>%s</p>
         <ul class="tags-mini">%s</ul>
-      </li>''' % (p['date'], nice_date(p['date'], fr), p['slug'], html.escape(c['title']), html.escape(c['summary']), tags))
+      </li>''' % (proj, html.escape(PROJECTS.get(proj, (proj, proj))[1 if fr else 0]), p['date'], nice_date(p['date'], fr), p['slug'], html.escape(c['title']), html.escape(c['summary']), tags))
     return '''<main class="wrap">
   <header class="page-head">
     <span class="tag">%s</span>
@@ -56,12 +67,20 @@ def index_main(fr):
     <p>%s <a class="rss" href="feed.xml">RSS</a></p>
   </header>
   <section>
+    <div class="proj-filter" role="group" aria-label="%s">
+      <button type="button" data-filter="all" aria-pressed="true">%s</button>
+%s
+    </div>
     <ol class="post-list">
 %s
     </ol>
   </section>
 </main>''' % (L('Devlog', 'Journal'), L('Built in public', 'Construit en public'),
-              L('Notes as the site, the homelab and the battlestation come together. Follow along with the', 'Des notes à mesure que le site, le homelab et le poste de jeu prennent forme. Suis le tout avec le flux'),
+              L('Every update to the site, the Discord server and its bot, the Minecraft server, the homelab and the setup. New posts are also announced on Discord. Follow along with the',
+                'Chaque mise à jour du site, du serveur Discord et de son bot, du serveur Minecraft, du homelab et du poste de jeu. Les nouveaux billets sont aussi annoncés sur Discord. Suis le tout avec le flux'),
+              L('Show posts about', 'Afficher les billets sur'), L('Everything', 'Tout'),
+              '\n'.join('      <button type="button" data-filter="%s" aria-pressed="false">%s</button>' % (k, html.escape(v[1 if fr else 0]))
+                        for k, v in PROJECTS.items() if any(q.get('project', 'website') == k for q in posts)),
               '\n'.join(items))
 
 def post_main(p, i, fr):
@@ -89,7 +108,7 @@ def post_main(p, i, fr):
 
 def build_devlog():
     pages = []
-    en = make_page('devlog.html', 'Devlog | TehZombiJesus', 'Notes as the TehZombiJesus site, homelab and battlestation come together.', index_main(False))
+    en = make_page('devlog.html', 'Devlog | TehZombiJesus', 'Every update to the TehZombiJesus site, Discord, Minecraft server, homelab and setup.', index_main(False), scripts=['assets/devlog.js'])
     write('devlog.html', with_rss(en)); pages.append(('devlog.html', index_main(True)))
     for i, p in enumerate(posts):
         rel = 'devlog/%s.html' % p['slug']

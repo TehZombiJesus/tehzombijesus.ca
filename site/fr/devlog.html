@@ -4,13 +4,13 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Journal | TehZombiJesus</title>
-<meta name="description" content="Des notes à mesure que le site, le homelab et le poste de jeu de TehZombiJesus prennent forme.">
+<meta name="description" content="Chaque mise à jour du site de TehZombiJesus, de Discord, du serveur Minecraft, du homelab et du poste de jeu.">
 <meta name="theme-color" content="#8300fb">
 <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
 <link rel="manifest" href="../manifest.webmanifest">
 <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
 <meta property="og:title" content="Journal | TehZombiJesus">
-<meta property="og:description" content="Des notes à mesure que le site, le homelab et le poste de jeu de TehZombiJesus prennent forme.">
+<meta property="og:description" content="Chaque mise à jour du site de TehZombiJesus, de Discord, du serveur Minecraft, du homelab et du poste de jeu.">
 <meta property="og:locale" content="fr_CA">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="TehZombiJesus">
@@ -59,24 +59,35 @@
     <span class="tag">Journal</span>
     <h1>Construit en public</h1>
     <div class="bar"></div>
-    <p>Des notes à mesure que le site, le homelab et le poste de jeu prennent forme. Suis le tout avec le flux <a class="rss" href="feed.xml">RSS</a></p>
+    <p>Chaque mise à jour du site, du serveur Discord et de son bot, du serveur Minecraft, du homelab et du poste de jeu. Les nouveaux billets sont aussi annoncés sur Discord. Suis le tout avec le flux <a class="rss" href="feed.xml">RSS</a></p>
   </header>
   <section>
+    <div class="proj-filter" role="group" aria-label="Afficher les billets sur">
+      <button type="button" data-filter="all" aria-pressed="true">Tout</button>
+      <button type="button" data-filter="website" aria-pressed="false">Site web</button>
+      <button type="button" data-filter="discord" aria-pressed="false">Discord et bot</button>
+    </div>
     <ol class="post-list">
-      <li>
-        <time datetime="2026-10-07">7 octobre 2026</time>
+      <li data-project="website">
+        <span class="proj">Site web</span><time datetime="2026-10-09">9 octobre 2026</time>
+        <h3><a href="devlog/a-new-look.html">Un nouveau look, dessiné de A à Z</a></h3>
+        <p>Tout le site passe au sombre et au néon, avec des illustrations faites pour lui, un portrait retravaillé, Stavo sur la page du homelab et un journal qui couvre maintenant tout.</p>
+        <ul class="tags-mini"><li>website</li><li>design</li><li>homelab</li></ul>
+      </li>
+      <li data-project="website">
+        <span class="proj">Site web</span><time datetime="2026-10-07">7 octobre 2026</time>
         <h3><a href="devlog/moved-to-github.html">Le site a déménagé sur GitHub, et il parle français</a></h3>
         <p>Chaque changement est maintenant mis en ligne tout seul, le site entier est bilingue, et il y a quelques secrets à trouver.</p>
         <ul class="tags-mini"><li>website</li><li>github</li><li>français</li></ul>
       </li>
-      <li>
-        <time datetime="2026-10-06">6 octobre 2026</time>
+      <li data-project="discord">
+        <span class="proj">Discord et bot</span><time datetime="2026-10-06">6 octobre 2026</time>
         <h3><a href="devlog/welcome-to-the-crypt.html">Bienvenue dans la Crypte</a></h3>
         <p>Mon serveur Discord est ouvert, et il a son propre robot sur mesure : Crypt Keeper.</p>
         <ul class="tags-mini"><li>discord</li><li>bot</li></ul>
       </li>
-      <li>
-        <time datetime="2026-10-05">5 octobre 2026</time>
+      <li data-project="website">
+        <span class="proj">Site web</span><time datetime="2026-10-05">5 octobre 2026</time>
         <h3><a href="devlog/site-goes-live.html">Le site est en ligne</a></h3>
         <p>tehzombijesus.ca est en ligne : une page de liens et un portfolio, hébergés sur Cloudflare Pages.</p>
         <ul class="tags-mini"><li>website</li><li>cloudflare</li></ul>
@@ -96,5 +107,6 @@
 
 <script src="../site.js"></script>
 <script src="../extras.js"></script>
+<script src="../assets/devlog.js"></script>
 </body>
 </html>

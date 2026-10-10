@@ -96,7 +96,7 @@
     <h2>Stavo, par un ami</h2>
     <p class="lede">Stavo est un logiciel auto-hébergé créé par mon bon ami Ronniie, chez NullDaily. Il roule sur ton propre matériel, et une bonne partie de mon lab pourrait finir par rouler dessus. Voici les applications que je surveille.</p>
     <div class="stavo">
-      <a class="svc st" href="https://stavo.nulldaily.com/features/drive"><h3>Drive</h3><p>Fichiers, documents, feuilles de calcul, présentations et code</p><span class="swap">Remplacerait TrueNAS</span></a>
+      <a class="svc st" href="https://stavo.nulldaily.com/features/drive"><h3>Drive</h3><p>Fichiers, documents, feuilles de calcul, présentations et code</p><span class="swap">Remplacerait Seafile</span></a>
       <a class="svc st" href="https://stavo.nulldaily.com/features/photos"><h3>Photos</h3><p>Sauvegarde de photos avec souvenirs, carte et détection des doublons</p><span class="swap">Remplacerait Immich</span></a>
       <a class="svc st" href="https://stavo.nulldaily.com/features/notes"><h3>Notes</h3><p>Notes liées et bases de données</p></a>
       <a class="svc st" href="https://stavo.nulldaily.com/features/assistant"><h3>Assistant</h3><p>Claude ou n'importe quelle IA, sur mes propres fichiers</p></a>
@@ -205,63 +205,72 @@
 
     <!-- SERVER X-RAY: each part lights up when its line in the build plan below says data-got="yes" (matched by data-key) -->
     <figure class="xray">
-      <svg viewBox="0 0 640 520" role="img" aria-label="Dessin du prochain serveur, pièce par pièce. Les pièces déjà achetées sont pleines et allumées; les pièces prévues sont dessinées comme un plan.">
+      <svg viewBox="0 0 680 540" role="img" aria-label="Dessin du prochain serveur, pièce par pièce. Les pièces déjà achetées sont allumées; les pièces prévues sont sombres.">
         <defs>
-          <linearGradient id="xr-scan" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fb54f7" stop-opacity="0"/><stop offset=".5" stop-color="#fb54f7" stop-opacity=".22"/><stop offset="1" stop-color="#fb54f7" stop-opacity="0"/></linearGradient>
-          <clipPath id="xr-clip"><rect x="20" y="20" width="430" height="480" rx="16"/></clipPath>
+          <linearGradient id="xr-scan" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fb54f7" stop-opacity="0"/><stop offset=".5" stop-color="#fb54f7" stop-opacity=".12"/><stop offset="1" stop-color="#fb54f7" stop-opacity="0"/></linearGradient>
+          <linearGradient id="xr-lit" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#3b1a63"/><stop offset="1" stop-color="#241032"/></linearGradient>
+          <linearGradient id="xr-glass" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".07"/><stop offset=".35" stop-color="#fff" stop-opacity="0"/></linearGradient>
+          <radialGradient id="xr-floor" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#8300fb" stop-opacity=".35"/><stop offset="1" stop-color="#8300fb" stop-opacity="0"/></radialGradient>
+          <clipPath id="xr-clip"><rect x="20" y="20" width="440" height="500" rx="18"/></clipPath>
         </defs>
+        <ellipse cx="330" cy="528" rx="330" ry="14" fill="url(#xr-floor)"/>
         <g class="xr-part" data-key="case" tabindex="0">
-          <rect class="body" x="20" y="20" width="430" height="480" rx="16"/>
-          <circle class="led power" cx="420" cy="40" r="5"/>
-          <text class="lbl" x="36" y="488">Fractal Define 7</text>
-        </g>
-        <g class="xr-part" data-key="board" tabindex="0">
-          <rect class="body" x="160" y="50" width="260" height="300" rx="8"/>
-          <text class="lbl" x="172" y="70">Carte W880</text>
-        </g>
-        <g class="xr-part" data-key="cooler" tabindex="0">
-          <rect class="body" x="205" y="95" width="100" height="100" rx="10"/>
-          <g class="fan" style="transform-origin:255px 145px"><circle class="ring" cx="255" cy="145" r="40"/><path class="blades" d="M255 145 L255 109 A36 36 0 0 1 286 127 Z M255 145 L286 163 A36 36 0 0 1 255 181 Z M255 145 L224 163 A36 36 0 0 1 224 127 Z"/></g>
-        </g>
-        <g class="xr-part" data-key="cpu" tabindex="0">
-          <rect class="body chip" x="238" y="205" width="34" height="34" rx="4"/>
-          <text class="lbl" x="278" y="227">Core Ultra 7</text>
-        </g>
-        <g class="xr-part" data-key="ram" tabindex="0">
-          <rect class="body" x="330" y="90" width="12" height="110" rx="3"/><rect class="body" x="348" y="90" width="12" height="110" rx="3"/>
-          <rect class="spare" x="366" y="90" width="12" height="110" rx="3"/><rect class="spare" x="384" y="90" width="12" height="110" rx="3"/>
-          <text class="lbl" x="330" y="216">64 Go ECC</text>
-        </g>
-        <g class="xr-part" data-key="fast" tabindex="0">
-          <rect class="body" x="180" y="252" width="64" height="12" rx="3"/><rect class="body" x="180" y="270" width="64" height="12" rx="3"/>
-          <circle class="led act" cx="250" cy="258" r="3"/><circle class="led act d2" cx="250" cy="276" r="3"/>
-          <text class="lbl" x="258" y="280">NVMe ×2</text>
-        </g>
-        <g class="xr-part" data-key="hba" tabindex="0">
-          <rect class="body" x="175" y="300" width="230" height="22" rx="4"/>
-          <circle class="led act d3" cx="395" cy="311" r="3.5"/>
-          <text class="lbl" x="185" y="316">HBA 16 ports</text>
-        </g>
-        <g class="xr-part" data-key="boot" tabindex="0">
-          <rect class="body" x="175" y="372" width="90" height="16" rx="3"/><rect class="body" x="175" y="394" width="90" height="16" rx="3"/>
-          <text class="lbl" x="272" y="396">Démarrage ×2</text>
-        </g>
-        <g class="xr-part" data-key="psu" tabindex="0">
-          <rect class="body" x="250" y="420" width="190" height="66" rx="8"/>
-          <g class="fan slow" style="transform-origin:300px 453px"><circle class="ring" cx="300" cy="453" r="24"/><path class="blades" d="M300 453 L300 432 A21 21 0 0 1 318 443 Z M300 453 L318 463 A21 21 0 0 1 300 474 Z M300 453 L282 463 A21 21 0 0 1 282 443 Z"/></g>
-          <text class="lbl" x="334" y="458">1000 W</text>
+          <rect class="body" x="20" y="20" width="440" height="500" rx="18"/>
+          <rect class="trim" x="20" y="20" width="440" height="6" rx="3"/>
+          <circle class="led power" cx="432" cy="40" r="5"/>
+          <text class="lbl" x="40" y="506">Fractal Define 7</text>
         </g>
         <g class="xr-part" data-key="media" tabindex="0">
-          <g class="bays"></g>
-          <text class="lbl" x="36" y="372">Baie de disques</text>
+          <rect class="cage" x="34" y="40" width="148" height="370" rx="10"/>
+          <g class="bays" data-x="44" data-y="52" data-w="128" data-h="20" data-gap="25" data-led="162"></g>
+          <text class="lbl" x="44" y="432">Baie de disques</text>
         </g>
+        <g class="xr-part" data-key="board" tabindex="0">
+          <rect class="body" x="198" y="40" width="248" height="306" rx="10"/>
+          <g class="deco"><rect x="214" y="294" width="214" height="4" rx="2"/><rect x="214" y="338" width="214" height="4" rx="2"/><circle cx="210" cy="52" r="3"/><circle cx="434" cy="52" r="3"/><circle cx="210" cy="334" r="3"/><circle cx="434" cy="334" r="3"/></g>
+          <text class="lbl" x="212" y="64">Carte W880</text>
+        </g>
+        <g class="xr-part" data-key="cooler" tabindex="0">
+          <rect class="body" x="226" y="80" width="104" height="104" rx="14"/>
+          <g class="fan" style="transform-origin:278px 132px"><circle class="ring" cx="278" cy="132" r="42"/><path class="blades" d="M278 132 L278 94 A38 38 0 0 1 311 113 Z M278 132 L311 151 A38 38 0 0 1 278 170 Z M278 132 L245 151 A38 38 0 0 1 245 113 Z"/><circle class="hub" cx="278" cy="132" r="8"/></g>
+        </g>
+        <g class="xr-part" data-key="cpu" tabindex="0">
+          <rect class="body chip" x="262" y="192" width="32" height="32" rx="4"/>
+          <rect class="die" x="270" y="200" width="16" height="16" rx="2"/>
+          <text class="lbl" x="278" y="238" text-anchor="middle">Core Ultra 7</text>
+        </g>
+        <g class="xr-part" data-key="ram" tabindex="0">
+          <rect class="body" x="350" y="80" width="12" height="114" rx="3"/><rect class="body" x="368" y="80" width="12" height="114" rx="3"/>
+          <rect class="spare" x="386" y="80" width="12" height="114" rx="3"/><rect class="spare" x="404" y="80" width="12" height="114" rx="3"/>
+          <text class="lbl" x="416" y="212" text-anchor="end">64 Go ECC</text>
+        </g>
+        <g class="xr-part" data-key="fast" tabindex="0">
+          <rect class="body" x="214" y="250" width="74" height="12" rx="3"/><rect class="body" x="214" y="268" width="74" height="12" rx="3"/>
+          <circle class="led act" cx="296" cy="256" r="3"/><circle class="led act d2" cx="296" cy="274" r="3"/>
+          <text class="lbl" x="306" y="270">NVMe ×2</text>
+        </g>
+        <g class="xr-part" data-key="hba" tabindex="0">
+          <rect class="body" x="210" y="304" width="224" height="24" rx="4"/>
+          <circle class="led act d3" cx="422" cy="316" r="3.5"/>
+          <text class="lbl" x="222" y="320">HBA 16 ports</text>
+        </g>
+        <g class="xr-part" data-key="boot" tabindex="0">
+          <rect class="body" x="200" y="372" width="96" height="16" rx="3"/><rect class="body" x="200" y="394" width="96" height="16" rx="3"/>
+          <text class="lbl" x="304" y="396">Démarrage ×2</text>
+        </g>
+        <g class="xr-part" data-key="psu" tabindex="0">
+          <rect class="body" x="254" y="426" width="190" height="76" rx="10"/>
+          <g class="fan slow" style="transform-origin:300px 464px"><circle class="ring" cx="300" cy="464" r="27"/><path class="blades" d="M300 464 L300 440 A24 24 0 0 1 321 452 Z M300 464 L321 476 A24 24 0 0 1 300 488 Z M300 464 L279 476 A24 24 0 0 1 279 452 Z"/><circle class="hub" cx="300" cy="464" r="6"/></g>
+          <text class="lbl" x="340" y="469">1000 W</text>
+        </g>
+        <rect class="glass" x="20" y="20" width="440" height="500" rx="18" fill="url(#xr-glass)" pointer-events="none"/>
         <g class="xr-part" data-key="ups" tabindex="0">
-          <rect class="body" x="480" y="340" width="130" height="160" rx="10"/>
-          <circle class="led power" cx="545" cy="372" r="6"/>
-          <rect class="body bar" x="500" y="400" width="90" height="10" rx="5"/>
-          <text class="lbl" x="545" y="440" text-anchor="middle">Onduleur</text><text class="lbl" x="545" y="460" text-anchor="middle">1500 VA</text>
+          <rect class="body" x="494" y="318" width="160" height="200" rx="14"/>
+          <circle class="led power" cx="574" cy="352" r="6"/>
+          <rect class="body bar" x="516" y="378" width="116" height="10" rx="5"/>
+          <text class="lbl big" x="574" y="440" text-anchor="middle">Onduleur</text><text class="lbl" x="574" y="462" text-anchor="middle">1500 VA</text>
         </g>
-        <g class="scan" clip-path="url(#xr-clip)"><rect x="20" y="-90" width="430" height="90" fill="url(#xr-scan)"/></g>
+        <g class="scan" clip-path="url(#xr-clip)"><rect x="20" y="-90" width="440" height="90" fill="url(#xr-scan)"/></g>
       </svg>
       <figcaption>
         <p class="xr-count"></p>

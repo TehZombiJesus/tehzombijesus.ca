@@ -2,14 +2,19 @@
 # Newest first or any order: they are sorted by date. Each post needs:
 #   slug   short name used in the address (devlog/<slug>.html), letters, numbers and dashes
 #   date   YYYY-MM-DD
+#   project  which project it's about: website, discord, minecraft, homelab or setup (see PROJECTS in build.py)
+#            Every update gets a post, so the devlog doubles as the changelog for everything, not just this site.
 #   tags   a few words
-#   en/fr  title, summary (one sentence for the list and the RSS feed) and body (HTML)
+#   en/fr  title, summary (one sentence for the list, the RSS feed and Discord) and body (HTML)
 # Then run:  python3 tools/build.py
+# When a new post reaches the live site (main branch), GitHub posts it to Discord on its own
+# (.github/workflows/discord.yml, see the README).
 # =========================================================================
 
 POSTS = [
  {
   'slug': 'site-goes-live',
+  'project': 'website',
   'date': '2026-10-05',
   'tags': ['website', 'cloudflare'],
   'en': {
@@ -35,6 +40,7 @@ POSTS = [
  },
  {
   'slug': 'welcome-to-the-crypt',
+  'project': 'discord',
   'date': '2026-10-06',
   'tags': ['discord', 'bot'],
   'en': {
@@ -74,6 +80,7 @@ POSTS = [
  },
  {
   'slug': 'moved-to-github',
+  'project': 'website',
   'date': '2026-10-07',
   'tags': ['website', 'github', 'français'],
   'en': {
@@ -106,5 +113,46 @@ POSTS = [
   <li>La page Homelab a une carte animée de comment tout se connecte.</li>
 </ul>
 '''},
+ },
+
+ {
+  'slug': 'a-new-look',
+  'date': '2026-10-09',
+  'project': 'website',
+  'tags': ['website', 'design', 'homelab'],
+  'en': {
+    'title': 'A new look, drawn from scratch',
+    'summary': 'The whole site goes dark and neon, with art made for it, a reworked portrait, Stavo on the homelab page, and a devlog that now covers everything.',
+    'body': """
+<p>The site has a new look. It started with a few mockups I asked another AI to imagine, and ended up as something built and drawn properly for this site.</p>
+<h2>What changed</h2>
+<ul>
+  <li><strong>Darker and glowier, but calm.</strong> Glass cards with violet edges, a faint grid behind everything, and glow saved for the big moments. The slanted stripes from the brand kit are back as a signature under every title.</li>
+  <li><strong>A reworked portrait.</strong> The home page opens with my portrait, cut out and relit in violet and magenta, floating in front of a neon ring.</li>
+  <li><strong>Art made for the site.</strong> The rack room, the battlestation (the real layout: a 57" with three 22" screens above it), the Crypt window and the terminal banner are all drawn in code, in the brand colours. No stock images, nothing borrowed.</li>
+  <li><strong>A tighter home page.</strong> Three picture cards for the homelab, the setup and Ruenix, quick stats, and a "latest activity" list that fills itself from this devlog.</li>
+  <li><strong>The next server, redrawn.</strong> Solid shapes instead of blueprint lines. Planned parts stay dim and light up as they're bought.</li>
+  <li><strong>Stavo, by a friend.</strong> The homelab page now has the apps from Stavo, the self-hosted platform my good friend Ronniie builds at NullDaily. A lot of my lab might end up running on it.</li>
+</ul>
+<h2>One devlog for everything</h2>
+<p>From now on, every update gets a post here: the website, the Discord server and its bot, the Minecraft server, the homelab and the setup. The devlog list can be filtered by project, and each new post is also announced in the Discord server.</p>
+"""},
+  'fr': {
+    'title': 'Un nouveau look, dessiné de A à Z',
+    'summary': "Tout le site passe au sombre et au néon, avec des illustrations faites pour lui, un portrait retravaillé, Stavo sur la page du homelab et un journal qui couvre maintenant tout.",
+    'body': """
+<p>Le site a un nouveau look. Tout est parti de quelques maquettes que j'ai demandé à une autre IA d'imaginer, et c'est devenu quelque chose de bâti et dessiné comme il faut pour ce site.</p>
+<h2>Ce qui a changé</h2>
+<ul>
+  <li><strong>Plus sombre, plus lumineux, mais calme.</strong> Des cartes vitrées aux bordures violettes, une fine grille derrière tout et des effets lumineux gardés pour les grands moments. Les bandes obliques de la trousse de marque sont de retour sous chaque titre.</li>
+  <li><strong>Un portrait retravaillé.</strong> La page d'accueil s'ouvre sur mon portrait, détouré et rééclairé en violet et magenta, qui flotte devant un anneau néon.</li>
+  <li><strong>Des illustrations faites pour le site.</strong> La salle des serveurs, le poste de jeu (la vraie disposition&nbsp;: un 57&nbsp;po avec trois écrans de 22&nbsp;po au-dessus), la fenêtre de la Crypte et la bannière du terminal sont toutes dessinées en code, aux couleurs de la marque. Aucune image de banque, rien d'emprunté.</li>
+  <li><strong>Une page d'accueil plus serrée.</strong> Trois cartes illustrées pour le homelab, le poste de jeu et Ruenix, des statistiques en bref et une liste «&nbsp;activité récente&nbsp;» qui se remplit toute seule à partir de ce journal.</li>
+  <li><strong>Le prochain serveur, redessiné.</strong> Des formes pleines au lieu de lignes de plan. Les pièces prévues restent sombres et s'allument à mesure qu'elles sont achetées.</li>
+  <li><strong>Stavo, par un ami.</strong> La page du homelab présente maintenant les applications de Stavo, la plateforme auto-hébergée que mon bon ami Ronniie bâtit chez NullDaily. Une bonne partie de mon lab pourrait finir par rouler dessus.</li>
+</ul>
+<h2>Un seul journal pour tout</h2>
+<p>À partir de maintenant, chaque mise à jour a son billet ici&nbsp;: le site web, le serveur Discord et son bot, le serveur Minecraft, le homelab et le poste de jeu. La liste du journal se filtre par projet, et chaque nouveau billet est aussi annoncé sur le serveur Discord.</p>
+"""},
  },
 ]
