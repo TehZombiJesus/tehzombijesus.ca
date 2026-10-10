@@ -986,3 +986,10 @@ kbd { font: 600 .85em var(--mono); background: var(--raised); border: 1px solid 
 .proj-filter button:hover { color: var(--ink); border-color: var(--violet-text); }
 .proj-filter button[aria-pressed="true"] { color: #fff; background: var(--violet); border-color: var(--violet); }
 .post-list .proj { margin-right: 12px; font: 600 13px/1 var(--display); color: var(--magenta); text-transform: uppercase; letter-spacing: .06em; }
+
+/* ---------- Version and build in the footer ---------- */
+footer .ver, footer .build { font: 400 14px/1 var(--mono); color: var(--muted); }
+footer .ver:hover, footer .build:hover { color: var(--violet-text); }
+/* Devlog: which releases a post covers */
+.post-versions { margin: 10px 0 0; font: 400 14px/1.4 var(--mono); color: var(--violet-text); }
+.page-head .post-versions { font-size: 15px; margin-top: 14px; }

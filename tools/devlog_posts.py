@@ -5,6 +5,8 @@
 #   project  which project it's about: website, discord, minecraft, homelab or setup (see PROJECTS in build.py)
 #            Every update gets a post, so the devlog doubles as the changelog for everything, not just this site.
 #   tags   a few words
+#   versions  the releases this post covers, for example ['Website v1.1.0', 'Crypt Keeper v1.2.0'] (see "Versions" in the README).
+#             Shown on the post, in the RSS feed and in the Discord announcement. Every update gets a version and a post.
 #   en/fr  title, summary (one sentence for the list, the RSS feed and Discord) and body (HTML)
 # Then run:  python3 tools/build.py
 # Once a new post is live, Crypt Keeper posts it in #devlog on Discord by itself (it reads the RSS feeds).
@@ -196,6 +198,56 @@ POSTS = [
   <li><strong><code>/timestamp</code></strong> transforme quelque chose comme <code>fri 9pm</code> ou <code>2026-10-31 19:00</code> en un code à coller dans n'importe quel message. Chaque personne voit sa propre heure locale.</li>
 </ul>
 <p>Mes annonces vont les utiliser aussi, alors plus besoin de convertir à partir de l'heure de l'Est.</p>
+"""},
+ },
+
+ {
+  'slug': 'version-numbers',
+  'date': '2026-10-09',
+  'project': 'website',
+  'versions': ['Website v1.0.0', 'Crypt Keeper v1.0.0'],
+  'tags': ['website', 'bot', 'versions'],
+  'en': {
+    'title': 'Version 1.0.0 of everything',
+    'summary': 'The website and Crypt Keeper now have real version numbers and builds, starting at v1.0.0, and every update from now on gets one.',
+    'body': """
+<p>Everything I build now has a version number, starting today at <strong>v1.0.0</strong> for both this website and Crypt Keeper. The Minecraft server will get the same treatment when it's ready.</p>
+<h2>How to read a version</h2>
+<p>Versions look like <code>v1.2.0 · build b66769c</code>:</p>
+<ul>
+  <li><strong>The last number</strong> goes up for fixes and small changes.</li>
+  <li><strong>The middle number</strong> goes up for new features.</li>
+  <li><strong>The first number</strong> goes up when something big changes and you'd want to know before updating.</li>
+  <li><strong>The build</strong> is the exact change on GitHub it came from, so two copies of the same version can always be told apart.</li>
+</ul>
+<h2>Where you'll see it</h2>
+<ul>
+  <li>At the bottom of every page of this site, linking to the changelog and the exact build on GitHub.</li>
+  <li>In Crypt Keeper's <code>/bot version</code>, its update button and its startup message.</li>
+  <li>On each devlog post and its announcement in #devlog, which list the versions it covers.</li>
+  <li>As releases with notes on GitHub, and in each project's changelog.</li>
+</ul>
+"""},
+  'fr': {
+    'title': 'La version 1.0.0 de tout',
+    'summary': "Le site web et Crypt Keeper ont maintenant de vrais numéros de version et de build, à partir de la v1.0.0, et chaque mise à jour en aura un.",
+    'body': """
+<p>Tout ce que je bâtis a maintenant un numéro de version, à partir d'aujourd'hui avec la <strong>v1.0.0</strong> pour ce site web et pour Crypt Keeper. Le serveur Minecraft aura droit au même traitement quand il sera prêt.</p>
+<h2>Comment lire une version</h2>
+<p>Les versions ressemblent à <code>v1.2.0 · build b66769c</code>&nbsp;:</p>
+<ul>
+  <li><strong>Le dernier chiffre</strong> augmente pour les corrections et les petits changements.</li>
+  <li><strong>Le chiffre du milieu</strong> augmente pour les nouvelles fonctions.</li>
+  <li><strong>Le premier chiffre</strong> augmente quand quelque chose de gros change, assez pour vouloir le savoir avant de mettre à jour.</li>
+  <li><strong>Le build</strong> est le changement exact sur GitHub d'où vient la version, alors deux copies de la même version peuvent toujours être distinguées.</li>
+</ul>
+<h2>Où la voir</h2>
+<ul>
+  <li>Au bas de chaque page de ce site, avec un lien vers le journal des changements et le build exact sur GitHub.</li>
+  <li>Dans <code>/bot version</code> de Crypt Keeper, son bouton de mise à jour et son message de démarrage.</li>
+  <li>Sur chaque article du journal et son annonce dans #devlog, qui indiquent les versions couvertes.</li>
+  <li>Sous forme de versions publiées avec des notes sur GitHub, et dans le journal des changements de chaque projet.</li>
+</ul>
 """},
  },
 ]

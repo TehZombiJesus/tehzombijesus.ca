@@ -3,6 +3,20 @@
 The personal site of **TehZombiJesus**: link hub, portfolio, homelab, setup, devlog and the Ruenix network.
 Plain HTML, CSS and JavaScript, plus a few small Cloudflare functions for the live parts. Hosted on Cloudflare Pages, in English and French.
 
+## Versions
+
+The site, Crypt Keeper and (later) the Minecraft server all use the same scheme, shown as **v1.2.0 · build b66769c**:
+
+- **Version** (the `VERSION` file here) follows *major.minor.patch*:
+  - **patch** (1.2.0 → 1.2.1): fixes, wording, small tweaks
+  - **minor** (1.2.0 → 1.3.0): a new page, section or feature
+  - **major** (1.2.0 → 2.0.0): a redesign or anything that changes how the site works
+- **Build** is the GitHub commit the live site was published from (`/api/version`), so the footer always says exactly what's running.
+
+Every update: bump `VERSION`, add an entry to `CHANGELOG.md`, write a devlog post with its `versions`
+(for example `['Website v1.1.0']`), run the build, push, then tag the release on GitHub (`v1.1.0`) with the same notes.
+The footer of every page shows the version (from `VERSION`, added by the build) and the build (filled in by `assets/version.js`).
+
 ## How it deploys
 
 Every push to `main` goes live on its own, about a minute later.

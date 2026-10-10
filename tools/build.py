@@ -16,6 +16,7 @@ from devlog_posts import POSTS
 import build_fr
 
 DOMAIN = 'https://tehzombijesus.ca/'
+VERSION = open(os.path.join(HERE, '..', 'VERSION'), encoding='utf-8').read().strip()   # bumped by hand with every release (README, "Versions")
 MONTHS_EN = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
 MONTHS_FR = ['janvier', 'février', 'mars', 'avril', 'mai', 'juin', 'juillet', 'août', 'septembre', 'octobre', 'novembre', 'décembre']
 
@@ -57,8 +58,8 @@ def index_main(fr):
         <span class="proj">%s</span><time datetime="%s">%s</time>
         <h3><a href="devlog/%s.html">%s</a></h3>
         <p>%s</p>
-        <ul class="tags-mini">%s</ul>
-      </li>''' % (proj, html.escape(PROJECTS.get(proj, (proj, proj))[1 if fr else 0]), p['date'], nice_date(p['date'], fr), p['slug'], html.escape(c['title']), html.escape(c['summary']), tags))
+        <ul class="tags-mini">%s</ul>%s
+      </li>''' % (proj, html.escape(PROJECTS.get(proj, (proj, proj))[1 if fr else 0]), p['date'], nice_date(p['date'], fr), p['slug'], html.escape(c['title']), html.escape(c['summary']), tags, versions_html(p)))
     return '''<main class="wrap">
   <header class="page-head">
     <span class="tag">%s</span>
@@ -83,6 +84,10 @@ def index_main(fr):
                         for k, v in PROJECTS.items() if any(q.get('project', 'website') == k for q in posts)),
               '\n'.join(items))
 
+def versions_html(p):
+    v = p.get('versions') or []
+    return ('\n        <p class="post-versions">%s</p>' % ' · '.join(html.escape(x) for x in v)) if v else ''
+
 def post_main(p, i, fr):
     L = (lambda en, f: f if fr else en)
     c = p['fr' if fr else 'en']
@@ -97,13 +102,13 @@ def post_main(p, i, fr):
     <span class="tag">%s · <time datetime="%s">%s</time></span>
     <h1>%s</h1>
     <div class="bar"></div>
-    <p>%s</p>
+    <p>%s</p>%s
   </header>
   <article class="prose">
 %s
   </article>
   <nav class="post-nav" aria-label="%s">%s</nav>
-</main>''' % (L('Devlog', 'Journal'), p['date'], nice_date(p['date'], fr), html.escape(c['title']), html.escape(c['summary']), c['body'].strip(),
+</main>''' % (L('Devlog', 'Journal'), p['date'], nice_date(p['date'], fr), html.escape(c['title']), html.escape(c['summary']), versions_html(p).replace('\n        ', '\n    '), c['body'].strip(),
               L('More posts', 'Autres articles'), ''.join(nav))
 
 def build_devlog():
@@ -143,9 +148,11 @@ def build_feed(fr):
     <link>%s</link>
     <guid>%s</guid>
     <pubDate>%s</pubDate>
-    <category>%s</category>
+    <category>%s</category>%s
     <description>%s</description>
-  </item>''' % (html.escape(c['title']), url, url, date, p.get('project', 'website'), html.escape(c['summary'] + '\n' + c['body'].strip())))
+  </item>''' % (html.escape(c['title']), url, url, date, p.get('project', 'website'),
+                ''.join('\n    <category domain="version">%s</category>' % html.escape(v) for v in p.get('versions') or []),
+                html.escape(c['summary'] + '\n' + c['body'].strip())))
     return '''<?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0">
 <channel>
@@ -190,8 +197,8 @@ def changelog_main(fr):
     </ol>
   </section>
 </main>''' % (L('Changelog', 'Journal des changements'), L("What's new", 'Quoi de neuf'),
-              L('Every change to this site, straight from its <a href="https://github.com/TehZombiJesus/tehzombijesus.ca">GitHub history</a>. Bigger stories go in the <a href="devlog.html">devlog</a>.',
-                "Chaque changement apporté au site, tiré directement de son <a href=\"https://github.com/TehZombiJesus/tehzombijesus.ca\">historique GitHub</a>. Les messages des changements sont en anglais. Les plus grosses nouvelles vont dans le <a href=\"devlog.html\">journal</a>."),
+              L('This is <strong>v%s</strong>. Every change to this site, straight from its <a href="https://github.com/TehZombiJesus/tehzombijesus.ca">GitHub history</a>. Bigger stories go in the <a href="devlog.html">devlog</a>.' % VERSION,
+                "Version actuelle&nbsp;: <strong>v%s</strong>. Chaque changement apporté au site, tiré directement de son <a href=\"https://github.com/TehZombiJesus/tehzombijesus.ca\">historique GitHub</a>. Les messages des changements sont en anglais. Les plus grosses nouvelles vont dans le <a href=\"devlog.html\">journal</a>." % VERSION),
               '\n'.join(blocks) or '    <li>' + L('No changes yet.', 'Aucun changement pour le moment.') + '</li>')
 
 # ------------------------------------------------------------------ sitemap
@@ -219,7 +226,26 @@ def apply_og(rels):
             s = re.sub(r'(<meta (?:property="og:image"|name="twitter:image") content=")[^"]*(">)', r'\g<1>' + DOMAIN + img + r'\g<2>', s)
             open(path, 'w', encoding='utf-8').write(s)
 
+FOOTER_VER = re.compile(r'(\n\s*| · )<a class="ver"[^>]*>[^<]*</a>')
+
+def stamp_version():
+    """Put the current version in the footer of every English page (the French copies are made from them)."""
+    tag = ' · <a class="ver" href="changelog.html" title="Version and build">v%s</a>' % VERSION
+    for name in os.listdir(SITE):
+        if not name.endswith('.html'): continue
+        path = os.path.join(SITE, name)
+        s = open(path, encoding='utf-8').read()
+        if '<footer>' not in s: continue
+        s2 = FOOTER_VER.sub('', s)
+        t = tag.replace('href="changelog.html"', 'href="/changelog.html"') if name == '404.html' else tag   # the 404 page can show at any address
+        s2 = re.sub(r'(<footer>\s*<div class="wrap">\s*<span>[^<]*)(</span>)', lambda m: m.group(1) + t + m.group(2), s2, count=1)
+        if 'assets/version.js' not in s2:
+            s2 = s2.replace('<script src="extras.js"></script>', '<script src="extras.js"></script>\n<script src="assets/version.js"></script>', 1)
+        if s2 != s: open(path, 'w', encoding='utf-8').write(s2)
+
 if __name__ == '__main__':
+    stamp_version()
+    build_fr.KEEP.add('v' + VERSION)
     special = build_devlog()
     write('feed.xml', build_feed(False)); write('fr/feed.xml', build_feed(True))
     write('changelog.html', make_page('changelog.html', 'Changelog | TehZombiJesus', 'Every change to tehzombijesus.ca, from its GitHub history.', changelog_main(False)))

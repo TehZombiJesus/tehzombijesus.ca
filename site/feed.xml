@@ -47,6 +47,32 @@
 &lt;p&gt;Announcements from me will use them too, so you never have to convert from Eastern time again.&lt;/p&gt;</description>
   </item>
   <item>
+    <title>Version 1.0.0 of everything</title>
+    <link>https://tehzombijesus.ca/devlog/version-numbers</link>
+    <guid>https://tehzombijesus.ca/devlog/version-numbers</guid>
+    <pubDate>Fri, 09 Oct 2026 12:00:00 +0000</pubDate>
+    <category>website</category>
+    <category domain="version">Website v1.0.0</category>
+    <category domain="version">Crypt Keeper v1.0.0</category>
+    <description>The website and Crypt Keeper now have real version numbers and builds, starting at v1.0.0, and every update from now on gets one.
+&lt;p&gt;Everything I build now has a version number, starting today at &lt;strong&gt;v1.0.0&lt;/strong&gt; for both this website and Crypt Keeper. The Minecraft server will get the same treatment when it&#x27;s ready.&lt;/p&gt;
+&lt;h2&gt;How to read a version&lt;/h2&gt;
+&lt;p&gt;Versions look like &lt;code&gt;v1.2.0 · build b66769c&lt;/code&gt;:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;The last number&lt;/strong&gt; goes up for fixes and small changes.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;The middle number&lt;/strong&gt; goes up for new features.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;The first number&lt;/strong&gt; goes up when something big changes and you&#x27;d want to know before updating.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;The build&lt;/strong&gt; is the exact change on GitHub it came from, so two copies of the same version can always be told apart.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Where you&#x27;ll see it&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;At the bottom of every page of this site, linking to the changelog and the exact build on GitHub.&lt;/li&gt;
+  &lt;li&gt;In Crypt Keeper&#x27;s &lt;code&gt;/bot version&lt;/code&gt;, its update button and its startup message.&lt;/li&gt;
+  &lt;li&gt;On each devlog post and its announcement in #devlog, which list the versions it covers.&lt;/li&gt;
+  &lt;li&gt;As releases with notes on GitHub, and in each project&#x27;s changelog.&lt;/li&gt;
+&lt;/ul&gt;</description>
+  </item>
+  <item>
     <title>The site moved to GitHub, and learned French</title>
     <link>https://tehzombijesus.ca/devlog/moved-to-github</link>
     <guid>https://tehzombijesus.ca/devlog/moved-to-github</guid>

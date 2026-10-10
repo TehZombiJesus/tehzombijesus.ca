@@ -486,4 +486,5 @@ FR.update({
  'Statistics': 'Statistiques',
  'Dashboards with history for my machines, game servers and sites': "Des tableaux de bord avec l'historique de mes machines, serveurs de jeu et sites",
  'Alternative to Grafana': 'Alternative à Grafana',
+ 'Version and build': 'Version et build',
 })

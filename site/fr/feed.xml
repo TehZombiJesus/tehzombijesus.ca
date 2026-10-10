@@ -47,6 +47,32 @@
 &lt;p&gt;Mes annonces vont les utiliser aussi, alors plus besoin de convertir à partir de l&#x27;heure de l&#x27;Est.&lt;/p&gt;</description>
   </item>
   <item>
+    <title>La version 1.0.0 de tout</title>
+    <link>https://tehzombijesus.ca/fr/devlog/version-numbers</link>
+    <guid>https://tehzombijesus.ca/fr/devlog/version-numbers</guid>
+    <pubDate>Fri, 09 Oct 2026 12:00:00 +0000</pubDate>
+    <category>website</category>
+    <category domain="version">Website v1.0.0</category>
+    <category domain="version">Crypt Keeper v1.0.0</category>
+    <description>Le site web et Crypt Keeper ont maintenant de vrais numéros de version et de build, à partir de la v1.0.0, et chaque mise à jour en aura un.
+&lt;p&gt;Tout ce que je bâtis a maintenant un numéro de version, à partir d&#x27;aujourd&#x27;hui avec la &lt;strong&gt;v1.0.0&lt;/strong&gt; pour ce site web et pour Crypt Keeper. Le serveur Minecraft aura droit au même traitement quand il sera prêt.&lt;/p&gt;
+&lt;h2&gt;Comment lire une version&lt;/h2&gt;
+&lt;p&gt;Les versions ressemblent à &lt;code&gt;v1.2.0 · build b66769c&lt;/code&gt;&amp;nbsp;:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Le dernier chiffre&lt;/strong&gt; augmente pour les corrections et les petits changements.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Le chiffre du milieu&lt;/strong&gt; augmente pour les nouvelles fonctions.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Le premier chiffre&lt;/strong&gt; augmente quand quelque chose de gros change, assez pour vouloir le savoir avant de mettre à jour.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Le build&lt;/strong&gt; est le changement exact sur GitHub d&#x27;où vient la version, alors deux copies de la même version peuvent toujours être distinguées.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Où la voir&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;Au bas de chaque page de ce site, avec un lien vers le journal des changements et le build exact sur GitHub.&lt;/li&gt;
+  &lt;li&gt;Dans &lt;code&gt;/bot version&lt;/code&gt; de Crypt Keeper, son bouton de mise à jour et son message de démarrage.&lt;/li&gt;
+  &lt;li&gt;Sur chaque article du journal et son annonce dans #devlog, qui indiquent les versions couvertes.&lt;/li&gt;
+  &lt;li&gt;Sous forme de versions publiées avec des notes sur GitHub, et dans le journal des changements de chaque projet.&lt;/li&gt;
+&lt;/ul&gt;</description>
+  </item>
+  <item>
     <title>Le site a déménagé sur GitHub, et il parle français</title>
     <link>https://tehzombijesus.ca/fr/devlog/moved-to-github</link>
     <guid>https://tehzombijesus.ca/fr/devlog/moved-to-github</guid>
