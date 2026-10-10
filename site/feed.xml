@@ -20,6 +20,20 @@
 &lt;p&gt;The drawing of the next server is gone from the homelab page. The build plan and the reasons behind it are still there.&lt;/p&gt;</description>
   </item>
   <item>
+    <title>Every time in your own time zone</title>
+    <link>https://tehzombijesus.ca/devlog/times-in-your-time-zone</link>
+    <guid>https://tehzombijesus.ca/devlog/times-in-your-time-zone</guid>
+    <pubDate>Sat, 10 Oct 2026 12:00:00 +0000</pubDate>
+    <category>discord</category>
+    <description>Dates and times posted in the Crypt now show in each person&#x27;s own time zone, and /timestamp makes them for anyone.
+&lt;p&gt;Half the Crypt is in Quebec and the rest is all over the place, so &quot;9 PM&quot; never meant the same thing for everyone. Not anymore.&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Everything Crypt Keeper posts with a date&lt;/strong&gt; (game nights, big sales, free games, deals) now uses Discord timestamps: Discord shows the time in your own time zone, and can count down to it.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;&lt;code&gt;/timestamp&lt;/code&gt;&lt;/strong&gt; turns something like &lt;code&gt;fri 9pm&lt;/code&gt; or &lt;code&gt;2026-10-31 19:00&lt;/code&gt; into a code you can paste into any message. Everyone reading it sees their own local time.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Announcements from me will use them too, so you never have to convert from Eastern time again.&lt;/p&gt;</description>
+  </item>
+  <item>
     <title>Crypt Keeper posts the devlog, and gets /update-server</title>
     <link>https://tehzombijesus.ca/devlog/crypt-keeper-devlog</link>
     <guid>https://tehzombijesus.ca/devlog/crypt-keeper-devlog</guid>

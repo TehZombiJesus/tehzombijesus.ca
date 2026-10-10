@@ -20,6 +20,20 @@
 &lt;p&gt;Le dessin du prochain serveur n&#x27;est plus sur la page du homelab. Le plan de montage et les raisons derrière chaque choix sont toujours là.&lt;/p&gt;</description>
   </item>
   <item>
+    <title>Chaque heure dans ton propre fuseau horaire</title>
+    <link>https://tehzombijesus.ca/fr/devlog/times-in-your-time-zone</link>
+    <guid>https://tehzombijesus.ca/fr/devlog/times-in-your-time-zone</guid>
+    <pubDate>Sat, 10 Oct 2026 12:00:00 +0000</pubDate>
+    <category>discord</category>
+    <description>Les dates et heures publiées dans la Crypte s&#x27;affichent maintenant dans le fuseau horaire de chacun, et /timestamp permet à tout le monde d&#x27;en créer.
+&lt;p&gt;La moitié de la Crypte est au Québec et le reste un peu partout, alors «&amp;nbsp;21&amp;nbsp;h&amp;nbsp;» ne voulait jamais dire la même chose pour tout le monde. C&#x27;est réglé.&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Tout ce que Crypt Keeper publie avec une date&lt;/strong&gt; (soirées de jeu, grosses soldes, jeux gratuits, aubaines) utilise maintenant les horodatages de Discord&amp;nbsp;: Discord affiche l&#x27;heure dans ton propre fuseau horaire et peut même faire le décompte.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;&lt;code&gt;/timestamp&lt;/code&gt;&lt;/strong&gt; transforme quelque chose comme &lt;code&gt;fri 9pm&lt;/code&gt; ou &lt;code&gt;2026-10-31 19:00&lt;/code&gt; en un code à coller dans n&#x27;importe quel message. Chaque personne voit sa propre heure locale.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Mes annonces vont les utiliser aussi, alors plus besoin de convertir à partir de l&#x27;heure de l&#x27;Est.&lt;/p&gt;</description>
+  </item>
+  <item>
     <title>Crypt Keeper publie le journal et reçoit /update-server</title>
     <link>https://tehzombijesus.ca/fr/devlog/crypt-keeper-devlog</link>
     <guid>https://tehzombijesus.ca/fr/devlog/crypt-keeper-devlog</guid>

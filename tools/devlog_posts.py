@@ -169,4 +169,33 @@ POSTS = [
 <p>Le dessin du prochain serveur n'est plus sur la page du homelab. Le plan de montage et les raisons derrière chaque choix sont toujours là.</p>
 """},
  },
+
+ {
+  'slug': 'times-in-your-time-zone',
+  'date': '2026-10-10',
+  'project': 'discord',
+  'tags': ['discord', 'bot', 'crypt keeper'],
+  'en': {
+    'title': 'Every time in your own time zone',
+    'summary': "Dates and times posted in the Crypt now show in each person's own time zone, and /timestamp makes them for anyone.",
+    'body': """
+<p>Half the Crypt is in Quebec and the rest is all over the place, so "9 PM" never meant the same thing for everyone. Not anymore.</p>
+<ul>
+  <li><strong>Everything Crypt Keeper posts with a date</strong> (game nights, big sales, free games, deals) now uses Discord timestamps: Discord shows the time in your own time zone, and can count down to it.</li>
+  <li><strong><code>/timestamp</code></strong> turns something like <code>fri 9pm</code> or <code>2026-10-31 19:00</code> into a code you can paste into any message. Everyone reading it sees their own local time.</li>
+</ul>
+<p>Announcements from me will use them too, so you never have to convert from Eastern time again.</p>
+"""},
+  'fr': {
+    'title': 'Chaque heure dans ton propre fuseau horaire',
+    'summary': "Les dates et heures publiées dans la Crypte s'affichent maintenant dans le fuseau horaire de chacun, et /timestamp permet à tout le monde d'en créer.",
+    'body': """
+<p>La moitié de la Crypte est au Québec et le reste un peu partout, alors «&nbsp;21&nbsp;h&nbsp;» ne voulait jamais dire la même chose pour tout le monde. C'est réglé.</p>
+<ul>
+  <li><strong>Tout ce que Crypt Keeper publie avec une date</strong> (soirées de jeu, grosses soldes, jeux gratuits, aubaines) utilise maintenant les horodatages de Discord&nbsp;: Discord affiche l'heure dans ton propre fuseau horaire et peut même faire le décompte.</li>
+  <li><strong><code>/timestamp</code></strong> transforme quelque chose comme <code>fri 9pm</code> ou <code>2026-10-31 19:00</code> en un code à coller dans n'importe quel message. Chaque personne voit sa propre heure locale.</li>
+</ul>
+<p>Mes annonces vont les utiliser aussi, alors plus besoin de convertir à partir de l'heure de l'Est.</p>
+"""},
+ },
 ]
