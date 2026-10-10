@@ -12,3 +12,4 @@ The first numbered release: the site as it is today.
 - Devlog covers every project (website, Discord and bot, Minecraft, homelab, setup), with a filter, RSS feeds and link previews; Crypt Keeper posts new entries in #devlog
 - Extras: hidden terminal, 16 achievements, seasons, pet zombie, Crypt Run game, installable app with offline page
 - Versions: the version and build are shown at the bottom of every page
+- Releases: every new version is tagged and published on GitHub automatically, with these notes

@@ -14,7 +14,7 @@ The site, Crypt Keeper and (later) the Minecraft server all use the same scheme,
 - **Build** is the GitHub commit the live site was published from (`/api/version`), so the footer always says exactly what's running.
 
 Every update: bump `VERSION`, add an entry to `CHANGELOG.md`, write a devlog post with its `versions`
-(for example `['Website v1.1.0']`), run the build, push, then push a tag (`git tag v1.1.0 && git push origin v1.1.0`): `.github/workflows/release.yml` turns it into a GitHub release with the CHANGELOG notes.
+(for example `['Website v1.1.0']`), run the build, push, and push. `.github/workflows/release.yml` sees the new version, tags the commit `v1.1.0` and publishes the GitHub release with the CHANGELOG notes.
 The footer of every page shows the version (from `VERSION`, added by the build) and the build (filled in by `assets/version.js`).
 
 ## How it deploys

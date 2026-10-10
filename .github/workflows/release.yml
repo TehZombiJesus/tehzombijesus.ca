@@ -1,10 +1,13 @@
-# Turns every version tag (v1.2.0) into a GitHub release, with its notes taken from CHANGELOG.md.
-# Tag a release with:  git tag v1.2.0 && git push origin v1.2.0
+# Publishes a GitHub release whenever the version number goes up.
+# Bump the version (VERSION), add its section to CHANGELOG.md, push to main: this workflow tags the
+# commit (v1.2.0) and publishes the release with that CHANGELOG section as its notes. Nothing else to do.
 name: Release
 
 on:
   push:
-    tags: ['v*']
+    branches: [main]
+    paths: ['VERSION', 'CHANGELOG.md']
+  workflow_dispatch:
 
 permissions:
   contents: write
@@ -14,17 +17,19 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Create the release
+      - name: Tag and publish the release (if this version doesn't have one yet)
         env:
           GH_TOKEN: ${{ github.token }}
-          TAG: ${{ github.ref_name }}
         run: |
+          VERSION="$(cat VERSION)"
+          TAG="v$VERSION"
+          if gh release view "$TAG" >/dev/null 2>&1; then echo "$TAG is already released."; exit 0; fi
           # the CHANGELOG section for this version, up to the next "## v"
           awk -v tag="$TAG" '
             $0 ~ "^## " tag "( |$)" { found = 1; next }
             found && /^## v/ { exit }
             found { print }
           ' CHANGELOG.md > notes.md
-          [ -s notes.md ] || echo "See CHANGELOG.md." > notes.md
+          [ -s notes.md ] || { echo "CHANGELOG.md has no section for $TAG yet: not releasing."; exit 0; }
           printf '\nBuild `%s`\n' "${GITHUB_SHA::7}" >> notes.md
-          gh release create "$TAG" --title "$TAG · build ${GITHUB_SHA::7}" --notes-file notes.md --verify-tag
+          gh release create "$TAG" --target "$GITHUB_SHA" --title "$TAG · build ${GITHUB_SHA::7}" --notes-file notes.md
