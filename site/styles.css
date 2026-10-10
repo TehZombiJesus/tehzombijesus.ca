@@ -961,3 +961,6 @@ kbd { font: 600 .85em var(--mono); background: var(--raised); border: 1px solid 
   .lb-sum { padding: 14px 16px; }
   .lb-sum strong { font-size: 18px; }
 }
+
+/* The portrait's float and hover tilt (above) apply to every image in About me, which also moved the Canada flag. Keep the flag still. */
+.about .me img, .about .me img:hover { animation: none; transform: none; }
