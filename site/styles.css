@@ -1222,3 +1222,5 @@ footer { border-top-color: var(--glass-line); background: rgba(10, 6, 16, .6); }
 .stavo-sec .cta-row { margin-top: 28px; }
 @media (max-width: 960px) { .stavo { grid-template-columns: 1fr 1fr; } }
 @media (max-width: 520px) { .stavo { grid-template-columns: 1fr; } }
+/* the float/tilt above was meant for the portrait only; keep the flag still inside its chip */
+.about .me img, .about .me img:hover { animation: none; transform: none; }
