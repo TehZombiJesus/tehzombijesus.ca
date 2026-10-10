@@ -436,8 +436,8 @@ FR.update({
  # ---------- homelab: Stavo ----------
  "What's next": 'La suite',
  'Stavo, by a friend': 'Stavo, par un ami',
- "Stavo is self-hosted software made by my good friend Ronniie at NullDaily. It runs on your own hardware, and a lot of my lab might end up running on it. These are the apps I'm keeping an eye on.":
-   "Stavo est un logiciel auto-hébergé créé par mon bon ami Ronniie, chez NullDaily. Il roule sur ton propre matériel, et une bonne partie de mon lab pourrait finir par rouler dessus. Voici les applications que je surveille.",
+ "Stavo is self-hosted software made by my good friend Ronniie at NullDaily. It runs on your own hardware, and a lot of my lab might end up running on it. These are the parts I plan to use.":
+   "Stavo est un logiciel auto-hébergé créé par mon bon ami Ronniie, chez NullDaily. Il roule sur ton propre matériel, et une bonne partie de mon lab pourrait finir par rouler dessus. Voici les parties que je prévois utiliser.",
  'Files, docs, sheets, slides and code': 'Fichiers, documents, feuilles de calcul, présentations et code',
  'Photo backup with memories, a map and duplicate finding': 'Sauvegarde de photos avec souvenirs, carte et détection des doublons',
  'Notes': 'Notes',
@@ -482,4 +482,8 @@ FR.update({
  'Alternative to WHMCS': 'Alternative à WHMCS',
  'Alternative to Uptime Kuma': 'Alternative à Uptime Kuma',
  'Alternative to Homarr': 'Alternative à Homarr',
+ 'Minecraft and many more on my own machines, with mods, backups and auto-restart': "Minecraft et bien d'autres sur mes propres machines, avec mods, sauvegardes et redémarrage automatique",
+ 'Hosting store': 'Boutique d’hébergement',
+ 'Hosting plans paid through Stripe, with a client area on my own domain': "Des forfaits d'hébergement payés par Stripe, avec un espace client sur mon propre domaine",
+ 'A start page with live tiles for everything in the lab': 'Une page de départ avec des tuiles en direct pour tout ce qui roule dans le lab',
 })
