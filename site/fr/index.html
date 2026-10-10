@@ -19,7 +19,7 @@
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://tehzombijesus.ca/assets/social-preview.png">
-<link rel="preload" href="../assets/art/hero-portrait.webp" as="image">
+<link rel="preload" href="../assets/art/portrait.webp" as="image">
 <link rel="preload" href="../assets/fonts/chakra-petch-latin-700-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="../assets/fonts/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="alternate" hreflang="en" href="https://tehzombijesus.ca/">
@@ -45,7 +45,8 @@
   </div>
 </nav>
 <!-- ===================== HERO =====================
-     The portrait art is assets/art/hero-portrait.webp. Swap it for a sharper version any time (same name, roughly 1000 × 820). -->
+     The art is all drawn for this site: assets/art/backdrop.svg (rings and shards, made by tools/make_art.py)
+     and assets/art/portrait.webp (your portrait, cut out and relit in the brand colours). -->
 <header class="xhero">
   <div class="wrap xhero-in">
     <div class="xhero-text">
@@ -71,7 +72,8 @@
       <p class="discord-live" hidden><span class="dot" aria-hidden="true"></span><span class="dl-text"></span></p>
     </div>
     <div class="xhero-art" aria-hidden="true">
-      <img src="../assets/art/hero-portrait.webp" alt="" width="988" height="824">
+      <img class="bd" src="../assets/art/backdrop.svg" alt="" width="900" height="900">
+      <img class="pt" src="../assets/art/portrait.webp" alt="" width="960" height="960">
       <span class="scrawl s1">Bâtir<br>Apprendre<br>Améliorer</span>
     </div>
   </div>
@@ -83,7 +85,7 @@
   <section class="worlds-sec">
     <div class="worlds">
       <a class="world" href="homelab.html">
-        <div class="art"><img loading="lazy" decoding="async" src="../assets/art/lab.webp" alt="" width="598" height="286"></div>
+        <div class="art"><img loading="lazy" decoding="async" src="../assets/art/lab.svg" alt="" width="1400" height="700"></div>
         <div class="body">
           <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="5" rx="1.5"/><rect x="3" y="9.5" width="18" height="5" rx="1.5"/><rect x="3" y="16" width="18" height="5" rx="1.5"/><circle cx="7" cy="5.5" r=".9"/><circle cx="7" cy="12" r=".9"/><circle cx="7" cy="18.5" r=".9"/></svg></span>
           <h3>Homelab</h3>
@@ -93,7 +95,7 @@
         </div>
       </a>
       <a class="world" href="setup.html">
-        <div class="art"><img loading="lazy" decoding="async" src="../assets/art/battlestation.webp" alt="" width="600" height="286"></div>
+        <div class="art"><img loading="lazy" decoding="async" src="../assets/art/station.svg" alt="" width="1400" height="700"></div>
         <div class="body">
           <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 8h10a5 5 0 0 1 4.9 6l-.6 3a2.5 2.5 0 0 1-4.3 1.2L15 16H9l-2 2.2A2.5 2.5 0 0 1 2.7 17l-.6-3A5 5 0 0 1 7 8z"/><path d="M7.5 11v3M6 12.5h3"/><circle cx="16" cy="11.5" r=".8"/><circle cx="17.8" cy="13.4" r=".8"/></svg></span>
           <h3>Poste de jeu</h3>
@@ -127,7 +129,7 @@
         <li><b>0</b><span>Parties classées</span></li>
       </ul>
       <figure class="quote">
-        <img loading="lazy" decoding="async" src="../assets/art/desk.webp" alt="" width="598" height="286">
+        <img loading="lazy" decoding="async" src="../assets/art/terminal.svg" alt="" width="1400" height="600">
         <!-- EDIT: your motto -->
         <blockquote>De meilleurs systèmes. De meilleures expériences. Une communauté plus forte.</blockquote>
         <figcaption>TehZombiJesus</figcaption>
@@ -266,7 +268,7 @@
 
   <section>
     <div class="contact join">
-      <div class="join-art" aria-hidden="true"><img loading="lazy" decoding="async" src="../assets/art/crypt-room.webp" alt="" width="1090" height="454"></div>
+      <div class="join-art" aria-hidden="true"><img loading="lazy" decoding="async" src="../assets/art/crypt.svg" alt="" width="1400" height="700"></div>
       <div class="join-text">
         <p class="kicker">// Restons en contact</p>
         <h2>Me contacter</h2>

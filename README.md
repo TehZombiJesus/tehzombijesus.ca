@@ -67,6 +67,7 @@ and lists any sentence that is still missing a French translation.
 - **Now page:** edit `site/now.html` and the "Updated" month.
 - **Seasons, clock hours, terminal commands:** marked `EDIT` in `extras.js`. Preview a season with `?season=christmas`.
 - **Link preview images:** `npm install @napi-rs/canvas` once, then `node tools/og.js`.
+- **Illustrations** (`site/assets/art/*.svg`: the rack room, battlestation, Crypt window, terminal and the rings behind the portrait) are drawn in code by `tools/make_art.py`. Change a colour or a number and run `python3 tools/make_art.py`. `portrait.webp` is the avatar cut out and relit in the brand colours.
 
 ## Live features (Cloudflare functions)
 
