@@ -484,4 +484,7 @@ FR.update({
  'Hosting store': 'Boutique d’hébergement',
  'Hosting plans paid through Stripe, with a client area on my own domain': "Des forfaits d'hébergement payés par Stripe, avec un espace client sur mon propre domaine",
  'A start page with live tiles for everything in the lab': 'Une page de départ avec des tuiles en direct pour tout ce qui roule dans le lab',
+ 'Statistics': 'Statistiques',
+ 'Dashboards with history for my machines, game servers and sites': "Des tableaux de bord avec l'historique de mes machines, serveurs de jeu et sites",
+ 'Alternative to Grafana': 'Alternative à Grafana',
 })
