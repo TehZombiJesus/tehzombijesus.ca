@@ -964,3 +964,25 @@ kbd { font: 600 .85em var(--mono); background: var(--raised); border: 1px solid 
 
 /* The portrait's float and hover tilt (above) apply to every image in About me, which also moved the Canada flag. Keep the flag still. */
 .about .me img, .about .me img:hover { animation: none; transform: none; }
+
+/* ---------- Homelab: Stavo apps ---------- */
+.stavo-sec .tag { display: block; color: var(--violet-text); font: 600 18px/1 var(--display); margin-bottom: 12px; }
+.services.stavo { grid-template-columns: repeat(4, 1fr); }
+.svc.st { display: flex; flex-direction: column; gap: 6px; text-decoration: none; transition: background-color .15s ease; }
+.svc.st:hover { background: var(--raised); }
+.svc.st h3 { font-size: 22px; }
+.svc.st h3::after { content: " ↗"; font-size: .7em; color: var(--muted); }
+.svc.st .swap { margin-top: auto; padding-top: 10px; color: var(--gold); font: 600 13px/1.3 var(--mono); }
+.stavo-sec .cta-row { margin-top: 28px; }
+@media (max-width: 960px) { .services.stavo { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 640px) { .services.stavo { grid-template-columns: 1fr; } }
+
+/* ---------- Devlog: project labels and filter ---------- */
+.proj-filter { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 24px; }
+.proj-filter button {
+  font: 600 15px/1 var(--display); color: var(--muted); background: var(--raised);
+  border: 1px solid var(--line); border-radius: 4px; padding: 10px 16px; cursor: pointer;
+}
+.proj-filter button:hover { color: var(--ink); border-color: var(--violet-text); }
+.proj-filter button[aria-pressed="true"] { color: #fff; background: var(--violet); border-color: var(--violet); }
+.post-list .proj { margin-right: 12px; font: 600 13px/1 var(--display); color: var(--magenta); text-transform: uppercase; letter-spacing: .06em; }

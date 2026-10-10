@@ -55,7 +55,7 @@ and lists any sentence that is still missing a French translation.
 
 - **Text on a page:** edit the English page in `site/`, add the sentence and its French version to `tools/fr_dict.py`, then build.
 - **New devlog post:** add it to `tools/devlog_posts.py` (both languages), then build. For its link preview, add nothing: run `node tools/og.js`.
-- **Build trackers:** on `setup.html` and `homelab.html`, change `data-got="no"` to `data-got="yes"` when a part is bought. On the homelab page, that part also lights up in the server drawing (matched by `data-key`).
+- **Build trackers:** on `setup.html` and `homelab.html`, change `data-got="no"` to `data-got="yes"` when a part is bought. 
 - **Ruenix opening day:** on `ruenix.html`, put the date in `data-opening`, for example `2026-12-01T19:00:00-05:00`. A live countdown appears.
 - **Now page:** edit `site/now.html` and the "Updated" month.
 - **Seasons, clock hours, terminal commands:** marked `EDIT` in `extras.js`. Preview a season with `?season=christmas`.

@@ -413,7 +413,7 @@
     },
     games: function () { ['Minecraft — ' + t('better with friends', 'mieux entre amis'), 'GTA V — ' + t('whenever chaos is needed', 'quand ça prend du chaos'), 'Ghost Recon Wildlands — ' + t('open-world stealth', 'infiltration en monde ouvert'), 'League of Legends — ' + t('ARAM only', 'ARAM seulement')].forEach(function (g) { print('  ▸ ' + g); }); },
     setup: function () { print(t('57" Odyssey Neo G9 + three 22" above, Ryzen 7 9850X3D, RTX 5090. No RGB. Type "cd setup" for the rest.', '57 po Odyssey Neo G9 + trois 22 po au-dessus, Ryzen 7 9850X3D, RTX 5090. Aucun RGB. Tape « cd setup » pour le reste.')); },
-    homelab: function () { ['proxmox', 'truenas', 'coolify', 'immich', 'seafile', 'jellyfin*', 'uptime-kuma*'].forEach(function (s) { print('  ● ' + s + (s.indexOf('*') > -1 ? t('   (trying out)', '   (à l\'essai)') : '   ' + t('running', 'en marche')), s.indexOf('*') > -1 ? 'warn' : 'ok'); }); },
+    homelab: function () { ['proxmox', 'truenas', 'coolify', 'jellyfin*', 'uptime-kuma*'].forEach(function (s) { print('  ● ' + s + (s.indexOf('*') > -1 ? t('   (trying out)', '   (à l\'essai)') : '   ' + t('running', 'en marche')), s.indexOf('*') > -1 ? 'warn' : 'ok'); }); },
     uptime: function () { var a = ageNow(); print(t('up ' + a[0] + ' years, ' + a[1] + ' days. Load average: coffee, coffee, coffee', 'en marche depuis ' + a[0] + ' ans, ' + a[1] + ' jours. Charge moyenne : café, café, café')); },
     time: function () { var c = document.querySelector('.clock-text'); print(c ? c.textContent : new Intl.DateTimeFormat(FR ? 'fr-CA' : 'en-CA', { timeZone: TZ, hour: 'numeric', minute: '2-digit' }).format(new Date()) + t(' (Eastern time)', ' (heure de l\'Est)')); },
     date: function () { CMDS.time(); },

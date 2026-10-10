@@ -4,13 +4,13 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Devlog | TehZombiJesus</title>
-<meta name="description" content="Notes as the TehZombiJesus site, homelab and battlestation come together.">
+<meta name="description" content="Every update to the TehZombiJesus site, Discord, Minecraft server, homelab and setup.">
 <meta name="theme-color" content="#8300fb">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
 <meta property="og:title" content="Devlog | TehZombiJesus">
-<meta property="og:description" content="Notes as the TehZombiJesus site, homelab and battlestation come together.">
+<meta property="og:description" content="Every update to the TehZombiJesus site, Discord, Minecraft server, homelab and setup.">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="TehZombiJesus">
 <meta property="og:image" content="https://tehzombijesus.ca/assets/og/devlog-en.jpg">
@@ -58,24 +58,41 @@
     <span class="tag">Devlog</span>
     <h1>Built in public</h1>
     <div class="bar"></div>
-    <p>Notes as the site, the homelab and the battlestation come together. Follow along with the <a class="rss" href="feed.xml">RSS</a></p>
+    <p>Every update to the site, the Discord server and its bot, the Minecraft server, the homelab and the setup. New posts are also announced on Discord. Follow along with the <a class="rss" href="feed.xml">RSS</a></p>
   </header>
   <section>
+    <div class="proj-filter" role="group" aria-label="Show posts about">
+      <button type="button" data-filter="all" aria-pressed="true">Everything</button>
+      <button type="button" data-filter="website" aria-pressed="false">Website</button>
+      <button type="button" data-filter="discord" aria-pressed="false">Discord and bot</button>
+    </div>
     <ol class="post-list">
-      <li>
-        <time datetime="2026-10-07">October 7, 2026</time>
+      <li data-project="website">
+        <span class="proj">Website</span><time datetime="2026-10-10">October 10, 2026</time>
+        <h3><a href="devlog/stavo-and-one-devlog.html">Stavo on the homelab page, and one devlog for everything</a></h3>
+        <p>The homelab page now shows Stavo, my friend Ronniie&#x27;s self-hosted platform, and this devlog now covers every project, with a filter.</p>
+        <ul class="tags-mini"><li>website</li><li>homelab</li><li>stavo</li></ul>
+      </li>
+      <li data-project="discord">
+        <span class="proj">Discord and bot</span><time datetime="2026-10-09">October 9, 2026</time>
+        <h3><a href="devlog/crypt-keeper-devlog.html">Crypt Keeper posts the devlog, and gets /update-server</a></h3>
+        <p>Every new devlog post now shows up in the Crypt by itself, in English and French, in a new 📰┃devlog channel.</p>
+        <ul class="tags-mini"><li>discord</li><li>bot</li><li>crypt keeper</li></ul>
+      </li>
+      <li data-project="website">
+        <span class="proj">Website</span><time datetime="2026-10-07">October 7, 2026</time>
         <h3><a href="devlog/moved-to-github.html">The site moved to GitHub, and learned French</a></h3>
         <p>Every change now goes live on its own, the whole site is bilingual, and there are a few secrets to find.</p>
         <ul class="tags-mini"><li>website</li><li>github</li><li>français</li></ul>
       </li>
-      <li>
-        <time datetime="2026-10-06">October 6, 2026</time>
+      <li data-project="discord">
+        <span class="proj">Discord and bot</span><time datetime="2026-10-06">October 6, 2026</time>
         <h3><a href="devlog/welcome-to-the-crypt.html">Welcome to The Crypt</a></h3>
         <p>My Discord server is open, and it has its own custom bot: Crypt Keeper.</p>
         <ul class="tags-mini"><li>discord</li><li>bot</li></ul>
       </li>
-      <li>
-        <time datetime="2026-10-05">October 5, 2026</time>
+      <li data-project="website">
+        <span class="proj">Website</span><time datetime="2026-10-05">October 5, 2026</time>
         <h3><a href="devlog/site-goes-live.html">The site goes live</a></h3>
         <p>tehzombijesus.ca is up: a link hub and portfolio, hosted on Cloudflare Pages.</p>
         <ul class="tags-mini"><li>website</li><li>cloudflare</li></ul>
@@ -95,5 +112,6 @@
 
 <script src="site.js"></script>
 <script src="extras.js"></script>
+<script src="assets/devlog.js"></script>
 </body>
 </html>

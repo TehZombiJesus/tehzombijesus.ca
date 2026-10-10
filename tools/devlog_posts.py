@@ -2,14 +2,18 @@
 # Newest first or any order: they are sorted by date. Each post needs:
 #   slug   short name used in the address (devlog/<slug>.html), letters, numbers and dashes
 #   date   YYYY-MM-DD
+#   project  which project it's about: website, discord, minecraft, homelab or setup (see PROJECTS in build.py)
+#            Every update gets a post, so the devlog doubles as the changelog for everything, not just this site.
 #   tags   a few words
-#   en/fr  title, summary (one sentence for the list and the RSS feed) and body (HTML)
+#   en/fr  title, summary (one sentence for the list, the RSS feed and Discord) and body (HTML)
 # Then run:  python3 tools/build.py
+# Once a new post is live, Crypt Keeper posts it in #devlog on Discord by itself (it reads the RSS feeds).
 # =========================================================================
 
 POSTS = [
  {
   'slug': 'site-goes-live',
+  'project': 'website',
   'date': '2026-10-05',
   'tags': ['website', 'cloudflare'],
   'en': {
@@ -35,6 +39,7 @@ POSTS = [
  },
  {
   'slug': 'welcome-to-the-crypt',
+  'project': 'discord',
   'date': '2026-10-06',
   'tags': ['discord', 'bot'],
   'en': {
@@ -74,6 +79,7 @@ POSTS = [
  },
  {
   'slug': 'moved-to-github',
+  'project': 'website',
   'date': '2026-10-07',
   'tags': ['website', 'github', 'français'],
   'en': {
@@ -106,5 +112,61 @@ POSTS = [
   <li>La page Homelab a une carte animée de comment tout se connecte.</li>
 </ul>
 '''},
+ },
+
+ {
+  'slug': 'crypt-keeper-devlog',
+  'date': '2026-10-09',
+  'project': 'discord',
+  'tags': ['discord', 'bot', 'crypt keeper'],
+  'en': {
+    'title': 'Crypt Keeper posts the devlog, and gets /update-server',
+    'summary': 'Every new devlog post now shows up in the Crypt by itself, in English and French, in a new 📰┃devlog channel.',
+    'body': """
+<p>Crypt Keeper, the Crypt's own bot, learned a new trick. It checks this site's devlog every 30 minutes, and each new post lands in <strong>📰┃devlog</strong> on the Discord server, with its title, a one-line summary in English and French, and links to both versions.</p>
+<p>The channel is read-only, so the updates stay easy to follow. Talk about them in the usual channels.</p>
+<h2>/update-server</h2>
+<p>New features that need something on the server now arrive as small updates. <code>/update-server</code> lists only what's new, explains each change and waits for an Apply click. Each update runs once and touches only its own new thing, so anything changed by hand in Discord stays exactly as it is. No more running the full <code>/build-server</code> again.</p>
+<p>The devlog now covers everything: this website, the Discord server and Crypt Keeper, the Minecraft server, the homelab and the setup. So #devlog is the one place to see what changed.</p>
+"""},
+  'fr': {
+    'title': 'Crypt Keeper publie le journal et reçoit /update-server',
+    'summary': 'Chaque nouveau billet du journal arrive maintenant tout seul dans la Crypte, en anglais et en français, dans un nouveau salon 📰┃devlog.',
+    'body': """
+<p>Crypt Keeper, le bot de la Crypte, a appris un nouveau tour. Il vérifie le journal de ce site toutes les 30&nbsp;minutes, et chaque nouveau billet arrive dans <strong>📰┃devlog</strong> sur le serveur Discord, avec son titre, un résumé d'une ligne en anglais et en français, et des liens vers les deux versions.</p>
+<p>Le salon est en lecture seule, pour que les mises à jour restent faciles à suivre. On en jase dans les salons habituels.</p>
+<h2>/update-server</h2>
+<p>Les nouvelles fonctions qui ont besoin de quelque chose sur le serveur arrivent maintenant sous forme de petites mises à jour. <code>/update-server</code> affiche seulement ce qui est nouveau, explique chaque changement et attend un clic sur Appliquer. Chaque mise à jour ne s'applique qu'une fois et ne touche qu'à sa propre nouveauté, alors tout ce qui a été modifié à la main dans Discord reste exactement pareil. Fini de relancer tout le <code>/build-server</code>.</p>
+<p>Le journal couvre maintenant tout&nbsp;: ce site web, le serveur Discord et Crypt Keeper, le serveur Minecraft, le homelab et le poste de jeu. Le salon #devlog est donc l'endroit unique pour voir ce qui a changé.</p>
+"""},
+ },
+
+ {
+  'slug': 'stavo-and-one-devlog',
+  'date': '2026-10-10',
+  'project': 'website',
+  'tags': ['website', 'homelab', 'stavo'],
+  'en': {
+    'title': 'Stavo on the homelab page, and one devlog for everything',
+    'summary': "The homelab page now shows Stavo, my friend Ronniie's self-hosted platform, and this devlog now covers every project, with a filter.",
+    'body': """
+<h2>Stavo, by a friend</h2>
+<p>The homelab page has a new section about <a href="https://stavo.nulldaily.com">Stavo</a>, the self-hosted platform my good friend Ronniie builds at <a href="https://nulldaily.com">NullDaily</a>. It runs on your own hardware: files, photos, notes, game servers, hosting and billing, status pages, passwords, mail and more. A lot of my lab might end up running on it, so each app I'm watching has a card that links to it.</p>
+<h2>One devlog for everything</h2>
+<p>This devlog now covers every project, not just the website: the Discord server and Crypt Keeper, the Minecraft server, the homelab and the setup. Each post says which project it's about, and the buttons above the list show only one project at a time. New posts also land in #devlog on the Discord server by themselves.</p>
+<h2>Cleaned up</h2>
+<p>The drawing of the next server is gone from the homelab page. The build plan and the reasons behind it are still there.</p>
+"""},
+  'fr': {
+    'title': 'Stavo sur la page du homelab, et un seul journal pour tout',
+    'summary': "La page du homelab présente maintenant Stavo, la plateforme auto-hébergée de mon ami Ronniie, et ce journal couvre maintenant chaque projet, avec un filtre.",
+    'body': """
+<h2>Stavo, par un ami</h2>
+<p>La page du homelab a une nouvelle section sur <a href="https://stavo.nulldaily.com">Stavo</a>, la plateforme auto-hébergée que mon bon ami Ronniie bâtit chez <a href="https://nulldaily.com">NullDaily</a>. Elle roule sur ton propre matériel&nbsp;: fichiers, photos, notes, serveurs de jeu, hébergement et facturation, pages de statut, mots de passe, courriel et plus encore. Une bonne partie de mon lab pourrait finir par rouler dessus, alors chaque application que je surveille a sa carte avec un lien.</p>
+<h2>Un seul journal pour tout</h2>
+<p>Ce journal couvre maintenant chaque projet, pas juste le site web&nbsp;: le serveur Discord et Crypt Keeper, le serveur Minecraft, le homelab et le poste de jeu. Chaque billet indique de quel projet il parle, et les boutons au-dessus de la liste n'affichent qu'un projet à la fois. Les nouveaux billets arrivent aussi tout seuls dans #devlog sur le serveur Discord.</p>
+<h2>Ménage</h2>
+<p>Le dessin du prochain serveur n'est plus sur la page du homelab. Le plan de montage et les raisons derrière chaque choix sont toujours là.</p>
+"""},
  },
 ]

@@ -6,10 +6,38 @@
   <description>Construit en public : le site, le homelab et le poste de jeu.</description>
   <language>fr-CA</language>
   <item>
+    <title>Stavo sur la page du homelab, et un seul journal pour tout</title>
+    <link>https://tehzombijesus.ca/fr/devlog/stavo-and-one-devlog</link>
+    <guid>https://tehzombijesus.ca/fr/devlog/stavo-and-one-devlog</guid>
+    <pubDate>Sat, 10 Oct 2026 12:00:00 +0000</pubDate>
+    <category>website</category>
+    <description>La page du homelab présente maintenant Stavo, la plateforme auto-hébergée de mon ami Ronniie, et ce journal couvre maintenant chaque projet, avec un filtre.
+&lt;h2&gt;Stavo, par un ami&lt;/h2&gt;
+&lt;p&gt;La page du homelab a une nouvelle section sur &lt;a href=&quot;https://stavo.nulldaily.com&quot;&gt;Stavo&lt;/a&gt;, la plateforme auto-hébergée que mon bon ami Ronniie bâtit chez &lt;a href=&quot;https://nulldaily.com&quot;&gt;NullDaily&lt;/a&gt;. Elle roule sur ton propre matériel&amp;nbsp;: fichiers, photos, notes, serveurs de jeu, hébergement et facturation, pages de statut, mots de passe, courriel et plus encore. Une bonne partie de mon lab pourrait finir par rouler dessus, alors chaque application que je surveille a sa carte avec un lien.&lt;/p&gt;
+&lt;h2&gt;Un seul journal pour tout&lt;/h2&gt;
+&lt;p&gt;Ce journal couvre maintenant chaque projet, pas juste le site web&amp;nbsp;: le serveur Discord et Crypt Keeper, le serveur Minecraft, le homelab et le poste de jeu. Chaque billet indique de quel projet il parle, et les boutons au-dessus de la liste n&#x27;affichent qu&#x27;un projet à la fois. Les nouveaux billets arrivent aussi tout seuls dans #devlog sur le serveur Discord.&lt;/p&gt;
+&lt;h2&gt;Ménage&lt;/h2&gt;
+&lt;p&gt;Le dessin du prochain serveur n&#x27;est plus sur la page du homelab. Le plan de montage et les raisons derrière chaque choix sont toujours là.&lt;/p&gt;</description>
+  </item>
+  <item>
+    <title>Crypt Keeper publie le journal et reçoit /update-server</title>
+    <link>https://tehzombijesus.ca/fr/devlog/crypt-keeper-devlog</link>
+    <guid>https://tehzombijesus.ca/fr/devlog/crypt-keeper-devlog</guid>
+    <pubDate>Fri, 09 Oct 2026 12:00:00 +0000</pubDate>
+    <category>discord</category>
+    <description>Chaque nouveau billet du journal arrive maintenant tout seul dans la Crypte, en anglais et en français, dans un nouveau salon 📰┃devlog.
+&lt;p&gt;Crypt Keeper, le bot de la Crypte, a appris un nouveau tour. Il vérifie le journal de ce site toutes les 30&amp;nbsp;minutes, et chaque nouveau billet arrive dans &lt;strong&gt;📰┃devlog&lt;/strong&gt; sur le serveur Discord, avec son titre, un résumé d&#x27;une ligne en anglais et en français, et des liens vers les deux versions.&lt;/p&gt;
+&lt;p&gt;Le salon est en lecture seule, pour que les mises à jour restent faciles à suivre. On en jase dans les salons habituels.&lt;/p&gt;
+&lt;h2&gt;/update-server&lt;/h2&gt;
+&lt;p&gt;Les nouvelles fonctions qui ont besoin de quelque chose sur le serveur arrivent maintenant sous forme de petites mises à jour. &lt;code&gt;/update-server&lt;/code&gt; affiche seulement ce qui est nouveau, explique chaque changement et attend un clic sur Appliquer. Chaque mise à jour ne s&#x27;applique qu&#x27;une fois et ne touche qu&#x27;à sa propre nouveauté, alors tout ce qui a été modifié à la main dans Discord reste exactement pareil. Fini de relancer tout le &lt;code&gt;/build-server&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Le journal couvre maintenant tout&amp;nbsp;: ce site web, le serveur Discord et Crypt Keeper, le serveur Minecraft, le homelab et le poste de jeu. Le salon #devlog est donc l&#x27;endroit unique pour voir ce qui a changé.&lt;/p&gt;</description>
+  </item>
+  <item>
     <title>Le site a déménagé sur GitHub, et il parle français</title>
     <link>https://tehzombijesus.ca/fr/devlog/moved-to-github</link>
     <guid>https://tehzombijesus.ca/fr/devlog/moved-to-github</guid>
     <pubDate>Wed, 07 Oct 2026 12:00:00 +0000</pubDate>
+    <category>website</category>
     <description>Chaque changement est maintenant mis en ligne tout seul, le site entier est bilingue, et il y a quelques secrets à trouver.
 &lt;p&gt;Jusqu&#x27;à maintenant, mettre ce site à jour voulait dire compresser un dossier et le glisser dans Cloudflare. C&#x27;est fini. Le site vit sur &lt;a href=&quot;https://github.com/TehZombiJesus/tehzombijesus.ca&quot;&gt;GitHub&lt;/a&gt;, et chaque changement envoyé là-bas est en ligne environ une minute plus tard. Chaque version est gardée, alors n&#x27;importe quelle erreur s&#x27;annule en un clic.&lt;/p&gt;
 &lt;h2&gt;In English too&lt;/h2&gt;
@@ -27,6 +55,7 @@
     <link>https://tehzombijesus.ca/fr/devlog/welcome-to-the-crypt</link>
     <guid>https://tehzombijesus.ca/fr/devlog/welcome-to-the-crypt</guid>
     <pubDate>Tue, 06 Oct 2026 12:00:00 +0000</pubDate>
+    <category>discord</category>
     <description>Mon serveur Discord est ouvert, et il a son propre robot sur mesure : Crypt Keeper.
 &lt;p&gt;&lt;strong&gt;La Crypte&lt;/strong&gt;, c&#x27;est mon serveur Discord&amp;nbsp;: un lieu de rencontre entre amis, un endroit pour trouver des gens avec qui jouer, et un coin d&#x27;entraide sur le homelab et l&#x27;informatique. Il a aussi une section complète en français.&lt;/p&gt;
 &lt;h2&gt;Crypt Keeper&lt;/h2&gt;
@@ -46,6 +75,7 @@
     <link>https://tehzombijesus.ca/fr/devlog/site-goes-live</link>
     <guid>https://tehzombijesus.ca/fr/devlog/site-goes-live</guid>
     <pubDate>Mon, 05 Oct 2026 12:00:00 +0000</pubDate>
+    <category>website</category>
     <description>tehzombijesus.ca est en ligne : une page de liens et un portfolio, hébergés sur Cloudflare Pages.
 &lt;p&gt;Pendant des années, «&amp;nbsp;TehZombiJesus&amp;nbsp;» était un nom d&#x27;utilisateur sur une douzaine de plateformes, sans rien pour les relier. Maintenant, il y a un camp de base&amp;nbsp;: &lt;strong&gt;tehzombijesus.ca&lt;/strong&gt;.&lt;/p&gt;
 &lt;p&gt;Ça a commencé comme une simple page de liens, puis c&#x27;est devenu quatre pages&amp;nbsp;: le homelab, le poste de jeu que je planifie, le réseau Minecraft Ruenix et l&#x27;habituel à propos. C&#x27;est du HTML et du CSS tout simples sur Cloudflare Pages. Pas de framework, pas d&#x27;étape de compilation, rien à mettre à jour chaque semaine.&lt;/p&gt;
