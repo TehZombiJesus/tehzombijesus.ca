@@ -28,7 +28,6 @@ FR = {
  'Minecraft network, SMP and SkyPvP': 'Réseau Minecraft, SMP et SkyPvP',
  'About me': 'À propos de moi',
  'The short version.': 'La version courte.',
- 'Cartoon version of TehZombiJesus': 'Version dessin animé de TehZombiJesus',
  'years old': 'ans',
  'Eastern time': "Heure de l'Est",
  "I'm Kevin, better known online as TehZombiJesus. I'm the person who ends up running the servers: setting them up, keeping them online, and figuring out why they stopped.":

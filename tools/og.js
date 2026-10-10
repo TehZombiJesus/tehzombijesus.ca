@@ -37,7 +37,7 @@ function wrap(ctx, text, max) {
 
 (async () => {
   const A = p => loadImage(path.join(ROOT, 'site/assets', p));
-  const toon = await A('avatar-toon.webp');
+  const face = await A('avatar.webp');
   const crest = await A('ruenix-crest.webp');
   const word = await loadImage(Buffer.from(fs.readFileSync(path.join(ROOT, 'site/assets/wordmark.svg'), 'utf8')));
   for (const pg of PAGES) for (const [li, lang] of [[0, 'en'], [1, 'fr']]) {
@@ -52,7 +52,7 @@ function wrap(ctx, text, max) {
     const g = x.createLinearGradient(560, 0, 900, 0); g.addColorStop(0, C.bg); g.addColorStop(1, 'rgba(0,0,0,0)');
     x.fillStyle = g; x.fillRect(480, 0, 440, H);
     // portrait / crest
-    const img = rx ? crest : toon, S = 330, cx = 940, cy = 330;
+    const img = rx ? crest : face, S = 330, cx = 940, cy = 330;
     x.save(); x.shadowColor = 'rgba(0,0,0,.6)'; x.shadowBlur = 40;
     x.beginPath(); x.arc(cx, cy, S / 2 + 10, 0, 7); x.fillStyle = C.bg; x.fill(); x.restore();
     x.save(); x.beginPath(); x.arc(cx, cy, S / 2, 0, 7); x.clip(); x.drawImage(img, cx - S / 2, cy - S / 2, S, S); x.restore();

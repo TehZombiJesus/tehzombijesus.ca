@@ -1,8 +1,8 @@
 /* Service worker: makes the site installable and readable offline.
    Pages always come from the network first, so a new version shows up right away.
    The cache is only a fallback for when there is no connection. Live data (/api/) is never cached. */
-const CACHE = 'tzj-v1';
-const CORE = ['/', '/offline.html', '/styles.css', '/site.js', '/extras.js', '/assets/favicon.svg', '/assets/avatar.webp', '/assets/avatar-toon.webp', '/assets/wordmark.svg'];
+const CACHE = 'tzj-v2';
+const CORE = ['/', '/offline.html', '/styles.css', '/site.js', '/extras.js', '/assets/favicon.svg', '/assets/avatar.webp', '/assets/wordmark.svg'];
 
 self.addEventListener('install', e => {
   e.waitUntil(caches.open(CACHE).then(c => c.addAll(CORE)).then(() => self.skipWaiting()));

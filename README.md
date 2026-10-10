@@ -102,4 +102,4 @@ Achievements, game scores and the pet zombie setting stay in the visitor's own b
 
 ## Hidden things
 
-Press `` ` `` for the terminal (`help` lists everything). Type `crypt` anywhere. Try the Konami code. There are 17 achievements.
+Press `` ` `` for the terminal (`help` lists everything). Type `crypt` anywhere. Try the Konami code. There are 16 achievements.

@@ -77,8 +77,8 @@ def index_main(fr):
   </section>
 </main>''' % (L('Devlog', 'Journal'), L('Built in public', 'Construit en public'),
               L('Every update to the site, the Discord server and its bot, the Minecraft server, the homelab and the setup. New posts are also announced on Discord. Follow along with the',
-                'Chaque mise à jour du site, du serveur Discord et de son bot, du serveur Minecraft, du homelab et du poste de jeu. Les nouveaux billets sont aussi annoncés sur Discord. Suis le tout avec le flux'),
-              L('Show posts about', 'Afficher les billets sur'), L('Everything', 'Tout'),
+                'Chaque mise à jour du site, du serveur Discord et de son bot, du serveur Minecraft, du homelab et du poste de jeu. Les nouveaux articles sont aussi annoncés sur Discord. Suis le tout avec le flux'),
+              L('Show posts about', 'Afficher les articles sur'), L('Everything', 'Tout'),
               '\n'.join('      <button type="button" data-filter="%s" aria-pressed="false">%s</button>' % (k, html.escape(v[1 if fr else 0]))
                         for k, v in PROJECTS.items() if any(q.get('project', 'website') == k for q in posts)),
               '\n'.join(items))
@@ -90,7 +90,7 @@ def post_main(p, i, fr):
     older = posts[i + 1] if i + 1 < len(posts) else None
     nav = []
     if older: nav.append('<a class="older" href="devlog/%s.html">← %s</a>' % (older['slug'], html.escape(older['fr' if fr else 'en']['title'])))
-    nav.append('<a class="all" href="devlog.html">%s</a>' % L('All posts', 'Tous les billets'))
+    nav.append('<a class="all" href="devlog.html">%s</a>' % L('All posts', 'Tous les articles'))
     if newer: nav.append('<a class="newer" href="devlog/%s.html">%s →</a>' % (newer['slug'], html.escape(newer['fr' if fr else 'en']['title'])))
     return '''<main class="wrap">
   <header class="page-head">
@@ -104,7 +104,7 @@ def post_main(p, i, fr):
   </article>
   <nav class="post-nav" aria-label="%s">%s</nav>
 </main>''' % (L('Devlog', 'Journal'), p['date'], nice_date(p['date'], fr), html.escape(c['title']), html.escape(c['summary']), c['body'].strip(),
-              L('More posts', 'Autres billets'), ''.join(nav))
+              L('More posts', 'Autres articles'), ''.join(nav))
 
 def build_devlog():
     pages = []

@@ -6,16 +6,29 @@
   <description>Construit en public : le site, le homelab et le poste de jeu.</description>
   <language>fr-CA</language>
   <item>
+    <title>Crypt Keeper publie le journal et reçoit /update-server</title>
+    <link>https://tehzombijesus.ca/fr/devlog/crypt-keeper-devlog</link>
+    <guid>https://tehzombijesus.ca/fr/devlog/crypt-keeper-devlog</guid>
+    <pubDate>Fri, 09 Oct 2026 12:00:00 +0000</pubDate>
+    <category>discord</category>
+    <description>Chaque nouvel article du journal arrive maintenant tout seul dans la Crypte, en anglais et en français, dans un nouveau salon 📰┃devlog.
+&lt;p&gt;Crypt Keeper, le bot de la Crypte, a appris un nouveau tour. Il vérifie le journal de ce site toutes les 30&amp;nbsp;minutes, et chaque nouvel article arrive dans &lt;strong&gt;📰┃devlog&lt;/strong&gt; sur le serveur Discord, avec son titre, un résumé d&#x27;une ligne en anglais et en français, et des liens vers les deux versions.&lt;/p&gt;
+&lt;p&gt;Le salon est en lecture seule, pour que les mises à jour restent faciles à suivre. On en jase dans les salons habituels.&lt;/p&gt;
+&lt;h2&gt;/update-server&lt;/h2&gt;
+&lt;p&gt;Les nouvelles fonctions qui ont besoin de quelque chose sur le serveur arrivent maintenant sous forme de petites mises à jour. &lt;code&gt;/update-server&lt;/code&gt; affiche seulement ce qui est nouveau, explique chaque changement et attend un clic sur Appliquer. Chaque mise à jour ne s&#x27;applique qu&#x27;une fois et ne touche qu&#x27;à sa propre nouveauté, alors tout ce qui a été modifié à la main dans Discord reste exactement pareil. Fini de relancer tout le &lt;code&gt;/build-server&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Le journal couvre maintenant tout&amp;nbsp;: ce site web, le serveur Discord et Crypt Keeper, le serveur Minecraft, le homelab et le poste de jeu. Le salon #devlog est donc l&#x27;endroit unique pour voir ce qui a changé.&lt;/p&gt;</description>
+  </item>
+  <item>
     <title>Stavo sur la page du homelab, et un seul journal pour tout</title>
     <link>https://tehzombijesus.ca/fr/devlog/stavo-and-one-devlog</link>
     <guid>https://tehzombijesus.ca/fr/devlog/stavo-and-one-devlog</guid>
-    <pubDate>Sat, 10 Oct 2026 12:00:00 +0000</pubDate>
+    <pubDate>Fri, 09 Oct 2026 12:00:00 +0000</pubDate>
     <category>website</category>
     <description>La page du homelab présente maintenant Stavo, la plateforme auto-hébergée de mon ami Ronniie, et ce journal couvre maintenant chaque projet, avec un filtre.
 &lt;h2&gt;Stavo, par un ami&lt;/h2&gt;
 &lt;p&gt;La page du homelab a une nouvelle section sur &lt;a href=&quot;https://stavo.nulldaily.com&quot;&gt;Stavo&lt;/a&gt;, la plateforme auto-hébergée que mon bon ami Ronniie bâtit chez &lt;a href=&quot;https://nulldaily.com&quot;&gt;NullDaily&lt;/a&gt;. Elle roule sur ton propre matériel&amp;nbsp;: fichiers, photos, notes, serveurs de jeu, hébergement et facturation, pages de statut, mots de passe, courriel et plus encore. Une bonne partie de mon lab pourrait finir par rouler dessus, alors chaque application que je surveille a sa carte avec un lien.&lt;/p&gt;
 &lt;h2&gt;Un seul journal pour tout&lt;/h2&gt;
-&lt;p&gt;Ce journal couvre maintenant chaque projet, pas juste le site web&amp;nbsp;: le serveur Discord et Crypt Keeper, le serveur Minecraft, le homelab et le poste de jeu. Chaque billet indique de quel projet il parle, et les boutons au-dessus de la liste n&#x27;affichent qu&#x27;un projet à la fois. Les nouveaux billets arrivent aussi tout seuls dans #devlog sur le serveur Discord.&lt;/p&gt;
+&lt;p&gt;Ce journal couvre maintenant chaque projet, pas juste le site web&amp;nbsp;: le serveur Discord et Crypt Keeper, le serveur Minecraft, le homelab et le poste de jeu. Chaque article indique de quel projet il parle, et les boutons au-dessus de la liste n&#x27;affichent qu&#x27;un projet à la fois. Les nouveaux articles arrivent aussi tout seuls dans #devlog sur le serveur Discord.&lt;/p&gt;
 &lt;h2&gt;Ménage&lt;/h2&gt;
 &lt;p&gt;Le dessin du prochain serveur n&#x27;est plus sur la page du homelab. Le plan de montage et les raisons derrière chaque choix sont toujours là.&lt;/p&gt;</description>
   </item>
@@ -23,7 +36,7 @@
     <title>Chaque heure dans ton propre fuseau horaire</title>
     <link>https://tehzombijesus.ca/fr/devlog/times-in-your-time-zone</link>
     <guid>https://tehzombijesus.ca/fr/devlog/times-in-your-time-zone</guid>
-    <pubDate>Sat, 10 Oct 2026 12:00:00 +0000</pubDate>
+    <pubDate>Fri, 09 Oct 2026 12:00:00 +0000</pubDate>
     <category>discord</category>
     <description>Les dates et heures publiées dans la Crypte s&#x27;affichent maintenant dans le fuseau horaire de chacun, et /timestamp permet à tout le monde d&#x27;en créer.
 &lt;p&gt;La moitié de la Crypte est au Québec et le reste un peu partout, alors «&amp;nbsp;21&amp;nbsp;h&amp;nbsp;» ne voulait jamais dire la même chose pour tout le monde. C&#x27;est réglé.&lt;/p&gt;
@@ -32,19 +45,6 @@
   &lt;li&gt;&lt;strong&gt;&lt;code&gt;/timestamp&lt;/code&gt;&lt;/strong&gt; transforme quelque chose comme &lt;code&gt;fri 9pm&lt;/code&gt; ou &lt;code&gt;2026-10-31 19:00&lt;/code&gt; en un code à coller dans n&#x27;importe quel message. Chaque personne voit sa propre heure locale.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;Mes annonces vont les utiliser aussi, alors plus besoin de convertir à partir de l&#x27;heure de l&#x27;Est.&lt;/p&gt;</description>
-  </item>
-  <item>
-    <title>Crypt Keeper publie le journal et reçoit /update-server</title>
-    <link>https://tehzombijesus.ca/fr/devlog/crypt-keeper-devlog</link>
-    <guid>https://tehzombijesus.ca/fr/devlog/crypt-keeper-devlog</guid>
-    <pubDate>Fri, 09 Oct 2026 12:00:00 +0000</pubDate>
-    <category>discord</category>
-    <description>Chaque nouveau billet du journal arrive maintenant tout seul dans la Crypte, en anglais et en français, dans un nouveau salon 📰┃devlog.
-&lt;p&gt;Crypt Keeper, le bot de la Crypte, a appris un nouveau tour. Il vérifie le journal de ce site toutes les 30&amp;nbsp;minutes, et chaque nouveau billet arrive dans &lt;strong&gt;📰┃devlog&lt;/strong&gt; sur le serveur Discord, avec son titre, un résumé d&#x27;une ligne en anglais et en français, et des liens vers les deux versions.&lt;/p&gt;
-&lt;p&gt;Le salon est en lecture seule, pour que les mises à jour restent faciles à suivre. On en jase dans les salons habituels.&lt;/p&gt;
-&lt;h2&gt;/update-server&lt;/h2&gt;
-&lt;p&gt;Les nouvelles fonctions qui ont besoin de quelque chose sur le serveur arrivent maintenant sous forme de petites mises à jour. &lt;code&gt;/update-server&lt;/code&gt; affiche seulement ce qui est nouveau, explique chaque changement et attend un clic sur Appliquer. Chaque mise à jour ne s&#x27;applique qu&#x27;une fois et ne touche qu&#x27;à sa propre nouveauté, alors tout ce qui a été modifié à la main dans Discord reste exactement pareil. Fini de relancer tout le &lt;code&gt;/build-server&lt;/code&gt;.&lt;/p&gt;
-&lt;p&gt;Le journal couvre maintenant tout&amp;nbsp;: ce site web, le serveur Discord et Crypt Keeper, le serveur Minecraft, le homelab et le poste de jeu. Le salon #devlog est donc l&#x27;endroit unique pour voir ce qui a changé.&lt;/p&gt;</description>
   </item>
   <item>
     <title>Le site a déménagé sur GitHub, et il parle français</title>

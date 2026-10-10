@@ -131,9 +131,9 @@ POSTS = [
 """},
   'fr': {
     'title': 'Crypt Keeper publie le journal et reçoit /update-server',
-    'summary': 'Chaque nouveau billet du journal arrive maintenant tout seul dans la Crypte, en anglais et en français, dans un nouveau salon 📰┃devlog.',
+    'summary': 'Chaque nouvel article du journal arrive maintenant tout seul dans la Crypte, en anglais et en français, dans un nouveau salon 📰┃devlog.',
     'body': """
-<p>Crypt Keeper, le bot de la Crypte, a appris un nouveau tour. Il vérifie le journal de ce site toutes les 30&nbsp;minutes, et chaque nouveau billet arrive dans <strong>📰┃devlog</strong> sur le serveur Discord, avec son titre, un résumé d'une ligne en anglais et en français, et des liens vers les deux versions.</p>
+<p>Crypt Keeper, le bot de la Crypte, a appris un nouveau tour. Il vérifie le journal de ce site toutes les 30&nbsp;minutes, et chaque nouvel article arrive dans <strong>📰┃devlog</strong> sur le serveur Discord, avec son titre, un résumé d'une ligne en anglais et en français, et des liens vers les deux versions.</p>
 <p>Le salon est en lecture seule, pour que les mises à jour restent faciles à suivre. On en jase dans les salons habituels.</p>
 <h2>/update-server</h2>
 <p>Les nouvelles fonctions qui ont besoin de quelque chose sur le serveur arrivent maintenant sous forme de petites mises à jour. <code>/update-server</code> affiche seulement ce qui est nouveau, explique chaque changement et attend un clic sur Appliquer. Chaque mise à jour ne s'applique qu'une fois et ne touche qu'à sa propre nouveauté, alors tout ce qui a été modifié à la main dans Discord reste exactement pareil. Fini de relancer tout le <code>/build-server</code>.</p>
@@ -143,7 +143,7 @@ POSTS = [
 
  {
   'slug': 'stavo-and-one-devlog',
-  'date': '2026-10-10',
+  'date': '2026-10-09',
   'project': 'website',
   'tags': ['website', 'homelab', 'stavo'],
   'en': {
@@ -164,7 +164,7 @@ POSTS = [
 <h2>Stavo, par un ami</h2>
 <p>La page du homelab a une nouvelle section sur <a href="https://stavo.nulldaily.com">Stavo</a>, la plateforme auto-hébergée que mon bon ami Ronniie bâtit chez <a href="https://nulldaily.com">NullDaily</a>. Elle roule sur ton propre matériel&nbsp;: fichiers, photos, notes, serveurs de jeu, hébergement et facturation, pages de statut, mots de passe, courriel et plus encore. Une bonne partie de mon lab pourrait finir par rouler dessus, alors chaque application que je surveille a sa carte avec un lien.</p>
 <h2>Un seul journal pour tout</h2>
-<p>Ce journal couvre maintenant chaque projet, pas juste le site web&nbsp;: le serveur Discord et Crypt Keeper, le serveur Minecraft, le homelab et le poste de jeu. Chaque billet indique de quel projet il parle, et les boutons au-dessus de la liste n'affichent qu'un projet à la fois. Les nouveaux billets arrivent aussi tout seuls dans #devlog sur le serveur Discord.</p>
+<p>Ce journal couvre maintenant chaque projet, pas juste le site web&nbsp;: le serveur Discord et Crypt Keeper, le serveur Minecraft, le homelab et le poste de jeu. Chaque article indique de quel projet il parle, et les boutons au-dessus de la liste n'affichent qu'un projet à la fois. Les nouveaux articles arrivent aussi tout seuls dans #devlog sur le serveur Discord.</p>
 <h2>Ménage</h2>
 <p>Le dessin du prochain serveur n'est plus sur la page du homelab. Le plan de montage et les raisons derrière chaque choix sont toujours là.</p>
 """},
@@ -172,7 +172,7 @@ POSTS = [
 
  {
   'slug': 'times-in-your-time-zone',
-  'date': '2026-10-10',
+  'date': '2026-10-09',
   'project': 'discord',
   'tags': ['discord', 'bot', 'crypt keeper'],
   'en': {

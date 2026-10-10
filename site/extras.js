@@ -66,7 +66,6 @@
     ['terminal', '💻', 'Root access', 'Accès root', 'Open the hidden terminal.', 'Ouvrir le terminal caché.'],
     ['sudo', '🚫', 'Nice try', 'Bien essayé', 'Try sudo in the terminal.', 'Essayer sudo dans le terminal.'],
     ['bats', '🦇', 'Release the bats', 'Libérez les chauves-souris', 'Type "crypt" anywhere.', 'Taper « crypt » n\'importe où.'],
-    ['faces', '🎭', 'Two faces', 'Deux visages', 'Flip the portrait.', 'Retourner le portrait.'],
     ['email', '📋', 'Copy that', 'Bien reçu', 'Copy the email address.', 'Copier l\'adresse courriel.'],
     ['map', '🗺️', 'Network admin', 'Admin réseau', 'Inspect the homelab map.', 'Explorer la carte du homelab.'],
     ['deep', '🤿', 'Deep diver', 'Plongeur', 'Read the homelab page to the bottom.', 'Lire la page Homelab jusqu\'en bas.'],
