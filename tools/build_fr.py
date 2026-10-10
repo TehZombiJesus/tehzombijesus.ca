@@ -22,7 +22,7 @@ KEEP = {'TehZombiJesus', 'Homelab', 'Ruenix', 'GitHub', '@TehZombiJesus', 'X / T
         'Cloud Gateway Fiber', '7680 × 2160, 240 Hz', 'PC', 'MAGNUS Pro XL', 'Gigabyte X870E AORUS Master', 'Windows', 'Arctic Liquid Freezer III Pro',
         'Fractal North XL Mesh', 'Premium PC Mount', 'Logitech G502 X Lightspeed', 'Logitech G Pro X 2 Lightspeed', 'Logitech Brio 4K', 'RTX 3070 Ti',
         'Gigabyte Z790 AORUS Elite AX', 'Windows 11 Pro', 'SMP', 'SkyPvP', 'Ruenix crest', 'Fibre', 'DNS · protection', 'Forums', 'Webcam', 'Photos',
-        'Immich · photos', 'FR', 'Français', 'RSS', '@@FRMAIN@@'}
+        'Immich · photos', 'FR', 'Français', 'RSS', 'Discord', '@@FRMAIN@@'}
 
 def tr_text(t):
     core = ' '.join(t.split())

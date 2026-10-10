@@ -19,6 +19,7 @@
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://tehzombijesus.ca/assets/social-preview.png">
+<link rel="preload" href="../assets/art/hero-portrait.webp" as="image">
 <link rel="preload" href="../assets/fonts/chakra-petch-latin-700-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="../assets/fonts/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="alternate" hreflang="en" href="https://tehzombijesus.ca/">
@@ -43,23 +44,15 @@
     </ul>
   </div>
 </nav>
-<div class="band animate" aria-hidden="true">
-  <svg viewBox="0 0 1440 300" preserveAspectRatio="xMidYMid slice">
-    <polygon class="s" fill="#472f4a" points="0,0 560,0 450,300 -110,300 -200,300 -200,0"/>
-    <polygon class="s" fill="#8300fb" points="560,0 1120,0 1010,300 450,300"/>
-    <polygon class="s" fill="#74263e" points="1120,0 1280,0 1170,300 1010,300"/>
-    <polygon class="s" fill="#fb54f7" points="1280,0 1640,0 1530,300 1170,300"/>
-    <g class="shards" fill="#472f4a"><polygon points="880,54 892,54 802,300 790,300"/><polygon points="916,108 928,108 858,300 846,300"/><polygon points="952,162 964,162 913,300 901,300"/><polygon points="1000,54 1012,54 922,300 910,300"/><polygon points="1036,108 1048,108 978,300 966,300"/></g>
-  </svg>
-</div>
-
-<main class="wrap">
-
-  <header class="hero animate">
-    <img class="avatar" fetchpriority="high" src="../assets/avatar.webp" alt="Avatar de TehZombiJesus" width="320" height="320" data-flip="../assets/avatar-toon.webp" title="Clique-moi">
-    <div class="hero-text">
-      <h1 style="margin:0"><img class="wordmark" src="../assets/wordmark.svg" alt="TehZombiJesus" width="700" height="79"></h1>
-      <div class="bar"></div>
+<!-- ===================== HERO =====================
+     The portrait art is assets/art/hero-portrait.webp. Swap it for a sharper version any time (same name, roughly 1000 × 820). -->
+<header class="xhero">
+  <div class="wrap xhero-in">
+    <div class="xhero-text">
+      <p class="kicker">// Bienvenue dans la Crypte //</p>
+      <h1 style="margin:0"><img class="wordmark" fetchpriority="high" src="../assets/wordmark.svg" alt="TehZombiJesus" width="700" height="79"></h1>
+      <p class="pillars"><span>Serveurs</span><i>/</i><span>Homelab</span><i>/</i><span>Jeux</span></p>
+      <p class="tagline">Même cerveau. Des univers différents.</p>
       <!-- EDIT: your intro -->
       <p class="intro">Je fais rouler des serveurs, je gère un réseau Minecraft et j'entretiens un homelab qui est toujours à une mise à niveau d'être terminé. <span class="soft">CTO et administrateur système de métier, bricoleur par habitude, joueur occasionnel après les heures.</span></p>
       <!-- EDIT: the rotating "Right now" line. Separate each phrase with | -->
@@ -68,10 +61,85 @@
         <a class="btn" href="https://discord.gg/DRSZb9qqqh">Rejoindre la Crypte</a>
         <a class="btn ghost" href="homelab.html">Voir le homelab</a>
       </div>
+      <!-- EDIT: social icons. One <a> per account you actually use. -->
+      <div class="socials">
+        <a href="https://discord.gg/DRSZb9qqqh" aria-label="Discord" title="Discord"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M20.317 4.37a19.79 19.79 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.865-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.74 19.74 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994a.076.076 0 0 0-.041-.106 13.1 13.1 0 0 1-1.872-.892.077.077 0 0 1-.008-.128c.126-.094.252-.192.372-.291a.074.074 0 0 1 .078-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.3 12.3 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.84 19.84 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/></svg></a>
+        <a href="https://github.com/TehZombiJesus" aria-label="GitHub" title="GitHub"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.1.79-.25.79-.56v-1.97c-3.2.7-3.87-1.37-3.87-1.37-.52-1.33-1.28-1.69-1.28-1.69-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.68 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.83 1.19 3.09 0 4.41-2.69 5.38-5.26 5.67.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5z"/></svg></a>
+        <a href="https://x.com/TehZombiJesus" aria-label="X / Twitter" title="X / Twitter"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+      </div>
       <!-- Live member count from Discord. Hides itself if Discord doesn't answer. -->
       <p class="discord-live" hidden><span class="dot" aria-hidden="true"></span><span class="dl-text"></span></p>
     </div>
-  </header>
+    <div class="xhero-art" aria-hidden="true">
+      <img src="../assets/art/hero-portrait.webp" alt="" width="988" height="824">
+      <span class="scrawl s1">Bâtir<br>Apprendre<br>Améliorer</span>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <!-- ===================== THREE WORLDS ===================== -->
+  <section class="worlds-sec">
+    <div class="worlds">
+      <a class="world" href="homelab.html">
+        <div class="art"><img loading="lazy" decoding="async" src="../assets/art/lab.webp" alt="" width="598" height="286"></div>
+        <div class="body">
+          <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="5" rx="1.5"/><rect x="3" y="9.5" width="18" height="5" rx="1.5"/><rect x="3" y="16" width="18" height="5" rx="1.5"/><circle cx="7" cy="5.5" r=".9"/><circle cx="7" cy="12" r=".9"/><circle cx="7" cy="18.5" r=".9"/></svg></span>
+          <h3>Homelab</h3>
+          <p class="sub">Proxmox <i>/</i> TrueNAS <i>/</i> Auto-hébergement</p>
+          <p>Proxmox et TrueNAS à la maison, j'héberge moi-même mes photos et mes fichiers, le tout derrière Cloudflare.</p>
+          <span class="go">Visiter le homelab</span>
+        </div>
+      </a>
+      <a class="world" href="setup.html">
+        <div class="art"><img loading="lazy" decoding="async" src="../assets/art/battlestation.webp" alt="" width="600" height="286"></div>
+        <div class="body">
+          <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 8h10a5 5 0 0 1 4.9 6l-.6 3a2.5 2.5 0 0 1-4.3 1.2L15 16H9l-2 2.2A2.5 2.5 0 0 1 2.7 17l-.6-3A5 5 0 0 1 7 8z"/><path d="M7.5 11v3M6 12.5h3"/><circle cx="16" cy="11.5" r=".8"/><circle cx="17.8" cy="13.4" r=".8"/></svg></span>
+          <h3>Poste de jeu</h3>
+          <p class="sub">Ultralarge 57 po <i>/</i> Prochain montage <i>/</i> Contrôleur</p>
+          <p>Un écran super ultralarge de 57 po, trois écrans au-dessus et un PC suspendu sous un bureau assis-debout. Chaque pièce choisie pour durer.</p>
+          <span class="go">Le poste au complet</span>
+        </div>
+      </a>
+      <a class="world rx-world" href="ruenix.html">
+        <div class="art crest-art"><img loading="lazy" decoding="async" src="../assets/ruenix-crest.webp" alt="" width="200" height="200"></div>
+        <div class="body">
+          <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2.5 20 7v10l-8 4.5L4 17V7z"/><path d="M12 12 20 7M12 12 4 7M12 12v9.5"/></svg></span>
+          <h3>Ruenix MC</h3>
+          <p class="sub">SMP <i>/</i> SkyPvP <i>/</i> Communauté</p>
+          <p>Un réseau Minecraft avec des serveurs SMP et SkyPvP. Je dirige l'équipe de modération et j'anime la communauté Discord.</p>
+          <span class="go">À propos de Ruenix</span>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <!-- ===================== STATS + LATEST ACTIVITY =====================
+       EDIT: the numbers below. The activity list fills itself from the devlog feed (assets/home.js). -->
+  <section class="pulse">
+    <div class="glass stats-card">
+      <p class="kicker">En bref</p>
+      <ul class="stats">
+        <li><b>8</b><span>Services dans le lab</span></li>
+        <li><b>22</b><span>Baies de disques, prévues</span></li>
+        <li><b>57"</b><span>Écran principal</span></li>
+        <li><b>0</b><span>Parties classées</span></li>
+      </ul>
+      <figure class="quote">
+        <img loading="lazy" decoding="async" src="../assets/art/desk.webp" alt="" width="598" height="286">
+        <!-- EDIT: your motto -->
+        <blockquote>De meilleurs systèmes. De meilleures expériences. Une communauté plus forte.</blockquote>
+        <figcaption>TehZombiJesus</figcaption>
+      </figure>
+    </div>
+    <div class="glass activity-card">
+      <div class="ac-head"><p class="kicker">Activité récente</p><a href="devlog.html">Tout voir</a></div>
+      <ol class="activity">
+        <li><a href="devlog.html"><span class="a-ico" aria-hidden="true"></span><span class="a-txt"><b>Journal</b><span>Des notes à mesure que le site, le homelab et le poste de jeu prennent forme.</span></span></a></li>
+      </ol>
+    </div>
+  </section>
 
   <!-- ========================= EDIT YOUR LINKS HERE =========================
        One <li> per link. Change href="..." and the name/handle text.
@@ -92,7 +160,7 @@
     <h2>À propos de moi</h2>
     <p class="lede">La version courte.</p>
     <div class="about">
-      <img loading="lazy" decoding="async" src="../assets/avatar-toon.webp" alt="Version dessin animé de TehZombiJesus" width="260" height="260">
+      <img class="avatar" loading="lazy" decoding="async" src="../assets/avatar.webp" alt="Avatar de TehZombiJesus" width="260" height="260" data-flip="../assets/avatar-toon.webp" title="Clique-moi">
       <div>
         <!-- Age updates itself every birthday. The birthday is set in site.js. -->
         <ul class="me">
@@ -197,21 +265,18 @@
   </section>
 
   <section>
-    <div class="contact">
-      <svg class="deco" viewBox="0 0 360 300" preserveAspectRatio="none" aria-hidden="true">
-        <polygon fill="#472f4a" points="160,0 240,0 140,300 60,300"/>
-        <polygon fill="#fb54f7" points="270,0 300,0 200,300 170,300"/>
-        <polygon fill="#0e080d" points="320,0 400,0 300,300 220,300"/>
-      </svg>
-      <div style="position:relative">
+    <div class="contact join">
+      <div class="join-art" aria-hidden="true"><img loading="lazy" decoding="async" src="../assets/art/crypt-room.webp" alt="" width="1090" height="454"></div>
+      <div class="join-text">
+        <p class="kicker">// Restons en contact</p>
         <h2>Me contacter</h2>
         <!-- EDIT: change the email below, or delete that button -->
         <p>La Crypte, mon serveur Discord, est le moyen le plus rapide de me joindre. Pour quelque chose de plus officiel, le courriel fonctionne aussi.</p>
-      </div>
-      <div class="actions">
-        <a class="btn" href="https://discord.gg/DRSZb9qqqh">Rejoindre la Crypte</a>
-        <!-- Clicking the address copies it (extras.js). Without JavaScript it opens the mail app instead. -->
-        <a class="btn ghost copy-email" href="mailto:hello@tehzombijesus.ca" data-email="hello@tehzombijesus.ca" title="Clique pour copier">hello@tehzombijesus.ca</a>
+        <div class="actions">
+          <a class="btn" href="https://discord.gg/DRSZb9qqqh">Rejoindre la Crypte</a>
+          <!-- Clicking the address copies it (extras.js). Without JavaScript it opens the mail app instead. -->
+          <a class="btn ghost copy-email" href="mailto:hello@tehzombijesus.ca" data-email="hello@tehzombijesus.ca" title="Clique pour copier">hello@tehzombijesus.ca</a>
+        </div>
       </div>
     </div>
   </section>
@@ -229,5 +294,6 @@
 
 <script src="../site.js"></script>
 <script src="../extras.js"></script>
+<script src="../assets/home.js"></script>
 </body>
 </html>

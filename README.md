@@ -15,6 +15,13 @@ Every push to `main` goes live on its own, about a minute later.
 
 The `functions/` folder is picked up automatically: those become the `/api/...` addresses.
 
+### The `dev` branch (try things without touching the live site)
+
+Pushes to `dev` never go to tehzombijesus.ca. Cloudflare builds them as a **preview** at
+`https://dev.tehzombijesus-ca.pages.dev` (the exact address shows under Workers & Pages → `tehzombijesus-ca` → Deployments).
+Previews use the *Preview* variables, not *Production*, so the live features that need secrets stay hidden there unless you add them.
+When you like what's on `dev`, merge it into `main` and it goes live.
+
 ## What's where
 
 ```
