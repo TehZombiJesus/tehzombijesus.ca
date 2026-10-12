@@ -6,6 +6,48 @@
   <description>Construit en public : le site, le homelab et le poste de jeu.</description>
   <language>fr-CA</language>
   <item>
+    <title>Une Crypte entièrement bilingue</title>
+    <link>https://tehzombijesus.ca/fr/devlog/bilingual-crypt</link>
+    <guid>https://tehzombijesus.ca/fr/devlog/bilingual-crypt</guid>
+    <pubDate>Mon, 12 Oct 2026 12:00:00 +0000</pubDate>
+    <category>discord</category>
+    <category domain="version">Crypt Keeper v1.1.0</category>
+    <description>La Crypte parle maintenant anglais et français partout où c&#x27;est officiel, avec une question de langue pour les nouveaux membres et /announce pour des annonces bilingues.
+&lt;p&gt;La Crypte a une section francophone depuis le premier jour, mais la plus grande partie du serveur parlait encore anglais d&#x27;abord. Avec &lt;strong&gt;Crypt Keeper v1.1.0&lt;/strong&gt;, toute la Crypte est bilingue.&lt;/p&gt;
+&lt;h2&gt;L&#x27;anglais d&#x27;abord, le français dessous&lt;/h2&gt;
+&lt;p&gt;Tout ce qui est officiel contient maintenant les deux langues, l&#x27;anglais en haut et le français sur sa propre ligne en dessous&amp;nbsp;: les règles, les liens, le message de bienvenue, les anniversaires et les annonces. Les trois salons officiels ont aussi reçu des noms bilingues&amp;nbsp;: &lt;strong&gt;#rules-règles&lt;/strong&gt;, &lt;strong&gt;#announcements-annonces&lt;/strong&gt; et &lt;strong&gt;#links-liens&lt;/strong&gt;, et les salons communs ont une ligne en français dans leur description.&lt;/p&gt;
+&lt;h2&gt;Choisis ta langue&lt;/h2&gt;
+&lt;p&gt;L&#x27;accueil du serveur commence maintenant par &lt;strong&gt;Language · Langue&lt;/strong&gt;&amp;nbsp;: English, Français ou les deux. Ça donne le nouveau rôle &lt;strong&gt;Anglophone&lt;/strong&gt;, le rôle &lt;strong&gt;Francophone&lt;/strong&gt;, ou les deux. Les membres qui choisissent les deux reçoivent leurs messages de bienvenue et d&#x27;anniversaire dans les deux langues.&lt;/p&gt;
+&lt;h2&gt;Jase dans la langue que tu veux&lt;/h2&gt;
+&lt;p&gt;Les salons principaux sont communs, alors écris dans la langue qui te convient. La ⚜️ Section francophone est toujours là pour ceux qui veulent un coin uniquement en français.&lt;/p&gt;
+&lt;h2&gt;/announce&lt;/h2&gt;
+&lt;p&gt;Mes annonces passent maintenant par &lt;code&gt;/announce&lt;/code&gt;&amp;nbsp;: un formulaire avec des champs en anglais et en français qui publie un seul message avec les deux, avec une mention facultative.&lt;/p&gt;
+&lt;h2&gt;Une mise à jour sans tout reconstruire&lt;/h2&gt;
+&lt;p&gt;Pour le serveur existant, ça est arrivé sous forme d&#x27;une étape de &lt;code&gt;/update-server&lt;/code&gt;. Elle renomme et reformule seulement les salons qui avaient encore leur nom et leur description d&#x27;origine, modifie sur place les publications des règles et des liens de Crypt Keeper, et laisse tout ce qui a été changé à la main exactement comme c&#x27;était.&lt;/p&gt;</description>
+  </item>
+  <item>
+    <title>Le Crypt SMP a maintenant sa place dans la Crypte</title>
+    <link>https://tehzombijesus.ca/fr/devlog/crypt-smp-in-the-crypt</link>
+    <guid>https://tehzombijesus.ca/fr/devlog/crypt-smp-in-the-crypt</guid>
+    <pubDate>Mon, 12 Oct 2026 12:00:00 +0000</pubDate>
+    <category>minecraft</category>
+    <category domain="version">Crypt Keeper v1.1.0</category>
+    <description>Le serveur Minecraft a maintenant sa propre section dans le même Discord, avec des nouvelles, comment le rejoindre, du clavardage et des tickets de soutien pour les problèmes en jeu.
+&lt;p&gt;Le Crypt SMP est mon propre serveur Minecraft, et je ne voulais pas un deuxième Discord juste pour lui. Il vit donc maintenant dans la Crypte, dans sa propre section &lt;strong&gt;⛏️ The Crypt SMP&lt;/strong&gt;. Crypt Keeper v1.1.0 la construit et la fait fonctionner.&lt;/p&gt;
+&lt;h2&gt;Qui voit quoi&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Les nouvelles et comment rejoindre&lt;/strong&gt; sont ouvertes à tout le monde, en lecture seule, pour que chacun puisse voir de quoi il s&#x27;agit et comment se connecter.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Le clavardage, les suggestions, les captures d&#x27;écran et un salon vocal&lt;/strong&gt; sont réservés aux membres qui ont le nouveau rôle &lt;strong&gt;Crypt SMP&lt;/strong&gt;. Choisis-le dans l&#x27;accueil du serveur ou sous Salons et rôles.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Tout dans la section est bilingue, l&#x27;anglais d&#x27;abord et le français dessous, comme le reste de la Crypte.&lt;/p&gt;
+&lt;h2&gt;Des tickets de soutien, seulement pour Minecraft&lt;/h2&gt;
+&lt;p&gt;Le salon d&#x27;aide a quatre boutons&amp;nbsp;: aide, rapport de bogue, signaler un joueur et appel de bannissement. Appuie sur l&#x27;un d&#x27;eux, indique ton pseudo Minecraft et ce qui s&#x27;est passé, et Crypt Keeper ouvre un &lt;strong&gt;ticket privé&lt;/strong&gt; que seuls toi et les modérateurs peuvent voir. Appuie sur Fermer quand c&#x27;est réglé. Tu peux avoir un seul ticket ouvert à la fois.&lt;/p&gt;
+&lt;p&gt;Les tickets existent seulement pour le serveur Minecraft. Pour tout le reste de la Crypte, on écrit toujours à un modérateur en message direct, et les anciennes publications qui parlaient de tickets ont été nettoyées.&lt;/p&gt;
+&lt;h2&gt;L&#x27;adresse du serveur&lt;/h2&gt;
+&lt;p&gt;La publication «&amp;nbsp;Comment rejoindre&amp;nbsp;» affiche les adresses Java et Bedrock ainsi que la version, et je la mets à jour avec une seule commande dès que quelque chose change.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://discord.gg/DRSZb9qqqh&quot;&gt;Rejoins la Crypte&lt;/a&gt; pour la voir.&lt;/p&gt;</description>
+  </item>
+  <item>
     <title>Crypt Keeper publie le journal et reçoit /update-server</title>
     <link>https://tehzombijesus.ca/fr/devlog/crypt-keeper-devlog</link>
     <guid>https://tehzombijesus.ca/fr/devlog/crypt-keeper-devlog</guid>

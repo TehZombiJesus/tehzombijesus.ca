@@ -6,6 +6,48 @@
   <description>Built in public: the site, the homelab and the battlestation.</description>
   <language>en-CA</language>
   <item>
+    <title>A fully bilingual Crypt</title>
+    <link>https://tehzombijesus.ca/devlog/bilingual-crypt</link>
+    <guid>https://tehzombijesus.ca/devlog/bilingual-crypt</guid>
+    <pubDate>Mon, 12 Oct 2026 12:00:00 +0000</pubDate>
+    <category>discord</category>
+    <category domain="version">Crypt Keeper v1.1.0</category>
+    <description>The Crypt now speaks English and French everywhere official, with a language question for new members and /announce for bilingual announcements.
+&lt;p&gt;The Crypt has had a French section since day one, but most of the server still spoke English first. With &lt;strong&gt;Crypt Keeper v1.1.0&lt;/strong&gt;, the whole Crypt is bilingual.&lt;/p&gt;
+&lt;h2&gt;English first, French underneath&lt;/h2&gt;
+&lt;p&gt;Everything official now carries both languages, English on top and French on its own line under it: the rules, the links, the welcome message, birthday posts and announcements. The three official channels got bilingual names too: &lt;strong&gt;#rules-règles&lt;/strong&gt;, &lt;strong&gt;#announcements-annonces&lt;/strong&gt; and &lt;strong&gt;#links-liens&lt;/strong&gt;, and the shared channels have a French line in their description.&lt;/p&gt;
+&lt;h2&gt;Pick your language&lt;/h2&gt;
+&lt;p&gt;Onboarding now starts with &lt;strong&gt;Language · Langue&lt;/strong&gt;: English, Français or both. It gives the new &lt;strong&gt;Anglophone&lt;/strong&gt; role, the &lt;strong&gt;Francophone&lt;/strong&gt; role, or both. Members with both get their welcome and birthday messages in both languages.&lt;/p&gt;
+&lt;h2&gt;Chat in whichever you like&lt;/h2&gt;
+&lt;p&gt;The main channels are shared, so write in the language you&#x27;re comfortable with. The ⚜️ Section francophone is still there for people who want a French-only corner.&lt;/p&gt;
+&lt;h2&gt;/announce&lt;/h2&gt;
+&lt;p&gt;Announcements from me now go through &lt;code&gt;/announce&lt;/code&gt;: a form with English and French fields that posts one message with both, with an optional ping.&lt;/p&gt;
+&lt;h2&gt;Updating without a rebuild&lt;/h2&gt;
+&lt;p&gt;For the existing server this arrived as a &lt;code&gt;/update-server&lt;/code&gt; step. It only renames and rewords channels that still had their original names and descriptions, edits Crypt Keeper&#x27;s own rules and links posts in place, and leaves everything changed by hand exactly as it was.&lt;/p&gt;</description>
+  </item>
+  <item>
+    <title>The Crypt SMP gets a home in the Crypt</title>
+    <link>https://tehzombijesus.ca/devlog/crypt-smp-in-the-crypt</link>
+    <guid>https://tehzombijesus.ca/devlog/crypt-smp-in-the-crypt</guid>
+    <pubDate>Mon, 12 Oct 2026 12:00:00 +0000</pubDate>
+    <category>minecraft</category>
+    <category domain="version">Crypt Keeper v1.1.0</category>
+    <description>The Minecraft server now has its own section in the same Discord, with news, how to join, chat, and support tickets for in-game problems.
+&lt;p&gt;The Crypt SMP is my own Minecraft server, and I didn&#x27;t want a second Discord just for it. So it now lives inside the Crypt, in its own &lt;strong&gt;⛏️ The Crypt SMP&lt;/strong&gt; section. Crypt Keeper v1.1.0 builds and runs it.&lt;/p&gt;
+&lt;h2&gt;Who sees what&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;News and how to join&lt;/strong&gt; are open to everyone, read-only, so anybody can see what the server is about and how to connect.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Chat, suggestions, screenshots and a voice channel&lt;/strong&gt; are for members with the new &lt;strong&gt;Crypt SMP&lt;/strong&gt; role. Pick it in onboarding or under Channels &amp;amp; Roles.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Everything in the section is bilingual, English first and French underneath, like the rest of the Crypt.&lt;/p&gt;
+&lt;h2&gt;Support tickets, for Minecraft only&lt;/h2&gt;
+&lt;p&gt;The support channel has four buttons: help, bug report, report a player and ban appeal. Press one, fill in your Minecraft name and what happened, and Crypt Keeper opens a &lt;strong&gt;private ticket&lt;/strong&gt; that only you and the moderators can see. Press Close when it&#x27;s sorted. You can have one open ticket at a time.&lt;/p&gt;
+&lt;p&gt;Tickets exist only for the Minecraft server. Anything else in the Crypt still goes to a moderator by direct message, and the older posts that mentioned tickets were cleaned up.&lt;/p&gt;
+&lt;h2&gt;The server address&lt;/h2&gt;
+&lt;p&gt;The how-to-join post shows the Java and Bedrock addresses and the version, and I update it with a single command whenever something changes.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://discord.gg/DRSZb9qqqh&quot;&gt;Join the Crypt&lt;/a&gt; to see it.&lt;/p&gt;</description>
+  </item>
+  <item>
     <title>Crypt Keeper posts the devlog, and gets /update-server</title>
     <link>https://tehzombijesus.ca/devlog/crypt-keeper-devlog</link>
     <guid>https://tehzombijesus.ca/devlog/crypt-keeper-devlog</guid>

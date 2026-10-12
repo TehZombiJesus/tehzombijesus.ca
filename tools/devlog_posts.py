@@ -250,4 +250,88 @@ POSTS = [
 </ul>
 """},
  },
+
+ {
+  'slug': 'bilingual-crypt',
+  'date': '2026-10-12',
+  'project': 'discord',
+  'versions': ['Crypt Keeper v1.1.0'],
+  'tags': ['discord', 'bot', 'crypt keeper', 'français'],
+  'en': {
+    'title': 'A fully bilingual Crypt',
+    'summary': "The Crypt now speaks English and French everywhere official, with a language question for new members and /announce for bilingual announcements.",
+    'body': """
+<p>The Crypt has had a French section since day one, but most of the server still spoke English first. With <strong>Crypt Keeper v1.1.0</strong>, the whole Crypt is bilingual.</p>
+<h2>English first, French underneath</h2>
+<p>Everything official now carries both languages, English on top and French on its own line under it: the rules, the links, the welcome message, birthday posts and announcements. The three official channels got bilingual names too: <strong>#rules-règles</strong>, <strong>#announcements-annonces</strong> and <strong>#links-liens</strong>, and the shared channels have a French line in their description.</p>
+<h2>Pick your language</h2>
+<p>Onboarding now starts with <strong>Language · Langue</strong>: English, Français or both. It gives the new <strong>Anglophone</strong> role, the <strong>Francophone</strong> role, or both. Members with both get their welcome and birthday messages in both languages.</p>
+<h2>Chat in whichever you like</h2>
+<p>The main channels are shared, so write in the language you're comfortable with. The ⚜️ Section francophone is still there for people who want a French-only corner.</p>
+<h2>/announce</h2>
+<p>Announcements from me now go through <code>/announce</code>: a form with English and French fields that posts one message with both, with an optional ping.</p>
+<h2>Updating without a rebuild</h2>
+<p>For the existing server this arrived as a <code>/update-server</code> step. It only renames and rewords channels that still had their original names and descriptions, edits Crypt Keeper's own rules and links posts in place, and leaves everything changed by hand exactly as it was.</p>
+"""},
+  'fr': {
+    'title': 'Une Crypte entièrement bilingue',
+    'summary': "La Crypte parle maintenant anglais et français partout où c'est officiel, avec une question de langue pour les nouveaux membres et /announce pour des annonces bilingues.",
+    'body': """
+<p>La Crypte a une section francophone depuis le premier jour, mais la plus grande partie du serveur parlait encore anglais d'abord. Avec <strong>Crypt Keeper v1.1.0</strong>, toute la Crypte est bilingue.</p>
+<h2>L'anglais d'abord, le français dessous</h2>
+<p>Tout ce qui est officiel contient maintenant les deux langues, l'anglais en haut et le français sur sa propre ligne en dessous&nbsp;: les règles, les liens, le message de bienvenue, les anniversaires et les annonces. Les trois salons officiels ont aussi reçu des noms bilingues&nbsp;: <strong>#rules-règles</strong>, <strong>#announcements-annonces</strong> et <strong>#links-liens</strong>, et les salons communs ont une ligne en français dans leur description.</p>
+<h2>Choisis ta langue</h2>
+<p>L'accueil du serveur commence maintenant par <strong>Language · Langue</strong>&nbsp;: English, Français ou les deux. Ça donne le nouveau rôle <strong>Anglophone</strong>, le rôle <strong>Francophone</strong>, ou les deux. Les membres qui choisissent les deux reçoivent leurs messages de bienvenue et d'anniversaire dans les deux langues.</p>
+<h2>Jase dans la langue que tu veux</h2>
+<p>Les salons principaux sont communs, alors écris dans la langue qui te convient. La ⚜️ Section francophone est toujours là pour ceux qui veulent un coin uniquement en français.</p>
+<h2>/announce</h2>
+<p>Mes annonces passent maintenant par <code>/announce</code>&nbsp;: un formulaire avec des champs en anglais et en français qui publie un seul message avec les deux, avec une mention facultative.</p>
+<h2>Une mise à jour sans tout reconstruire</h2>
+<p>Pour le serveur existant, ça est arrivé sous forme d'une étape de <code>/update-server</code>. Elle renomme et reformule seulement les salons qui avaient encore leur nom et leur description d'origine, modifie sur place les publications des règles et des liens de Crypt Keeper, et laisse tout ce qui a été changé à la main exactement comme c'était.</p>
+"""},
+ },
+
+ {
+  'slug': 'crypt-smp-in-the-crypt',
+  'date': '2026-10-12',
+  'project': 'minecraft',
+  'versions': ['Crypt Keeper v1.1.0'],
+  'tags': ['minecraft', 'discord', 'tickets'],
+  'en': {
+    'title': 'The Crypt SMP gets a home in the Crypt',
+    'summary': "The Minecraft server now has its own section in the same Discord, with news, how to join, chat, and support tickets for in-game problems.",
+    'body': """
+<p>The Crypt SMP is my own Minecraft server, and I didn't want a second Discord just for it. So it now lives inside the Crypt, in its own <strong>⛏️ The Crypt SMP</strong> section. Crypt Keeper v1.1.0 builds and runs it.</p>
+<h2>Who sees what</h2>
+<ul>
+  <li><strong>News and how to join</strong> are open to everyone, read-only, so anybody can see what the server is about and how to connect.</li>
+  <li><strong>Chat, suggestions, screenshots and a voice channel</strong> are for members with the new <strong>Crypt SMP</strong> role. Pick it in onboarding or under Channels &amp; Roles.</li>
+</ul>
+<p>Everything in the section is bilingual, English first and French underneath, like the rest of the Crypt.</p>
+<h2>Support tickets, for Minecraft only</h2>
+<p>The support channel has four buttons: help, bug report, report a player and ban appeal. Press one, fill in your Minecraft name and what happened, and Crypt Keeper opens a <strong>private ticket</strong> that only you and the moderators can see. Press Close when it's sorted. You can have one open ticket at a time.</p>
+<p>Tickets exist only for the Minecraft server. Anything else in the Crypt still goes to a moderator by direct message, and the older posts that mentioned tickets were cleaned up.</p>
+<h2>The server address</h2>
+<p>The how-to-join post shows the Java and Bedrock addresses and the version, and I update it with a single command whenever something changes.</p>
+<p><a href="https://discord.gg/DRSZb9qqqh">Join the Crypt</a> to see it.</p>
+"""},
+  'fr': {
+    'title': 'Le Crypt SMP a maintenant sa place dans la Crypte',
+    'summary': "Le serveur Minecraft a maintenant sa propre section dans le même Discord, avec des nouvelles, comment le rejoindre, du clavardage et des tickets de soutien pour les problèmes en jeu.",
+    'body': """
+<p>Le Crypt SMP est mon propre serveur Minecraft, et je ne voulais pas un deuxième Discord juste pour lui. Il vit donc maintenant dans la Crypte, dans sa propre section <strong>⛏️ The Crypt SMP</strong>. Crypt Keeper v1.1.0 la construit et la fait fonctionner.</p>
+<h2>Qui voit quoi</h2>
+<ul>
+  <li><strong>Les nouvelles et comment rejoindre</strong> sont ouvertes à tout le monde, en lecture seule, pour que chacun puisse voir de quoi il s'agit et comment se connecter.</li>
+  <li><strong>Le clavardage, les suggestions, les captures d'écran et un salon vocal</strong> sont réservés aux membres qui ont le nouveau rôle <strong>Crypt SMP</strong>. Choisis-le dans l'accueil du serveur ou sous Salons et rôles.</li>
+</ul>
+<p>Tout dans la section est bilingue, l'anglais d'abord et le français dessous, comme le reste de la Crypte.</p>
+<h2>Des tickets de soutien, seulement pour Minecraft</h2>
+<p>Le salon d'aide a quatre boutons&nbsp;: aide, rapport de bogue, signaler un joueur et appel de bannissement. Appuie sur l'un d'eux, indique ton pseudo Minecraft et ce qui s'est passé, et Crypt Keeper ouvre un <strong>ticket privé</strong> que seuls toi et les modérateurs peuvent voir. Appuie sur Fermer quand c'est réglé. Tu peux avoir un seul ticket ouvert à la fois.</p>
+<p>Les tickets existent seulement pour le serveur Minecraft. Pour tout le reste de la Crypte, on écrit toujours à un modérateur en message direct, et les anciennes publications qui parlaient de tickets ont été nettoyées.</p>
+<h2>L'adresse du serveur</h2>
+<p>La publication «&nbsp;Comment rejoindre&nbsp;» affiche les adresses Java et Bedrock ainsi que la version, et je la mets à jour avec une seule commande dès que quelque chose change.</p>
+<p><a href="https://discord.gg/DRSZb9qqqh">Rejoins la Crypte</a> pour la voir.</p>
+"""},
+ },
 ]
