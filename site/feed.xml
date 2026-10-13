@@ -48,6 +48,27 @@
 &lt;p&gt;&lt;a href=&quot;https://discord.gg/DRSZb9qqqh&quot;&gt;Join the Crypt&lt;/a&gt; to see it.&lt;/p&gt;</description>
   </item>
   <item>
+    <title>Game deals: Steam only, with an Open in Steam button</title>
+    <link>https://tehzombijesus.ca/devlog/steam-deals-open-in-steam</link>
+    <guid>https://tehzombijesus.ca/devlog/steam-deals-open-in-steam</guid>
+    <pubDate>Mon, 12 Oct 2026 12:00:00 +0000</pubDate>
+    <category>discord</category>
+    <category domain="version">Crypt Keeper v1.4.1</category>
+    <category domain="version">Crypt Keeper v1.4.2</category>
+    <description>Crypt Keeper&#x27;s game deals now post only Steam games, and every post has a button that opens the game&#x27;s Steam page.
+&lt;p&gt;Crypt Keeper posts the best PC game deals in the Crypt. Two small changes in &lt;strong&gt;v1.4.1&lt;/strong&gt; and &lt;strong&gt;v1.4.2&lt;/strong&gt; make those posts easier to use.&lt;/p&gt;
+&lt;h2&gt;An Open in Steam button&lt;/h2&gt;
+&lt;p&gt;Every deal post now has an &lt;strong&gt;Open in Steam&lt;/strong&gt; button under it. One tap and you&#x27;re on the game&#x27;s store page, ready to buy. The same button is on the DM you get when a game on your &lt;code&gt;/wishlist&lt;/code&gt; drops to your price.&lt;/p&gt;
+&lt;h2&gt;Steam only, for now&lt;/h2&gt;
+&lt;p&gt;Deals used to come from several stores, and not every one could link straight to the game. For now Crypt Keeper only posts &lt;strong&gt;Steam&lt;/strong&gt; deals, and only for games that have a Steam ID, so every post opens the real Steam page. Epic, GOG, Humble and the other stores are paused. I can switch them back on later with a single setting.&lt;/p&gt;
+&lt;h2&gt;What did not change&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;The filters are the same: a minimum discount, a maximum price and a minimum Steam rating, set by staff with &lt;code&gt;/deals filters&lt;/code&gt;.&lt;/li&gt;
+  &lt;li&gt;&lt;code&gt;/deal&lt;/code&gt;, &lt;code&gt;/wishlist&lt;/code&gt;, the deal ping roles and the big sales calendar all work as before.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Want a ping for deals? Press the 🔔 button under any deal, or use &lt;code&gt;/deal-pings&lt;/code&gt;. &lt;a href=&quot;https://discord.gg/DRSZb9qqqh&quot;&gt;Join the Crypt&lt;/a&gt; to see it.&lt;/p&gt;</description>
+  </item>
+  <item>
     <title>Crypt Keeper posts the devlog, and gets /update-server</title>
     <link>https://tehzombijesus.ca/devlog/crypt-keeper-devlog</link>
     <guid>https://tehzombijesus.ca/devlog/crypt-keeper-devlog</guid>

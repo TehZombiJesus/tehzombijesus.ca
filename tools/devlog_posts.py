@@ -334,4 +334,44 @@ POSTS = [
 <p><a href="https://discord.gg/DRSZb9qqqh">Rejoins la Crypte</a> pour la voir.</p>
 """},
  },
+
+ {
+  'slug': 'steam-deals-open-in-steam',
+  'date': '2026-10-12',
+  'project': 'discord',
+  'versions': ['Crypt Keeper v1.4.1', 'Crypt Keeper v1.4.2'],
+  'tags': ['discord', 'bot', 'deals', 'steam'],
+  'en': {
+    'title': 'Game deals: Steam only, with an Open in Steam button',
+    'summary': "Crypt Keeper's game deals now post only Steam games, and every post has a button that opens the game's Steam page.",
+    'body': """
+<p>Crypt Keeper posts the best PC game deals in the Crypt. Two small changes in <strong>v1.4.1</strong> and <strong>v1.4.2</strong> make those posts easier to use.</p>
+<h2>An Open in Steam button</h2>
+<p>Every deal post now has an <strong>Open in Steam</strong> button under it. One tap and you're on the game's store page, ready to buy. The same button is on the DM you get when a game on your <code>/wishlist</code> drops to your price.</p>
+<h2>Steam only, for now</h2>
+<p>Deals used to come from several stores, and not every one could link straight to the game. For now Crypt Keeper only posts <strong>Steam</strong> deals, and only for games that have a Steam ID, so every post opens the real Steam page. Epic, GOG, Humble and the other stores are paused. I can switch them back on later with a single setting.</p>
+<h2>What did not change</h2>
+<ul>
+  <li>The filters are the same: a minimum discount, a maximum price and a minimum Steam rating, set by staff with <code>/deals filters</code>.</li>
+  <li><code>/deal</code>, <code>/wishlist</code>, the deal ping roles and the big sales calendar all work as before.</li>
+</ul>
+<p>Want a ping for deals? Press the 🔔 button under any deal, or use <code>/deal-pings</code>. <a href="https://discord.gg/DRSZb9qqqh">Join the Crypt</a> to see it.</p>
+"""},
+  'fr': {
+    'title': 'Aubaines de jeux : Steam seulement, avec un bouton Open in Steam',
+    'summary': "Les aubaines de jeux de Crypt Keeper ne viennent plus que de Steam, et chaque publication a un bouton qui ouvre la page Steam du jeu.",
+    'body': """
+<p>Crypt Keeper publie les meilleures aubaines de jeux PC dans la Crypte. Deux petits changements, dans les versions <strong>v1.4.1</strong> et <strong>v1.4.2</strong>, rendent ces publications plus pratiques.</p>
+<h2>Un bouton « Open in Steam »</h2>
+<p>Chaque aubaine a maintenant un bouton <strong>Open in Steam</strong> en dessous. Un clic et tu es sur la page du jeu dans la boutique, prêt à l'acheter. Le même bouton est dans le message privé que tu reçois quand un jeu de ta liste <code>/wishlist</code> atteint ton prix.</p>
+<h2>Steam seulement, pour l'instant</h2>
+<p>Les aubaines venaient de plusieurs boutiques, et toutes ne pouvaient pas mener directement au jeu. Pour l'instant, Crypt Keeper publie seulement les aubaines de <strong>Steam</strong>, et seulement pour les jeux qui ont un identifiant Steam, de sorte que chaque publication ouvre la vraie page Steam. Epic, GOG, Humble et les autres boutiques sont en pause. Je pourrai les remettre plus tard avec un seul réglage.</p>
+<h2>Ce qui n'a pas changé</h2>
+<ul>
+  <li>Les filtres sont les mêmes&nbsp;: un rabais minimum, un prix maximum et une cote Steam minimale, réglés par l'équipe avec <code>/deals filters</code>.</li>
+  <li><code>/deal</code>, <code>/wishlist</code>, les rôles de notification des aubaines et le calendrier des grandes soldes fonctionnent comme avant.</li>
+</ul>
+<p>Tu veux une notification pour les aubaines&nbsp;? Appuie sur le bouton 🔔 sous une aubaine, ou utilise <code>/deal-pings</code>. <a href="https://discord.gg/DRSZb9qqqh">Rejoins la Crypte</a> pour la voir.</p>
+"""},
+ },
 ]

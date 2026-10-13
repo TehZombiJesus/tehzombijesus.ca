@@ -48,6 +48,27 @@
 &lt;p&gt;&lt;a href=&quot;https://discord.gg/DRSZb9qqqh&quot;&gt;Rejoins la Crypte&lt;/a&gt; pour la voir.&lt;/p&gt;</description>
   </item>
   <item>
+    <title>Aubaines de jeux : Steam seulement, avec un bouton Open in Steam</title>
+    <link>https://tehzombijesus.ca/fr/devlog/steam-deals-open-in-steam</link>
+    <guid>https://tehzombijesus.ca/fr/devlog/steam-deals-open-in-steam</guid>
+    <pubDate>Mon, 12 Oct 2026 12:00:00 +0000</pubDate>
+    <category>discord</category>
+    <category domain="version">Crypt Keeper v1.4.1</category>
+    <category domain="version">Crypt Keeper v1.4.2</category>
+    <description>Les aubaines de jeux de Crypt Keeper ne viennent plus que de Steam, et chaque publication a un bouton qui ouvre la page Steam du jeu.
+&lt;p&gt;Crypt Keeper publie les meilleures aubaines de jeux PC dans la Crypte. Deux petits changements, dans les versions &lt;strong&gt;v1.4.1&lt;/strong&gt; et &lt;strong&gt;v1.4.2&lt;/strong&gt;, rendent ces publications plus pratiques.&lt;/p&gt;
+&lt;h2&gt;Un bouton « Open in Steam »&lt;/h2&gt;
+&lt;p&gt;Chaque aubaine a maintenant un bouton &lt;strong&gt;Open in Steam&lt;/strong&gt; en dessous. Un clic et tu es sur la page du jeu dans la boutique, prêt à l&#x27;acheter. Le même bouton est dans le message privé que tu reçois quand un jeu de ta liste &lt;code&gt;/wishlist&lt;/code&gt; atteint ton prix.&lt;/p&gt;
+&lt;h2&gt;Steam seulement, pour l&#x27;instant&lt;/h2&gt;
+&lt;p&gt;Les aubaines venaient de plusieurs boutiques, et toutes ne pouvaient pas mener directement au jeu. Pour l&#x27;instant, Crypt Keeper publie seulement les aubaines de &lt;strong&gt;Steam&lt;/strong&gt;, et seulement pour les jeux qui ont un identifiant Steam, de sorte que chaque publication ouvre la vraie page Steam. Epic, GOG, Humble et les autres boutiques sont en pause. Je pourrai les remettre plus tard avec un seul réglage.&lt;/p&gt;
+&lt;h2&gt;Ce qui n&#x27;a pas changé&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;Les filtres sont les mêmes&amp;nbsp;: un rabais minimum, un prix maximum et une cote Steam minimale, réglés par l&#x27;équipe avec &lt;code&gt;/deals filters&lt;/code&gt;.&lt;/li&gt;
+  &lt;li&gt;&lt;code&gt;/deal&lt;/code&gt;, &lt;code&gt;/wishlist&lt;/code&gt;, les rôles de notification des aubaines et le calendrier des grandes soldes fonctionnent comme avant.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Tu veux une notification pour les aubaines&amp;nbsp;? Appuie sur le bouton 🔔 sous une aubaine, ou utilise &lt;code&gt;/deal-pings&lt;/code&gt;. &lt;a href=&quot;https://discord.gg/DRSZb9qqqh&quot;&gt;Rejoins la Crypte&lt;/a&gt; pour la voir.&lt;/p&gt;</description>
+  </item>
+  <item>
     <title>Crypt Keeper publie le journal et reçoit /update-server</title>
     <link>https://tehzombijesus.ca/fr/devlog/crypt-keeper-devlog</link>
     <guid>https://tehzombijesus.ca/fr/devlog/crypt-keeper-devlog</guid>
