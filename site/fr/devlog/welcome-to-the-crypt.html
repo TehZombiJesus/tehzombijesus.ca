@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="fr">
 <head>
+<meta name="robots" content="noindex, nofollow">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Bienvenue dans la Crypte | TehZombiJesus</title>
@@ -26,24 +27,38 @@
 <link rel="alternate" hreflang="fr" href="https://tehzombijesus.ca/fr/devlog/welcome-to-the-crypt">
 <link rel="alternate" hreflang="x-default" href="https://tehzombijesus.ca/devlog/welcome-to-the-crypt">
 <link rel="stylesheet" href="../../styles.css">
+<link rel="stylesheet" href="../../refresh.css">
+<link rel="stylesheet" href="../../redesign.css">
 </head>
-<body>
+<body data-page="welcome-to-the-crypt">
+<a class="skip-link" href="#main">Aller au contenu</a>
 
 <!-- Top menu: to add a page, copy one <li> line and point it at the new file -->
 <nav class="nav" aria-label="Principal">
   <div class="wrap">
-    <a class="home" href="../index.html"><img src="../../assets/favicon.svg" alt="" width="38" height="38"><span>TehZombiJesus</span></a>
+    <a class="home" href="../index.html"><img src="../../assets/favicon.svg" alt="" width="36" height="36"><img class="nav-wordmark" src="../../assets/wordmark.svg" alt="TehZombiJesus" width="700" height="79"></a>
     <ul>
       <li><a href="../index.html">Accueil</a></li>
       <li><a href="../homelab.html">Homelab</a></li>
       <li><a href="../setup.html">Poste de jeu</a></li>
-      <li><a href="../ruenix.html">Ruenix</a></li>
+      <li><a href="../crypt.html" aria-current="page">The Crypt</a></li>
+<li><a href="../ruenix.html">Ruenix</a></li>
       <li><a href="../devlog.html" aria-current="page">Journal</a></li>
       <li><a href="../now.html">En ce moment</a></li>
       <li><a class="lang" href="../../devlog/welcome-to-the-crypt.html" hreflang="en" lang="en" title="English">EN</a></li>
     </ul>
   </div>
 </nav>
+<div class="brand-art" aria-hidden="true">
+  <svg viewBox="0 0 1440 300" preserveAspectRatio="xMidYMid slice">
+    <polygon class="s" fill="#472f4a" points="0,0 560,0 450,300 -110,300 -200,300 -200,0"/>
+    <polygon class="s" fill="#8300fb" points="560,0 1120,0 1010,300 450,300"/>
+    <polygon class="s" fill="#74263e" points="1120,0 1280,0 1170,300 1010,300"/>
+    <polygon class="s" fill="#fb54f7" points="1280,0 1640,0 1530,300 1170,300"/>
+    <g class="shards" fill="#472f4a"><polygon points="880,54 892,54 802,300 790,300"/><polygon points="916,108 928,108 858,300 846,300"/><polygon points="952,162 964,162 913,300 901,300"/><polygon points="1000,54 1012,54 922,300 910,300"/><polygon points="1036,108 1048,108 978,300 966,300"/></g>
+  </svg>
+</div>
+
 <div class="band small" aria-hidden="true">
   <svg viewBox="0 0 1440 150" preserveAspectRatio="xMidYMid slice">
     <polygon class="s" fill="#472f4a" points="0,0 560,0 505,150 -55,150 -200,150 -200,0"/>
@@ -54,7 +69,7 @@
   </svg>
 </div>
 
-<main class="wrap">
+<main class="wrap" id="main">
   <header class="page-head">
     <span class="tag">Journal · <time datetime="2026-10-06">6 octobre 2026</time></span>
     <h1>Bienvenue dans la Crypte</h1>
@@ -85,10 +100,12 @@
     <!-- When your Uptime Kuma status page is public, uncomment this line and put in its address:
     <a href="https://status.tehzombijesus.ca">Status</a> -->
   </div>
+<div class="preview-notice"><span>DESIGN STUDY / 02</span><span>Aperçu de développement · production inchangée</span></div><nav class="footer-social wrap" aria-label="Liens sociaux"><a href="https://github.com/TehZombiJesus">GitHub ↗</a><a href="https://x.com/TehZombiJesus">X / Twitter ↗</a><a href="../crypt.html">The Crypt ↗</a></nav>
 </footer>
 
 <script src="../../site.js"></script>
 <script src="../../extras.js"></script>
+<script src="../../redesign.js"></script>
 <script src="../../assets/version.js"></script>
 </body>
 </html>

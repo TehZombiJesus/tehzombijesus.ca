@@ -12,10 +12,10 @@ from fr_dict import FR
 from i18n import chunks, SITE, SKIP_TEXT
 
 DOMAIN = 'https://tehzombijesus.ca/'
-CORE = ['index.html', 'homelab.html', 'setup.html', 'ruenix.html', 'now.html', 'guestbook.html', '404.html']
+CORE = ['crypt.html', 'index.html', 'homelab.html', 'setup.html', 'ruenix.html', 'now.html', 'guestbook.html', '404.html']
 missing = set()
 # names that stay the same in French; not reported as missing
-KEEP = {'TehZombiJesus', 'Homelab', 'Ruenix', 'GitHub', '@TehZombiJesus', 'X / Twitter', 'Ruenix MC', 'Canada', 'Nox Interactive', 'Proxmox', 'TrueNAS', 'ZFS',
+KEEP = {'Stavo', 'Servio', 'Budvo', 'Labvo', 'Pingvo', 'Routvo', 'Termvo', 'CRYPT KEEPER', 'MINECRAFT', 'THE CRYPT', 'INFRASTRUCTURE / COMMUNITIES / PLAY', 'TehZombiJesus', 'Homelab', 'Ruenix', 'GitHub', '@TehZombiJesus', 'X / Twitter', 'Ruenix MC', 'Canada', 'Nox Interactive', 'Proxmox', 'TrueNAS', 'ZFS',
         'Docker', 'Coolify', 'Cloudflare', 'UniFi', 'Linux', 'Minecraft', 'GTA V', 'Ghost Recon Wildlands', 'League of Legends', 'Secretlab MAGNUS Pro XL',
         'RTX 5090 Founders Edition', 'Ryzen 7 9850X3D', 'hello@tehzombijesus.ca', 'Immich', 'Seafile', 'Jellyfin', 'Uptime Kuma', 'NVMe', 'RAIDZ2',
         'Intel Core Ultra 7 265K', 'ASUS Pro WS W880-ACE SE', 'Noctua NH-U12A', 'Corsair RM1000x', 'Fractal Design Define 7', 'CyberPower 1500 VA',
@@ -78,7 +78,7 @@ def add_alternates(s, rel):
              '<link rel="alternate" hreflang="x-default" href="%s">\n') % (en_url, fr_url, en_url)
     return s.replace('<link rel="stylesheet" href="', links + '<link rel="stylesheet" href="', 1)
 
-SHARED = r'(assets/|styles\.css|site\.js|extras\.js|manifest\.webmanifest|sw-register\.js)'
+SHARED = r'(assets/|redesign\.css|redesign\.js|refresh\.css|styles\.css|site\.js|extras\.js|manifest\.webmanifest|sw-register\.js)'
 
 def build_pair(rel, fr_main=None):
     """Read site/<rel> (English), make sure it has its FR switch, and write site/fr/<rel>."""
@@ -88,7 +88,7 @@ def build_pair(rel, fr_main=None):
     if en2 != en: open(path, 'w', encoding='utf-8').write(en2)
     src = re.sub(r'\n\s*<li><a class="lang"[^\n]*</li>', '', en2)
     if fr_main is not None:
-        a = src.index('<main class="wrap">'); b = src.index('</main>') + len('</main>')
+        a = src.index('<main '); b = src.index('</main>') + len('</main>')
         src = src[:a] + '@@FRMAIN@@' + src[b:]
     s = translate(src)
     if fr_main is not None:
@@ -105,6 +105,7 @@ def build_pair(rel, fr_main=None):
         s = re.sub(r'href="/(index|homelab|setup|ruenix|devlog|now|guestbook|changelog)\.html"', r'href="/fr/\1.html"', s)
     else:
         s = re.sub(r'(["\'])((?:\.\./)*)' + SHARED, r'\1../\2\3', s)
+    s = s.replace('<main class="wrap">', '<main class="wrap" id="main">')
     s = add_alternates(add_switch(s, rel, True), rel)
     out = os.path.join(SITE, 'fr', rel)
     os.makedirs(os.path.dirname(out), exist_ok=True)

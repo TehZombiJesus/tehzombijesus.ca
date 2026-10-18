@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
+<meta name="robots" content="noindex, nofollow">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Setup | TehZombiJesus</title>
@@ -24,24 +25,38 @@
 <link rel="alternate" hreflang="fr" href="https://tehzombijesus.ca/fr/setup">
 <link rel="alternate" hreflang="x-default" href="https://tehzombijesus.ca/setup">
 <link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="refresh.css">
+<link rel="stylesheet" href="redesign.css">
 </head>
-<body>
+<body data-page="setup">
+<a class="skip-link" href="#main">Skip to content</a>
 
 <!-- Top menu: to add a page, copy one <li> line and point it at the new file -->
 <nav class="nav" aria-label="Main">
   <div class="wrap">
-    <a class="home" href="index.html"><img src="assets/favicon.svg" alt="" width="38" height="38"><span>TehZombiJesus</span></a>
+    <a class="home" href="index.html"><img src="assets/favicon.svg" alt="" width="36" height="36"><img class="nav-wordmark" src="assets/wordmark.svg" alt="TehZombiJesus" width="700" height="79"></a>
     <ul>
       <li><a href="index.html">Home</a></li>
       <li><a href="homelab.html">Homelab</a></li>
       <li><a href="setup.html" aria-current="page">Setup</a></li>
-      <li><a href="ruenix.html">Ruenix</a></li>
+      <li><a href="crypt.html">The Crypt</a></li>
+<li><a href="ruenix.html">Ruenix</a></li>
       <li><a href="devlog.html">Devlog</a></li>
       <li><a href="now.html">Now</a></li>
       <li><a class="lang" href="fr/setup.html" hreflang="fr" lang="fr" title="Français">FR</a></li>
     </ul>
   </div>
 </nav>
+<div class="brand-art" aria-hidden="true">
+  <svg viewBox="0 0 1440 300" preserveAspectRatio="xMidYMid slice">
+    <polygon class="s" fill="#472f4a" points="0,0 560,0 450,300 -110,300 -200,300 -200,0"/>
+    <polygon class="s" fill="#8300fb" points="560,0 1120,0 1010,300 450,300"/>
+    <polygon class="s" fill="#74263e" points="1120,0 1280,0 1170,300 1010,300"/>
+    <polygon class="s" fill="#fb54f7" points="1280,0 1640,0 1530,300 1170,300"/>
+    <g class="shards" fill="#472f4a"><polygon points="880,54 892,54 802,300 790,300"/><polygon points="916,108 928,108 858,300 846,300"/><polygon points="952,162 964,162 913,300 901,300"/><polygon points="1000,54 1012,54 922,300 910,300"/><polygon points="1036,108 1048,108 978,300 966,300"/></g>
+  </svg>
+</div>
+
 <div class="band small" aria-hidden="true">
   <svg viewBox="0 0 1440 150" preserveAspectRatio="xMidYMid slice">
     <polygon class="s" fill="#472f4a" points="0,0 560,0 505,150 -55,150 -200,150 -200,0"/>
@@ -52,14 +67,27 @@
   </svg>
 </div>
 
-<main class="wrap">
+<main class="wrap" id="main">
   <header class="page-head">
     <span class="tag">Setup</span>
     <h1>The battlestation</h1>
     <div class="bar"></div>
-    <p>A 57" super ultrawide, three screens above it, and a PC hanging under a standing desk. Every part chosen to last.</p>
-  </header>
+    <p>What I use today, and the desk and PC I’m planning next. Current equipment and unbought parts are shown separately.</p>
+  </header><div class="page-summary"><span class="state state-confirmed">Current equipment first</span><p>The future build is a plan. Parts marked as not bought are not in the current setup.</p></div>
 
+  <section>
+    <h2>What I use today</h2>
+    <p class="lede">The current PC, still doing its job until the new one is built.</p>
+    <div class="panel dark" style="max-width:640px">
+      <dl class="specs">
+        <dt>CPU</dt><dd>Intel Core i7-13700K, 16 cores / 24 threads</dd>
+        <dt>GPU</dt><dd>RTX 3070 Ti</dd>
+        <dt>Board</dt><dd>Gigabyte Z790 AORUS Elite AX</dd>
+        <dt>RAM</dt><dd>32 GB</dd>
+        <dt>OS</dt><dd>Windows 11 Pro</dd>
+      </dl>
+    </div>
+  </section>
   <section>
     <h2>The layout</h2>
     <p class="lede">Everything is mounted to the desk, so the whole setup rises and lowers together when I switch between sitting and standing.</p>
@@ -118,7 +146,7 @@
         <li data-got="no"><strong>Three 22" screens above</strong><span>Thin bezels, 1080p. The outer two turn in about 31° to follow the curve below.</span></li>
         <li><strong>Two Vertical Monitor Stands</strong><span>About 20 cm either side of centre, tall enough to clear the 57".</span></li>
         <li><strong>PC under the desk</strong><span>On the Secretlab Premium PC Mount, so the floor stays clear.</span></li>
-        <li data-got="no"><strong>One special cable</strong><span>A VESA-certified DP80LL DisplayPort cable, the only kind that runs the 57" at full 240 Hz.</span></li>
+        <li data-got="no"><strong>One special cable</strong><span>A certified DisplayPort cable, selected against the monitor and GPU requirements before ordering.</span></li>
       </ul>
     </div>
   </section>
@@ -192,26 +220,14 @@
     <div class="rules">
       <div><h3>No RGB</h3><p>Not dimmed, not turned off in software. Parts without it, from the start.</p></div>
       <div><h3>Quality over price</h3><p>Built to last for years, not to hit the cheapest total.</p></div>
-      <div><h3>Checked first</h3><p>Every part verified for compatibility before anything is ordered.</p></div>
+      <div><h3>Checked first</h3><p>Confirm component, mounting and power compatibility before ordering.</p></div>
       <div><h3>Nothing recycled</h3><p>Every part in the new build is new.</p></div>
-      <div><h3>No last-minute swaps</h3><p>Once a part is decided, it stays decided.</p></div>
+      <div><h3>Decisions can evolve</h3><p>Revisit a choice when compatibility, availability or requirements change.</p></div>
       <div><h3>Moves with the desk</h3><p>Screens, PC and cables all rise and lower together.</p></div>
     </div>
   </section>
 
-  <section>
-    <h2>What I use today</h2>
-    <p class="lede">The current PC, still doing its job until the new one is built.</p>
-    <div class="panel dark" style="max-width:640px">
-      <dl class="specs">
-        <dt>CPU</dt><dd>Intel Core i7-13700K, 16 cores / 24 threads</dd>
-        <dt>GPU</dt><dd>RTX 3070 Ti</dd>
-        <dt>Board</dt><dd>Gigabyte Z790 AORUS Elite AX</dd>
-        <dt>RAM</dt><dd>32 GB</dd>
-        <dt>OS</dt><dd>Windows 11 Pro</dd>
-      </dl>
-    </div>
-  </section>
+
 </main>
 
 <footer>
@@ -221,10 +237,12 @@
     <!-- When your Uptime Kuma status page is public, uncomment this line and put in its address:
     <a href="https://status.tehzombijesus.ca">Status</a> -->
   </div>
+<div class="preview-notice"><span>DESIGN STUDY / 02</span><span>Development preview · production unchanged</span></div><nav class="footer-social wrap" aria-label="Social links"><a href="https://github.com/TehZombiJesus">GitHub ↗</a><a href="https://x.com/TehZombiJesus">X / Twitter ↗</a><a href="crypt.html">The Crypt ↗</a></nav>
 </footer>
 
 <script src="site.js"></script>
 <script src="extras.js"></script>
+<script src="redesign.js"></script>
 <script src="assets/version.js"></script>
 </body>
 </html>

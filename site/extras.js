@@ -10,7 +10,7 @@
   var FR = document.documentElement.lang === 'fr';
   function t(en, fr) { return FR ? fr : en; }
   var BASE = ((document.currentScript && document.currentScript.src) || '').replace(/[^/]*$/, '');
-  var calm = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var calm = document.documentElement.dataset.effects === 'off' || (window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches);
   var TZ = 'America/Toronto';               // EDIT: my time zone (Gatineau runs on Eastern time)
   var DISCORD_INVITE = 'DRSZb9qqqh';        // EDIT: The Crypt invite code
   var DISCORD_GUILD = '1556862328505507931';
@@ -557,7 +557,7 @@
     ['Braaains… I mean, hi!', 'Have you tried restarting it?', 'Join the Crypt!', 'I\'m only dead on the inside.', 'Type "crypt" and see…', 'Psst. Try the ` key.', 'No RGB here. Just zombie green.'];
   function makePet(force) {
     if (pet) return;
-    if (!force && store.get('petOff', false)) return;      // the "pet" terminal command turns it off and on
+    if (!force && (calm || store.get('petOff', false))) return;      // the "pet" terminal command turns it off and on
     var small = innerWidth < 700, touch = window.matchMedia && matchMedia('(pointer: coarse)').matches;
     pet = el('button', 'pet' + (small ? ' small' : ''), '<svg viewBox="0 0 16 20" aria-hidden="true" shape-rendering="crispEdges"><rect x="4" y="0" width="8" height="2" fill="#3a2a3a"/><rect x="4" y="2" width="8" height="6" fill="#7fb069"/>' +
       '<rect x="6" y="4" width="1" height="1" fill="#0e080d"/><rect x="9" y="4" width="1" height="1" fill="#0e080d"/><rect x="6" y="6" width="4" height="1" fill="#fb54f7"/>' +
@@ -875,7 +875,7 @@
   });
 
   // ---------- Installable app + offline page (service worker lives at /sw.js) ----------
-  if ('serviceWorker' in navigator && location.protocol === 'https:' && /(^|\.)tehzombijesus\.ca$|pages\.dev$/.test(location.hostname)) {
+  if (!document.querySelector('meta[name="robots"][content*="noindex"]') && 'serviceWorker' in navigator && location.protocol === 'https:' && /(^|\.)tehzombijesus\.ca$|pages\.dev$/.test(location.hostname)) {
     addEventListener('load', function () { navigator.serviceWorker.register('/sw.js').catch(function () {}); });
   }
 

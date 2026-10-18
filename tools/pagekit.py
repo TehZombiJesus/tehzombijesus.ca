@@ -24,10 +24,11 @@ def make_page(filename, title, description, main, current=None, scripts=(), og_i
     s = re.sub(r'<meta property="og:title" content="[^"]*">', '<meta property="og:title" content="%s">' % title, s)
     if og_image:
         s = re.sub(r'(<meta (?:property="og:image"|name="twitter:image") content=")[^"]*(">)', r'\g<1>%s\g<2>' % og_image, s)
+    s = re.sub(r' data-page="[^"]*"', ' data-page="%s"' % filename.replace('.html', ''), s)
     s = s.replace(' aria-current="page"', '')
     cur = current or filename
     s = s.replace('<li><a href="%s">' % cur, '<li><a href="%s" aria-current="page">' % cur, 1)
-    a = s.index('<main class="wrap">'); b = s.index('</main>') + len('</main>')
+    a = s.index('<main '); b = s.index('</main>') + len('</main>')
     s = s[:a] + main.strip() + s[b:]
     extra = ''.join('\n<script src="%s"></script>' % p for p in scripts)
     s = s.replace('<script src="extras.js"></script>', '<script src="extras.js"></script>' + extra)
@@ -35,4 +36,4 @@ def make_page(filename, title, description, main, current=None, scripts=(), og_i
         up = '../' * depth
         s = re.sub(r'((?:href|src)=")(?!https?:|/|#|mailto:|\.\./)', r'\1' + up, s)
         s = re.sub(r"(data-flip=')(?!https?:|/)", r'\1' + up, s)
-    return s
+    return s.replace('<main class="wrap">', '<main class="wrap" id="main">')

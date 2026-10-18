@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="fr">
 <head>
+<meta name="robots" content="noindex, nofollow">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Poste de jeu | TehZombiJesus</title>
@@ -25,24 +26,38 @@
 <link rel="alternate" hreflang="fr" href="https://tehzombijesus.ca/fr/setup">
 <link rel="alternate" hreflang="x-default" href="https://tehzombijesus.ca/setup">
 <link rel="stylesheet" href="../styles.css">
+<link rel="stylesheet" href="../refresh.css">
+<link rel="stylesheet" href="../redesign.css">
 </head>
-<body>
+<body data-page="setup">
+<a class="skip-link" href="#main">Aller au contenu</a>
 
 <!-- Top menu: to add a page, copy one <li> line and point it at the new file -->
 <nav class="nav" aria-label="Principal">
   <div class="wrap">
-    <a class="home" href="index.html"><img src="../assets/favicon.svg" alt="" width="38" height="38"><span>TehZombiJesus</span></a>
+    <a class="home" href="index.html"><img src="../assets/favicon.svg" alt="" width="36" height="36"><img class="nav-wordmark" src="../assets/wordmark.svg" alt="TehZombiJesus" width="700" height="79"></a>
     <ul>
       <li><a href="index.html">Accueil</a></li>
       <li><a href="homelab.html">Homelab</a></li>
       <li><a href="setup.html" aria-current="page">Poste de jeu</a></li>
-      <li><a href="ruenix.html">Ruenix</a></li>
+      <li><a href="crypt.html">The Crypt</a></li>
+<li><a href="ruenix.html">Ruenix</a></li>
       <li><a href="devlog.html">Journal</a></li>
       <li><a href="now.html">En ce moment</a></li>
       <li><a class="lang" href="../setup.html" hreflang="en" lang="en" title="English">EN</a></li>
     </ul>
   </div>
 </nav>
+<div class="brand-art" aria-hidden="true">
+  <svg viewBox="0 0 1440 300" preserveAspectRatio="xMidYMid slice">
+    <polygon class="s" fill="#472f4a" points="0,0 560,0 450,300 -110,300 -200,300 -200,0"/>
+    <polygon class="s" fill="#8300fb" points="560,0 1120,0 1010,300 450,300"/>
+    <polygon class="s" fill="#74263e" points="1120,0 1280,0 1170,300 1010,300"/>
+    <polygon class="s" fill="#fb54f7" points="1280,0 1640,0 1530,300 1170,300"/>
+    <g class="shards" fill="#472f4a"><polygon points="880,54 892,54 802,300 790,300"/><polygon points="916,108 928,108 858,300 846,300"/><polygon points="952,162 964,162 913,300 901,300"/><polygon points="1000,54 1012,54 922,300 910,300"/><polygon points="1036,108 1048,108 978,300 966,300"/></g>
+  </svg>
+</div>
+
 <div class="band small" aria-hidden="true">
   <svg viewBox="0 0 1440 150" preserveAspectRatio="xMidYMid slice">
     <polygon class="s" fill="#472f4a" points="0,0 560,0 505,150 -55,150 -200,150 -200,0"/>
@@ -53,14 +68,27 @@
   </svg>
 </div>
 
-<main class="wrap">
+<main class="wrap" id="main">
   <header class="page-head">
     <span class="tag">Poste de jeu</span>
     <h1>La station de combat</h1>
     <div class="bar"></div>
-    <p>Un écran super ultralarge de 57 po, trois écrans au-dessus et un PC suspendu sous un bureau assis-debout. Chaque pièce choisie pour durer.</p>
-  </header>
+    <p>Ce que j’utilise aujourd’hui, puis le bureau et le PC que je prévois monter. Le matériel actuel et les pièces non achetées sont présentés séparément.</p>
+  </header><div class="page-summary"><span class="state state-confirmed">Le matériel actuel d’abord</span><p>Le prochain montage est un plan. Les pièces indiquées comme non achetées ne font pas partie du poste actuel.</p></div>
 
+  <section>
+    <h2>Ce que j'utilise aujourd'hui</h2>
+    <p class="lede">Le PC actuel, qui fait encore le travail en attendant que le nouveau soit monté.</p>
+    <div class="panel dark" style="max-width:640px">
+      <dl class="specs">
+        <dt>Processeur</dt><dd>Intel Core i7-13700K, 16 cœurs / 24 fils</dd>
+        <dt>Carte graphique</dt><dd>RTX 3070 Ti</dd>
+        <dt>Carte mère</dt><dd>Gigabyte Z790 AORUS Elite AX</dd>
+        <dt>Mémoire vive</dt><dd>32 Go</dd>
+        <dt>Système d'exploitation</dt><dd>Windows 11 Pro</dd>
+      </dl>
+    </div>
+  </section>
   <section>
     <h2>La disposition</h2>
     <p class="lede">Tout est fixé au bureau, alors l'ensemble monte et descend d'un bloc quand je passe de assis à debout.</p>
@@ -119,7 +147,7 @@
         <li data-got="no"><strong>Trois écrans de 22 po au-dessus</strong><span>Bordures minces, 1080p. Les deux des côtés sont tournés d'environ 31° pour suivre la courbe en dessous.</span></li>
         <li><strong>Deux supports d'écran verticaux</strong><span>Environ 20 cm de chaque côté du centre, assez hauts pour dépasser le 57 po.</span></li>
         <li><strong>Le PC sous le bureau</strong><span>Sur le Premium PC Mount de Secretlab, pour garder le plancher dégagé.</span></li>
-        <li data-got="no"><strong>Un câble spécial</strong><span>Un câble DisplayPort DP80LL certifié VESA, le seul type qui fait rouler le 57 po à 240 Hz au complet.</span></li>
+        <li data-got="no"><strong>Un câble spécial</strong><span>Un câble DisplayPort certifié, choisi selon les exigences de l’écran et de la carte graphique avant la commande.</span></li>
       </ul>
     </div>
   </section>
@@ -193,26 +221,14 @@
     <div class="rules">
       <div><h3>Aucun RGB</h3><p>Pas tamisé, pas éteint dans un logiciel. Des pièces sans RGB, dès le départ.</p></div>
       <div><h3>La qualité avant le prix</h3><p>Conçu pour durer des années, pas pour atteindre le total le moins cher.</p></div>
-      <div><h3>Vérifié d'abord</h3><p>Chaque pièce vérifiée pour la compatibilité avant de commander quoi que ce soit.</p></div>
+      <div><h3>Vérifié d'abord</h3><p>Confirmer la compatibilité des composants, des supports et de l’alimentation avant de commander.</p></div>
       <div><h3>Rien de recyclé</h3><p>Chaque pièce du nouveau PC est neuve.</p></div>
-      <div><h3>Aucun changement de dernière minute</h3><p>Une fois qu'une pièce est choisie, elle reste choisie.</p></div>
+      <div><h3>Les décisions peuvent évoluer</h3><p>Revoir un choix quand la compatibilité, la disponibilité ou les besoins changent.</p></div>
       <div><h3>Bouge avec le bureau</h3><p>Les écrans, le PC et les câbles montent et descendent ensemble.</p></div>
     </div>
   </section>
 
-  <section>
-    <h2>Ce que j'utilise aujourd'hui</h2>
-    <p class="lede">Le PC actuel, qui fait encore le travail en attendant que le nouveau soit monté.</p>
-    <div class="panel dark" style="max-width:640px">
-      <dl class="specs">
-        <dt>Processeur</dt><dd>Intel Core i7-13700K, 16 cœurs / 24 fils</dd>
-        <dt>Carte graphique</dt><dd>RTX 3070 Ti</dd>
-        <dt>Carte mère</dt><dd>Gigabyte Z790 AORUS Elite AX</dd>
-        <dt>Mémoire vive</dt><dd>32 Go</dd>
-        <dt>Système d'exploitation</dt><dd>Windows 11 Pro</dd>
-      </dl>
-    </div>
-  </section>
+
 </main>
 
 <footer>
@@ -222,10 +238,12 @@
     <!-- When your Uptime Kuma status page is public, uncomment this line and put in its address:
     <a href="https://status.tehzombijesus.ca">Status</a> -->
   </div>
+<div class="preview-notice"><span>DESIGN STUDY / 02</span><span>Aperçu de développement · production inchangée</span></div><nav class="footer-social wrap" aria-label="Liens sociaux"><a href="https://github.com/TehZombiJesus">GitHub ↗</a><a href="https://x.com/TehZombiJesus">X / Twitter ↗</a><a href="crypt.html">The Crypt ↗</a></nav>
 </footer>
 
 <script src="../site.js"></script>
 <script src="../extras.js"></script>
+<script src="../redesign.js"></script>
 <script src="../assets/version.js"></script>
 </body>
 </html>
