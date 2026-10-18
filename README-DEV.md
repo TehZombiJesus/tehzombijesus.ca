@@ -1,51 +1,28 @@
-# Full redesign development preview
+# Development preview — branding and homelab correction
 
 Preview: https://dev-site-refresh-2026-10-18.tehzombijesus-ca.pages.dev
-Draft review: https://github.com/TehZombiJesus/tehzombijesus.ca/pull/1
+Draft PR: https://github.com/TehZombiJesus/tehzombijesus.ca/pull/1
 
-Production and the existing dev branch are untouched. This is design study 02 on the isolated dev-site-refresh-2026-10-18 branch.
+Production and the pre-existing dev branch are untouched.
 
-## Design
+## Brand
 
-A complete editorial redesign with a large portrait, typographic introduction, three distinct project worlds, personal introduction, journal links and an after-hours section. The new design applies across the existing English and French pages, including the journal, setup, homelab, community, Now page and guestbook. No made-up testimonials, uptime statistics or hardware photos. Original assets are reused.
+The original favicon/logo, wordmark, slanted purple/plum/magenta artwork and portrait are restored prominently. The editorial layout is retained, but the original identity anchors it again.
 
-Long pages get a section index. Mobile navigation keeps the language switch visible. Effects remain off by default and OS reduced-motion preferences are respected.
+## Homelab source of truth
 
-## Updated migration plan
+The owner supplied a system export on October 18, 2026. Confirmed public hardware facts: HP EliteDesk 800 G5 Desktop Mini, Intel Core i5-9500T with 6 cores/6 threads, 64 GB DDR4 (2×32 GB Kingston, configured at 2667 MT/s), two approximately 2 TB NVMe drives, Intel UHD Graphics 630 and Intel I219-LM. The export does not establish the pool layout, mirror configuration, application inventory, router or off-site server. Serial numbers, UUID, raw diagnostics, memory-module identifiers, and firmware/security diagnostics are not included in the website or repository.
 
-- Proxmox remains the compute foundation.
-- Uptime Kuma → Pingvo, planned after Pingvo is released. The current status adapter still reads Uptime Kuma; a Pingvo adapter needs the actual API when migration happens.
-- Coolify → Servio. Docker hosting capability was confirmed by the owner through Ronnie. The migration is planned, not claimed complete.
-- TrueNAS ⇢ Stavo is conditional. Stavo is intended for the personal cloud, but is not a full TrueNAS replacement today. Broader storage features are planned according to Ronnie; retain TrueNAS until real storage requirements are met.
-- Budvo, Labvo and Pingvo are intended additions; Routvo and Termvo are later possibilities. Labvo and Pingvo are described as planned products, not installed services.
+The homelab page is now only:
 
-The architecture drawing includes planned hardware and is now labeled accordingly.
+1. Today — confirmed current hardware.
+2. Planned software — Stavo, Servio, Budvo, Labvo and Pingvo, with clearly described intended roles and release limitations. Servio Docker support comes from the owner's confirmation from Ronnie. Stavo is not described as a current full TrueNAS replacement.
+3. Possibly later — Routvo and Termvo.
 
-## Page improvements
+The unverified What's running inventory, mixed current/future connection map, duplicate chapter sections and old larger-server proposal were removed from this page. Their old source remains in Git history. Current applications and real topology can be added after the owner confirms them; do not recreate them from older pages or assume a mirror from two drives.
 
-- Home: project-first introduction, stronger portrait, reduced repetition, separate personal and project stories.
-- Homelab: explicit migration scope; architecture before product roadmap; current and future software distinguished.
-- Setup: current equipment first; future equipment labeled; buying choices can be revisited and compatibility is checked before ordering.
-- The Crypt: a community-led introduction with distinct Discord, Minecraft and Crypt Keeper sections.
-- Ruenix: launch status and its own Discord appear before the longer details.
-- Now: a concise focus statement before the project lists.
-- Devlog: a quieter editorial list with existing filters, article navigation and RSS preserved.
-- Guestbook: clearer form styling; moderation and anti-spam code unchanged.
+## Run and verify
 
-## Suggestions for a next iteration
+Node.js 24+: node dev-server.mjs, then http://127.0.0.1:4173. Local preview does not execute Cloudflare Functions. Run node verify-dev.mjs. CI also runs python tools/build.py and repeats source checks against regenerated pages. Live integrations are retained unchanged and have not been tested for writes.
 
-1. Add real desk/lab photographs and screenshots as they become available. Avoid representing concepts as existing equipment.
-2. Replace hard-coded featured journal links with entries generated from tools/devlog_posts.py so new stories appear automatically.
-3. Make migration notes into small case studies: requirements, tradeoffs, cutover and outcome. Do not promise data migration or parity without checking real product behavior.
-4. Add a private pre-cutover checklist for backups, restore tests and rollback; keep sensitive topology out of the public site.
-5. When Pingvo ships, review its API and replace the Kuma adapter separately from this visual redesign.
-
-## Preview and checks
-
-Requires Node.js 24+. Run node dev-server.mjs and open http://127.0.0.1:4173. Static preview does not execute Cloudflare Functions or connect production services. Cloudflare keeps the existing functions/ and lib/ unchanged.
-
-Run node verify-dev.mjs. The GitHub workflow also runs python tools/build.py and repeats the checks against regenerated output. New English/French content and inline fragments are in tools/fr_dict.py.
-
-This branch is deliberately noindex and preview-only; service-worker registration is disabled. Before a reviewed production merge, remove preview labels/noindex policy, restore intended service-worker behavior and regenerate outputs. Never point production at this branch directly.
-
-Full redesign review: the deployed homepage was checked at desktop and 390-pixel mobile widths; mobile menu and EN/FR switching worked. The French homelab migration section, anchor navigation, Setup, Ruenix and journal pages were inspected. Journal filtering was tested and worked. Ruenix describes modes as planned for launch and no longer links back to itself. GitHub Actions passed the Python generator and repeated source checks. API writes and private integrations are not tested.
+The preceding full redesign passed desktop/mobile browser review. This correction is checked separately on the deployed preview. Preview-only noindex directives and disabled service-worker registration remain deliberate. Do not merge or promote to production without review.

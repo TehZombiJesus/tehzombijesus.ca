@@ -34,7 +34,7 @@
 <!-- Top menu: to add a page, copy one <li> line and point it at the new file -->
 <nav class="nav" aria-label="Main">
   <div class="wrap">
-    <a class="home" href="index.html"><span class="brand-monogram">TZJ<span>↗</span></span><span class="brand-name">TehZombiJesus<span>.ca</span></span></a>
+    <a class="home" href="index.html"><img src="assets/favicon.svg" alt="" width="36" height="36"><img class="nav-wordmark" src="assets/wordmark.svg" alt="TehZombiJesus" width="700" height="79"></a>
     <ul>
       <li><a href="index.html">Home</a></li>
       <li><a href="homelab.html" aria-current="page">Homelab</a></li>
@@ -47,6 +47,16 @@
     </ul>
   </div>
 </nav>
+<div class="brand-art" aria-hidden="true">
+  <svg viewBox="0 0 1440 300" preserveAspectRatio="xMidYMid slice">
+    <polygon class="s" fill="#472f4a" points="0,0 560,0 450,300 -110,300 -200,300 -200,0"/>
+    <polygon class="s" fill="#8300fb" points="560,0 1120,0 1010,300 450,300"/>
+    <polygon class="s" fill="#74263e" points="1120,0 1280,0 1170,300 1010,300"/>
+    <polygon class="s" fill="#fb54f7" points="1280,0 1640,0 1530,300 1170,300"/>
+    <g class="shards" fill="#472f4a"><polygon points="880,54 892,54 802,300 790,300"/><polygon points="916,108 928,108 858,300 846,300"/><polygon points="952,162 964,162 913,300 901,300"/><polygon points="1000,54 1012,54 922,300 910,300"/><polygon points="1036,108 1048,108 978,300 966,300"/></g>
+  </svg>
+</div>
+
 <div class="band small" aria-hidden="true">
   <svg viewBox="0 0 1440 150" preserveAspectRatio="xMidYMid slice">
     <polygon class="s" fill="#472f4a" points="0,0 560,0 505,150 -55,150 -200,150 -200,0"/>
@@ -57,180 +67,10 @@
   </svg>
 </div>
 
-<main class="wrap" id="main">
-  <header class="page-head">
-    <span class="tag">Homelab</span>
-    <h1>The rack that keeps growing</h1>
-    <div class="bar"></div>
-    <p>What I self-host at home, the hardware it runs on, and where it's headed. It's never finished, and that's the fun part.</p>
-  </header>
-
-  <!-- LAB CONSOLE: typed by extras.js from what's on this page (services, build tracker, live status) -->
-  <div class="lab-console" hidden></div>
-
-  <!-- LIVE STATUS: filled from /api/status (Uptime Kuma). Stays hidden until KUMA_URL and KUMA_SLUG are set. -->
-  <section class="lab-live" hidden>
-    <h2>Live status</h2>
-    <p class="lede">Straight from Uptime Kuma, which checks every service around the clock. Updates every minute.</p>
-    <div class="live-board" aria-live="polite"></div>
-  </section>
-
-  <!-- ===================== EDIT SERVICES HERE: one <div class="svc"> each ===================== -->
-  <section>
-    <h2>What's running</h2>
-    <p class="lede">Everything lives in virtual machines and containers on one Proxmox host, with storage handled by TrueNAS.</p>
-    <div class="services">
-      <div class="svc"><h3>Proxmox</h3><p class="what">Hypervisor</p><p>The foundation. Every service runs in its own VM or container, to reduce the impact of service failures.</p></div>
-      <div class="svc"><h3>TrueNAS</h3><p class="what">Storage</p><p>ZFS storage for everything else: media, backups, and shares.</p></div>
-      <div class="svc"><h3>Coolify</h3><p class="what">App deployment</p><p>A self-hosted platform for spinning up apps and databases. Its built-in proxy gives each one its own address with automatic HTTPS.</p></div>
-      <div class="svc trial"><h3>Jellyfin</h3><p class="what">Trying out</p><p>A media server for the movie and TV library.</p></div>
-      <div class="svc trial"><h3>Uptime Kuma</h3><p class="what">Trying out</p><p>Status monitoring that pings every service and warns when something goes down.</p></div>
-      <div class="svc"><h3>Cloudflare</h3><p class="what">Edge and DNS</p><p>DNS, protection, and secure access, including this website.</p></div>
-    </div>
-  </section>
-
-  <!-- ===================== STAVO =====================
-       Stavo is made by my friend Ronniie (NullDaily). One card per app: change the text, or delete a card.
-       A "swap" line says what it would take over from. -->
-
-
-  <!-- ===================== HOMELAB MAP =====================
-       Each box is a <g class="node">. data-name is its title and data-info is the text shown under the map.
-       The moving dots follow the lines named e1 to e6. No addresses or private details on purpose. -->
-  <section>
-    <h2>How it connects</h2>
-    <p class="lede">From the internet to the drives. Hover or tap any box to see what it does.</p>
-    <p class="architecture-note">Architecture overview · includes planned networking and storage hardware. This is not a live inventory.</p><figure class="netmap">
-      <div class="netmap-scroll">
-      <svg viewBox="0 0 1000 470" role="img" aria-label="Map of the homelab: Cloudflare and the fibre connection lead to the UniFi gateway, which feeds one Proxmox host running TrueNAS, Coolify, the apps and Uptime Kuma, with TrueNAS managing a fast NVMe pool and a RAIDZ2 media pool. An off-site server connects through Cloudflare.">
-        <defs>
-          <linearGradient id="nm-edge" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="1000" y2="0"><stop offset="0" stop-color="#8300fb"/><stop offset="1" stop-color="#fb54f7"/></linearGradient>
-        </defs>
-        <!-- connections -->
-        <g class="edges" fill="none" stroke="url(#nm-edge)" stroke-width="3" stroke-linecap="round">
-          <path id="e1" d="M40,395 C0,395 0,75 40,75"/>
-          <path id="e2" d="M140,110 L140,200"/>
-          <path id="e3" d="M240,235 L300,235"/>
-          <path id="e4" d="M480,235 L560,235"/>
-          <path id="e5" d="M622,130 L622,190"/>
-          <path id="e6" d="M717,130 L717,190"/>
-        </g>
-        <!-- the host -->
-        <g class="node host" tabindex="0" data-name="Proxmox host" data-info="One machine running everything below, each service in its own virtual machine or container. Isolation reduces the impact of service failures; the host is still shared.">
-          <rect x="560" y="20" width="420" height="430" rx="14"/>
-          <text x="580" y="50" class="t">Proxmox host</text>
-          <text x="770" y="428" class="s" text-anchor="middle">One machine. Every service in its own VM or container.</text>
-        </g>
-        <!-- outside -->
-        <g class="node" tabindex="0" data-name="Cloudflare" data-info="DNS for my domains, protection in front of everything public, and secure access from outside. This website runs on it too.">
-          <rect x="40" y="40" width="200" height="70" rx="10"/><text x="140" y="70" class="t" text-anchor="middle">Cloudflare</text><text x="140" y="92" class="s" text-anchor="middle">DNS · protection</text>
-        </g>
-        <g class="node" tabindex="0" data-name="Fibre" data-info="Multi-gig fibre, planned at 3 Gbps, so uploads and remote access are never the bottleneck.">
-          <rect x="40" y="200" width="200" height="70" rx="10"/><text x="140" y="230" class="t" text-anchor="middle">Fibre</text><text x="140" y="252" class="s" text-anchor="middle">3 Gbps, planned</text>
-        </g>
-        <g class="node" tabindex="0" data-name="Off-site server" data-info="A rented dedicated server running Proxmox for work projects. Kept separate from home, and reached through Cloudflare.">
-          <rect x="40" y="360" width="200" height="70" rx="10"/><text x="140" y="390" class="t" text-anchor="middle">Off-site server</text><text x="140" y="412" class="s" text-anchor="middle">Work projects</text>
-        </g>
-        <g class="node" tabindex="0" data-name="UniFi gateway" data-info="UniFi Cloud Gateway Fiber: routing and firewall for the whole network. Chosen over a DIY pfSense box for easier day-to-day management.">
-          <rect x="300" y="200" width="180" height="70" rx="10"/><text x="390" y="230" class="t" text-anchor="middle">UniFi gateway</text><text x="390" y="252" class="s" text-anchor="middle">Router · firewall</text>
-        </g>
-        <!-- inside the host -->
-        <g class="node" tabindex="0" data-name="TrueNAS" data-info="Runs ZFS and owns the hard drives directly through the HBA. Serves storage to everything else.">
-          <rect x="580" y="70" width="180" height="60" rx="10"/><text x="670" y="97" class="t" text-anchor="middle">TrueNAS</text><text x="670" y="118" class="s" text-anchor="middle">Storage</text>
-        </g>
-        <g class="node pool" tabindex="0" data-name="Fast pool" data-info="Mirrored NVMe drives. VMs, containers and apps live here so they stay fast.">
-          <rect x="580" y="190" width="85" height="60" rx="10"/><text x="622" y="217" class="t sm" text-anchor="middle">Fast</text><text x="622" y="237" class="s" text-anchor="middle">NVMe</text>
-        </g>
-        <g class="node pool" tabindex="0" data-name="Media pool" data-info="WD Red Pro drives in RAIDZ2, for movies and TV only. Any two drives can fail without losing anything.">
-          <rect x="675" y="190" width="85" height="60" rx="10"/><text x="717" y="217" class="t sm" text-anchor="middle">Media</text><text x="717" y="237" class="s" text-anchor="middle">RAIDZ2</text>
-        </g>
-        <g class="node" tabindex="0" data-name="Coolify" data-info="A self-hosted app platform: spins up apps and databases, each with its own address and automatic HTTPS.">
-          <rect x="780" y="70" width="180" height="60" rx="10"/><text x="870" y="97" class="t" text-anchor="middle">Coolify</text><text x="870" y="118" class="s" text-anchor="middle">App platform</text>
-        </g>
-        <g class="node trial" tabindex="0" data-name="Jellyfin" data-info="A media server for the movie and TV library. Still being tried out.">
-          <rect x="780" y="150" width="180" height="40" rx="8"/><text x="870" y="176" class="t sm" text-anchor="middle">Jellyfin · media</text>
-        </g>
-        <g class="node trial" tabindex="0" data-name="Uptime Kuma" data-info="Pings every service around the clock and warns me when something goes down. Still being tried out.">
-          <rect x="580" y="320" width="380" height="56" rx="10"/><text x="770" y="346" class="t" text-anchor="middle">Uptime Kuma</text><text x="770" y="366" class="s" text-anchor="middle">Keeps an eye on everything</text>
-        </g>
-        <!-- traffic -->
-        <g class="packets">
-          <circle r="5"><animateMotion dur="3.2s" repeatCount="indefinite"><mpath href="#e1"/></animateMotion></circle>
-          <circle r="5"><animateMotion dur="1.4s" repeatCount="indefinite"><mpath href="#e2"/></animateMotion></circle>
-          <circle r="5"><animateMotion dur="1.4s" begin="0.7s" repeatCount="indefinite"><mpath href="#e2"/></animateMotion></circle>
-          <circle r="5"><animateMotion dur="1.1s" repeatCount="indefinite"><mpath href="#e3"/></animateMotion></circle>
-          <circle r="5"><animateMotion dur="1.1s" begin="0.55s" repeatCount="indefinite"><mpath href="#e3"/></animateMotion></circle>
-          <circle r="5"><animateMotion dur="1.2s" begin="0.3s" repeatCount="indefinite"><mpath href="#e4"/></animateMotion></circle>
-          <circle r="5"><animateMotion dur="1.2s" begin="0.9s" repeatCount="indefinite"><mpath href="#e4"/></animateMotion></circle>
-          <circle r="4" class="gold"><animateMotion dur="1s" repeatCount="indefinite"><mpath href="#e5"/></animateMotion></circle>
-          <circle r="4" class="gold"><animateMotion dur="1.3s" begin="0.4s" repeatCount="indefinite"><mpath href="#e6"/></animateMotion></circle>
-        </g>
-      </svg>
-      </div>
-      <p class="map-info" aria-live="polite"><strong>Hover or tap a box</strong> to see what it does.</p>
-    </figure>
-  </section>
-  <section class="migration" id="migration"><div class="section-top"><div><span class="overline">THE NEXT CHAPTER</span><h2>Same lab.<br>A new software stack.</h2></div><p>A migration plan, not a claim that the switch is already done. Proxmox remains the compute foundation.</p></div><div class="migration-list">
- <div class="migration-row"><div><span class="migration-label">MONITORING</span><h3>Uptime Kuma <span>→</span> Pingvo</h3></div><p>Pingvo will take over monitoring and status pages. Migration is planned for when the product is released.</p><span class="state state-planned">Planned · awaiting release</span></div>
- <div class="migration-row"><div><span class="migration-label">APPLICATION HOSTING</span><h3>Coolify <span>→</span> Servio</h3></div><p>Ronnie confirmed Docker hosting support, so Servio is my planned replacement for Coolify.</p><span class="state state-confirmed">Capability confirmed · migration planned</span></div>
- <div class="migration-row"><div><span class="migration-label">STORAGE & PERSONAL CLOUD</span><h3>TrueNAS <span>⇢</span> Stavo</h3></div><p>Stavo is planned for my personal cloud. A full TrueNAS replacement is only a possibility: Ronnie confirmed that broader storage features are planned, but it is not a complete replacement today.</p><span class="state">Conditional · future capabilities</span></div>
- </div><p class="source-note">Roadmap updated October 18, 2026, from my plans and confirmations from Ronnie at NullDaily.</p></section><section class="stavo-sec" id="next-stack"><span class="eyebrow">WHAT’S NEXT</span><h2>My next chapter with NullDaily</h2><p class="lede">The products behind the plan. I intend to use Stavo, Servio, Budvo, Labvo and Pingvo; Routvo and Termvo remain possibilities for later.</p><div class="services stavo"><a class="svc st" href="https://nulldaily.com/products/stavo"><span class="plan-state">Planned adoption · available</span><h3>Stavo</h3><p class="what">Personal cloud</p><p>Personal cloud first. A possible TrueNAS replacement later, if the planned storage capabilities fit my lab.</p><span class="more">Product details ↗</span></a>
-<a class="svc st" href="https://nulldaily.com/products/servio"><span class="plan-state">Planned adoption · available</span><h3>Servio</h3><p class="what">Servers & community</p><p>Docker applications, game servers and community tools. My planned Coolify replacement.</p><span class="more">Product details ↗</span></a>
-<a class="svc st" href="https://nulldaily.com/products/budvo"><span class="plan-state">Planned adoption · available</span><h3>Budvo</h3><p class="what">Personal finances</p><p>Paycheck planning, budgets and a clearer view of what I can spend.</p><span class="more">Product details ↗</span></a>
-<a class="svc st" href="https://nulldaily.com/products/labvo"><span class="plan-state">Intended adoption · product planned</span><h3>Labvo</h3><p class="what">Homelab dashboard</p><p>A central view of the lab. Intended for my stack when released.</p><span class="more">Product details ↗</span></a>
-<a class="svc st" href="https://nulldaily.com/products/pingvo"><span class="plan-state">Intended adoption · product planned</span><h3>Pingvo</h3><p class="what">Monitoring & status</p><p>My intended replacement for Uptime Kuma, once Pingvo is released.</p><span class="more">Product details ↗</span></a></div><details class="later-products"><summary>Maybe later: Routvo + Termvo</summary><p>Routvo is coming next for routing and certificates. Termvo is planned for browser terminals. Both are possibilities for later, not part of my current lab.</p><a href="https://nulldaily.com/products/routvo">Routvo ↗</a> · <a href="https://nulldaily.com/products/termvo">Termvo ↗</a></details><p class="muted">Product availability checked October 18, 2026. Plans may change.</p><a class="more" href="https://nulldaily.com">Explore NullDaily ↗</a></section>
-
-
-  <section>
-    <h2>The next server</h2>
-    <p class="lede">A rebuild that's being planned in stages, so storage can grow without starting over.</p>
-
-    <div class="split">
-      <div class="panel">
-        <h3>Build plan</h3>
-        <p class="status">Parts chosen, and why each one.</p>
-        <!-- The grey line under each part is the "why". Edit the text inside <span class="why">...</span> -->
-        <!-- BUILD TRACKER: change data-got="no" to data-got="yes" when a part is bought -->
-        <dl class="specs" data-track="parts">
-          <dt>CPU</dt><dd data-key="cpu" data-got="no">Intel Core Ultra 7 265K<span class="why">Built-in Quick Sync handles video transcoding for Jellyfin without a separate graphics card. Plenty of cores for the VMs, and low power at idle.</span></dd>
-          <dt>Board</dt><dd data-key="board" data-got="no">ASUS Pro WS W880-ACE SE<span class="why">A workstation board, because it supports ECC memory, which regular desktop boards don't. Room for the HBA and the NVMe drives too.</span></dd>
-          <dt>Memory</dt><dd data-key="ram" data-got="no">64 GB ECC<span class="why">ECC catches memory errors before they reach the data. 64 GB covers every VM plus ZFS caching, with slots free to add more.</span></dd>
-          <dt>Cooler</dt><dd data-key="cooler" data-got="no">Noctua NH-U12A<span class="why">Quiet and dependable. An air cooler has no pump to fail on a machine that runs 24/7.</span></dd>
-          <dt>PSU</dt><dd data-key="psu" data-got="no">Corsair RM1000x<span class="why">Enough power for a case full of hard drives spinning up at the same time, and silent at low load.</span></dd>
-          <dt>Case</dt><dd data-key="case" data-got="no">Fractal Design Define 7<span class="why">Room for lots of drives, and sound-dampened panels so a box full of disks stays quiet.</span></dd>
-          <dt>Controller</dt><dd data-key="hba" data-got="no">16-port HBA<span class="why">Connects far more drives than the motherboard can, and hands them straight to TrueNAS, which ZFS needs to work properly.</span></dd>
-          <dt>Boot</dt><dd data-key="boot" data-got="no">2× 480 GB SSD, mirrored<span class="why">If one boot drive dies, the server keeps running on the other.</span></dd>
-          <dt>Fast pool</dt><dd data-key="fast" data-got="no">2× 4 TB NVMe, mirrored<span class="why">VMs, containers and apps run from fast flash. Mirrored, so one drive can fail without losing anything.</span></dd>
-          <dt>Media pool</dt><dd data-key="media" data-got="no">7× WD Red Pro 20 TB, RAIDZ2 to start<span class="why">Where the movies and TV live. NAS-grade drives made to run all day, added in batches as the library grows.</span></dd>
-          <dt>UPS</dt><dd data-key="ups" data-got="no">CyberPower 1500 VA<span class="why">Rides through short outages and gives time to shut down cleanly in a long one, so no write is ever lost halfway.</span></dd>
-        </dl>
-      </div>
-      <div class="stick">
-        <h3>Why it's built this way</h3>
-        <p class="muted" style="margin:12px 0 22px">A server that runs 24/7 at home has three jobs: keep the data safe, grow without a rebuild, and stay quiet enough to live with. Every choice comes back to one of those.</p>
-        <!-- EDIT: one <li> per reason -->
-        <ul class="facts why-list">
-          <li><strong>Two drives can fail, and nothing is lost</strong><span>The media pool uses RAIDZ2: two drives' worth of space holds parity, so any two can die at the same time and the pool keeps running while they're replaced. That costs raw capacity, but on drives this big a rebuild takes days, and a second failure during a rebuild is the real risk. Peace of mind over extra terabytes.</span></li>
-          <li><strong>Grows in stages, never starts over</strong><span>The case, controller and power supply are sized for the full drive count from day one. Drives get added in batches as the library grows, instead of paying for empty space up front or migrating everything to a new box later.</span></li>
-          <li><strong>Fast storage and big storage, kept apart</strong><span>VMs, containers and apps live on mirrored NVMe, so they stay quick no matter what the hard drives are doing. The hard drives only hold movies and TV, which need space, not speed.</span></li>
-          <li><strong>Safety net, not a full backup</strong><span>Everything on the media pool can be replaced, so RAIDZ2 is its protection. Backing up that many terabytes would double the cost of the storage for files that aren't irreplaceable.</span></li>
-          <li><strong>The data stays correct</strong><span>ZFS checks every block it reads and repairs silent corruption from the redundant copy. ECC memory closes the last gap by catching errors in RAM before they're written to disk. 64 GB to start while memory prices are high, with slots free to add more.</span></li>
-          <li><strong>Quiet, cool and boring</strong><span>A sound-dampened case, a Noctua air cooler with no pump to fail, and a battery backup for outages. The goal is a server you forget is there.</span></li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <section>
-    <h2>Network</h2>
-    <p class="lede">The plumbing that ties it together.</p>
-    <div class="cols">
-      <div class="col"><h3>Fibre</h3><p class="role">Planned: 3 Gbps</p><p>A multi-gig fibre connection, so remote access and uploads aren't the bottleneck.</p></div>
-      <div class="col plum"><h3>UniFi</h3><p class="role">Cloud Gateway Fiber</p><p>Ubiquiti for routing and firewall, chosen over a DIY pfSense box for easier day-to-day management.</p></div>
-      <div class="col wine"><h3>Off-site</h3><p class="role">Dedicated server</p><p>A rented dedicated server runs Proxmox for work projects, kept separate from home and all behind Cloudflare.</p></div>
-    </div>
-  </section>
-</main>
+<main class="wrap" id="main"><header class="page-head"><span class="tag">HOMELAB</span><h1>A small machine.<br>My actual homelab.</h1><div class="bar"></div><p>The hardware I have today, followed by the software I intend to use. Two separate things, in one place.</p></header>
+ <section id="today" class="hardware-today"><div class="section-top"><div><span class="overline">01 / TODAY</span><h2>HP EliteDesk 800 G5<br>Desktop Mini</h2></div><p>Current hardware, confirmed from the machine’s system export in October 2026.</p></div><div class="current-hardware-grid"><div class="hardware-identity"><span class="overline">THE CURRENT HOST</span><div class="mini-machine" aria-hidden="true"><span>HP</span><i></i><b></b><b></b></div><h3>Compact hardware.<br>Room to experiment.</h3><p>One mini PC is the starting point. The software roadmap below describes the direction, not an inventory of installed apps.</p></div><dl class="hardware-specs"><div><dt>Processor</dt><dd>Intel Core i5-9500T<span>6 cores / 6 threads</span></dd></div><div><dt>Memory</dt><dd>64 GB DDR4<span>2 × 32 GB Kingston · 2667 MT/s configured</span></dd></div><div><dt>Installed storage</dt><dd>2 × 2 TB NVMe<span>Approximately 1.8 TiB per drive as shown by Linux.</span></dd></div><div><dt>Graphics</dt><dd>Intel UHD Graphics 630</dd></div><div><dt>Network controller</dt><dd>Intel I219-LM</dd></div></dl></div><p class="source-note">Drive capacities describe installed hardware, not usable pool capacity or a confirmed mirror.</p></section>
+ <section id="planned-software"><div class="section-top"><div><span class="overline">02 / PLANNED SOFTWARE</span><h2>The direction:<br>NullDaily.</h2></div><p>My intended stack. These choices are kept separate from today’s hardware and are not labeled as running services.</p></div><div class="services stavo"><a class="svc st" href="https://nulldaily.com/products/stavo"><span class="plan-state">Intended adoption</span><h3>Stavo</h3><p class="what">Personal cloud; storage possibilities later</p><p>Planned for files and personal cloud services. A full TrueNAS replacement is a future possibility, not a capability I’m claiming today. Ronnie confirmed broader storage features are planned.</p><span class="more">Product details ↗</span></a><a class="svc st" href="https://nulldaily.com/products/servio"><span class="plan-state">Intended adoption</span><h3>Servio</h3><p class="what">Docker applications and game hosting</p><p>Planned for Docker applications and game hosting, in place of Coolify. Docker support was confirmed by Ronnie.</p><span class="more">Product details ↗</span></a><a class="svc st" href="https://nulldaily.com/products/budvo"><span class="plan-state">Intended adoption</span><h3>Budvo</h3><p class="what">Personal finances</p><p>Intended for budgeting and paycheck planning on my own hardware.</p><span class="more">Product details ↗</span></a><a class="svc st" href="https://nulldaily.com/products/labvo"><span class="plan-state">Intended adoption</span><h3>Labvo</h3><p class="what">Homelab overview · product planned</p><p>The intended dashboard when Labvo is released.</p><span class="more">Product details ↗</span></a><a class="svc st" href="https://nulldaily.com/products/pingvo"><span class="plan-state">Intended adoption</span><h3>Pingvo</h3><p class="what">Monitoring · product planned</p><p>Monitoring and status pages, chosen in place of Uptime Kuma. Planned adoption after Pingvo is released.</p><span class="more">Product details ↗</span></a></div></section>
+ <section id="later"><span class="overline">03 / POSSIBLY LATER</span><h2>Routvo + Termvo</h2><p class="lede">Routing and certificates with Routvo, and browser terminals with Termvo. Possibilities for later, separate from the intended stack above.</p><div class="cta-row"><a class="btn ghost" href="https://nulldaily.com/products/routvo">Routvo ↗</a><a class="btn ghost" href="https://nulldaily.com/products/termvo">Termvo ↗</a></div></section></main>
 
 <footer>
   <div class="wrap">

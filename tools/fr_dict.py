@@ -672,3 +672,51 @@ FR.update({
 FR.update({"What I use today, and the desk and PC I’m planning next. Current equipment and unbought parts are shown separately.":"Ce que j’utilise aujourd’hui, puis le bureau et le PC que je prévois monter. Le matériel actuel et les pièces non achetées sont présentés séparément.","Social links":"Liens sociaux"})
 
 FR.update({"Two game modes planned for launch, with more to come.":"Deux modes de jeu prévus au lancement, et d’autres à venir."})
+
+# Confirmed hardware and clarified intended software.
+FR.update({
+  "Personal cloud; storage possibilities later": "Cloud personnel; possibilités de stockage plus tard",
+  "Planned for files and personal cloud services. A full TrueNAS replacement is a future possibility, not a capability I’m claiming today. Ronnie confirmed broader storage features are planned.": "Prévu pour les fichiers et les services de cloud personnel. Le remplacement complet de TrueNAS reste une possibilité future, pas une fonction tenue pour acquise aujourd’hui. Ronnie a confirmé que des fonctions de stockage plus larges sont prévues.",
+  "Docker applications and game hosting": "Applications Docker et serveurs de jeu",
+  "My choice for Docker applications and game hosting. Ronnie confirmed Docker support, so Coolify is no longer the intended deployment platform. This is a software decision, not a claim that either is installed.": "Mon choix pour les applications Docker et les serveurs de jeu. Ronnie a confirmé Docker, alors Coolify n’est plus la plateforme de déploiement prévue. C’est un choix de logiciel, pas une affirmation que l’un ou l’autre est installé.",
+  "Personal finances": "Finances personnelles",
+  "Intended for budgeting and paycheck planning on my own hardware.": "Prévu pour le budget et la planification des paies sur mon matériel.",
+  "Homelab overview · product planned": "Vue d’ensemble du lab · produit prévu",
+  "The intended dashboard when Labvo is released.": "Le tableau de bord prévu après la sortie de Labvo.",
+  "Monitoring · product planned": "Surveillance · produit prévu",
+  "My intended monitoring and status-page tool instead of Uptime Kuma, when Pingvo is released. This does not mean Uptime Kuma is currently running.": "L’outil de surveillance et de pages d’état prévu à la place d’Uptime Kuma, après la sortie de Pingvo. Cela ne signifie pas qu’Uptime Kuma est actuellement installé.",
+  "A small machine.<br>My actual homelab.": "Une petite machine.<br>Mon vrai homelab.",
+  "The hardware I have today, followed by the software I intend to use. Two separate things, in one place.": "Le matériel que j’ai aujourd’hui, puis les logiciels que je compte utiliser. Deux choses distinctes, au même endroit.",
+  "TODAY": "AUJOURD’HUI",
+  "Current hardware, confirmed from the machine’s system export in October 2026.": "Matériel actuel confirmé par l’export système de la machine en octobre 2026.",
+  "THE CURRENT HOST": "L’HÔTE ACTUEL",
+  "Compact hardware.<br>Room to experiment.": "Du matériel compact.<br>De la place pour expérimenter.",
+  "One mini PC is the starting point. The software roadmap below describes the direction, not an inventory of installed apps.": "Un mini PC comme point de départ. Le plan logiciel ci-dessous indique la direction, pas un inventaire des applications installées.",
+  "Processor": "Processeur",
+  "6 cores / 6 threads": "6 cœurs / 6 fils",
+  "Memory": "Mémoire",
+  "configured": "configurés",
+  "Installed storage": "Stockage installé",
+  "Approximately 1.8 TiB per drive as shown by Linux.": "Environ 1,8 Tio par disque selon Linux.",
+  "Graphics": "Graphiques",
+  "Network controller": "Contrôleur réseau",
+  "Drive capacities describe installed hardware, not usable pool capacity or a confirmed mirror.": "Les capacités décrivent les disques installés, pas la capacité utilisable d’un pool ni un miroir confirmé.",
+  "PLANNED SOFTWARE": "LOGICIELS PRÉVUS",
+  "The direction:<br>NullDaily.": "La direction :<br>NullDaily.",
+  "My intended stack. These choices are kept separate from today’s hardware and are not labeled as running services.": "Ma configuration logicielle prévue. Ces choix sont distincts du matériel actuel et ne sont pas présentés comme des services en fonction.",
+  "Intended adoption": "Adoption prévue",
+  "Product details": "Détails du produit",
+  "POSSIBLY LATER": "PEUT-ÊTRE PLUS TARD",
+  "Routing and certificates with Routvo, and browser terminals with Termvo. Possibilities for later, separate from the intended stack above.": "Le routage et les certificats avec Routvo, et les terminaux dans le navigateur avec Termvo. Des possibilités pour plus tard, distinctes des choix ci-dessus.",
+  "Servers, communities,<br>and everything in between.": "Des serveurs, des communautés<br>et tout ce qui vient avec.",
+  "A small machine.": "Une petite machine.",
+  "My actual homelab.": "Mon vrai homelab.",
+  "The direction:": "La direction :",
+  "NullDaily.": "NullDaily.",
+  "Servers, communities,": "Des serveurs, des communautés",
+  "and everything in between.": "et tout ce qui vient avec.",
+  "Compact hardware.": "Du matériel compact.",
+  "Room to experiment.": "De la place pour expérimenter."
+})
+
+FR.update({"Planned for Docker applications and game hosting, in place of Coolify. Docker support was confirmed by Ronnie.":"Prévu pour les applications Docker et les serveurs de jeu, à la place de Coolify. La prise en charge de Docker a été confirmée par Ronnie.","Monitoring and status pages, chosen in place of Uptime Kuma. Planned adoption after Pingvo is released.":"Surveillance et pages d’état, choisies à la place d’Uptime Kuma. Adoption prévue après la sortie de Pingvo."})
