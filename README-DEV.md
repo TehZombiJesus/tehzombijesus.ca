@@ -48,4 +48,4 @@ Run node verify-dev.mjs. The GitHub workflow also runs python tools/build.py and
 
 This branch is deliberately noindex and preview-only; service-worker registration is disabled. Before a reviewed production merge, remove preview labels/noindex policy, restore intended service-worker behavior and regenerate outputs. Never point production at this branch directly.
 
-The earlier development build passed desktop/mobile browser review. The full redesign is being validated separately on the hosted preview; only the final review report should be used for its QA status. API writes and private integrations are not tested.
+Full redesign review: the deployed homepage was checked at desktop and 390-pixel mobile widths; mobile menu and EN/FR switching worked. The French homelab migration section, anchor navigation, and Setup page were inspected. GitHub Actions passed the Python generator and repeated source checks. API writes and private integrations are not tested.

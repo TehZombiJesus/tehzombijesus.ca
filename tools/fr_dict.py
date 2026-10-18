@@ -668,3 +668,5 @@ FR.update({
   "DESIGN STUDY / 02": "ÉTUDE VISUELLE / 02",
   "Development preview · production unchanged": "Aperçu de développement · production inchangée"
 })
+
+FR.update({"What I use today, and the desk and PC I’m planning next. Current equipment and unbought parts are shown separately.":"Ce que j’utilise aujourd’hui, puis le bureau et le PC que je prévois monter. Le matériel actuel et les pièces non achetées sont présentés séparément.","Social links":"Liens sociaux"})
