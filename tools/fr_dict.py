@@ -670,3 +670,5 @@ FR.update({
 })
 
 FR.update({"What I use today, and the desk and PC I’m planning next. Current equipment and unbought parts are shown separately.":"Ce que j’utilise aujourd’hui, puis le bureau et le PC que je prévois monter. Le matériel actuel et les pièces non achetées sont présentés séparément.","Social links":"Liens sociaux"})
+
+FR.update({"Two game modes planned for launch, with more to come.":"Deux modes de jeu prévus au lancement, et d’autres à venir."})
