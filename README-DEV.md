@@ -27,10 +27,13 @@ Open http://127.0.0.1:4173. English and French pages are included. The local ser
 
 Use a separate Pages project or a preview branch that is NOT the production branch. Keep output directory site. This bundle includes functions/ and lib/ unchanged. Do not reuse production secrets or D1 bindings for a preview.
 
-The original generator requires Python 3. Run python tools/build.py before deploying if changing source content. New copy is included in tools/fr_dict.py and the Crypt page is included in the French generator. Generated HTML is already bundled. The Python build and live Cloudflare integrations were not executed in this environment.
+The original generator requires Python 3. Run python tools/build.py before deploying if changing source content. New copy is included in tools/fr_dict.py and the Crypt page is included in the French generator. Generated HTML is already bundled. The Python generator and post-generation checks passed in GitHub Actions. Live Cloudflare integrations beyond the visible Discord member count were not tested.
 
 This is deliberately marked noindex and preview-only. Before promoting a reviewed version, remove preview labels and noindex policy, re-enable the intended service-worker behavior, and regenerate the sitemap/feeds. Do not merge this development copy directly into production without that review.
 
 ## Verification
 
-JavaScript syntax, source completeness, bilingual navigation, local link targets, and new product states are checked with node verify-dev.mjs. The browser could not reach the local preview in the execution environment; desktop/mobile visual QA of this build remains pending.
+JavaScript syntax, source completeness, bilingual navigation, local link targets, and new product states are checked with node verify-dev.mjs. The local preview was unreachable from the browser. The deployed Cloudflare preview was subsequently checked at desktop and 390-pixel mobile widths, including the mobile menu, EN/FR navigation, and the homelab roadmap. Live API writes were not tested.
+
+Preview: https://dev-site-refresh-2026-10-18.tehzombijesus-ca.pages.dev
+Draft review: https://github.com/TehZombiJesus/tehzombijesus.ca/pull/1

@@ -552,3 +552,5 @@ FR.update({
   "That’s the separate Minecraft network I help manage.": "C’est le réseau Minecraft distinct que je contribue à gérer.",
   "The Crypt: my Discord community, Minecraft with friends, and Crypt Keeper.": "The Crypt : ma communauté Discord, Minecraft entre amis et Crypt Keeper."
 })
+
+FR.update({"The foundation. Every service runs in its own VM or container, to reduce the impact of service failures.":"La fondation. Chaque service roule dans sa propre VM ou son propre conteneur pour limiter les répercussions d’une panne de service.","One machine running everything below, each service in its own virtual machine or container. Isolation reduces the impact of service failures; the host is still shared.":"Une seule machine héberge les services ci-dessous, chacun dans sa VM ou son conteneur. L’isolation limite les répercussions des pannes, mais l’hôte reste partagé."})
