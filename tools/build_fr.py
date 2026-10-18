@@ -78,7 +78,7 @@ def add_alternates(s, rel):
              '<link rel="alternate" hreflang="x-default" href="%s">\n') % (en_url, fr_url, en_url)
     return s.replace('<link rel="stylesheet" href="', links + '<link rel="stylesheet" href="', 1)
 
-SHARED = r'(assets/|refresh\.css|styles\.css|site\.js|extras\.js|manifest\.webmanifest|sw-register\.js)'
+SHARED = r'(assets/|redesign\.css|redesign\.js|refresh\.css|styles\.css|site\.js|extras\.js|manifest\.webmanifest|sw-register\.js)'
 
 def build_pair(rel, fr_main=None):
     """Read site/<rel> (English), make sure it has its FR switch, and write site/fr/<rel>."""

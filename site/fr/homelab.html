@@ -27,14 +27,15 @@
 <link rel="alternate" hreflang="x-default" href="https://tehzombijesus.ca/homelab">
 <link rel="stylesheet" href="../styles.css">
 <link rel="stylesheet" href="../refresh.css">
+<link rel="stylesheet" href="../redesign.css">
 </head>
-<body>
+<body data-page="homelab">
 <a class="skip-link" href="#main">Aller au contenu</a>
 
 <!-- Top menu: to add a page, copy one <li> line and point it at the new file -->
 <nav class="nav" aria-label="Principal">
   <div class="wrap">
-    <a class="home" href="index.html"><img src="../assets/favicon.svg" alt="" width="38" height="38"><span>TehZombiJesus</span></a>
+    <a class="home" href="index.html"><span class="brand-monogram">TZJ<span>↗</span></span><span class="brand-name">TehZombiJesus<span>.ca</span></span></a>
     <ul>
       <li><a href="index.html">Accueil</a></li>
       <li><a href="homelab.html" aria-current="page">Homelab</a></li>
@@ -100,7 +101,7 @@
   <section>
     <h2>Comment tout se connecte</h2>
     <p class="lede">D'Internet jusqu'aux disques. Survole ou touche une boîte pour voir à quoi elle sert.</p>
-    <figure class="netmap">
+    <p class="architecture-note">Vue d’ensemble de l’architecture · comprend du matériel réseau et de stockage prévu. Ce n’est pas un inventaire en direct.</p><figure class="netmap">
       <div class="netmap-scroll">
       <svg viewBox="0 0 1000 470" role="img" aria-label="Carte du homelab : Cloudflare et la connexion fibre mènent à la passerelle UniFi, qui alimente un hôte Proxmox faisant rouler TrueNAS, Coolify, les applications et Uptime Kuma. TrueNAS gère un pool NVMe rapide et un pool multimédia en RAIDZ2. Un serveur hors site se connecte par Cloudflare.">
         <defs>
@@ -170,11 +171,15 @@
       <p class="map-info" aria-live="polite"><strong>Survole ou touche une boîte</strong> pour voir à quoi elle sert.</p>
     </figure>
   </section>
-  <section class="stavo-sec" id="next-stack"><span class="eyebrow">LA SUITE</span><h2>La suite avec NullDaily</h2><p class="lede">Des logiciels créés par mon ami Ronniie chez NullDaily. Voici les ajouts prévus, distincts des services qui roulent déjà ci-dessus.</p><div class="services stavo"><a class="svc st" href="https://nulldaily.com/products/stavo"><span class="plan-state">Adoption prévue · disponible</span><h3>Stavo</h3><p class="what">Cloud personnel</p><p>Fichiers, photos, notes, courriels et calendriers sur mon matériel.</p><span class="more">Détails du produit ↗</span></a>
-<a class="svc st" href="https://nulldaily.com/products/servio"><span class="plan-state">Adoption prévue · disponible</span><h3>Servio</h3><p class="what">Serveurs et communauté</p><p>Serveurs de jeu, bots, hébergement et outils communautaires dans un panneau.</p><span class="more">Détails du produit ↗</span></a>
+  <section class="migration" id="migration"><div class="section-top"><div><span class="overline">LE PROCHAIN CHAPITRE</span><h2>Le même lab.<br>De nouveaux logiciels.</h2></div><p>Un plan de migration : les changements ne sont pas encore faits. Proxmox demeure la base pour le calcul.</p></div><div class="migration-list">
+ <div class="migration-row"><div><span class="migration-label">SURVEILLANCE</span><h3>Uptime Kuma <span>→</span> Pingvo</h3></div><p>Pingvo prendra la relève pour la surveillance et les pages d’état. La migration est prévue après la sortie du produit.</p><span class="state state-planned">Prévu · en attente de sortie</span></div>
+ <div class="migration-row"><div><span class="migration-label">HÉBERGEMENT D’APPLICATIONS</span><h3>Coolify <span>→</span> Servio</h3></div><p>Ronnie a confirmé la prise en charge de Docker. Servio est donc le remplacement prévu de Coolify.</p><span class="state state-confirmed">Fonction confirmée · migration prévue</span></div>
+ <div class="migration-row"><div><span class="migration-label">STOCKAGE ET CLOUD PERSONNEL</span><h3>TrueNAS <span>⇢</span> Stavo</h3></div><p>Stavo est prévu pour mon cloud personnel. Le remplacement complet de TrueNAS reste une possibilité : Ronnie a confirmé que des fonctions de stockage plus larges sont prévues, mais Stavo ne le remplace pas entièrement aujourd’hui.</p><span class="state">Conditionnel · fonctions futures</span></div>
+ </div><p class="source-note">Plan mis à jour le 18 octobre 2026 selon mes intentions et les confirmations de Ronnie chez NullDaily.</p></section><section class="stavo-sec" id="next-stack"><span class="eyebrow">LA SUITE</span><h2>La suite avec NullDaily</h2><p class="lede">Les produits derrière le plan. Je compte utiliser Stavo, Servio, Budvo, Labvo et Pingvo; Routvo et Termvo restent des possibilités pour plus tard.</p><div class="services stavo"><a class="svc st" href="https://nulldaily.com/products/stavo"><span class="plan-state">Adoption prévue · disponible</span><h3>Stavo</h3><p class="what">Cloud personnel</p><p>Le cloud personnel d’abord. Un remplacement possible de TrueNAS plus tard, si les fonctions de stockage prévues conviennent au lab.</p><span class="more">Détails du produit ↗</span></a>
+<a class="svc st" href="https://nulldaily.com/products/servio"><span class="plan-state">Adoption prévue · disponible</span><h3>Servio</h3><p class="what">Serveurs et communauté</p><p>Applications Docker, serveurs de jeu et outils communautaires. Le remplacement prévu de Coolify.</p><span class="more">Détails du produit ↗</span></a>
 <a class="svc st" href="https://nulldaily.com/products/budvo"><span class="plan-state">Adoption prévue · disponible</span><h3>Budvo</h3><p class="what">Finances personnelles</p><p>Planification des paies, budgets et portrait plus clair de ce que je peux dépenser.</p><span class="more">Détails du produit ↗</span></a>
 <a class="svc st" href="https://nulldaily.com/products/labvo"><span class="plan-state">Adoption prévue · produit en préparation</span><h3>Labvo</h3><p class="what">Tableau de bord du lab</p><p>Une vue centrale du lab. Prévu dans ma configuration après sa sortie.</p><span class="more">Détails du produit ↗</span></a>
-<a class="svc st" href="https://nulldaily.com/products/pingvo"><span class="plan-state">Adoption prévue · produit en préparation</span><h3>Pingvo</h3><p class="what">Surveillance et état</p><p>Surveillance des services et pages d’état. Prévu après sa sortie.</p><span class="more">Détails du produit ↗</span></a></div><details class="later-products"><summary>Peut-être plus tard : Routvo + Termvo</summary><p>Routvo est le prochain produit prévu pour le routage et les certificats. Termvo est prévu pour les terminaux dans le navigateur. Ce sont des possibilités pour plus tard.</p><a href="https://nulldaily.com/products/routvo">Routvo ↗</a> · <a href="https://nulldaily.com/products/termvo">Termvo ↗</a></details><p class="muted">Disponibilité des produits vérifiée le 18 octobre 2026. Les plans peuvent changer.</p><a class="more" href="https://nulldaily.com">Découvrir NullDaily ↗</a></section>
+<a class="svc st" href="https://nulldaily.com/products/pingvo"><span class="plan-state">Adoption prévue · produit en préparation</span><h3>Pingvo</h3><p class="what">Surveillance et état</p><p>Le remplacement prévu d’Uptime Kuma, après la sortie de Pingvo.</p><span class="more">Détails du produit ↗</span></a></div><details class="later-products"><summary>Peut-être plus tard : Routvo + Termvo</summary><p>Routvo est le prochain produit prévu pour le routage et les certificats. Termvo est prévu pour les terminaux dans le navigateur. Ce sont des possibilités pour plus tard.</p><a href="https://nulldaily.com/products/routvo">Routvo ↗</a> · <a href="https://nulldaily.com/products/termvo">Termvo ↗</a></details><p class="muted">Disponibilité des produits vérifiée le 18 octobre 2026. Les plans peuvent changer.</p><a class="more" href="https://nulldaily.com">Découvrir NullDaily ↗</a></section>
 
 
   <section>
@@ -235,10 +240,11 @@
     <!-- When your Uptime Kuma status page is public, uncomment this line and put in its address:
     <a href="https://status.tehzombijesus.ca">Status</a> -->
   </div>
-<div class="preview-notice">Version de développement · aperçu seulement</div></footer>
+<div class="preview-notice"><span>DESIGN STUDY / 02</span><span>Aperçu de développement · production inchangée</span></div></footer>
 
 <script src="../site.js"></script>
 <script src="../extras.js"></script>
+<script src="../redesign.js"></script>
 <script src="../assets/version.js"></script>
 </body>
 </html>

@@ -27,14 +27,15 @@
 <link rel="alternate" hreflang="x-default" href="https://tehzombijesus.ca/now">
 <link rel="stylesheet" href="../styles.css">
 <link rel="stylesheet" href="../refresh.css">
+<link rel="stylesheet" href="../redesign.css">
 </head>
-<body>
+<body data-page="now">
 <a class="skip-link" href="#main">Aller au contenu</a>
 
 <!-- Top menu: to add a page, copy one <li> line and point it at the new file -->
 <nav class="nav" aria-label="Principal">
   <div class="wrap">
-    <a class="home" href="index.html"><img src="../assets/favicon.svg" alt="" width="38" height="38"><span>TehZombiJesus</span></a>
+    <a class="home" href="index.html"><span class="brand-monogram">TZJ<span>↗</span></span><span class="brand-name">TehZombiJesus<span>.ca</span></span></a>
     <ul>
       <li><a href="index.html">Accueil</a></li>
       <li><a href="homelab.html">Homelab</a></li>
@@ -64,7 +65,7 @@
     <div class="bar"></div>
     <!-- EDIT: change the month whenever you update this page -->
     <p>Un aperçu de ce qui m'occupe ces temps-ci. Si on ne s'est pas parlé depuis un bout, voici la version courte. <span class="updated">Mis à jour en octobre 2026.</span></p>
-  </header>
+  </header><div class="focus-note"><span class="overline">LA VERSION COURTE</span><p>Garder l’infrastructure en santé. Faire grandir The Crypt. Bien planifier la suite du lab. Garder du temps pour jouer.</p></div>
 
   <!-- ===================== EDIT THIS PAGE: one <li> per item ===================== -->
   <section>
@@ -110,10 +111,11 @@
     <!-- When your Uptime Kuma status page is public, uncomment this line and put in its address:
     <a href="https://status.tehzombijesus.ca">Status</a> -->
   </div>
-<div class="preview-notice">Version de développement · aperçu seulement</div></footer>
+<div class="preview-notice"><span>DESIGN STUDY / 02</span><span>Aperçu de développement · production inchangée</span></div></footer>
 
 <script src="../site.js"></script>
 <script src="../extras.js"></script>
+<script src="../redesign.js"></script>
 <script src="../assets/version.js"></script>
 </body>
 </html>

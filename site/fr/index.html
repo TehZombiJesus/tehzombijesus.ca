@@ -27,14 +27,15 @@
 <link rel="alternate" hreflang="x-default" href="https://tehzombijesus.ca/">
 <link rel="stylesheet" href="../styles.css">
 <link rel="stylesheet" href="../refresh.css">
+<link rel="stylesheet" href="../redesign.css">
 </head>
-<body>
+<body class="redesign-home" data-page="index">
 <a class="skip-link" href="#main">Aller au contenu</a>
 
 <!-- Top menu: to add a page, copy one <li> line and point it at the new file -->
 <nav class="nav" aria-label="Principal">
   <div class="wrap">
-    <a class="home" href="index.html"><img src="../assets/favicon.svg" alt="" width="38" height="38"><span>TehZombiJesus</span></a>
+    <a class="home" href="index.html"><span class="brand-monogram">TZJ<span>↗</span></span><span class="brand-name">TehZombiJesus<span>.ca</span></span></a>
     <ul>
       <li><a href="index.html" aria-current="page">Accueil</a></li>
       <li><a href="homelab.html">Homelab</a></li>
@@ -58,90 +59,26 @@
 </div>
 
 <main class="wrap" id="main">
-
-  <header class="hero animate"><span class="hero-kicker">KEVIN / TEHZOMBIJESUS / CANADA</span>
-    <img class="avatar" fetchpriority="high" src="../assets/avatar.webp" alt="Avatar de TehZombiJesus" width="320" height="320">
-    <div class="hero-text">
-      <h1 style="margin:0"><img class="wordmark" src="../assets/wordmark.svg" alt="TehZombiJesus" width="700" height="79"></h1>
-      <div class="bar"></div>
-      <!-- EDIT: your intro -->
-      <p class="intro">Je gère des serveurs, je rassemble du monde et mon homelab a toujours une amélioration en vue. <span class="soft">Admin système au travail. Bidouilleur par habitude. Joueur après les heures.</span></p>
-      <!-- EDIT: the rotating "Right now" line. Separate each phrase with | -->
-      <p class="typed"><span class="typed-label">En ce moment :</span> <span class="typed-text" data-words="je garde les serveurs en vie|je bâtis la Crypte|je planifie un poste de 57 pouces|je mets à niveau le homelab, encore|je joue en ARAM, juste pour le plaisir">je garde les serveurs en vie</span><span class="caret" aria-hidden="true"></span></p>
-      <div class="cta-row">
-        <a class="btn" href="#projects">Explorer mes projets ↘</a>
-        <a class="btn ghost" href="crypt.html">Découvrir The Crypt ↗</a>
-      </div>
-      <!-- Live member count from Discord. Hides itself if Discord doesn't answer. -->
-      <p class="discord-live" hidden><span class="dot" aria-hidden="true"></span><span class="dl-text"></span></p>
-    </div>
-  </header>
-
-  <!-- ========================= EDIT YOUR LINKS HERE =========================
-       One <li> per link. Change href="..." and the name/handle text.
-       Keep an even number so the two columns line up. -->
-  <section id="projects" class="featured">
- <div class="section-top"><div><span class="eyebrow">INFRASTRUCTURE / COMMUNAUTÉS / JEUX</span><h2>Ce que je fais rouler</h2></div><a class="more" href="now.html">Ce qui se passe en ce moment ↗</a></div>
- <div class="project-grid">
- <a class="project-card lab-card" href="homelab.html"><span class="project-num">01 / HOMELAB</span><div class="mini-rack" aria-hidden="true"><i></i><i></i><i></i></div><h3>Toujours une amélioration en vue.</h3><p>Proxmox, TrueNAS et les décisions derrière mon infrastructure à la maison.</p><span class="more">Explorer le lab ↗</span></a>
- <a class="project-card crypt-card" href="crypt.html"><span class="project-num">02 / THE CRYPT</span><div class="project-symbol" aria-hidden="true">⌘</div><h3>Du bon monde. Du chaos partagé.</h3><p>Ma communauté Discord, Minecraft entre amis et en famille, et Crypt Keeper.</p><span class="more">Entrer dans The Crypt ↗</span></a>
- <a class="project-card ruenix-card" href="ruenix.html"><span class="project-num">03 / RUENIX MC</span><img src="../assets/ruenix-crest.webp" width="96" height="96" alt=""><h3>Un monde en préparation.</h3><p>Le réseau Minecraft que je contribue à gérer. SMP, SkyPvP et une communauté qui prend forme.</p><span class="more">Découvrir Ruenix ↗</span></a>
+ <header class="home-v2">
+  <div class="home-copy"><span class="overline"><i></i> KEVIN · CANADIEN FRANÇAIS · ADMIN SYSTÈME</span>
+  <h1>Un peu de tech.<br>Beaucoup de <em>moi.</em></h1>
+  <p class="hero-lead">Moi, c’est TehZombiJesus. Je garde les serveurs en marche, je rassemble du monde et mon homelab n’est jamais tout à fait terminé.</p>
+  <div class="hero-actions"><a class="btn" href="#projects">Fais comme chez toi <span>↘</span></a><a class="text-link" href="crypt.html">Retrouve-moi dans The Crypt ↗</a></div>
+  <div class="hero-footnote"><span>01 — INFRASTRUCTURE</span><span>02 — COMMUNAUTÉS</span><span>03 — APRÈS LES HEURES</span></div></div>
+  <div class="portrait-stage"><span class="portrait-label">TEHZOMBIJESUS / EN LIGNE ET HORS LIGNE</span><div class="portrait-orbit" aria-hidden="true"></div><img src="../assets/avatar.webp" alt="Portrait de TehZombiJesus" width="480" height="480" fetchpriority="high"><div class="portrait-caption"><span>Bidouilleur par habitude.</span><span>EST / EDT ↗</span></div></div>
+ </header>
+ <div class="identity-strip"><span>DANS MON ORBITE</span><span>Proxmox</span><span>Cloudflare</span><span>Minecraft</span><span>Linux</span><span>NullDaily</span></div>
+ <section id="projects" class="featured"><div class="section-top"><div><span class="overline">01 / CE QUE JE FAIS ROULER</span><h2>Des mondes différents.<br>La même personne derrière.</h2></div><p>De l’infrastructure, des communautés et quelques redémarrages tard le soir.</p></div>
+ <div class="world-grid">
+ <a class="world world-lab" href="homelab.html"><div class="world-visual"><span class="world-id">LAB / 01</span><div class="rack-v2" aria-hidden="true"><div><i></i><b></b><b></b><span>COMPUTE</span></div><div><i></i><b></b><b></b><span>STORAGE</span></div><div><i></i><b></b><b></b><span>NETWORK</span></div></div><span class="visual-caption">Toujours en évolution</span></div><div class="world-content"><span class="world-type">INFRASTRUCTURE / AUTOHÉBERGEMENT</span><h3>Dans le homelab <span>↗</span></h3><p>Ce qui roule aujourd’hui, la suite et les raisons derrière les changements.</p></div></a>
+ <a class="world world-crypt" href="crypt.html"><div class="world-visual"><span class="world-id">COMMUNITY / 02</span><div class="crypt-mark" aria-hidden="true"><span>THE</span>CRYPT<span>EST. ONLINE</span></div><span class="visual-caption">Des amis. Des jeux. Du bon monde.</span></div><div class="world-content"><span class="world-type">DISCORD / MINECRAFT / CRYPT KEEPER</span><h3>The Crypt <span>↗</span></h3><p>Mon coin du Web pour jouer, partager et passer du bon temps.</p></div></a>
+ <a class="world world-ruenix" href="ruenix.html"><div class="world-visual"><span class="world-id">MINECRAFT / 03</span><img src="../assets/ruenix-crest.webp" alt="" width="160" height="160" loading="lazy"><span class="visual-caption">Ouverture à venir</span></div><div class="world-content"><span class="world-type">SMP / SKYPVP / COMMUNAUTÉ</span><h3>Ruenix MC <span>↗</span></h3><p>Le réseau Minecraft que je contribue à gérer et la communauté qui se forme autour.</p></div></a>
  </div></section>
-  <section>
-    <h2>À propos de moi</h2>
-    <p class="lede">La version courte.</p>
-    <div class="about">
-      
-      <div>
-        <!-- Age updates itself every birthday. The birthday is set in site.js. -->
-        <ul class="me">
-          <li><span id="age">28</span> ans</li>
-          <li><img src="../assets/flag-ca.svg" alt="" width="28" height="21">Canada</li>
-          <!-- My local time and what I'm probably doing. The hours are set in extras.js. -->
-          <li class="clock"><span class="dot" aria-hidden="true"></span><span class="clock-text">Heure de l'Est</span></li>
-        </ul>
-        <p>Je m'appelle Kevin, mieux connu en ligne sous le nom de TehZombiJesus. Je suis celui qui finit toujours par s'occuper des serveurs : les installer, les garder en ligne et comprendre pourquoi ils ont arrêté.</p>
-        <p class="muted">Ces temps-ci, ça veut dire être CTO et administrateur système chez Nox Interactive, gérer le réseau Minecraft Ruenix, et entretenir à la maison un homelab qui devient tranquillement un petit centre de données. Je ne suis pas développeur. Mon rôle, c'est l'infrastructure, la coordination et l'organisation des communautés.</p>
-        <p class="muted">Quand tout roule, je suis habituellement dans un jeu, juste pour le plaisir.</p>
-      </div>
-    </div>
-  </section>
-  <section class="latest"><div class="section-top"><div><span class="eyebrow">DES NOUVELLES DE MON COIN DU WEB</span><h2>Dans les coulisses</h2></div><a class="more" href="devlog.html">Toutes les nouvelles ↗</a></div><div class="update-grid">
- <a href="devlog/crypt-keeper-devlog.html"><span class="project-num">CRYPT KEEPER</span><h3>Le bot derrière la communauté</h3><span class="more">Lire le journal ↗</span></a>
- <a href="devlog/crypt-smp-in-the-crypt.html"><span class="project-num">MINECRAFT</span><h3>Un endroit pour jouer ensemble</h3><span class="more">Lire le journal ↗</span></a>
- <a href="setup.html"><span class="project-num">LE PROCHAIN POSTE</span><h3>Un morceau à la fois</h3><span class="more">Voir le plan du montage ↗</span></a></div></section>
-  <section class="currently-strip"><div><span class="eyebrow">EN CE MOMENT</span><h2>Serveurs en marche. Manette prête.</h2><p>Faire grandir The Crypt, planifier le lab et trouver du temps pour jouer avec des amis.</p></div><a class="btn ghost" href="now.html">Ma page du moment ↗</a></section>
-  <section>
-    <h2>Me trouver</h2>
-    <p class="lede">Le même nom partout : TehZombiJesus.</p>
-    <ul class="links">
-      <li><a href="https://discord.gg/DRSZb9qqqh"><span class="name">La Crypte</span><span class="handle">Mon serveur Discord</span></a></li>
-      <li><a href="https://github.com/TehZombiJesus"><span class="name">GitHub</span><span class="handle">@TehZombiJesus</span></a></li>
-      <li><a href="https://x.com/TehZombiJesus"><span class="name">X / Twitter</span><span class="handle">@TehZombiJesus</span></a></li>
-      <li><a href="ruenix.html"><span class="name">Ruenix MC</span><span class="handle">Réseau Minecraft, SMP et SkyPvP</span></a></li>
-    </ul>
-  </section>
-  <section>
-    <div class="contact">
-      <svg class="deco" viewBox="0 0 360 300" preserveAspectRatio="none" aria-hidden="true">
-        <polygon fill="#472f4a" points="160,0 240,0 140,300 60,300"/>
-        <polygon fill="#fb54f7" points="270,0 300,0 200,300 170,300"/>
-        <polygon fill="#0e080d" points="320,0 400,0 300,300 220,300"/>
-      </svg>
-      <div style="position:relative">
-        <h2>Me contacter</h2>
-        <!-- EDIT: change the email below, or delete that button -->
-        <p>La Crypte, mon serveur Discord, est le moyen le plus rapide de me joindre. Pour quelque chose de plus officiel, le courriel fonctionne aussi.</p>
-      </div>
-      <div class="actions">
-        <a class="btn" href="https://discord.gg/DRSZb9qqqh">Rejoindre la Crypte</a>
-        <!-- Clicking the address copies it (extras.js). Without JavaScript it opens the mail app instead. -->
-        <a class="btn ghost copy-email" href="mailto:hello@tehzombijesus.ca" data-email="hello@tehzombijesus.ca" title="Clique pour copier">hello@tehzombijesus.ca</a>
-      </div>
-    </div>
-  </section>
-
-</main>
+ <section class="human-section"><div class="human-label"><span class="overline">02 / DERRIÈRE LE PSEUDO</span><h2>Salut, moi c’est Kevin.</h2><p>Admin système au travail.<br>Curieux de nature.</p></div><div class="about"><p class="about-lead">Je suis habituellement celui qui finit par s’occuper des serveurs : les installer, les garder en ligne et comprendre pourquoi ils ont arrêté.</p><p>Mon quotidien touche l’infrastructure et la coordination chez Nox Interactive, l’équipe de Ruenix et un homelab qui trouve toujours une façon de grandir. Je ne suis pas développeur; mon domaine, ce sont les systèmes et les communautés.</p><a class="text-link" href="now.html">Ce qui m’occupe en ce moment ↗</a></div></section>
+ <section class="dispatches"><div class="section-top"><div><span class="overline">03 / NOTES ET QUÊTES SECONDAIRES</span><h2>De mon petit<br>coin du Web.</h2></div><a class="text-link" href="devlog.html">Parcourir le journal ↗</a></div><div class="dispatch-grid"><a href="devlog/crypt-keeper-devlog.html"><span class="dispatch-no">01</span><span class="world-type">CRYPT KEEPER</span><h3>Le bot derrière la communauté.</h3><span class="text-link">Lire l’histoire ↗</span></a><a href="devlog/crypt-smp-in-the-crypt.html"><span class="dispatch-no">02</span><span class="world-type">MINECRAFT</span><h3>Un monde à partager entre amis.</h3><span class="text-link">Lire l’histoire ↗</span></a><a href="setup.html"><span class="dispatch-no">03</span><span class="world-type">LE POSTE DE JEU</span><h3>Le bureau. Le matériel. La suite.</h3><span class="text-link">Explorer le poste ↗</span></a></div></section>
+ <section class="offhours"><div><span class="overline">04 / APRÈS LES HEURES</span><h2>Serveurs en marche.<br>Manette prête.</h2></div><div><p>Minecraft entre amis. Un peu de chaos dans GTA. De l’ARAM, juste pour le plaisir. Quand tout roule, c’est probablement là que tu me trouveras.</p><a class="text-link" href="crypt.html">Viens faire un tour ↗</a><div class="game-tags"><span>Minecraft</span><span>GTA V</span><span>ARAM</span></div></div></section>
+ <section class="contact-v2"><span class="overline">VIENS DIRE SALUT</span><h2>Il y a une personne<br>derrière les serveurs.</h2><div class="contact-bottom"><p>Discord pour discuter.<br>Le courriel pour quelque chose de plus officiel.</p><a class="btn" href="https://discord.gg/DRSZb9qqqh">Rejoindre The Crypt ↗</a><a class="text-link" href="mailto:hello@tehzombijesus.ca">hello@tehzombijesus.ca ↗</a></div></section>
+ </main>
 
 <footer>
   <div class="wrap">
@@ -150,10 +87,11 @@
     <!-- When your Uptime Kuma status page is public, uncomment this line and put in its address:
     <a href="https://status.tehzombijesus.ca">Status</a> -->
   </div>
-<div class="preview-notice">Version de développement · aperçu seulement</div></footer>
+<div class="preview-notice"><span>DESIGN STUDY / 02</span><span>Aperçu de développement · production inchangée</span></div></footer>
 
 <script src="../site.js"></script>
 <script src="../extras.js"></script>
+<script src="../redesign.js"></script>
 <script src="../assets/version.js"></script>
 </body>
 </html>

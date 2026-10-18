@@ -24,6 +24,7 @@ def make_page(filename, title, description, main, current=None, scripts=(), og_i
     s = re.sub(r'<meta property="og:title" content="[^"]*">', '<meta property="og:title" content="%s">' % title, s)
     if og_image:
         s = re.sub(r'(<meta (?:property="og:image"|name="twitter:image") content=")[^"]*(">)', r'\g<1>%s\g<2>' % og_image, s)
+    s = re.sub(r' data-page="[^"]*"', ' data-page="%s"' % filename.replace('.html', ''), s)
     s = s.replace(' aria-current="page"', '')
     cur = current or filename
     s = s.replace('<li><a href="%s">' % cur, '<li><a href="%s" aria-current="page">' % cur, 1)

@@ -1,39 +1,51 @@
-# TehZombiJesus development build
-
-Based on upstream main d5d48a0a9acdec8aa8f6d2309b6d65e53640fea7, reviewed October 18, 2026. This is an isolated development copy. Production is untouched. Development branch: dev-site-refresh-2026-10-18.
-
-## Preview
-
-Requires Node.js 24 or later. From this folder run:
-
-    node dev-server.mjs
-
-Open http://127.0.0.1:4173. English and French pages are included. The local server serves static files; it does not execute Cloudflare Functions. It returns disabled integration configuration, so guestbook submission, Discord counts, Spotify, presence, and live lab status are not connected locally.
-
-## Changes
-
-- Compact branded hero and project-first homepage.
-- Dedicated bilingual Crypt page; clear distinction from Ruenix.
-- Curated devlog links and Now summary.
-- Responsive menu with always-visible language switch.
-- Visible persistent effects control; effects off by default. OS reduced-motion preference remains respected.
-- Current setup before future build details.
-- Lab map before the product roadmap.
-- NullDaily roadmap: Stavo, Servio, Budvo planned adoption; Labvo and Pingvo intended when released; Routvo and Termvo possible later. No implication these are already installed. Product status comes from nulldaily.com on October 18, 2026, not independent software validation.
-- Preview noindex headers, robots policy, labels, and no service-worker registration.
-- Full-birthday constant removed from site.js; existing birthday celebration logic in extras.js retained.
-
-## Cloudflare Pages preview
-
-Use a separate Pages project or a preview branch that is NOT the production branch. Keep output directory site. This bundle includes functions/ and lib/ unchanged. Do not reuse production secrets or D1 bindings for a preview.
-
-The original generator requires Python 3. Run python tools/build.py before deploying if changing source content. New copy is included in tools/fr_dict.py and the Crypt page is included in the French generator. Generated HTML is already bundled. The Python generator and post-generation checks passed in GitHub Actions. Live Cloudflare integrations beyond the visible Discord member count were not tested.
-
-This is deliberately marked noindex and preview-only. Before promoting a reviewed version, remove preview labels and noindex policy, re-enable the intended service-worker behavior, and regenerate the sitemap/feeds. Do not merge this development copy directly into production without that review.
-
-## Verification
-
-JavaScript syntax, source completeness, bilingual navigation, local link targets, and new product states are checked with node verify-dev.mjs. The local preview was unreachable from the browser. The deployed Cloudflare preview was subsequently checked at desktop and 390-pixel mobile widths, including the mobile menu, EN/FR navigation, and the homelab roadmap. Live API writes were not tested.
+# Full redesign development preview
 
 Preview: https://dev-site-refresh-2026-10-18.tehzombijesus-ca.pages.dev
 Draft review: https://github.com/TehZombiJesus/tehzombijesus.ca/pull/1
+
+Production and the existing dev branch are untouched. This is design study 02 on the isolated dev-site-refresh-2026-10-18 branch.
+
+## Design
+
+A complete editorial redesign with a large portrait, typographic introduction, three distinct project worlds, personal introduction, journal links and an after-hours section. The new design applies across the existing English and French pages, including the journal, setup, homelab, community, Now page and guestbook. No made-up testimonials, uptime statistics or hardware photos. Original assets are reused.
+
+Long pages get a section index. Mobile navigation keeps the language switch visible. Effects remain off by default and OS reduced-motion preferences are respected.
+
+## Updated migration plan
+
+- Proxmox remains the compute foundation.
+- Uptime Kuma → Pingvo, planned after Pingvo is released. The current status adapter still reads Uptime Kuma; a Pingvo adapter needs the actual API when migration happens.
+- Coolify → Servio. Docker hosting capability was confirmed by the owner through Ronnie. The migration is planned, not claimed complete.
+- TrueNAS ⇢ Stavo is conditional. Stavo is intended for the personal cloud, but is not a full TrueNAS replacement today. Broader storage features are planned according to Ronnie; retain TrueNAS until real storage requirements are met.
+- Budvo, Labvo and Pingvo are intended additions; Routvo and Termvo are later possibilities. Labvo and Pingvo are described as planned products, not installed services.
+
+The architecture drawing includes planned hardware and is now labeled accordingly.
+
+## Page improvements
+
+- Home: project-first introduction, stronger portrait, reduced repetition, separate personal and project stories.
+- Homelab: explicit migration scope; architecture before product roadmap; current and future software distinguished.
+- Setup: current equipment first; future equipment labeled; buying choices can be revisited and compatibility is checked before ordering.
+- The Crypt: a community-led introduction with distinct Discord, Minecraft and Crypt Keeper sections.
+- Ruenix: launch status and its own Discord appear before the longer details.
+- Now: a concise focus statement before the project lists.
+- Devlog: a quieter editorial list with existing filters, article navigation and RSS preserved.
+- Guestbook: clearer form styling; moderation and anti-spam code unchanged.
+
+## Suggestions for a next iteration
+
+1. Add real desk/lab photographs and screenshots as they become available. Avoid representing concepts as existing equipment.
+2. Replace hard-coded featured journal links with entries generated from tools/devlog_posts.py so new stories appear automatically.
+3. Make migration notes into small case studies: requirements, tradeoffs, cutover and outcome. Do not promise data migration or parity without checking real product behavior.
+4. Add a private pre-cutover checklist for backups, restore tests and rollback; keep sensitive topology out of the public site.
+5. When Pingvo ships, review its API and replace the Kuma adapter separately from this visual redesign.
+
+## Preview and checks
+
+Requires Node.js 24+. Run node dev-server.mjs and open http://127.0.0.1:4173. Static preview does not execute Cloudflare Functions or connect production services. Cloudflare keeps the existing functions/ and lib/ unchanged.
+
+Run node verify-dev.mjs. The GitHub workflow also runs python tools/build.py and repeats the checks against regenerated output. New English/French content and inline fragments are in tools/fr_dict.py.
+
+This branch is deliberately noindex and preview-only; service-worker registration is disabled. Before a reviewed production merge, remove preview labels/noindex policy, restore intended service-worker behavior and regenerate outputs. Never point production at this branch directly.
+
+The earlier development build passed desktop/mobile browser review. The full redesign is being validated separately on the hosted preview; only the final review report should be used for its QA status. API writes and private integrations are not tested.

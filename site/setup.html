@@ -26,14 +26,15 @@
 <link rel="alternate" hreflang="x-default" href="https://tehzombijesus.ca/setup">
 <link rel="stylesheet" href="styles.css">
 <link rel="stylesheet" href="refresh.css">
+<link rel="stylesheet" href="redesign.css">
 </head>
-<body>
+<body data-page="setup">
 <a class="skip-link" href="#main">Skip to content</a>
 
 <!-- Top menu: to add a page, copy one <li> line and point it at the new file -->
 <nav class="nav" aria-label="Main">
   <div class="wrap">
-    <a class="home" href="index.html"><img src="assets/favicon.svg" alt="" width="38" height="38"><span>TehZombiJesus</span></a>
+    <a class="home" href="index.html"><span class="brand-monogram">TZJ<span>↗</span></span><span class="brand-name">TehZombiJesus<span>.ca</span></span></a>
     <ul>
       <li><a href="index.html">Home</a></li>
       <li><a href="homelab.html">Homelab</a></li>
@@ -62,7 +63,7 @@
     <h1>The battlestation</h1>
     <div class="bar"></div>
     <p>A 57" super ultrawide, three screens above it, and a PC hanging under a standing desk. Every part chosen to last.</p>
-  </header>
+  </header><div class="page-summary"><span class="state state-confirmed">Current equipment first</span><p>The future build is a plan. Parts marked as not bought are not in the current setup.</p></div>
 
   <section>
     <h2>What I use today</h2>
@@ -135,7 +136,7 @@
         <li data-got="no"><strong>Three 22" screens above</strong><span>Thin bezels, 1080p. The outer two turn in about 31° to follow the curve below.</span></li>
         <li><strong>Two Vertical Monitor Stands</strong><span>About 20 cm either side of centre, tall enough to clear the 57".</span></li>
         <li><strong>PC under the desk</strong><span>On the Secretlab Premium PC Mount, so the floor stays clear.</span></li>
-        <li data-got="no"><strong>One special cable</strong><span>A VESA-certified DP80LL DisplayPort cable, the only kind that runs the 57" at full 240 Hz.</span></li>
+        <li data-got="no"><strong>One special cable</strong><span>A certified DisplayPort cable, selected against the monitor and GPU requirements before ordering.</span></li>
       </ul>
     </div>
   </section>
@@ -209,9 +210,9 @@
     <div class="rules">
       <div><h3>No RGB</h3><p>Not dimmed, not turned off in software. Parts without it, from the start.</p></div>
       <div><h3>Quality over price</h3><p>Built to last for years, not to hit the cheapest total.</p></div>
-      <div><h3>Checked first</h3><p>Every part verified for compatibility before anything is ordered.</p></div>
+      <div><h3>Checked first</h3><p>Confirm component, mounting and power compatibility before ordering.</p></div>
       <div><h3>Nothing recycled</h3><p>Every part in the new build is new.</p></div>
-      <div><h3>No last-minute swaps</h3><p>Once a part is decided, it stays decided.</p></div>
+      <div><h3>Decisions can evolve</h3><p>Revisit a choice when compatibility, availability or requirements change.</p></div>
       <div><h3>Moves with the desk</h3><p>Screens, PC and cables all rise and lower together.</p></div>
     </div>
   </section>
@@ -226,10 +227,11 @@
     <!-- When your Uptime Kuma status page is public, uncomment this line and put in its address:
     <a href="https://status.tehzombijesus.ca">Status</a> -->
   </div>
-<div class="preview-notice">Development build · preview only</div></footer>
+<div class="preview-notice"><span>DESIGN STUDY / 02</span><span>Development preview · production unchanged</span></div></footer>
 
 <script src="site.js"></script>
 <script src="extras.js"></script>
+<script src="redesign.js"></script>
 <script src="assets/version.js"></script>
 </body>
 </html>

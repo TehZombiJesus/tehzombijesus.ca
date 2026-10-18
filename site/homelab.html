@@ -26,14 +26,15 @@
 <link rel="alternate" hreflang="x-default" href="https://tehzombijesus.ca/homelab">
 <link rel="stylesheet" href="styles.css">
 <link rel="stylesheet" href="refresh.css">
+<link rel="stylesheet" href="redesign.css">
 </head>
-<body>
+<body data-page="homelab">
 <a class="skip-link" href="#main">Skip to content</a>
 
 <!-- Top menu: to add a page, copy one <li> line and point it at the new file -->
 <nav class="nav" aria-label="Main">
   <div class="wrap">
-    <a class="home" href="index.html"><img src="assets/favicon.svg" alt="" width="38" height="38"><span>TehZombiJesus</span></a>
+    <a class="home" href="index.html"><span class="brand-monogram">TZJ<span>↗</span></span><span class="brand-name">TehZombiJesus<span>.ca</span></span></a>
     <ul>
       <li><a href="index.html">Home</a></li>
       <li><a href="homelab.html" aria-current="page">Homelab</a></li>
@@ -99,7 +100,7 @@
   <section>
     <h2>How it connects</h2>
     <p class="lede">From the internet to the drives. Hover or tap any box to see what it does.</p>
-    <figure class="netmap">
+    <p class="architecture-note">Architecture overview · includes planned networking and storage hardware. This is not a live inventory.</p><figure class="netmap">
       <div class="netmap-scroll">
       <svg viewBox="0 0 1000 470" role="img" aria-label="Map of the homelab: Cloudflare and the fibre connection lead to the UniFi gateway, which feeds one Proxmox host running TrueNAS, Coolify, the apps and Uptime Kuma, with TrueNAS managing a fast NVMe pool and a RAIDZ2 media pool. An off-site server connects through Cloudflare.">
         <defs>
@@ -169,11 +170,15 @@
       <p class="map-info" aria-live="polite"><strong>Hover or tap a box</strong> to see what it does.</p>
     </figure>
   </section>
-  <section class="stavo-sec" id="next-stack"><span class="eyebrow">WHAT’S NEXT</span><h2>My next chapter with NullDaily</h2><p class="lede">Software made by my friend Ronniie at NullDaily. These are my intended additions, separate from the services running above.</p><div class="services stavo"><a class="svc st" href="https://nulldaily.com/products/stavo"><span class="plan-state">Planned adoption · available</span><h3>Stavo</h3><p class="what">Personal cloud</p><p>Files, photos, notes, mail and calendars on my own hardware.</p><span class="more">Product details ↗</span></a>
-<a class="svc st" href="https://nulldaily.com/products/servio"><span class="plan-state">Planned adoption · available</span><h3>Servio</h3><p class="what">Servers & community</p><p>Game servers, bots, hosting and community tools in one panel.</p><span class="more">Product details ↗</span></a>
+  <section class="migration" id="migration"><div class="section-top"><div><span class="overline">THE NEXT CHAPTER</span><h2>Same lab.<br>A new software stack.</h2></div><p>A migration plan, not a claim that the switch is already done. Proxmox remains the compute foundation.</p></div><div class="migration-list">
+ <div class="migration-row"><div><span class="migration-label">MONITORING</span><h3>Uptime Kuma <span>→</span> Pingvo</h3></div><p>Pingvo will take over monitoring and status pages. Migration is planned for when the product is released.</p><span class="state state-planned">Planned · awaiting release</span></div>
+ <div class="migration-row"><div><span class="migration-label">APPLICATION HOSTING</span><h3>Coolify <span>→</span> Servio</h3></div><p>Ronnie confirmed Docker hosting support, so Servio is my planned replacement for Coolify.</p><span class="state state-confirmed">Capability confirmed · migration planned</span></div>
+ <div class="migration-row"><div><span class="migration-label">STORAGE & PERSONAL CLOUD</span><h3>TrueNAS <span>⇢</span> Stavo</h3></div><p>Stavo is planned for my personal cloud. A full TrueNAS replacement is only a possibility: Ronnie confirmed that broader storage features are planned, but it is not a complete replacement today.</p><span class="state">Conditional · future capabilities</span></div>
+ </div><p class="source-note">Roadmap updated October 18, 2026, from my plans and confirmations from Ronnie at NullDaily.</p></section><section class="stavo-sec" id="next-stack"><span class="eyebrow">WHAT’S NEXT</span><h2>My next chapter with NullDaily</h2><p class="lede">The products behind the plan. I intend to use Stavo, Servio, Budvo, Labvo and Pingvo; Routvo and Termvo remain possibilities for later.</p><div class="services stavo"><a class="svc st" href="https://nulldaily.com/products/stavo"><span class="plan-state">Planned adoption · available</span><h3>Stavo</h3><p class="what">Personal cloud</p><p>Personal cloud first. A possible TrueNAS replacement later, if the planned storage capabilities fit my lab.</p><span class="more">Product details ↗</span></a>
+<a class="svc st" href="https://nulldaily.com/products/servio"><span class="plan-state">Planned adoption · available</span><h3>Servio</h3><p class="what">Servers & community</p><p>Docker applications, game servers and community tools. My planned Coolify replacement.</p><span class="more">Product details ↗</span></a>
 <a class="svc st" href="https://nulldaily.com/products/budvo"><span class="plan-state">Planned adoption · available</span><h3>Budvo</h3><p class="what">Personal finances</p><p>Paycheck planning, budgets and a clearer view of what I can spend.</p><span class="more">Product details ↗</span></a>
 <a class="svc st" href="https://nulldaily.com/products/labvo"><span class="plan-state">Intended adoption · product planned</span><h3>Labvo</h3><p class="what">Homelab dashboard</p><p>A central view of the lab. Intended for my stack when released.</p><span class="more">Product details ↗</span></a>
-<a class="svc st" href="https://nulldaily.com/products/pingvo"><span class="plan-state">Intended adoption · product planned</span><h3>Pingvo</h3><p class="what">Monitoring & status</p><p>Service monitoring and status pages. Intended for my stack when released.</p><span class="more">Product details ↗</span></a></div><details class="later-products"><summary>Maybe later: Routvo + Termvo</summary><p>Routvo is coming next for routing and certificates. Termvo is planned for browser terminals. Both are possibilities for later, not part of my current lab.</p><a href="https://nulldaily.com/products/routvo">Routvo ↗</a> · <a href="https://nulldaily.com/products/termvo">Termvo ↗</a></details><p class="muted">Product availability checked October 18, 2026. Plans may change.</p><a class="more" href="https://nulldaily.com">Explore NullDaily ↗</a></section>
+<a class="svc st" href="https://nulldaily.com/products/pingvo"><span class="plan-state">Intended adoption · product planned</span><h3>Pingvo</h3><p class="what">Monitoring & status</p><p>My intended replacement for Uptime Kuma, once Pingvo is released.</p><span class="more">Product details ↗</span></a></div><details class="later-products"><summary>Maybe later: Routvo + Termvo</summary><p>Routvo is coming next for routing and certificates. Termvo is planned for browser terminals. Both are possibilities for later, not part of my current lab.</p><a href="https://nulldaily.com/products/routvo">Routvo ↗</a> · <a href="https://nulldaily.com/products/termvo">Termvo ↗</a></details><p class="muted">Product availability checked October 18, 2026. Plans may change.</p><a class="more" href="https://nulldaily.com">Explore NullDaily ↗</a></section>
 
 
   <section>
@@ -234,10 +239,11 @@
     <!-- When your Uptime Kuma status page is public, uncomment this line and put in its address:
     <a href="https://status.tehzombijesus.ca">Status</a> -->
   </div>
-<div class="preview-notice">Development build · preview only</div></footer>
+<div class="preview-notice"><span>DESIGN STUDY / 02</span><span>Development preview · production unchanged</span></div></footer>
 
 <script src="site.js"></script>
 <script src="extras.js"></script>
+<script src="redesign.js"></script>
 <script src="assets/version.js"></script>
 </body>
 </html>
