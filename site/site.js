@@ -1,7 +1,8 @@
+(function(){var root=document.documentElement;try{root.dataset.effects=localStorage.getItem('tzj.effects')||'off';}catch(e){root.dataset.effects='off';}var fr=root.lang==='fr',wrap=document.querySelector('.nav .wrap'),list=wrap&&wrap.querySelector('ul');if(list){list.id='main-menu';var lang=list.querySelector('.lang');if(lang)wrap.appendChild(lang);var b=document.createElement('button');b.className='menu-toggle';b.textContent='Menu';b.setAttribute('aria-controls','main-menu');b.setAttribute('aria-expanded','false');wrap.insertBefore(b,list);b.onclick=function(){var open=b.getAttribute('aria-expanded')==='true';b.setAttribute('aria-expanded',String(!open));list.classList.toggle('menu-open',!open);};document.addEventListener('keydown',function(e){if(e.key==='Escape'&&b.getAttribute('aria-expanded')==='true'){b.click();b.focus();}});}var btn=document.createElement('button');btn.className='effects-toggle';var on=root.dataset.effects==='on';btn.textContent=fr?'Effets : '+(on?'activés':'désactivés'):'Effects: '+(on?'on':'off');btn.setAttribute('aria-pressed',String(on));btn.onclick=function(){try{localStorage.setItem('tzj.effects',on?'off':'on');}catch(e){}location.reload();};document.querySelector('footer .wrap')?.appendChild(btn);})();
 /* TehZombiJesus site — small scripts used on every page. */
 
 // ===== Age: EDIT this to your birthday (YYYY-MM-DD). Until it's set, the page shows the number written in the HTML. =====
-var BIRTHDAY = "1998-04-02";
+var BIRTHDAY = "";
 (function () {
   var el = document.getElementById('age');
   var m = /^([0-9]{4})-([0-9]{2})-([0-9]{2})$/.exec(BIRTHDAY);
@@ -15,7 +16,7 @@ var BIRTHDAY = "1998-04-02";
 document.querySelectorAll('[data-copy]').forEach(function (btn) {
   btn.addEventListener('click', function () {
     var text = btn.getAttribute('data-copy');
-    var done = function () { btn.textContent = 'Copied'; setTimeout(function () { btn.textContent = 'Copy'; }, 1600); };
+    var done = function () { btn.textContent = document.documentElement.lang === 'fr' ? 'Copié' : 'Copied'; setTimeout(function () { btn.textContent = document.documentElement.lang === 'fr' ? 'Copier' : 'Copy'; }, 1600); };
     if (navigator.clipboard) { navigator.clipboard.writeText(text).then(done, function(){}); }
   });
 });
@@ -26,7 +27,7 @@ document.querySelectorAll('[data-copy]').forEach(function (btn) {
    It all switches itself off for visitors who ask for less motion.
    ===================================================================== */
 (function () {
-  var calm = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var calm = document.documentElement.dataset.effects === 'off' || (window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches);
   var finePointer = window.matchMedia && matchMedia('(pointer: fine)').matches;
   var root = document.documentElement;
   root.classList.add('fx');

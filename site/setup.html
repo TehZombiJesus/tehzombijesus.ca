@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
+<meta name="robots" content="noindex, nofollow">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Setup | TehZombiJesus</title>
@@ -24,8 +25,10 @@
 <link rel="alternate" hreflang="fr" href="https://tehzombijesus.ca/fr/setup">
 <link rel="alternate" hreflang="x-default" href="https://tehzombijesus.ca/setup">
 <link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="refresh.css">
 </head>
 <body>
+<a class="skip-link" href="#main">Skip to content</a>
 
 <!-- Top menu: to add a page, copy one <li> line and point it at the new file -->
 <nav class="nav" aria-label="Main">
@@ -35,7 +38,8 @@
       <li><a href="index.html">Home</a></li>
       <li><a href="homelab.html">Homelab</a></li>
       <li><a href="setup.html" aria-current="page">Setup</a></li>
-      <li><a href="ruenix.html">Ruenix</a></li>
+      <li><a href="crypt.html">The Crypt</a></li>
+<li><a href="ruenix.html">Ruenix</a></li>
       <li><a href="devlog.html">Devlog</a></li>
       <li><a href="now.html">Now</a></li>
       <li><a class="lang" href="fr/setup.html" hreflang="fr" lang="fr" title="Français">FR</a></li>
@@ -52,7 +56,7 @@
   </svg>
 </div>
 
-<main class="wrap">
+<main class="wrap" id="main">
   <header class="page-head">
     <span class="tag">Setup</span>
     <h1>The battlestation</h1>
@@ -60,6 +64,19 @@
     <p>A 57" super ultrawide, three screens above it, and a PC hanging under a standing desk. Every part chosen to last.</p>
   </header>
 
+  <section>
+    <h2>What I use today</h2>
+    <p class="lede">The current PC, still doing its job until the new one is built.</p>
+    <div class="panel dark" style="max-width:640px">
+      <dl class="specs">
+        <dt>CPU</dt><dd>Intel Core i7-13700K, 16 cores / 24 threads</dd>
+        <dt>GPU</dt><dd>RTX 3070 Ti</dd>
+        <dt>Board</dt><dd>Gigabyte Z790 AORUS Elite AX</dd>
+        <dt>RAM</dt><dd>32 GB</dd>
+        <dt>OS</dt><dd>Windows 11 Pro</dd>
+      </dl>
+    </div>
+  </section>
   <section>
     <h2>The layout</h2>
     <p class="lede">Everything is mounted to the desk, so the whole setup rises and lowers together when I switch between sitting and standing.</p>
@@ -199,19 +216,7 @@
     </div>
   </section>
 
-  <section>
-    <h2>What I use today</h2>
-    <p class="lede">The current PC, still doing its job until the new one is built.</p>
-    <div class="panel dark" style="max-width:640px">
-      <dl class="specs">
-        <dt>CPU</dt><dd>Intel Core i7-13700K, 16 cores / 24 threads</dd>
-        <dt>GPU</dt><dd>RTX 3070 Ti</dd>
-        <dt>Board</dt><dd>Gigabyte Z790 AORUS Elite AX</dd>
-        <dt>RAM</dt><dd>32 GB</dd>
-        <dt>OS</dt><dd>Windows 11 Pro</dd>
-      </dl>
-    </div>
-  </section>
+
 </main>
 
 <footer>
@@ -221,7 +226,7 @@
     <!-- When your Uptime Kuma status page is public, uncomment this line and put in its address:
     <a href="https://status.tehzombijesus.ca">Status</a> -->
   </div>
-</footer>
+<div class="preview-notice">Development build · preview only</div></footer>
 
 <script src="site.js"></script>
 <script src="extras.js"></script>
