@@ -720,3 +720,5 @@ FR.update({
 })
 
 FR.update({"Planned for Docker applications and game hosting, in place of Coolify. Docker support was confirmed by Ronnie.":"Prévu pour les applications Docker et les serveurs de jeu, à la place de Coolify. La prise en charge de Docker a été confirmée par Ronnie.","Monitoring and status pages, chosen in place of Uptime Kuma. Planned adoption after Pingvo is released.":"Surveillance et pages d’état, choisies à la place d’Uptime Kuma. Adoption prévue après la sortie de Pingvo."})
+
+FR.update({"ZFS mirror · approximately 1.81 TiB pool capacity":"Miroir ZFS · environ 1,81 Tio de capacité du pool","ZFS mirror confirmed: the pool is online, with no known data errors in the supplied October 2026 snapshot.":"Miroir ZFS confirmé : le pool est en ligne, sans erreur de données connue dans le relevé fourni en octobre 2026.","Hypervisor":"Hyperviseur","One running VM · no LXC containers listed":"Une VM en fonction · aucun conteneur LXC répertorié"})

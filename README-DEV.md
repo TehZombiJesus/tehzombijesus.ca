@@ -11,7 +11,7 @@ The original favicon/logo, wordmark, slanted purple/plum/magenta artwork and por
 
 ## Homelab source of truth
 
-The owner supplied a system export on October 18, 2026. Confirmed public hardware facts: HP EliteDesk 800 G5 Desktop Mini, Intel Core i5-9500T with 6 cores/6 threads, 64 GB DDR4 (2×32 GB Kingston, configured at 2667 MT/s), two approximately 2 TB NVMe drives, Intel UHD Graphics 630 and Intel I219-LM. The export does not establish the pool layout, mirror configuration, application inventory, router or off-site server. Serial numbers, UUID, raw diagnostics, memory-module identifiers, and firmware/security diagnostics are not included in the website or repository.
+The owner supplied a system export on October 18, 2026. Confirmed public hardware facts: HP EliteDesk 800 G5 Desktop Mini, Intel Core i5-9500T with 6 cores/6 threads, 64 GB DDR4 (2×32 GB Kingston, configured at 2667 MT/s), two approximately 2 TB NVMe drives, Intel UHD Graphics 630 and Intel I219-LM. A follow-up command export confirms two WD Black SN770 2 TB NVMe drives in a healthy ZFS mirror, approximately 1.81 TiB pool capacity; Proxmox VE 9.2.20; one running VM and no listed LXC containers. It does not establish the guest application inventory, router or off-site server. Serial numbers, UUID, raw diagnostics, memory-module identifiers, and firmware/security diagnostics are not included in the website or repository.
 
 The homelab page is now only:
 
